@@ -1,0 +1,7 @@
+{
+  "name": "UseYourFridge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Frigo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let ingredient of ingredients$ | async">
+      <ion-label>{{ ingredient.ingredients }}</ion-label>
+      <ion-button slot="end" color="danger" (click)="deleteIngredient(ingredient.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  
+  <ion-item *ngIf="(ingredients$ | async)?.length === 0">
+    Aucun ingrédient dans le frigo.
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="newIngredient" placeholder="Nouvel ingrédient"></ion-input>
+    <ion-button (click)="addIngredient()">Ajouter</ion-button>
+  </ion-item>
+</ion-content>

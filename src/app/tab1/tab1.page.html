@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recettes disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="(matchingRecettes$ | async) as recettes">
+    <ion-list *ngIf="recettes.length > 0">
+      <ion-item *ngFor="let recette of recettes" (click)="onRecetteClick(recette)">
+        <ion-label>
+          <h2>{{ recette.titre }}</h2>
+          <p>Type: {{ recette.type }}</p>
+          <p>Prix: {{ recette.prix }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    
+    <ion-item *ngIf="recettes.length === 0">
+      Aucune recette correspondante disponible.
+    </ion-item>
+  </ng-container>
+
+  <ion-card *ngIf="selectedRecette">
+    <ion-card-header>
+      <ion-card-title>{{ selectedRecette.titre }}</ion-card-title>
+      <ion-card-subtitle>{{ selectedRecette.type }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Prix:</strong> {{ selectedRecette.prix }}</p>
+      <p><strong>Temps de préparation:</strong> {{ selectedRecette.temps }} minutes</p>
+      <p><strong>Ingrédients:</strong> {{ selectedRecette.ingredients }}</p>
+      <p><strong>Étapes:</strong> {{ selectedRecette.etapes }}</p>
+      <p><strong>Notes:</strong> {{ selectedRecette.notes }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

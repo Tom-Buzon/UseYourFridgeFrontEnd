@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Toutes les Recettes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <!-- Liste de courses -->
+  <ion-list *ngIf="shoppingList.length > 0">
+    <ion-list-header>
+      <ion-label>Liste de courses</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of shoppingList" [ngClass]="{'in-frigo': item.inFrigo, 'not-in-frigo': !item.inFrigo}">
+      <ion-label>{{ item.ingredient }}</ion-label>
+      <ion-button *ngIf="!item.inFrigo" (click)="addToFridge(item.ingredient)">Add to Fridge</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Message si la liste de courses est vide -->
+  <ion-item *ngIf="shoppingList.length === 0 && selectedRecettes.length > 0">
+    La liste de courses est vide.
+  </ion-item>
+
+  <!-- Bouton pour créer la liste de courses -->
+  <ion-button *ngIf="selectedRecettes.length > 0" (click)="createShoppingList()" expand="block">
+    CRÉER UNE LISTE DE COURSES
+  </ion-button>
+
+  <!-- Liste des recettes -->
+  <ion-list *ngIf="recettes && recettes.length > 0">
+    <ion-item *ngFor="let recette of recettes">
+      <ion-checkbox [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"></ion-checkbox>
+      <ion-label class="availability">{{ recette.disponibles }}/{{ recette.total }}</ion-label>
+      <ion-label>{{ recette.titre }}</ion-label>
+      <ion-button fill="clear" (click)="showRecetteDetails(recette)">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Message si aucune recette n'est disponible -->
+  <ion-item *ngIf="!recettes || recettes.length === 0">
+    Aucune recette disponible.
+  </ion-item>
+</ion-content>
