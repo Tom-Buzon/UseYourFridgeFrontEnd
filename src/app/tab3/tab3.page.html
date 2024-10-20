@@ -4,11 +4,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let ingredient of ingredients$ | async">
       <ion-label>{{ ingredient.ingredients }}</ion-label>
-      <ion-button slot="end" color="danger" (click)="deleteIngredient(ingredient.id)">
+      <ion-button slot="end" color="danger" (click)="removeIngredient(ingredient.id)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-item>
@@ -22,4 +22,31 @@
     <ion-input [(ngModel)]="newIngredient" placeholder="Nouvel ingrédient"></ion-input>
     <ion-button (click)="addIngredient()">Ajouter</ion-button>
   </ion-item>
+
+  <ion-button expand="block" (click)="startScan()">
+    <ion-icon name="barcode-outline"></ion-icon>
+    SCAN
+  </ion-button>
+
+  <video #video [hidden]="!scanning" width="100%"></video>
 </ion-content>
+
+<!-- Modal pour afficher les informations du produit scanné -->
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Produit scanné</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeModal()">Fermer</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <h2>{{ scannedProduct?.product_name }}</h2>
+      <p>Marque: {{ scannedProduct?.brands }}</p>
+      <p>Quantité: {{ scannedProduct?.quantity }}</p>
+      <ion-button expand="block" (click)="addToFridge()">Ajouter au frigo</ion-button>
+    </ion-content>
+  </ng-template>
+</ion-modal>

@@ -4,7 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-button *ngIf="isReducedIconVisible" (click)="expandShoppingList()" expand="block">
+    VOIR LA LISTE DE COURSES
+  </ion-button>
+  <div *ngIf="isReducedIconVisible" class="reduced-icon" (click)="expandShoppingList()">
+    <ion-icon name="cart "></ion-icon>
+  </div>
   
   <!-- Liste de courses -->
   <ion-list *ngIf="shoppingList.length > 0">
@@ -15,6 +21,10 @@
       <ion-label>{{ item.ingredient }}</ion-label>
       <ion-button *ngIf="!item.inFrigo" (click)="addToFridge(item.ingredient)">Add to Fridge</ion-button>
     </ion-item>
+    <ion-button expand="block" (click)="clearShoppingList()">Vider</ion-button>
+    <ion-button *ngIf="shoppingList.length > 0" (click)="saveShoppingList()" expand="block">
+      SAVE
+    </ion-button>
   </ion-list>
 
   <!-- Message si la liste de courses est vide -->

@@ -51,6 +51,7 @@ export class FrigoService {
   }
 
   deleteIngredient(id: number): Observable<any> {
+    console.log(id);
     return this.http.delete(`${this.apiUrl}/ingredients/${id}`).pipe(
       tap(() => this.loadIngredients())
     );

@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RecetteService } from '../services/recette.service';
 import { FrigoService } from '../services/frigo.service';
 import { Observable } from 'rxjs';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { map, switchMap } from 'rxjs/operators';
 import { ChangeDetectorRef } from '@angular/core';
+import { ShoppingListModalComponent } from './../shopping-list-modal/shopping-list-modal.component';
+import { ShoppingListService } from './../services/shopping-list.service';
+
 
 
 interface Recette {
@@ -30,12 +33,16 @@ export class Tab2Page implements OnInit {
   recettes: Recette[] = [];
   selectedRecettes: Recette[] = [];
   shoppingList: { ingredient: string; inFrigo: boolean }[] = [];
+  isReducedIconVisible = false;
+  savedShoppingList: { ingredient: string; inFrigo: boolean }[] = [];
 
   constructor(
     private recetteService: RecetteService,
     private frigoService: FrigoService,
     private alertController: AlertController,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private modalController: ModalController,
+    private shoppingListService: ShoppingListService
   ) { }
 
   ngOnInit() {
@@ -140,5 +147,46 @@ export class Tab2Page implements OnInit {
 
   isIngredientInFridge(ingredient: string): boolean {
     return this.shoppingList.some(item => item.ingredient === ingredient && item.inFrigo);
+  }
+
+  clearShoppingList() {
+    this.shoppingList = [];
+    console.log('Liste de courses vidée');
+  }
+
+  saveShoppingList() {
+    // Sauvegarder la liste dans userShoppingList
+    this.shoppingListService.updateUserShoppingList([...this.shoppingList]);
+    this.isReducedIconVisible = true;
+    this.shoppingList = []; // Vider la liste locale après sauvegarde
+  }
+
+
+  async openShoppingListModal() {
+    const modal = await this.modalController.create({
+      component: ShoppingListModalComponent,
+      componentProps: {
+        shoppingList: this.shoppingListService.getUserShoppingList()
+      }
+    });
+
+    modal.onDidDismiss().then((result) => {
+      if (result.data && result.data.action === 'reduce') {
+        this.isReducedIconVisible = true;
+      }
+    });
+
+    return await modal.present();
+  }
+
+  emptyShoppingList() {
+    // Vider la liste locale sans affecter userShoppingList
+    this.shoppingList = [];
+    this.isReducedIconVisible = true;
+  }
+
+  expandShoppingList() {
+    this.isReducedIconVisible = false;
+    this.openShoppingListModal();
   }
 }

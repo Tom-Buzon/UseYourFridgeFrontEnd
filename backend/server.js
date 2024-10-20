@@ -1,6 +1,7 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+
 require('dotenv').config();
 
 const app = express();
@@ -18,6 +19,7 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
 });
+
 
 // Test database connection
 pool.query('SELECT NOW()', (err, res) => {
@@ -105,9 +107,9 @@ app.delete('/api/frigo/ingredients/:id', async (req, res) => {
 });
 
 // Route pour récupérer tous les titres de la table recettes
-app.get('/api/recettes/titres', async (req, res) => {
+app.get('/api/recettes/title', async (req, res) => {
   try {
-    const result = await pool.query('SELECT titre FROM recettes');
+    const result = await pool.query('SELECT title FROM recettes');
     res.json(result.rows);
   } catch (err) {
     console.error(err);
@@ -119,7 +121,7 @@ app.post('/api/recettes/matching', async (req, res) => {
   const { ingredients } = req.body;
   try {
     const query = `
-      SELECT * FROM recettes 
+      SELECT * FROM recettes
       WHERE $1::text[] @> string_to_array(ingredients, ', ')::text[]
     `;
     const result = await pool.query(query, [ingredients]);
@@ -154,6 +156,10 @@ app.get('/api/recettes/:id', async (req, res) => {
 //});
 //
 //Server pour tel
+
+
 app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on port ${port}`);
 });
+
+// Handle graceful shutdown
