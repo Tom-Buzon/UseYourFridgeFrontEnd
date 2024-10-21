@@ -1,8 +1,10 @@
-import { Component, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { FrigoService, Ingredient } from '../services/frigo.service'; // Ensure Ingredient is imported
+import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject  } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { FrigoService, Ingredient } from '../services/frigo.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-//import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+import { ScanOptions, ScanResult } from '@capacitor-community/barcode-scanner';
 
 
 @Component({
@@ -10,32 +12,34 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-
-
 export class Tab3Page implements OnInit, OnDestroy {
-  @ViewChild('video', { static: false }) video!: ElementRef;
 
   ingredients$: Observable<Ingredient[]>;
   newIngredient: string = '';
   isModalOpen: boolean = false;
   scannedProduct: any;
   scanning: boolean = false;
-  currentStream: MediaStream | null = null;
-  
 
-  constructor(private frigoService: FrigoService, private http: HttpClient) {
+  constructor(
+    private frigoService: FrigoService, 
+    private http: HttpClient,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+
+  ) {
     this.ingredients$ = this.frigoService.ingredients$;
-    
   }
 
   ngOnInit() {
-    
+    this.requestCameraPermission();
+    //BarcodeScanner.prepare();
   }
 
   ngOnDestroy() {
     this.stopScan();
   }
 
+  
   addIngredient() {
     if (this.newIngredient.trim()) {
       this.frigoService.addIngredient(this.newIngredient.trim()).subscribe(
@@ -57,52 +61,39 @@ export class Tab3Page implements OnInit, OnDestroy {
     );
   }
 
-  async checkCameraPermission() {
-    if ('mediaDevices' in navigator && 'getUser Media' in navigator.mediaDevices) {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        stream.getTracks().forEach(track => track.stop());
-        return true;
-      } catch (err: unknown) {
-        if (err instanceof Error) {
-          if (err.name === 'NotAllowedError') {
-            console.error('L\'autorisation de la caméra a été refusée');
-          } else {
-            console.error('Erreur lors de la vérification de l\'autorisation de la caméra', err);
-          }
-        } else {
-          console.error('Une erreur inconnue s\'est produite', err);
-        }
-        return false;
+  async requestCameraPermission() {
+    try {
+      const permission = await BarcodeScanner.checkPermission({ force: true });
+      if (permission.granted) {
+        console.log('Permission de caméra accordée');
+      } else {
+        console.error('Permission de caméra non accordée');
       }
-    } else {
-      console.error('getUser Media n\'est pas supporté sur ce navigateur');
-      return false;
+    } catch (error) {
+      console.error('Erreur lors de la demande de permission', error);
     }
   }
+
 
   async startScan() {
-  //  try {
-  //    const result = await CapacitorBarcodeScanner.scanBarcode({
-  //      hint: CapacitorBarcodeScannerTypeHint.ALL
-  //    });
-  //    console.log(result.ScanResult);      
-  //  } catch (error) {
-  //    console.error('Erreur lors de la numérisation du code-barres', error);
-  //  }
+    this.scanning = true;
+    document.body.classList.add('scanner-active');
+    await BarcodeScanner.hideBackground();
+    const result = await BarcodeScanner.startScan();
+    if (result.hasContent) {
+      console.log(result.content);
+      await this.getProductInfo(result.content);
+      this.stopScan();
+    }
   }
   
-
-  stopScan() {
-    if (this.currentStream) {
-      this.currentStream.getTracks().forEach(track => track.stop());
-      this.currentStream = null;
-    }
-    if (this.video && this.video.nativeElement) {
-      this.video.nativeElement.srcObject = null;
-    }
+  async stopScan() {
     this.scanning = false;
+    document.body.classList.remove('scanner-active');
+    await BarcodeScanner.showBackground();
+    await BarcodeScanner.stopScan();
   }
+
 
   closeModal() {
     this.isModalOpen = false;
@@ -116,7 +107,7 @@ export class Tab3Page implements OnInit, OnDestroy {
         this.scannedProduct = response.product;
         this.isModalOpen = true;
       } else {
-        console .error('Produit non trouvé');
+        console.error('Produit non trouvé');
         alert('Produit non trouvé. Veuillez vérifier le code-barres et réessayer.');
       }
     } catch (error) {

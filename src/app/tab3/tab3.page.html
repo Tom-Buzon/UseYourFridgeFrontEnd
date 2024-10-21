@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" [class.content-hidden]="scanning">
   <ion-list>
     <ion-item *ngFor="let ingredient of ingredients$ | async">
       <ion-label>{{ ingredient.ingredients }}</ion-label>
@@ -23,30 +23,45 @@
     <ion-button (click)="addIngredient()">Ajouter</ion-button>
   </ion-item>
 
-  <ion-button expand="block" (click)="startScan()">
+  <ion-button expand="block" (click)="scanning ? stopScan() : startScan()">
     <ion-icon name="barcode-outline"></ion-icon>
-    SCAN
+    {{ scanning ? 'Arrêter le scan' : 'Commencer le scan' }}
   </ion-button>
 
-  <video #video [hidden]="!scanning" width="100%"></video>
+  <div class="scan-box" [hidden]="!scanning">
+    <!-- Cette div peut être stylisée pour montrer où scanner -->
+  </div>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Produit scanné</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Fermer</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-img *ngIf="scannedProduct?.image_url" [src]="scannedProduct.image_url" alt="Image du produit"></ion-img>
+        <h2>{{ scannedProduct?.product_name }}</h2>
+        <p>Marque: {{ scannedProduct?.brands }}</p>
+        <p>Additives: {{ scannedProduct?.additives }}</p>
+        <p>traces: {{ scannedProduct?.traces }}</p>
+        <p>nutrition_grades: {{ scannedProduct?.nutrition_grades }}</p>
+        <p>contains: {{ scannedProduct?.contains }}</p>
+        <p>does_not_contain: {{ scannedProduct?.does_not_contain }}</p>
+        <p>states: {{ scannedProduct?.states }}</p>
+        <p>quantity: {{ scannedProduct?.quantity }}</p>
+        <ion-button expand="block" (click)="addToFridge()">Ajouter au frigo</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
 
-<!-- Modal pour afficher les informations du produit scanné -->
-<ion-modal [isOpen]="isModalOpen">
-  <ng-template>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Produit scanné</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="closeModal()">Fermer</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <h2>{{ scannedProduct?.product_name }}</h2>
-      <p>Marque: {{ scannedProduct?.brands }}</p>
-      <p>Quantité: {{ scannedProduct?.quantity }}</p>
-      <ion-button expand="block" (click)="addToFridge()">Ajouter au frigo</ion-button>
-    </ion-content>
-  </ng-template>
-</ion-modal>
+<div [class.active]="scanning" class="scan-overlay" >
+  <div  [class.active]="scanning"class="scan-box" ></div>
+  <ion-button (click)="stopScan()" *ngIf="scanning">Arrêter le scan</ion-button>
+</div>
+
+
