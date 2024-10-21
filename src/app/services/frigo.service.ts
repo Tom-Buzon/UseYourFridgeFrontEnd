@@ -16,7 +16,7 @@ export interface Ingredient {
 })
 export class FrigoService {
   //private apiUrl = 'http://localhost:3000/api/frigo';
-  private apiUrl = 'http://192.168.178.52:3000/api/frigo';
+  private apiUrl = 'http://15.188.55.187:3000/api/frigo';
 
   private ingredientsSubject = new ReplaySubject<Ingredient[]>(1);
   ingredients$ = this.ingredientsSubject.asObservable();

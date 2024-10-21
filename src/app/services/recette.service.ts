@@ -14,7 +14,7 @@ export interface Recette {
 })
 export class RecetteService {
   //private apiUrl = 'http://localhost:3000/api/recettes'; // Assurez-vous que l'URL correspond à votre configuration
-  private apiUrl = 'http://192.168.178.52:3000/api/recettes'; // Assurez-vous que l'URL correspond à votre configuration
+  private apiUrl = 'http://15.188.55.187:3000/api/recettes'; // Assurez-vous que l'URL correspond à votre configuration
 
   constructor(private http: HttpClient) { }
 
