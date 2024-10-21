@@ -11,6 +11,15 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.listen(3000, function () {
+  console.log("server started on port 3000");
+});
+
+app.get("/", function (req, res) {
+  // console.log(__dirname) ;
+  res.sendFile(__dirname + "/index.html");
+});
+
 // Database connection
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -146,20 +155,3 @@ app.get('/api/recettes/:id', async (req, res) => {
     res.status(500).json({ error: 'Une erreur est survenue lors de la récupération de la recette' });
   }
 });
-
-
-
-
-// Start server
-//app.listen(port, () => {
-//  console.log(`Server running on port ${port}`);
-//});
-//
-//Server pour tel
-
-
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on port ${port}`);
-});
-
-// Handle graceful shutdown
