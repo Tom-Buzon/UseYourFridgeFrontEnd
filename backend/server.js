@@ -155,3 +155,144 @@ app.get('/api/recettes/:id', async (req, res) => {
     res.status(500).json({ error: 'Une erreur est survenue lors de la récupération de la recette' });
   }
 });
+
+//RECETTEFORMAT
+app.get('/api/recetteformat', async (req, res) => {
+  try {
+    const query = `
+      SELECT rf.id, rf.title, rf.url, rf.rate, rf.tag1, rf.tag2, rf.tag3, rf.tag4, rf.tag5,
+             rf.difficulty, rf.budget, rf.people, rf.prep_time, rf.cooking_time, rf.total_time,
+             ri.ingredient, ri.unit, ri.quantite
+      FROM recetteformat rf
+      LEFT JOIN recetteingredients ri ON rf.id = ri.recetteid
+    `;
+    const result = await pool.query(query);
+    
+    // Regrouper les ingrédients sous forme de tableau pour chaque recette
+    const recettes = result.rows.reduce((acc, row) => {
+      let recette = acc.find(r => r.id === row.id);
+      if (recette) {
+        // Ajouter l'ingrédient à la recette existante
+        if (row.ingredient) {
+          recette.ingredients.push({
+            ingredient: row.ingredient,
+            unit: row.unit,
+            quantite: row.quantite,
+          });
+        }
+      } else {
+        // Créer une nouvelle recette
+        recette = {
+          id: row.id,
+          title: row.title,
+          url: row.url,
+          rate: row.rate,
+          tag1: row.tag1,
+          tag2: row.tag2,
+          tag3: row.tag3,
+          difficulty: row.difficulty,
+          budget: row.budget,
+          people: row.people,
+          prep_time: row.prep_time,
+          cooking_time: row.cooking_time,
+          total_time: row.total_time,
+          ingredients: row.ingredient ? [{
+            ingredient: row.ingredient,
+            unit: row.unit,
+            quantite: row.quantite
+          }] : []
+        };
+        acc.push(recette);
+      }
+      return acc;
+    }, []);
+    
+    res.json(recettes);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des recettes:', err);
+    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des recettes' });
+  }
+});
+
+app.get('/api/recetteformat/filter', async (req, res) => {
+  const { tag1, tag2, tag3, searchTerm } = req.query;
+  let query = `SELECT rf.*, ARRAY_AGG(ri.ingredient) as ingredients 
+               FROM recetteformat rf 
+               LEFT JOIN recetteingredients ri ON rf.id = ri.recetteid 
+               WHERE 1=1`;
+  const params = [];
+
+  // Appliquer les filtres de tags
+  if (tag1) {
+    query += ` AND rf.tag1 = $${params.length + 1}`;
+    params.push(tag1);
+  }
+  if (tag2) {
+    query += ` AND rf.tag2 = $${params.length + 1}`;
+    params.push(tag2);
+  }
+  if (tag3) {
+    query += ` AND rf.tag3 = $${params.length + 1}`;
+    params.push(tag3);
+  }
+
+  // Appliquer le filtre de recherche (titre ou ingrédient)
+  if (searchTerm) {
+    query += ` AND (rf.title ILIKE $${params.length + 1} OR EXISTS (SELECT 1 FROM recetteingredients ri WHERE ri.recetteid = rf.id AND ri.ingredient ILIKE $${params.length + 1}))`;
+    params.push(`%${searchTerm}%`);
+  }
+
+  // Ajouter un GROUP BY pour éviter les doublons d’ingrédients par recette
+  query += ` GROUP BY rf.id`;
+
+  try {
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des recettes filtrées:', err);
+    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des recettes filtrées' });
+  }
+});
+
+// Route pour récupérer les valeurs distinctes de tag1
+app.get('/api/recetteformat/tags/tag1', async (req, res) => {
+  try {
+    const result = await pool.query(`SELECT DISTINCT tag1 FROM recetteformat WHERE tag1 IS NOT NULL`);
+    const tag1Options = result.rows.map(row => row.tag1);
+    console.log('Tag1 Options:', tag1Options);
+    res.json(tag1Options);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des tags (tag1):', err);
+    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag1)' });
+  }
+});
+
+// Route pour récupérer les valeurs distinctes de tag2
+app.get('/api/recetteformat/tags/tag2', async (req, res) => {
+  try {
+    const result = await pool.query(`SELECT DISTINCT tag2 FROM recetteformat WHERE tag2 IS NOT NULL`);
+    const tag2Options = result.rows.map(row => row.tag2);
+    console.log('Tag2 Options:', tag2Options);
+    res.json(tag2Options);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des tags (tag2):', err);
+    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag2)' });
+  }
+});
+
+// Route pour récupérer les valeurs distinctes de tag3
+app.get('/api/recetteformat/tags/tag3', async (req, res) => {
+  try {
+    const result = await pool.query(`SELECT DISTINCT tag3 FROM recetteformat WHERE tag3 IS NOT NULL`);
+    const tag3Options = result.rows.map(row => row.tag3);
+    console.log('Tag3 Options:', tag3Options);
+    res.json(tag3Options);
+  } catch (err) {
+    console.error('Erreur lors de la récupération des tags (tag3):', err);
+    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag3)' });
+  }
+});
+
+
+
+

@@ -16,12 +16,12 @@ export class RecettesPage implements OnInit {
   }
 
   loadTitres() {
-    this.recetteService.getTitres().subscribe(
-      (data: any) => {
-        this.titres = data.map((item: any) => item.titre);
+    this.recetteService.getRecettes().subscribe(
+      data => {
+        // Traitez les données reçues ici
       },
-      (error) => {
-        console.error('Erreur lors de la récupération des titres', error);
+      (error: any) => {
+        console.error('Erreur lors de la récupération des recettes', error);
       }
     );
   }

@@ -1,40 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { RecetteService } from '../services/recette.service';
+import { RecetteService, Recette } from '../services/recette.service';
 import { FrigoService } from '../services/frigo.service';
-import { Observable } from 'rxjs';
 import { AlertController, ModalController } from '@ionic/angular';
-import { map, switchMap } from 'rxjs/operators';
 import { ChangeDetectorRef } from '@angular/core';
 import { ShoppingListModalComponent } from './../shopping-list-modal/shopping-list-modal.component';
 import { ShoppingListService } from './../services/shopping-list.service';
 
-
-
-interface Recette {
-  id: number;
-  titre: string;
-  ingredients: string;
-  selected?: boolean;
-  type?: string;
-  prix?: string;
-  temps?: number;
-  etapes?: string;
-  notes?: string;
-  disponibles?: number;
-  total?: number;
-}
-
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  templateUrl: './tab2.page.html',
+  styleUrls: ['./tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
-  recettes: Recette[] = [];
+  allRecettes: Recette[] = []; // Liste complète sans filtres
+  filteredRecettes: Recette[] = []; // Liste filtrée avant pagination
+  recettes: Recette[] = []; // Liste paginée à afficher
   selectedRecettes: Recette[] = [];
+
   shoppingList: { ingredient: string; inFrigo: boolean }[] = [];
   isReducedIconVisible = false;
   savedShoppingList: { ingredient: string; inFrigo: boolean }[] = [];
+  searchTerm: string = '';
+  selectedTag1: string | null = null;
+  selectedTag2: string | null = null;
+  selectedTag3: string | null = null;
+  tag1Options: string[] = [];
+  tag2Options: string[] = [];
+  tag3Options: string[] = [];
+  pageSize = 20; // Nombre de recettes par page
+  currentPage = 1; // Page courante
+  totalPages = 1; // Nombre total de pages
 
   constructor(
     private recetteService: RecetteService,
@@ -42,132 +37,129 @@ export class Tab2Page implements OnInit {
     private alertController: AlertController,
     private cdr: ChangeDetectorRef,
     private modalController: ModalController,
-    private shoppingListService: ShoppingListService
-  ) { }
+    private shoppingListService: ShoppingListService,
+  ) {}
 
   ngOnInit() {
-    console.log('Tab2 ngOnInit called');
-    this.loadRecettesWithAvailability();
+    this.loadRecettes();
+    this.loadTags();
   }
 
-  loadRecettesWithAvailability() {
-    console.log('Début du chargement des recettes');
-    this.recetteService.getTitres().pipe(
-      switchMap(recettes => 
-        this.frigoService.getCurrentIngredients().pipe(
-          map(frigoIngredients => ({ recettes, frigoIngredients }))
-        )
-      )
-    ).subscribe(
-      ({ recettes, frigoIngredients }) => {
-        console.log('Recettes reçues:', recettes);
-        console.log('Ingrédients du frigo reçus:', frigoIngredients);
-        
-        const recettesWithAvailability = recettes.map(recette => {
-          const ingredientsList = recette.ingredients.split(',').map(i => i.trim());
-          const disponibles = ingredientsList.filter(ingredient => 
-            frigoIngredients.some(frigoItem => 
-              frigoItem.toLowerCase() === ingredient.toLowerCase()
-            )
-          ).length;
-          console.log(`Recette ${recette.titre}: ${disponibles}/${ingredientsList.length} ingrédients disponibles`);
-          return {
-            ...recette,
-            selected: false,
-            disponibles,
-            total: ingredientsList.length
-          };
-        });
-  
-        console.log('Recettes avec disponibilité:', recettesWithAvailability);
-        this.recettes = recettesWithAvailability;
-        console.log('this.recettes mis à jour:', this.recettes);
-        this.cdr.detectChanges();
+  loadRecettes() {
+    this.recetteService.getRecettes().subscribe(
+      (recettes) => {
+        this.allRecettes = recettes; // Stocke les recettes initiales
+        this.filterRecettes(); // Applique les filtres dès le chargement initial
       },
-      error => console.error('Erreur lors du chargement des recettes', error)
+      (error) => {
+        console.error('Erreur lors du chargement des recettes', error);
+      }
     );
+  }
+
+  loadTags() {
+    this.recetteService.getTag1Options().subscribe(
+      (data) => {
+        this.tag1Options = data;
+        console.log('Tag1Options chargés :', this.tag1Options);
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des Tag1', error);
+      }
+    );
+    this.recetteService.getTag2Options().subscribe(
+      (data) => {
+        this.tag2Options = data;
+        console.log('Tag2Options chargés :', this.tag2Options);
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des Tag2', error);
+      }
+    );
+    this.recetteService.getTag3Options().subscribe(
+      (data) => {
+        this.tag3Options = data;
+        console.log('Tag3Options chargés :', this.tag3Options);
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des Tag3', error);
+      }
+    );
+  }
+
+  filterRecettes() {
+    // Filtrer les recettes selon les critères définis
+    this.filteredRecettes = this.allRecettes.filter((recette) => {
+      const matchesSearch = this.searchTerm
+        ? recette.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          recette.ingredients.some((ing) =>
+            ing.ingredient.toLowerCase().includes(this.searchTerm.toLowerCase())
+          )
+        : true;
+
+      const matchesTag1 = this.selectedTag1 ? recette.tag1 === this.selectedTag1 : true;
+      const matchesTag2 = this.selectedTag2 ? recette.tag2 === this.selectedTag2 : true;
+      const matchesTag3 = this.selectedTag3 ? recette.tag3 === this.selectedTag3 : true;
+
+      return matchesSearch && matchesTag1 && matchesTag2 && matchesTag3;
+    });
+
+    console.log('Recettes filtrées:', this.filteredRecettes.length);
+    this.currentPage = 1; // Réinitialise la page à 1 après le filtrage
+    this.totalPages = Math.ceil(this.filteredRecettes.length / this.pageSize) || 1;
+    this.updateDisplayedRecettes();
+  }
+
+  updateDisplayedRecettes() {
+    const start = (this.currentPage - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    this.recettes = this.filteredRecettes.slice(start, end); // Actualise les recettes affichées sur la page
+    console.log(`Affichage des recettes de ${start} à ${end}`);
+  }
+
+  goToNextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.updateDisplayedRecettes();
+    }
+  }
+
+  goToPreviousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updateDisplayedRecettes();
+    }
+  }
+
+  clearFilters() {
+    this.searchTerm = '';
+    this.selectedTag1 = null;
+    this.selectedTag2 = null;
+    this.selectedTag3 = null;
+    this.filterRecettes();
   }
 
   updateSelectedRecettes() {
-    this.selectedRecettes = this.recettes.filter(recette => recette.selected);
+    this.selectedRecettes = this.recettes.filter((recette) => recette.selected);
     console.log('Recettes sélectionnées:', this.selectedRecettes);
   }
 
-  createShoppingList() {
-    console.log('Création de la liste de courses');
-    this.shoppingList = [];
-    this.selectedRecettes.forEach(recette => {
-      const ingredients = recette.ingredients.split(',').map(i => i.trim());
-      ingredients.forEach(ingredient => {
-        if (!this.shoppingList.some(item => item.ingredient === ingredient)) {
-          this.shoppingList.push({ ingredient, inFrigo: false });
-        }
-      });
-    });
-
-    // Vérifier quels ingrédients sont dans le frigo
-    this.frigoService.getCurrentIngredients().subscribe(frigoIngredients => {
-      this.shoppingList.forEach(item => {
-        item.inFrigo = frigoIngredients.some(frigoItem => 
-          frigoItem.toLowerCase() === item.ingredient.toLowerCase()
-        );
-      });
-    });
+  expandShoppingList() {
+    this.isReducedIconVisible = false;
+    this.openShoppingListModal();
   }
 
-  async showRecetteDetails(recette: Recette) {
-    console.log('full card affichage');
-
-    const fullRecette = await this.recetteService.getRecetteDetails(recette.id).toPromise();
-    const alert = await this.alertController.create({
-      header: fullRecette.titre,
-      message: `
-        Type: ${fullRecette.type}<br>
-        Prix: ${fullRecette.prix}<br>
-        Temps: ${fullRecette.temps} minutes<br>
-        Ingrédients: ${fullRecette.ingredients}<br>
-        Étapes: ${fullRecette.etapes}<br>
-        Notes: ${fullRecette.notes || 'Aucune'}
-      `,
-      buttons: ['OK']
-    });
-
-    await alert.present();
+  showRecetteDetails(recette: Recette) {
+    console.log('Affichage des détails de la recette', recette);
+    // Implémentez ici la logique pour afficher les détails de la recette
   }
-
-  addToFridge(ingredient: string) {
-    this.frigoService.addIngredient(ingredient).subscribe(
-      () => {
-        console.log(`Ingrédient ${ingredient} ajouté au frigo`);
-        this.loadRecettesWithAvailability(); // Recharger les recettes pour mettre à jour la disponibilité
-      },
-      error => console.error(`Erreur lors de l'ajout de l'ingrédient ${ingredient} au frigo`, error)
-    );
-  }
-
-  isIngredientInFridge(ingredient: string): boolean {
-    return this.shoppingList.some(item => item.ingredient === ingredient && item.inFrigo);
-  }
-
-  clearShoppingList() {
-    this.shoppingList = [];
-    console.log('Liste de courses vidée');
-  }
-
-  saveShoppingList() {
-    // Sauvegarder la liste dans userShoppingList
-    this.shoppingListService.updateUserShoppingList([...this.shoppingList]);
-    this.isReducedIconVisible = true;
-    this.shoppingList = []; // Vider la liste locale après sauvegarde
-  }
-
 
   async openShoppingListModal() {
     const modal = await this.modalController.create({
       component: ShoppingListModalComponent,
       componentProps: {
-        shoppingList: this.shoppingListService.getUserShoppingList()
-      }
+        shoppingList: this.shoppingListService.getUserShoppingList(),
+      },
     });
 
     modal.onDidDismiss().then((result) => {
@@ -177,16 +169,5 @@ export class Tab2Page implements OnInit {
     });
 
     return await modal.present();
-  }
-
-  emptyShoppingList() {
-    // Vider la liste locale sans affecter userShoppingList
-    this.shoppingList = [];
-    this.isReducedIconVisible = true;
-  }
-
-  expandShoppingList() {
-    this.isReducedIconVisible = false;
-    this.openShoppingListModal();
   }
 }

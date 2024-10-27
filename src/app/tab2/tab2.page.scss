@@ -1,25 +1,95 @@
+/* Fond général pour le contenu */
 ion-content {
-    --overflow: auto;
-  }
-  
-  ion-list {
-    padding-bottom: 20px;  // Ajoute un peu d'espace en bas de la liste
-  }
+  --background: linear-gradient(135deg, #121212, #1e1e2f); /* Dégradé sombre pour un effet de profondeur */
+  backdrop-filter: blur(10px); /* Effet de flou sur le fond */
+}
 
-  ion-item {
-    .availability {
-      min-width: 50px;
-      text-align: center;
-      font-size: 0.9em;
-      color: var(--ion-color-medium);
-    }
-  }
-  
-  .in-frigo {
-    --background: rgba(0, 255, 0, 0.1);  // vert clair
-  }
-  
-  .not-in-frigo {
-    --background: rgba(255, 0, 0, 0.1);  // rouge clair
+/* Styles de chaque élément de liste avec un effet de verre */
+ion-item {
+  background: rgba(255, 255, 255, 0.1); /* Couche translucide pour le style verre */
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère pour un effet lumineux */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Ombre douce pour la profondeur */
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(20px); /* Flou supplémentaire pour l’effet de verre */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, background 0.2s ease;
+  --background: transparent !important;
+}
+
+ion-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.08); /* Légère expansion au survol pour l’interaction */
+}
+
+/* Dégradé lumineux autour de chaque item */
+ion-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(255, 0, 150, 0.4), rgba(0, 205, 255, 0.4)); /* Dégradé lumineux */
+  filter: blur(20px); /* Flou pour créer un halo doux */
+  z-index: -1;
+  //--background: transparent !important;
+}
+
+/* Bouton d'icône '?' en style glassmorphism */
+ion-button {
+  background: rgba(255, 255, 255, 0.25); /* Couleur de fond translucide pour effet verre */
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.3); /* Ombres pour 3D */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+ion-button:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: scale(1.1); /* Agrandissement léger au survol */
+}
+
+/* Disponibilité des ingrédients */
+.availability {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Accentuation pour lisibilité */
+  margin-right: 12px;
+}
+
+/* Titre de la recette avec flex-grow pour occuper l’espace */
+.texte {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ffffff;
+  //color:rgba(97, 38, 58, 0.699);
+  flex-grow: 4;
+  padding-left: 10px;
+}
+
+/* Boutons d'action pour liste de courses et autres interactions */
+ion-button.expand-button {
+  background: linear-gradient(135deg, rgba(255, 0, 150, 0.3), rgba(0, 205, 255, 0.3));
+  color: #ffffff;
+  margin: 5px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.expand-button:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 150, 0.4), rgba(0, 205, 255, 0.4));
+  transform: scale(1.05);
 }
 

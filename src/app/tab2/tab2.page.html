@@ -9,48 +9,71 @@
     VOIR LA LISTE DE COURSES
   </ion-button>
   <div *ngIf="isReducedIconVisible" class="reduced-icon" (click)="expandShoppingList()">
-    <ion-icon name="cart "></ion-icon>
+    <ion-icon name="cart"></ion-icon>
   </div>
-  
-  <!-- Liste de courses -->
-  <ion-list *ngIf="shoppingList.length > 0">
-    <ion-list-header>
-      <ion-label>Liste de courses</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let item of shoppingList" [ngClass]="{'in-frigo': item.inFrigo, 'not-in-frigo': !item.inFrigo}">
-      <ion-label>{{ item.ingredient }}</ion-label>
-      <ion-button *ngIf="!item.inFrigo" (click)="addToFridge(item.ingredient)">Add to Fridge</ion-button>
-    </ion-item>
-    <ion-button expand="block" (click)="clearShoppingList()">Vider</ion-button>
-    <ion-button *ngIf="shoppingList.length > 0" (click)="saveShoppingList()" expand="block">
-      SAVE
-    </ion-button>
-  </ion-list>
 
-  <!-- Message si la liste de courses est vide -->
-  <ion-item *ngIf="shoppingList.length === 0 && selectedRecettes.length > 0">
-    La liste de courses est vide.
+  <!-- Filtrer par recherche + tag1, tag2, tag3 -->
+  <ion-item>
+    <ion-input
+      placeholder="Rechercher par titre ou ingrédient"
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterRecettes()"
+    ></ion-input>
   </ion-item>
 
-  <!-- Bouton pour créer la liste de courses -->
-  <ion-button *ngIf="selectedRecettes.length > 0" (click)="createShoppingList()" expand="block">
-    CRÉER UNE LISTE DE COURSES
+  <ion-item>
+    <ion-label>Filtrer par Tag1</ion-label>
+    <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
+      <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <!-- Sélecteur pour tag2 -->
+  <ion-item>
+    <ion-label>Filtrer par Tag2</ion-label>
+    <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
+      <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <!-- Sélecteur pour tag3 -->
+  <ion-item>
+    <ion-label>Filtrer par Tag3</ion-label>
+    <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
+      <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-button expand="block" color="danger" (click)="clearFilters()">
+    Enlever tous les filtres
   </ion-button>
 
   <!-- Liste des recettes -->
   <ion-list *ngIf="recettes && recettes.length > 0">
     <ion-item *ngFor="let recette of recettes">
       <ion-checkbox [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"></ion-checkbox>
-      <ion-label class="availability">{{ recette.disponibles }}/{{ recette.total }}</ion-label>
-      <ion-label>{{ recette.titre }}</ion-label>
+      <ion-label class="availability">{{ recette.title }} ({{ recette.rate }})</ion-label>
+      <ion-label>{{ recette.difficulty }} - {{ recette.budget }}</ion-label>
+      <ion-label>Ingrédients: {{ recette.ingredients.length }}</ion-label>
       <ion-button fill="clear" (click)="showRecetteDetails(recette)">
         <ion-icon name="help-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+  
+  <!-- Pagination -->
+  <ion-item *ngIf="totalPages > 1">
+    <ion-button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Précédent</ion-button>
+    <ion-label>Page {{ currentPage }} sur {{ totalPages }}</ion-label>
+    <ion-button (click)="goToNextPage()" [disabled]="currentPage === totalPages">Suivant</ion-button>
+  </ion-item>
 
-  <!-- Message si aucune recette n'est disponible -->
-  <ion-item *ngIf="!recettes || recettes.length === 0">
-    Aucune recette disponible.
+  <!-- Messages Conditionnels -->
+  <ion-item *ngIf="(!recettes || recettes.length === 0) && allRecettes.length > 0">
+    Aucune recette correspondante aux filtres sélectionnés.
+  </ion-item>
+  
+  <ion-item *ngIf="allRecettes.length === 0 && recettes.length === 0">
+    Chargement des recettes...
   </ion-item>
 </ion-content>
