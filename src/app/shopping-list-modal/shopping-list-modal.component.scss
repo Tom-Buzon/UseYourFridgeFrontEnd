@@ -1,3 +1,5 @@
+
+
 .shopping-list-bubble {
     position: absolute;
     top: 50%;
@@ -75,3 +77,9 @@
  
     
   }
+  ion-content  {
+    --ion-color-primary: #3880ff;
+    --ion-color-primary-rgb: 56, 128, 255;
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    }

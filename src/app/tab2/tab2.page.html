@@ -5,15 +5,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button *ngIf="isReducedIconVisible" (click)="expandShoppingList()" expand="block">
+  <!-- Bouton pour afficher la liste de courses réduite -->
+  <ion-button [ngClass]="{'fixable-element': true}"  *ngIf="isReducedIconVisible" (click)="openShoppingListModal()" >
     VOIR LA LISTE DE COURSES
   </ion-button>
-  <div *ngIf="isReducedIconVisible" class="reduced-icon" (click)="expandShoppingList()">
-    <ion-icon name="cart"></ion-icon>
+  <div *ngIf="isReducedIconVisible" class="reduced-icon" (click)="openShoppingListModal()">
+    <ion-icon  name="cart"></ion-icon>
   </div>
 
+  <ion-list class="flex-container">
   <!-- Filtrer par recherche + tag1, tag2, tag3 -->
-  <ion-item>
+  <ion-item class="item-1">
     <ion-input
       placeholder="Rechercher par titre ou ingrédient"
       [(ngModel)]="searchTerm"
@@ -21,31 +23,41 @@
     ></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label>Filtrer par Tag1</ion-label>
-    <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
-      <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
+  
+
+  <ion-item class="item-2">
+    <ion-label>Tag1</ion-label>
+    <ion-select  [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
+      <ion-select-option  [value]="null"></ion-select-option>
+      <ion-select-option class ="white" *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
     </ion-select>
   </ion-item>
-  
-  <!-- Sélecteur pour tag2 -->
-  <ion-item>
-    <ion-label>Filtrer par Tag2</ion-label>
+
+  <ion-item class="item-3" >
+    <ion-label>Tag2</ion-label>
     <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
-      <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
+      <ion-select-option class ="white" [value]="null"></ion-select-option>
+      <ion-select-option class ="white" *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
     </ion-select>
   </ion-item>
-  
-  <!-- Sélecteur pour tag3 -->
-  <ion-item>
-    <ion-label>Filtrer par Tag3</ion-label>
+
+  <ion-item class="item-4">
+    <ion-label>Tag3</ion-label>
     <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
-      <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
+      <ion-select-option [value]="null"></ion-select-option>
+      <ion-select-option class ="white" *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
     </ion-select>
   </ion-item>
-  
+
+  </ion-list>
+
   <ion-button expand="block" color="danger" (click)="clearFilters()">
     Enlever tous les filtres
+  </ion-button>
+
+  <!-- Bouton pour générer et afficher la liste de courses -->
+  <ion-button expand="block" color="danger" [disabled]="selectedRecettes.length === 0" (click)="addMissingIngredientsToShoppingList()">
+    Générer la Liste de Courses
   </ion-button>
 
   <!-- Liste des recettes -->
@@ -55,12 +67,12 @@
       <ion-label class="availability">{{ recette.title }} ({{ recette.rate }})</ion-label>
       <ion-label>{{ recette.difficulty }} - {{ recette.budget }}</ion-label>
       <ion-label>Ingrédients: {{ recette.ingredients.length }}</ion-label>
-      <ion-button fill="clear" (click)="showRecetteDetails(recette)">
+      <ion-button fill="clear" class="detail-button" (click)="showRecetteDetails(recette)">
         <ion-icon name="help-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
-  
+
   <!-- Pagination -->
   <ion-item *ngIf="totalPages > 1">
     <ion-button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Précédent</ion-button>
@@ -72,7 +84,7 @@
   <ion-item *ngIf="(!recettes || recettes.length === 0) && allRecettes.length > 0">
     Aucune recette correspondante aux filtres sélectionnés.
   </ion-item>
-  
+
   <ion-item *ngIf="allRecettes.length === 0 && recettes.length === 0">
     Chargement des recettes...
   </ion-item>

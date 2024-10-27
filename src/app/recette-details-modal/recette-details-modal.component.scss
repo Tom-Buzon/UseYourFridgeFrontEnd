@@ -1,0 +1,32 @@
+/* recette-details-modal.component.scss */
+
+ion-card {
+    margin: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  ion-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  ion-card-header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+
+  /* recette-details-modal.component.scss */
+
+ion-card-content ul, ion-card-content pre {
+    display: block;
+//    color: #ffffff; /* Assurez-vous que la couleur contraste avec le fond */
+  }
+  
+  ion-card-content li {
+    display: list-item;
+  //  color: #ffffff; /* Assurez-vous que la couleur contraste avec le fond */
+  }
+  
+  

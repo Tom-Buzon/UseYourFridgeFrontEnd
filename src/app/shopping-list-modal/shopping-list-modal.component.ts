@@ -16,6 +16,7 @@ export class ShoppingListModalComponent {
   ) {}
 
   ngOnInit() {
+    
     this.updateShoppingListStatus();
   }
 

@@ -1,2 +1,19 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+.dark {
+    /* Thème sombre */
+    --ion-color-primary: #222428;
+    --ion-color-primary-rgb: 34, 36, 40;
+    --ion-background-color: #000000;
+    --ion-text-color: #ffffff;
+    --ion-color-test:  #dd7a1d;
+
+}
+.root {
+    /* Thème clair */
+    --ion-color-primary: #3880ff;
+    --ion-color-primary-rgb: 56, 128, 255;
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    /* Autres variables de thème clair */
+  }
