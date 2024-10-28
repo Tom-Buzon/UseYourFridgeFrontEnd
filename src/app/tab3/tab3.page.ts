@@ -1,12 +1,13 @@
 // src/app/tab3/tab3.page.ts
-import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { FrigoService, Ingredient } from '../services/frigo.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -21,6 +22,7 @@ export class Tab3Page implements OnInit, OnDestroy {
   scannedProduct: any;
   scanning: boolean = false;
   currentLang: string = 'fr';
+  toast: any;
 
   constructor(
     private frigoService: FrigoService, 
@@ -28,16 +30,17 @@ export class Tab3Page implements OnInit, OnDestroy {
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document,
     private translate: TranslateService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private toastController: ToastController
   ) {
     this.ingredients$ = this.frigoService.ingredients$;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.languageService.getPreferredLanguage().then(lang => {
       this.currentLang = lang || 'fr';
     });
-    this.requestCameraPermission();
+    await this.requestCameraPermission();
   }
 
   ngOnDestroy() {
@@ -79,22 +82,27 @@ export class Tab3Page implements OnInit, OnDestroy {
   }
 
   async startScan() {
+    document.body.classList.remove('dark');
     this.scanning = true;
-    document.body.classList.add('scanner-active');
+    this.renderer.addClass(this.document.body, 'scanner-active');
     await BarcodeScanner.hideBackground();
     const result = await BarcodeScanner.startScan();
     if (result.hasContent) {
       console.log(result.content);
       await this.getProductInfo(result.content);
       this.stopScan();
+    document.body.classList.add('dark');
+
     }
   }
   
   async stopScan() {
     this.scanning = false;
-    document.body.classList.remove('scanner-active');
+    this.renderer.removeClass(this.document.body, 'scanner-active');
     await BarcodeScanner.showBackground();
     await BarcodeScanner.stopScan();
+    document.body.classList.add('dark');
+
   }
 
   closeModal() {
@@ -110,23 +118,37 @@ export class Tab3Page implements OnInit, OnDestroy {
         this.isModalOpen = true;
       } else {
         console.error('Produit non trouvé');
-        alert(this.translate.instant('PRODUCT_NOT_FOUND'));
+        this.presentToast(this.translate.instant('PRODUCT_NOT_FOUND'));
       }
     } catch (error) {
       console.error('Erreur lors de la récupération des informations du produit', error);
-      alert(this.translate.instant('PRODUCT_INFO_ERROR'));
+      this.presentToast(this.translate.instant('PRODUCT_INFO_ERROR'));
     }
   }
 
-  addToFridge() {
+  async addToFridge() {
     if (this.scannedProduct) {
       this.frigoService.addIngredient(this.scannedProduct.product_name).subscribe(
         () => {
           console.log(`Ingrédient ${this.scannedProduct.product_name} ajouté au frigo`);
           this.closeModal();
+          this.presentToast(this.translate.instant('INGREDIENT_ADDED'));
         },
         error => console.error(`Erreur lors de l'ajout de l'ingrédient ${this.scannedProduct.product_name} au frigo`, error)
       );
     }
+  }
+
+  /**
+   * Afficher un toast de confirmation ou d'erreur
+   * @param message Message à afficher dans le toast
+   */
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present();
   }
 }

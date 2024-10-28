@@ -1,3 +1,12 @@
+/* src/app/tab3/tab3.page.scss */
+body{
+  --ion-color-primary: 0, 0, 0, 0.5 !important;
+  --ion-color-primary-rgb: 0, 0, 0, 0.5 !important;
+  --ion-background-color: 0, 0, 0, 0.5 !important;
+  --ion-text-color: 0, 0, 0, 0.5 !important;
+  --ion-color-test:  0, 0, 0, 0.5 !important;
+}
+/* Styles généraux du scanner */
 .scan-overlay {
   display: none;
   position: fixed;
@@ -5,29 +14,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent pour la superposition */
   z-index: 9999;
+  justify-content: center;
+  align-items: center;
 }
 
 .scan-overlay.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .scan-box {
-  display: none;
-  border: 2px solid #fff;
+  border: 2px solid #fff; /* Bordure blanche pour contraster */
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  content: '';
-  left: 50%;
   height: 300px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 300px;
+  position: center;
 }
 
 .scan-box.active {
-  display: block;
+  /* Aucune modification nécessaire si les classes sont correctement gérées */
 }
 
 .content-hidden {
@@ -36,5 +43,19 @@
 
 ion-item {
   border-bottom: 0.5px solid #fff;  
-  
+}
+
+/* Styles spécifiques pour le mode sombre */
+.dark .scan-overlay {
+  background-color: rgba(255, 255, 255, 0.1); /* Ajuster la couleur de superposition en mode sombre */
+}
+
+.dark .scan-box {
+  border: 2px solid #ffffff; /* Bordure blanche en mode sombre */
+}
+
+/* Styles pour le bouton Stop Scan en mode sombre */
+.dark .stop-scan-button {
+  --background: #ffffff; /* Fond blanc */
+  --color: #000000; /* Texte noir */
 }
