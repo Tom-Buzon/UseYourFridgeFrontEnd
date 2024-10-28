@@ -19,6 +19,7 @@
     {{ 'NO_INGREDIENTS_IN_FRIDGE' | translate }}
   </ion-item>
 
+<<<<<<< HEAD
   <ion-item>
     <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
     <ion-button (click)="addIngredient()">{{ 'ADD_INGREDIENT' | translate }}</ion-button>
@@ -28,6 +29,9 @@
     <ion-icon name="barcode-outline"></ion-icon>
     {{ scanning ? ('STOP_SCAN' | translate) : ('START_SCAN' | translate) }}
   </ion-button>
+=======
+
+>>>>>>> 3e221d3 (feat(footer): update)
 
   <div class="scan-box" [hidden]="!scanning">
     <!-- Cette div peut être stylisée pour montrer où scanner --><!-- src/app/tab3/tab3.page.html -->
@@ -122,8 +126,22 @@
     </ng-template>
   </ion-modal>
 </ion-content>
+<ion-item>
+  <ion-input [(ngModel)]="newIngredient" placeholder="Nouvel ingrédient"></ion-input>
+  <ion-button (click)="addIngredient()">Ajouter</ion-button>
+</ion-item>
 
+<<<<<<< HEAD
 <div [class.active]="scanning" class="scan-overlay">
   <div [class.active]="scanning" class="scan-box"></div>
   <ion-button (click)="stopScan()" *ngIf="scanning">{{ 'STOP_SCAN' | translate }}</ion-button>
+=======
+<ion-button expand="block" (click)="scanning ? stopScan() : startScan()">
+  <ion-icon name="barcode-outline"></ion-icon>
+  {{ scanning ? 'Arrêter le scan' : 'Commencer le scan' }}
+</ion-button>
+<div [class.active]="scanning" class="scan-overlay" >
+  <div  [class.active]="scanning"class="scan-box" ></div>
+  <ion-button (click)="stopScan()" *ngIf="scanning">Arrêter le scan</ion-button>
+>>>>>>> 3e221d3 (feat(footer): update)
 </div>
