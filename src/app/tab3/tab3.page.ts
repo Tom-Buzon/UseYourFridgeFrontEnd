@@ -75,14 +75,16 @@ export class Tab3Page implements OnInit {
   }
 
 
-    async ngOnInit() {
-      this.languageService.getPreferredLanguage().then(lang => {
-        this.currentLang = lang || 'fr';
-      });
-    BarcodeScanner.isSupported().then((result) => {
+
+      async ngOnInit() {
+        this.languageService.getPreferredLanguage().then(lang => {
+          this.currentLang = lang || 'fr';
+        });
+    BarcodeScanner.isSupported().then((result : any) => {
+
       this.isSupported = result.supported;
     });
-    BarcodeScanner.checkPermissions().then((result) => {
+    BarcodeScanner.checkPermissions().then((result: any) => {
       this.isPermissionGranted = result.camera === 'granted';
     });
     BarcodeScanner.removeAllListeners().then(() => {
