@@ -1,25 +1,27 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonContent } from '@ionic/angular';
+// src/app/tab2/tab2.page.ts
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { IonContent, ModalController, ToastController, AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { RecetteService, Recette } from '../services/recette.service';
-import { AlertController, ModalController, ToastController } from '@ionic/angular';
-import { ChangeDetectorRef } from '@angular/core';
 import { ShoppingListModalComponent } from './../shopping-list-modal/shopping-list-modal.component';
-import { ShoppingListService } from './../services/shopping-list.service';
-import { RecetteDetailsModalComponent } from './../recette-details-modal/recette-details-modal.component'; // Assurez-vous que ce chemin est correct
+import { ShoppingListService, ShoppingItem } from './../services/shopping-list.service';
+import { RecetteDetailsModalComponent } from './../recette-details-modal/recette-details-modal.component';
+import { ChangeDetectorRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: './tab2.page.html',
   styleUrls: ['./tab2.page.scss'],
 })
-export class Tab2Page implements OnInit {
+export class Tab2Page implements OnInit, OnDestroy {
   allRecettes: Recette[] = []; // Liste complète sans filtres
   filteredRecettes: Recette[] = []; // Liste filtrée avant pagination
   recettes: Recette[] = []; // Liste paginée à afficher
   selectedRecettes: Recette[] = [];
 
-  shoppingList: { ingredient: string; unit: string; quantite: number; inFrigo: boolean }[] = [];
+  shoppingList: ShoppingItem[] = []; // Type mis à jour
   isReducedIconVisible = false;
   searchTerm: string = '';
   selectedTag1: string | null = null;
@@ -34,6 +36,9 @@ export class Tab2Page implements OnInit {
   @ViewChild(IonContent, { static: false }) content!: IonContent;
   isFixed: boolean = false;
   scrollSubscription!: Subscription;
+  currentLang: string = 'fr'; // Langue actuelle
+
+  languageSubscription!: Subscription; // Souscription aux changements de langue
 
   constructor(
     private recetteService: RecetteService,
@@ -41,11 +46,35 @@ export class Tab2Page implements OnInit {
     private cdr: ChangeDetectorRef,
     private modalController: ModalController,
     private shoppingListService: ShoppingListService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private translate: TranslateService,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
-    this.loadRecettes();
+    // Charger la langue préférée et les recettes initiales
+    this.languageService.getPreferredLanguage().then(lang => {
+      this.currentLang = lang || 'fr';
+      this.loadRecettes();
+    });
+
+    // Souscrire aux changements de langue
+    this.languageSubscription = this.languageService.getLanguageObservable().subscribe(lang => {
+      if (lang !== this.currentLang) {
+        this.currentLang = lang;
+        this.loadRecettes(); // Recharger les recettes avec la nouvelle langue
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    // Nettoyer les souscriptions
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+    if (this.scrollSubscription) {
+      this.scrollSubscription.unsubscribe();
+    }
   }
 
   ionViewDidEnter() {
@@ -53,12 +82,6 @@ export class Tab2Page implements OnInit {
       this.scrollSubscription = this.content.ionScroll.subscribe((event) => {
         this.checkScroll(event.detail.scrollTop);
       });
-    }
-  }
-
-  ionViewWillLeave() {
-    if (this.scrollSubscription) {
-      this.scrollSubscription.unsubscribe();
     }
   }
 
@@ -70,12 +93,11 @@ export class Tab2Page implements OnInit {
     }
   }
 
-
   /**
    * Charger toutes les recettes depuis le backend
    */
   loadRecettes() {
-    this.recetteService.getRecettes().subscribe(
+    this.recetteService.getRecettes(this.currentLang).subscribe(
       (recettes) => {
         console.log('Recettes reçues du backend:', recettes);
         this.allRecettes = recettes; // Stocke les recettes initiales
@@ -92,9 +114,17 @@ export class Tab2Page implements OnInit {
    * Initialiser les options de Tag1, Tag2, Tag3 à partir de toutes les recettes
    */
   initializeTagOptions() {
-    this.tag1Options = this.getUniqueTags(this.allRecettes.map(r => r.tag1));
-    this.tag2Options = this.getUniqueTags(this.allRecettes.map(r => r.tag2));
-    this.tag3Options = this.getUniqueTags(this.allRecettes.map(r => r.tag3));
+    this.recetteService.getTag1Options(this.currentLang).subscribe(tags => {
+      this.tag1Options = this.getUniqueTags(tags);
+    });
+
+    this.recetteService.getTag2Options(this.currentLang).subscribe(tags => {
+      this.tag2Options = this.getUniqueTags(tags);
+    });
+
+    this.recetteService.getTag3Options(this.currentLang).subscribe(tags => {
+      this.tag3Options = this.getUniqueTags(tags);
+    });
   }
 
   /**
@@ -128,8 +158,13 @@ export class Tab2Page implements OnInit {
       }
     } else {
       // Si aucun Tag1 sélectionné, réinitialiser Tag2 et Tag3
-      this.tag2Options = this.getUniqueTags(this.allRecettes.map(r => r.tag2));
-      this.tag3Options = this.getUniqueTags(this.allRecettes.map(r => r.tag3));
+      this.recetteService.getTag2Options(this.currentLang).subscribe(tags => {
+        this.tag2Options = this.getUniqueTags(tags);
+      });
+
+      this.recetteService.getTag3Options(this.currentLang).subscribe(tags => {
+        this.tag3Options = this.getUniqueTags(tags);
+      });
     }
   }
 
@@ -219,7 +254,15 @@ export class Tab2Page implements OnInit {
   /**
    * Générer la liste de courses à partir des recettes sélectionnées
    */
-  generateShoppingList() {
+  async generateShoppingList() {
+    if (this.selectedRecettes.length === 0) {
+      this.presentToast(this.translate.instant('NO_RECIPES_SELECTED'));
+      return;
+    }
+
+    // Effacer la liste de courses précédente
+    await this.shoppingListService.clearShoppingList();
+
     const ingredientsMap: { [ingredient: string]: { unit: string; quantite: number } } = {};
 
     this.selectedRecettes.forEach(recette => {
@@ -246,11 +289,15 @@ export class Tab2Page implements OnInit {
       inFrigo: false // Par défaut, marquer comme non présent
     }));
 
-    // Ajouter les ingrédients manquants à la liste de courses via le service
-    this.shoppingListService.addIngredientsToShoppingList(this.shoppingList);
+    // Ajouter les ingrédients à la liste de courses via le service
+    await this.shoppingListService.addIngredientsToShoppingList(this.shoppingList);
+    console.log('Nouvelle liste de courses ajoutée:', this.shoppingList); // Log pour vérifier
 
     // Afficher un toast de confirmation
-    this.presentToast('Liste de courses générée avec succès !');
+  //  this.presentToast(this.translate.instant('LIST_GENERATED_SUCCESS')); -    -------------PUTAIN CEST PETE COUILLE CE TRUC
+
+    // Ouvrir le modal avec la liste mise à jour
+    this.openShoppingListModal();
   }
 
   /**
@@ -292,7 +339,7 @@ export class Tab2Page implements OnInit {
    */
   async showRecetteDetails(recette: Recette) {
     const modal = await this.modalController.create({
-      component: RecetteDetailsModalComponent, // Assurez-vous que ce composant existe
+      component: RecetteDetailsModalComponent,
       componentProps: {
         recette: recette
       }
@@ -304,9 +351,9 @@ export class Tab2Page implements OnInit {
   /**
    * Afficher la liste de courses en générant les éléments manquants
    */
-  addMissingIngredientsToShoppingList() {
+  async addMissingIngredientsToShoppingList() {
     // Générer la liste de courses basée sur les recettes sélectionnées
-    this.generateShoppingList();
+    await this.generateShoppingList();
     // Ouvrir le modal de la liste de courses
     this.openShoppingListModal();
   }

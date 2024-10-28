@@ -1,5 +1,6 @@
+// src/app/services/recette.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Recette {
@@ -28,34 +29,26 @@ export class RecetteService {
 
   constructor(private http: HttpClient) {}
 
-  getRecettes(): Observable<Recette[]> {
-    return this.http.get<Recette[]>(`${this.baseUrl}/recetteformat`);
+  getRecettes(lang: string): Observable<Recette[]> {
+    const params = new HttpParams().set('lang', lang);
+    return this.http.get<Recette[]>(`${this.baseUrl}/recetteformat`, { params });
   }
 
   // Récupérer les options de tag1
-  getTag1Options(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag1`);
+  getTag1Options(lang: string): Observable<string[]> {
+    const params = new HttpParams().set('lang', lang);
+    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag1`, { params });
   }
 
   // Récupérer les options de tag2
-  getTag2Options(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag2`);
+  getTag2Options(lang: string): Observable<string[]> {
+    const params = new HttpParams().set('lang', lang);
+    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag2`, { params });
   }
 
   // Récupérer les options de tag3
-  getTag3Options(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag3`);
+  getTag3Options(lang: string): Observable<string[]> {
+    const params = new HttpParams().set('lang', lang);
+    return this.http.get<string[]>(`${this.baseUrl}/recetteformat/tags/tag3`, { params });
   }
-
-  // Optionnel : Si vous souhaitez effectuer le filtrage côté serveur
-  // getFilteredRecettes(tag1: string | null, tag2: string | null, tag3: string | null, searchTerm: string): Observable<Recette[]> {
-  //   let params = new HttpParams();
-    
-  //   if (tag1) params = params.set('tag1', tag1);
-  //   if (tag2) params = params.set('tag2', tag2);
-  //   if (tag3) params = params.set('tag3', tag3);
-  //   if (searchTerm) params = params.set('searchTerm', searchTerm);
-    
-  //   return this.http.get<Recette[]>(`${this.baseUrl}/recetteformat/filter`, { params });
-  // }
 }

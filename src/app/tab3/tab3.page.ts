@@ -1,11 +1,12 @@
-import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject  } from '@angular/core';
+// src/app/tab3/tab3.page.ts
+import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { FrigoService, Ingredient } from '../services/frigo.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
-import { ScanOptions, ScanResult } from '@capacitor-community/barcode-scanner';
-
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-tab3',
@@ -19,27 +20,30 @@ export class Tab3Page implements OnInit, OnDestroy {
   isModalOpen: boolean = false;
   scannedProduct: any;
   scanning: boolean = false;
+  currentLang: string = 'fr';
 
   constructor(
     private frigoService: FrigoService, 
     private http: HttpClient,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-
+    @Inject(DOCUMENT) private document: Document,
+    private translate: TranslateService,
+    private languageService: LanguageService
   ) {
     this.ingredients$ = this.frigoService.ingredients$;
   }
 
   ngOnInit() {
+    this.languageService.getPreferredLanguage().then(lang => {
+      this.currentLang = lang || 'fr';
+    });
     this.requestCameraPermission();
-    //BarcodeScanner.prepare();
   }
 
   ngOnDestroy() {
     this.stopScan();
   }
 
-  
   addIngredient() {
     if (this.newIngredient.trim()) {
       this.frigoService.addIngredient(this.newIngredient.trim()).subscribe(
@@ -74,7 +78,6 @@ export class Tab3Page implements OnInit, OnDestroy {
     }
   }
 
-
   async startScan() {
     this.scanning = true;
     document.body.classList.add('scanner-active');
@@ -94,7 +97,6 @@ export class Tab3Page implements OnInit, OnDestroy {
     await BarcodeScanner.stopScan();
   }
 
-
   closeModal() {
     this.isModalOpen = false;
     this.scannedProduct = null;
@@ -108,11 +110,11 @@ export class Tab3Page implements OnInit, OnDestroy {
         this.isModalOpen = true;
       } else {
         console.error('Produit non trouvé');
-        alert('Produit non trouvé. Veuillez vérifier le code-barres et réessayer.');
+        alert(this.translate.instant('PRODUCT_NOT_FOUND'));
       }
     } catch (error) {
       console.error('Erreur lors de la récupération des informations du produit', error);
-      alert('Erreur lors de la récupération des informations. Veuillez réessayer.');
+      alert(this.translate.instant('PRODUCT_INFO_ERROR'));
     }
   }
 

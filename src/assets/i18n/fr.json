@@ -1,0 +1,26 @@
+{
+    "TITLE": "Bienvenue",
+    "RECIPES": "Recettes",
+    "SHOPPING_LIST": "Liste de Courses",
+    "FRIDGE": "Frigo",
+    "ADD_INGREDIENT": "Ajouter un Ingrédient",
+    "REMOVE_INGREDIENT": "Supprimer un Ingrédient",
+    "SEARCH": "Rechercher par titre ou ingrédient",
+    "FILTER_TAG1": "Tag1",
+    "FILTER_TAG2": "Tag2",
+    "FILTER_TAG3": "Tag3",
+    "CLEAR_FILTERS": "Effacer les Filtres",
+    "GENERATE_SHOPPING_LIST": "Générer la Liste de Courses",
+    "ALL_RECIPES": "Toutes les Recettes",
+    "NO_RECIPES_MATCH": "Aucune recette correspondante aux filtres sélectionnés.",
+    "LOADING_RECIPES": "Chargement des recettes...",
+    "ADD_TO_FRIDGE": "Ajouter au Frigo",
+    "REMOVE_FROM_FRIDGE": "Supprimer du Frigo",
+    "LIST_GENERATED_SUCCESS": "Liste de courses générée avec succès !",
+    "VIEW_SHOPPING_LIST": "Voir la Liste de Courses",
+    "CLOSE": "Fermer",
+    "ADD_RECIPES_TITLE": "Ajouter une Recette",
+    "ADD_BUTTON": "Ajouter"
+   
+  }
+  

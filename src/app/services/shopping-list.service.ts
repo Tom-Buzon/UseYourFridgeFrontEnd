@@ -1,76 +1,76 @@
+// src/app/services/shopping-list.service.ts
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+
+export interface ShoppingItem {
+  ingredient: string;
+  unit: string;
+  quantite: number;
+  inFrigo: boolean;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingListService {
-  private userShoppingList: { ingredient: string; unit: string; quantite: number; inFrigo: boolean }[] = [];
+  private STORAGE_KEY = 'shopping_list';
+  private shoppingList: ShoppingItem[] = [];
 
-  constructor() {}
-
-  /**
-   * Récupérer la liste de courses de l'utilisateur
-   */
-  getUserShoppingList() {
-    return this.userShoppingList;
+  constructor(private storage: Storage) {
+    this.init();
   }
 
-  /**
-   * Ajouter des ingrédients à la liste de courses de l'utilisateur
-   * @param ingredients Array d'ingrédients à ajouter
-   */
-  addIngredientsToShoppingList(ingredients: { ingredient: string; unit: string; quantite: number; inFrigo: boolean }[]) {
-    ingredients.forEach(newItem => {
-      const existingItem = this.userShoppingList.find(item => 
-        item.ingredient.toLowerCase() === newItem.ingredient.toLowerCase() && 
-        item.unit === newItem.unit
-      );
-      if (existingItem) {
-        existingItem.quantite += newItem.quantite;
-      } else {
-        this.userShoppingList.push({ ...newItem });
-      }
-    });
-  }
-
-  /**
-   * Mettre à jour un ingrédient dans la liste de courses
-   * @param ingredient Nom de l'ingrédient
-   * @param inFrigo Statut d'inventaire
-   */
-  updateIngredientStatus(ingredient: string, inFrigo: boolean) {
-    const item = this.userShoppingList.find(i => i.ingredient.toLowerCase() === ingredient.toLowerCase());
-    if (item) {
-      item.inFrigo = inFrigo;
+  async init() {
+    await this.storage.create();
+    const storedList = await this.storage.get(this.STORAGE_KEY);
+    if (storedList) {
+      this.shoppingList = storedList;
+      console.log('Liste de courses chargée depuis le stockage:', this.shoppingList);
+    } else {
+      console.log('Aucune liste de courses trouvée dans le stockage.');
     }
   }
 
-  /**
-   * Vider la liste de courses
-   */
-  clearShoppingList() {
-    this.userShoppingList = [];
+  // Ajouter des ingrédients à la liste de courses
+  async addIngredientsToShoppingList(newItems: ShoppingItem[]) {
+    console.log('Ajout de nouveaux ingrédients à la liste de courses:', newItems);
+    // Fusionner les nouvelles entrées avec les existantes
+    newItems.forEach(newItem => {
+      const existingItem = this.shoppingList.find(item => 
+        item.ingredient === newItem.ingredient && item.unit === newItem.unit
+      );
+      if (existingItem) {
+        existingItem.quantite += newItem.quantite;
+        console.log(`Quantité mise à jour pour ${newItem.ingredient} (${newItem.unit}): ${existingItem.quantite}`);
+      } else {
+        this.shoppingList.push(newItem);
+        console.log(`Ajouté ${newItem.ingredient} (${newItem.unit}): ${newItem.quantite}`);
+      }
+    });
+    await this.storage.set(this.STORAGE_KEY, this.shoppingList);
+    console.log('Liste de courses mise à jour:', this.shoppingList);
   }
 
-  /**
-   * Sauvegarder la liste de courses (implémenter selon vos besoins, par exemple avec LocalStorage ou une base de données)
-   */
-  saveShoppingList() {
-    // Implémenter la logique de sauvegarde
+  // Récupérer la liste de courses
+  getUserShoppingList(): ShoppingItem[] {
+    console.log('Récupération de la liste de courses depuis le service:', this.shoppingList);
+    return this.shoppingList;
+  }
+
+  // Effacer la liste de courses
+  async clearShoppingList() {
+    console.log('Effacement de la liste de courses précédente.');
+    this.shoppingList = [];
+    await this.storage.remove(this.STORAGE_KEY);
+    console.log('Liste de courses effacée.');
+  }
+
+  // Mettre à jour un élément de la liste
+  async updateShoppingItem(index: number, updatedItem: ShoppingItem) {
+    if (this.shoppingList[index]) {
+      this.shoppingList[index] = updatedItem;
+      await this.storage.set(this.STORAGE_KEY, this.shoppingList);
+      console.log(`Élément mis à jour à l'index ${index}:`, updatedItem);
+    }
   }
 }
-
-
-
-//export class ShoppingListService {
-//  private userShoppingListSource = new BehaviorSubject<{ ingredient: string; inFrigo: boolean }[]>([]);
-//  userShoppingList$ = this.userShoppingListSource.asObservable();
-//
-//  updateUserShoppingList(list: { ingredient: string; inFrigo: boolean }[]) {
-//    this.userShoppingListSource.next(list);
-//  }
-//
-//  getUserShoppingList() {
-//    return this.userShoppingListSource.value;
-//  }
-//}

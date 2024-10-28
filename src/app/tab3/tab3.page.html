@@ -1,6 +1,7 @@
+<!-- src/app/tab3/tab3.page.html -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>Frigo</ion-title>
+    <ion-title>{{ 'FRIDGE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,17 +16,17 @@
   </ion-list>
   
   <ion-item *ngIf="(ingredients$ | async)?.length === 0">
-    Aucun ingrédient dans le frigo.
+    {{ 'NO_INGREDIENTS_IN_FRIDGE' | translate }}
   </ion-item>
 
   <ion-item>
-    <ion-input [(ngModel)]="newIngredient" placeholder="Nouvel ingrédient"></ion-input>
-    <ion-button (click)="addIngredient()">Ajouter</ion-button>
+    <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
+    <ion-button (click)="addIngredient()">{{ 'ADD_INGREDIENT' | translate }}</ion-button>
   </ion-item>
 
   <ion-button expand="block" (click)="scanning ? stopScan() : startScan()">
     <ion-icon name="barcode-outline"></ion-icon>
-    {{ scanning ? 'Arrêter le scan' : 'Commencer le scan' }}
+    {{ scanning ? ('STOP_SCAN' | translate) : ('START_SCAN' | translate) }}
   </ion-button>
 
   <div class="scan-box" [hidden]="!scanning">
@@ -36,7 +37,7 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Produit scanné</ion-title>
+          <ion-title>{{ 'SCANNED_PRODUCT' | translate }}</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="closeModal()">Fermer</ion-button>
           </ion-buttons>
@@ -45,23 +46,21 @@
       <ion-content class="ion-padding">
         <ion-img *ngIf="scannedProduct?.image_url" [src]="scannedProduct.image_url" alt="Image du produit"></ion-img>
         <h2>{{ scannedProduct?.product_name }}</h2>
-        <p>Marque: {{ scannedProduct?.brands }}</p>
-        <p>Additives: {{ scannedProduct?.additives }}</p>
-        <p>traces: {{ scannedProduct?.traces }}</p>
-        <p>nutrition_grades: {{ scannedProduct?.nutrition_grades }}</p>
-        <p>contains: {{ scannedProduct?.contains }}</p>
-        <p>does_not_contain: {{ scannedProduct?.does_not_contain }}</p>
-        <p>states: {{ scannedProduct?.states }}</p>
-        <p>quantity: {{ scannedProduct?.quantity }}</p>
-        <ion-button expand="block" (click)="addToFridge()">Ajouter au frigo</ion-button>
+        <p>{{ 'BRAND' | translate }}: {{ scannedProduct?.brands }}</p>
+        <p>{{ 'ADDITIVES' | translate }}: {{ scannedProduct?.additives }}</p>
+        <p>{{ 'TRACES' | translate }}: {{ scannedProduct?.traces }}</p>
+        <p>{{ 'NUTRITION_GRADES' | translate }}: {{ scannedProduct?.nutrition_grades }}</p>
+        <p>{{ 'CONTAINS' | translate }}: {{ scannedProduct?.contains }}</p>
+        <p>{{ 'DOES_NOT_CONTAIN' | translate }}: {{ scannedProduct?.does_not_contain }}</p>
+        <p>{{ 'STATES' | translate }}: {{ scannedProduct?.states }}</p>
+        <p>{{ 'QUANTITY' | translate }}: {{ scannedProduct?.quantity }}</p>
+        <ion-button expand="block" (click)="addToFridge()">{{ 'ADD_TO_FRIDGE' | translate }}</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
 </ion-content>
 
-<div [class.active]="scanning" class="scan-overlay" >
-  <div  [class.active]="scanning"class="scan-box" ></div>
-  <ion-button (click)="stopScan()" *ngIf="scanning">Arrêter le scan</ion-button>
+<div [class.active]="scanning" class="scan-overlay">
+  <div [class.active]="scanning" class="scan-box"></div>
+  <ion-button (click)="stopScan()" *ngIf="scanning">{{ 'STOP_SCAN' | translate }}</ion-button>
 </div>
-
-

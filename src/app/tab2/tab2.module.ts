@@ -6,6 +6,7 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { ShoppingListModalModule } from '../shopping-list-modal/shopping-list-modal.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ShoppingListModalModule } from '../shopping-list-modal/shopping-list-mo
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
-    ShoppingListModalModule
+    ShoppingListModalModule,
+    SharedModule
   ],
   declarations: [Tab2Page]
 })

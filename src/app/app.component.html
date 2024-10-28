@@ -1,3 +1,17 @@
+<!-- src/app/app.component.html -->
 <ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ 'TITLE' | translate }}</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="changeLanguage('en')">
+          🇺🇸
+        </ion-button>
+        <ion-button (click)="changeLanguage('fr')">
+          🇫🇷
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

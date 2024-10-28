@@ -36,7 +36,7 @@ Also a ingredient csv file is deliver with a split unit/quantity/ingredient and 
 ///////////////////////////////////////////////------------------------Open admin powerShell------------------------------\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Ouvrir PowerShell en tant qu'administrateur
-$path = "C:\Users\suean\OneDrive\Desktop\tom\Scrap\modified_igrdtRecette4.csv" #------------------ ADD YOUR PATH HERE
+$path = "C:\Users\suean\OneDrive\Desktop\tom\useYourFridgeProd\UseYourFridgeFrontEnd\fullingrFRandEN.csv" #------------------ ADD YOUR PATH HERE
 $user = "NT AUTHORITY\NetworkService"  # ou "postgres" selon votre configuration
 
 # Donner les permissions

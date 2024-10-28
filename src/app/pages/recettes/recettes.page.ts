@@ -1,5 +1,7 @@
+// src/app/pages/recettes/recettes.page.ts
 import { Component, OnInit } from '@angular/core';
-import { RecetteService } from '../../services/recette.service';
+import { RecetteService, Recette } from '../../services/recette.service';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-recettes',
@@ -7,21 +9,28 @@ import { RecetteService } from '../../services/recette.service';
   styleUrls: ['./recettes.page.scss'],
 })
 export class RecettesPage implements OnInit {
-  titres: string[] = [];
+  recettes: Recette[] = [];
+  currentLang: string = 'fr';
 
-  constructor(private recetteService: RecetteService) { }
+  constructor(
+    private recetteService: RecetteService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit() {
-    this.loadTitres();
+    this.languageService.getPreferredLanguage().then(lang => {
+      this.currentLang = lang || 'fr';
+      this.loadRecettes();
+    });
   }
 
-  loadTitres() {
-    this.recetteService.getRecettes().subscribe(
-      data => {
-        // Traitez les données reçues ici
+  loadRecettes() {
+    this.recetteService.getRecettes(this.currentLang).subscribe(
+      (recettes) => {
+        this.recettes = recettes;
       },
-      (error: any) => {
-        console.error('Erreur lors de la récupération des recettes', error);
+      (error) => {
+        console.error('Erreur lors du chargement des recettes', error);
       }
     );
   }

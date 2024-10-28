@@ -158,16 +158,42 @@ app.get('/api/recettes/:id', async (req, res) => {
 
 //RECETTEFORMAT
 app.get('/api/recetteformat', async (req, res) => {
+  const lang = req.query.lang || 'fr'; // Langue par défaut : français
+
+  if (!['fr', 'en'].includes(lang)) {
+    return res.status(400).json({ error: 'Langue non supportée.' });
+  }
+
   try {
     const query = `
-      SELECT rf.id, rf.title, rf.url, rf.rate, rf.tag1, rf.tag2, rf.tag3, rf.tag4, rf.tag5,
-             rf.difficulty, rf.budget, rf.people, rf.prep_time, rf.cooking_time, rf.total_time,
-             ri.ingredient, ri.unit, ri.quantite
-      FROM recetteformat rf
-      LEFT JOIN recetteingredients ri ON rf.id = ri.recetteid
+      SELECT 
+        rf.id, 
+        ${lang === 'en' ? 'rf.title_en AS title' : 'rf.title'}, 
+        rf.url, 
+        rf.rate, 
+        ${lang === 'en' ? 'rf.tag1_en AS tag1' : 'rf.tag1'}, 
+        ${lang === 'en' ? 'rf.tag2_en AS tag2' : 'rf.tag2'}, 
+        ${lang === 'en' ? 'rf.tag3_en AS tag3' : 'rf.tag3'}, 
+        rf.difficulty, 
+        ${lang === 'en' ? 'rf.difficulty_en AS difficulty' : 'rf.difficulty'}, 
+        rf.budget, 
+        ${lang === 'en' ? 'rf.budget_en AS budget' : 'rf.budget'}, 
+        rf.people, 
+        rf.prep_time, 
+        rf.cooking_time, 
+        rf.total_time,
+        ${lang === 'en' ? 'ri.ingredient_en AS ingredient' : 'ri.ingredient'}, 
+        ${lang === 'en' ? 'ri.unit_en AS unit' : 'ri.unit'}, 
+        ${lang === 'en' ? 'ri.quantite_en AS quantite' : 'ri.quantite'}
+      FROM 
+        recetteformat rf
+      LEFT JOIN 
+        recetteingredients ri 
+      ON 
+        rf.id = ri.recetteid
     `;
     const result = await pool.query(query);
-    
+
     // Regrouper les ingrédients sous forme de tableau pour chaque recette
     const recettes = result.rows.reduce((acc, row) => {
       let recette = acc.find(r => r.id === row.id);
@@ -206,7 +232,7 @@ app.get('/api/recetteformat', async (req, res) => {
       }
       return acc;
     }, []);
-    
+
     res.json(recettes);
   } catch (err) {
     console.error('Erreur lors de la récupération des recettes:', err);
@@ -254,42 +280,28 @@ app.get('/api/recetteformat/filter', async (req, res) => {
   }
 });
 
-// Route pour récupérer les valeurs distinctes de tag1
-app.get('/api/recetteformat/tags/tag1', async (req, res) => {
-  try {
-    const result = await pool.query(`SELECT DISTINCT tag1 FROM recetteformat WHERE tag1 IS NOT NULL`);
-    const tag1Options = result.rows.map(row => row.tag1);
-    console.log('Tag1 Options:', tag1Options);
-    res.json(tag1Options);
-  } catch (err) {
-    console.error('Erreur lors de la récupération des tags (tag1):', err);
-    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag1)' });
-  }
-});
+// Routes pour récupérer les valeurs distinctes de tags en fonction de la langue
+app.get('/api/recetteformat/tags/:tag', async (req, res) => {
+  const { tag } = req.params;
+  const lang = req.query.lang || 'fr'; // Langue par défaut : français
 
-// Route pour récupérer les valeurs distinctes de tag2
-app.get('/api/recetteformat/tags/tag2', async (req, res) => {
-  try {
-    const result = await pool.query(`SELECT DISTINCT tag2 FROM recetteformat WHERE tag2 IS NOT NULL`);
-    const tag2Options = result.rows.map(row => row.tag2);
-    console.log('Tag2 Options:', tag2Options);
-    res.json(tag2Options);
-  } catch (err) {
-    console.error('Erreur lors de la récupération des tags (tag2):', err);
-    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag2)' });
+  if (!['fr', 'en'].includes(lang)) {
+    return res.status(400).json({ error: 'Langue non supportée.' });
   }
-});
 
-// Route pour récupérer les valeurs distinctes de tag3
-app.get('/api/recetteformat/tags/tag3', async (req, res) => {
+  let tagColumn;
+  if (tag === 'tag1') tagColumn = lang === 'en' ? 'tag1_en' : 'tag1';
+  else if (tag === 'tag2') tagColumn = lang === 'en' ? 'tag2_en' : 'tag2';
+  else if (tag === 'tag3') tagColumn = lang === 'en' ? 'tag3_en' : 'tag3';
+  else return res.status(400).json({ error: 'Tag invalide.' });
+
   try {
-    const result = await pool.query(`SELECT DISTINCT tag3 FROM recetteformat WHERE tag3 IS NOT NULL`);
-    const tag3Options = result.rows.map(row => row.tag3);
-    console.log('Tag3 Options:', tag3Options);
-    res.json(tag3Options);
+    const result = await pool.query(`SELECT DISTINCT ${tagColumn} FROM recetteformat WHERE ${tagColumn} IS NOT NULL`);
+    const tagOptions = result.rows.map(row => row[tagColumn]);
+    res.json(tagOptions);
   } catch (err) {
-    console.error('Erreur lors de la récupération des tags (tag3):', err);
-    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des tags (tag3)' });
+    console.error(`Erreur lors de la récupération des tags (${tag}):`, err);
+    res.status(500).json({ error: `Une erreur est survenue lors de la récupération des tags (${tag})` });
   }
 });
 

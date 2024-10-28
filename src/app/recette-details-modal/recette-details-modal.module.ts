@@ -1,18 +1,13 @@
 // src/app/recette-details-modal/recette-details-modal.module.ts
 
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular'; // Importez IonicModule
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RecetteDetailsModalComponent } from './recette-details-modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [RecetteDetailsModalComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule 
-  ],
-  exports: [RecetteDetailsModalComponent]
+  imports: [SharedModule],
+  exports: [RecetteDetailsModalComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Ajouter ceci pour reconnaître les éléments Ionic
 })
 export class RecetteDetailsModalModule {}

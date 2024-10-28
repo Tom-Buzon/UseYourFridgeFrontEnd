@@ -1,0 +1,26 @@
+{
+    "TITLE": "Welcome",
+    "RECIPES": "Recipes",
+    "SHOPPING_LIST": "Shopping List",
+    "FRIDGE": "Fridge",
+    "ADD_INGREDIENT": "Add Ingredient",
+    "REMOVE_INGREDIENT": "Remove Ingredient",
+    "SEARCH": "Search by title or ingredient",
+    "FILTER_TAG1": "Tag1",
+    "FILTER_TAG2": "Tag2",
+    "FILTER_TAG3": "Tag3",
+    "CLEAR_FILTERS": "Clear Filters",
+    "GENERATE_SHOPPING_LIST": "Generate Shopping List",
+    "ALL_RECIPES": "All Recipes",
+    "NO_RECIPES_MATCH": "No recipes match the selected filters.",
+    "LOADING_RECIPES": "Loading recipes...",
+    "ADD_TO_FRIDGE": "Add to Fridge",
+    "REMOVE_FROM_FRIDGE": "Remove from Fridge",
+    "LIST_GENERATED_SUCCESS": "Shopping list generated successfully!",
+    "VIEW_SHOPPING_LIST": "View Shopping List",
+    "CLOSE": "Close",
+    "ADD_RECIPES_TITLE": "Add Recipe",
+    "ADD_BUTTON": "Add"
+    
+  }
+  
