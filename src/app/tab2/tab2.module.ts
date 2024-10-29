@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     Tab2PageRoutingModule,
     ShoppingListModalModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [Tab2Page]
 })

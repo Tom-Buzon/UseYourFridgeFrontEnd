@@ -24,7 +24,7 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.refreshShoppingList();
-    this.subscribeToFrigoChanges();
+   // this.subscribeToFrigoChanges();
   }
 
   ngOnDestroy() {
@@ -36,7 +36,7 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
   /**
    * Souscrire aux changements des ingrédients du frigo
    */
-  subscribeToFrigoChanges() {
+/*   subscribeToFrigoChanges() {
     this.frigoSubscription = this.frigoService.ingredients$.subscribe(frigoIngredients => {
       this.shoppingList.forEach(item => {
         item.inFrigo = frigoIngredients.some(frigoItem => 
@@ -45,7 +45,7 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
       });
       this.cdr.detectChanges(); // Forcer la détection des changements
     });
-  }
+  } */
 
   /**
    * Ajouter un ingrédient au frigo

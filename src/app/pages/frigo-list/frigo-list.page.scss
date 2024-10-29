@@ -1,0 +1,197 @@
+/* src/app/tab3/tab3.page.scss */
+body{
+    --ion-color-primary: 0, 0, 0, 0.5 !important;
+    --ion-color-primary-rgb: 0, 0, 0, 0.5 !important;
+    --ion-background-color: 0, 0, 0, 0.5 !important;
+    --ion-text-color: 0, 0, 0, 0.5 !important;
+    --ion-color-test:  0, 0, 0, 0.5 !important;
+  }
+  /* Styles généraux du scanner */
+  .scan-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent pour la superposition */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .scan-overlay.active {
+    display: flex;
+    flex-direction: column;
+  }
+  ion-fab{
+    padding-bottom: 14%;
+  }
+  .scan-box {
+    border: 2px solid #fff; /* Bordure blanche pour contraster */
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    height: 300px;
+    width: 300px;
+    position: center;
+  }
+  
+  .scan-box.active {
+    /* Aucune modification nécessaire si les classes sont correctement gérées */
+  }
+  
+  .content-hidden {
+    display: none;
+  }
+  
+  ion-item {
+    border-bottom: 0.5px solid #fff;  
+  }
+  
+  /* Styles spécifiques pour le mode sombre */
+  .dark .scan-overlay {
+    background-color: rgba(255, 255, 255, 0.1); /* Ajuster la couleur de superposition en mode sombre */
+  }
+  
+  .dark .scan-box {
+    border: 2px solid #ffffff; /* Bordure blanche en mode sombre */
+  }
+  
+  /* Styles pour le bouton Stop Scan en mode sombre */
+  .dark .stop-scan-button {
+    --background: #ffffff; /* Fond blanc */
+    --color: #000000; /* Texte noir */
+  }
+  
+  .block {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+  }
+  
+  ion-header {
+  
+    ion-toolbar, ion-item {
+      --background: #f1f5f8;
+      background: #f1f5f8;
+      padding: 0 10px;
+    }
+  
+    ion-toolbar {
+      .bordered {
+        --border-radius: 10px;
+        --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
+      }
+    }
+  
+    ion-item {
+      h3 {
+        font-weight: 700;
+        font-size: 14px;
+      }
+  
+      p {
+        font-weight: 500;
+        font-size: 14px;
+      }
+  
+      ion-avatar {
+        --border-radius: 40%;
+      }
+    }
+  
+  }
+  ion-content {--overflow: hidden}
+  ion-content {
+    --background: linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
+  
+    swiper-slide {
+      margin-right:15px;
+    }
+    .slides {
+      background: #f1f5f8;
+      padding: 4px 10px 20px 10px;
+      border-radius: 0 0 28px 28px;
+    }
+  
+    ion-card {
+      width: 100%;
+      box-shadow: none;
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,.8);
+      .main {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background: #FFFFFF;
+        box-shadow:  7px 7px 20px #dbdfe2, 
+               -7px -7px 20px #ffffff;
+              
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+   
+  
+        
+  
+      }
+  
+      .files {
+          padding-top: 14px;
+      }
+  
+    }
+  
+    .container {
+      padding: 6px 20px;
+      color: #FFFFFF;
+  
+      ion-item {
+        --background: rgba(255,255,255,.1);
+        padding: 0;
+        margin: 14px 0;
+        --border-radius: 14px;
+        color: #FFFFFF;
+        font-weight: 600;
+  
+        ion-label {
+          padding: 6px 0;
+  
+          h4 {
+            font-weight: 600;
+            font-size: 16px;
+          }
+          h6 {
+            color: rgba(255,255,255,.66);
+          }
+        }
+  
+      }
+  
+      h2 {
+        padding-bottom: 8px;
+      }
+  
+    }
+  
+  }
+  

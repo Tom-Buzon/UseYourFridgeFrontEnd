@@ -6,7 +6,7 @@ import { ToastController } from '@ionic/angular';
 
 import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject, NgZone } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { FrigoService, Frigo } from '../services/frigo.service';
+import { FrigoService, Frigo, Ingredient } from '../services/frigo.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -30,11 +30,12 @@ import { BarcodeScanningModalComponent } from '../components/barcode-scanning-mo
 export class Tab3Page implements OnInit {
 
   frigos$: Observable<Frigo[]>;
+  ingredients$: Observable<Ingredient[]>;
   newIngredient: string = '';
   isModalOpen: boolean = false;
   scannedProduct: any;
   scanning: boolean = false;
-
+  
   currentLang: string = 'fr';
   toast: any;
 
@@ -70,10 +71,15 @@ export class Tab3Page implements OnInit {
 
   ) {
     this.frigos$ = this.frigoService.frigos$;
-    console.log(this.frigos$);
+    this.ingredients$ = this.frigoService.ingredients$;
+
 
   }
 
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
+    this.languageService.setPreferredLanguage(lang);
+  }
 
 
       async ngOnInit() {
@@ -111,8 +117,8 @@ export class Tab3Page implements OnInit {
 
   }
 
-  goToFrigoDetails() {
-    this.router.navigate(["tabs/tab3/frigo-details", 1]);
+  goToFrigoList() {
+    this.router.navigate(["tabs/tab3/frigo-list"]);
 
   }
 

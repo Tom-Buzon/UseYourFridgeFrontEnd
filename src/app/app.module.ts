@@ -1,5 +1,5 @@
 // src/app/app.module.ts
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -31,12 +31,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
 
+import { register } from 'swiper/element/bundle';
 
 import { BarcodeScanningModalComponent } from './components/barcode-scanning-modal/barcode-scanning-modal.component';
+import { FrigoListPage } from './pages/frigo-list/frigo-list.page';
+import { HeaderComponent } from './components/header/header.component';
+
+
+register();
+
 @NgModule({
-  declarations: [AppComponent,FrigoDetailsPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent],
+  declarations: [AppComponent,FrigoDetailsPage,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,HeaderComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
     IonicStorageModule.forRoot(),
     HttpClientModule, // Nécessaire pour ngx-translate
     IonicModule.forRoot(),
@@ -53,5 +63,7 @@ import { BarcodeScanningModalComponent } from './components/barcode-scanning-mod
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders],
   bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  exports: [ HeaderComponent],
 })
 export class AppModule {}

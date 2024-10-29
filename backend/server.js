@@ -1,11 +1,21 @@
 const express = require("express");
 const cors = require("cors");
-
+const { Pool } = require('pg');
 const app = express();
 /* 
 var corsOptions = {
   origin: "http://localhost:8081"
 }; */
+
+
+const pool = new Pool({
+  user: "useyourfridgeAdm",
+  host: "useyourfridgedb.cz8kwm66811r.eu-west-3.rds.amazonaws.com",
+  database: "useyourfridgeDB",
+  password: "Admin!123",
+  port: "5432",
+});
+
 
 app.use(cors());
 
@@ -25,6 +35,7 @@ db.sequelize.sync();
   console.log('Drop and Resync Database with { force: true }');
   initial();
 }); */
+
 
 // simple route
 app.get("/", (req, res) => {

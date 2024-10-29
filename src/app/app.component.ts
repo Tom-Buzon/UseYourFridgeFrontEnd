@@ -37,15 +37,11 @@ export class AppComponent {
    // });
   }
 
-  changeLanguage(lang: string) {
-    this.translate.use(lang);
-    this.languageService.setPreferredLanguage(lang);
-  }
 
   async initializeApp() {
     await this.platform.ready();
     await this.storage.create(); // Initialiser le Storage
-    document.body.classList.add('dark');
+   // document.body.classList.add('dark');
   }
  
 

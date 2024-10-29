@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import {  Router } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { tabItemsList } from '../models/tabs';
 
 @Component({
@@ -11,8 +12,11 @@ import { tabItemsList } from '../models/tabs';
 export class TabsPage {
 
   tab1Root = 'recettes';
-  constructor(public animationCtrl: AnimationController,
-    private router : Router) {}
+  constructor(public animationCtrl: AnimationController, private translate: TranslateService,
+    private router : Router) {
+
+      
+    }
 
   ionViewDidEnter() {
     document.querySelector('#tab-button-tab3')?.shadowRoot?.querySelector('.button-native')?.setAttribute('style', 'margin-top: -2px');

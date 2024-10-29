@@ -1,13 +1,24 @@
 <!-- src/app/tab3/tab3.page.html -->
-<ion-header>
+
+<ion-header  class="ion-no-border">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false" (click)="goToFrigoList()"></ion-menu-button>
+    </ion-buttons>
     <ion-title>{{ 'FRIDGE' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="changeLanguage('en')">
+        🇺🇸
+      </ion-button>
+      <ion-button (click)="changeLanguage('fr')">
+        🇫🇷
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true" [class.content-hidden]="scanning">
   <ion-list>
-    <ion-item *ngFor="let ingredient of ingredients$ | async">
+    <ion-item *ngFor="let ingredient of frigos$ | async">
       <ion-label>{{ ingredient.ingredients }}</ion-label>
       <ion-button slot="end" color="danger" (click)="removeIngredient(ingredient.id)">
         <ion-icon name="trash"></ion-icon>
@@ -39,7 +50,7 @@
 
 <ion-content [fullscreen]="true" [class.content-hidden]="scanning">
   <ion-list>
-    <ion-item *ngFor="let ingredient of ingredients$ | async">
+    <ion-item *ngFor="let ingredient of frigos$ | async">
       <ion-label>{{ ingredient.ingredients }}</ion-label> <!-- Ajusté selon l'interface Ingredient -->
       <ion-button slot="end" color="danger" (click)="removeIngredient(ingredient.id)">
         <ion-icon name="trash"></ion-icon>

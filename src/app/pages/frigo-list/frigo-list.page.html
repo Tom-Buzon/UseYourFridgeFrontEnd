@@ -1,0 +1,128 @@
+<app-header [back]="true" [menu]="false" title="Mes frigos"></app-header>
+<ion-content>
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <div class="block">
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-item>
+          <ion-input [(ngModel)]="newIngredient" placeholder="Nouveau frigo"></ion-input>
+          <ion-button (click)="addIngredient()">Ajouter</ion-button>
+        </ion-item>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+<div [class.active]="scanning" class="scan-overlay">
+  <div [class.active]="scanning" class="scan-box"></div>
+  <ion-button (click)="stopScan()" *ngIf="scanning">{{ 'STOP_SCAN' | translate }}</ion-button>
+
+</div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+
+    </ion-fab-button>
+    <ion-fab-list side="top">
+
+
+      <ion-fab-button id="open-modal">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
+  <div class="slides ion-margin-bottom">
+
+    <h1>Mes frigos</h1>
+    <swiper-container [slidesPerView]="1.5">
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://cdn-icons-png.freepik.com/512/242/242421.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Frigo Maison</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10 Ingredients</ion-card-subtitle>
+            <ion-progress-bar value="0.5" color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://cdn-icons-png.freepik.com/512/242/242421.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Congel Appart</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10 Ingredients</ion-card-subtitle>
+            <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+
+    </swiper-container>
+  </div>
+
+  <div class="container">
+
+    <h2>Mes frigos partagés</h2>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="server-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>Frigo appartement</h4>
+              <h6><i>By Leo</i></h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="server-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>Frigo appartement</h4>
+              <h6><i>By Leo</i></h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </div>
+
+</ion-content>

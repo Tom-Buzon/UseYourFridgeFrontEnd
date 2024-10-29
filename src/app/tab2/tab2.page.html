@@ -4,7 +4,6 @@
     <ion-title>{{ 'ALL_RECIPES' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <!-- Bouton pour afficher la liste de courses réduite -->
   <ion-button [ngClass]="{'fixable-element': true}"  *ngIf="isReducedIconVisible" (click)="openShoppingListModal()">

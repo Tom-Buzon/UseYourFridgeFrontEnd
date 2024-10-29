@@ -1,0 +1,20 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="menu">
+      <ion-menu-button auto-hide="false" (click)="goToFrigoList()"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start" *ngIf="back" >
+      <ion-icon  (click)="goBack()" name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>{{ title | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="bordered" fill="solid">
+        <ion-icon color="custom" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>

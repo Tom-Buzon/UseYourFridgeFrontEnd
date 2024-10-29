@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { RecettesPage } from '../pages/recettes/recettes.page'; // ajoutez cette ligne
 import { FrigoDetailsPage } from '../pages/frigo-details/frigo-details.page';
+import { FrigoListPage } from '../pages/frigo-list/frigo-list.page';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
           path: '',
           loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
         },
-        {path: 'frigo-details/:id', component: FrigoDetailsPage }
+        {path: 'frigo-list', component: FrigoListPage }
       ]
     },
       {
