@@ -1,100 +1,61 @@
-const express = require('express');
-const { Pool } = require('pg');
-const cors = require('cors');
-
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 3000;
+/* 
+var corsOptions = {
+  origin: "http://localhost:8081"
+}; */
 
-// Middleware
 app.use(cors());
+
+// parse requests of content-type - application/json
 app.use(express.json());
 
-app.listen(3000, function () {
-  console.log("server started on port 3000");
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+// database
+const db = require("./app/models");
+const Role = db.role;
+
+db.sequelize.sync();
+// force: true will drop the table if it already exists
+/* db.sequelize.sync({force: true}).then(() => {
+  console.log('Drop and Resync Database with { force: true }');
+  initial();
+}); */
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to useYourFridge application." });
 });
 
-app.get("/", function (req, res) {
-  // console.log(__dirname) ;
-  res.sendFile(__dirname + "/index.html");
+// routes
+require('./app/routes/auth.routes')(app);
+require('./app/routes/frigo.routes')(app);
+require('./app/routes/recette.routes')(app);
+require('./app/routes/ingredients.routes')(app);
+
+// set port, listen for requests
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
-// Database connection
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-});
-
-
-// Test database connection
-pool.query('SELECT NOW()', (err, res) => {
-  if (err) {
-    console.error('Error connecting to the database', err);
-  } else {
-    console.log('Connected to the database');
-  }
-});
-
-// Routes
-app.post('/api/query', async (req, res) => {
-  const { text, params } = req.body;
-  try {
-    const result = await pool.query(text, params);
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'An error occurred while querying the database' });
-  }
-});
-
-
-app.get('/api/recettes/titres-et-ingredients', async (req, res) => {
-  console.log('Route /api/recettes/titres-et-ingredients appelée');
-  try {
-    console.log('Exécution de la requête SQL');
-    const result = await pool.query('SELECT * FROM recettes');
-    console.log('Résultat de la requête:', result.rows);
-    res.json(result.rows);
-  } catch (err) {
-    console.error('Erreur lors de la récupération des recettes:', err);
-    res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des recettes' });
-  }
-});
-
-// Route pour récupérer tous les ingredients du frigo
-app.get('/api/frigo/ingredients', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT id, ingredients FROM frigo');
-    //console.log('Données envoyées au front:', result.rows);
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'An error occurred while fetching the ingredients' });
-  }
-});
-
-
-// Nouvelle route pour ajouter un ingrédient
-app.post('/api/frigo/ingredients', (req, res) => {
-  const { ingredients } = req.body;
-  if (!ingredients) {
-    return res.status(400).json({ message: 'L\'ingrédient est requis' });
-  }
-
-  const query = 'INSERT INTO frigo (ingredients) VALUES ($1)';
-  pool.query(query, [ingredients], (err, result) => {
-    if (err) {
-      console.error('Erreur SQL:', err);
-      res.status(500).json({ message: `Erreur lors de l'ajout de l'ingrédient: ${err.message}` });
-    } else {
-      res.status(201).json({ message: 'Ingrédient ajouté avec succès' });
-    }
+function initial() {
+  Role.create({
+    id: 1,
+    name: "user"
+  },{
+    id: 2,
+    name: "moderator"
+  },{
+    id: 3,
+    name: "admin"
   });
-});
+ 
+}
 
 // Route pour supprimer un ingrédient
 app.delete('/api/frigo/ingredients/:id', async (req, res) => {
@@ -304,7 +265,5 @@ app.get('/api/recetteformat/tags/:tag', async (req, res) => {
     res.status(500).json({ error: `Une erreur est survenue lors de la récupération des tags (${tag})` });
   }
 });
-
-
 
 

@@ -1,3 +1,4 @@
+
 <!-- src/app/tab3/tab3.page.html -->
 <ion-header>
   <ion-toolbar>
@@ -19,7 +20,6 @@
     {{ 'NO_INGREDIENTS_IN_FRIDGE' | translate }}
   </ion-item>
 
-<<<<<<< HEAD
   <ion-item>
     <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
     <ion-button (click)="addIngredient()">{{ 'ADD_INGREDIENT' | translate }}</ion-button>
@@ -29,9 +29,7 @@
     <ion-icon name="barcode-outline"></ion-icon>
     {{ scanning ? ('STOP_SCAN' | translate) : ('START_SCAN' | translate) }}
   </ion-button>
-=======
 
->>>>>>> 3e221d3 (feat(footer): update)
 
   <div class="scan-box" [hidden]="!scanning">
     <!-- Cette div peut être stylisée pour montrer où scanner --><!-- src/app/tab3/tab3.page.html -->
@@ -123,14 +121,40 @@
         <p>{{ 'QUANTITY' | translate }}: {{ scannedProduct?.quantity }}</p>
         <ion-button expand="block" (click)="addToFridge()">{{ 'ADD_TO_FRIDGE' | translate }}</ion-button>
       </ion-content>
+=======
+
+
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+
+		<ion-buttons slot="start">
+			<h1>Hello, {{user.username}}</h1>
+		</ion-buttons>
+		<ion-buttons slot="end">
+			<ion-button class="bordered" fill="solid" >
+				<ion-icon color="custom" name="notifications"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+        <ion-item>
+          <ion-input [(ngModel)]="newIngredient" placeholder="Nouveau frigo"></ion-input>
+          <ion-button (click)="addIngredient()">Ajouter</ion-button>
+        </ion-item>
+      </div>
+>>>>>>> 1e40f43 (feat(*): update project and backend)
     </ng-template>
   </ion-modal>
-</ion-content>
-<ion-item>
-  <ion-input [(ngModel)]="newIngredient" placeholder="Nouvel ingrédient"></ion-input>
-  <ion-button (click)="addIngredient()">Ajouter</ion-button>
-</ion-item>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <div [class.active]="scanning" class="scan-overlay">
   <div [class.active]="scanning" class="scan-box"></div>
@@ -145,3 +169,109 @@
   <ion-button (click)="stopScan()" *ngIf="scanning">Arrêter le scan</ion-button>
 >>>>>>> 3e221d3 (feat(footer): update)
 </div>
+=======
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+
+    </ion-fab-button>
+    <ion-fab-list side="top">
+
+
+      <ion-fab-button id="open-modal">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+  </ion-fab>
+  <div class="slides ion-margin-bottom">
+    
+  <h1>Mes frigos</h1>
+    <swiper-container [slidesPerView]="1.5">
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://cdn-icons-png.freepik.com/512/242/242421.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Frigo Maison</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10 Ingredients</ion-card-subtitle>
+            <ion-progress-bar value="0.5" color="custom"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+
+      <swiper-slide>
+        <ion-card>
+          <ion-card-header>
+            <div class="main">
+              <img src="https://cdn-icons-png.freepik.com/512/242/242421.png">
+            </div>
+          </ion-card-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">Congel Appart</ion-card-title>
+            <ion-card-subtitle class="ion-text-right">10 Ingredients</ion-card-subtitle>
+            <ion-progress-bar value="0.4" color="warning"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+
+    </swiper-container>
+  </div>
+
+  <div class="container">
+
+    <h2>Mes frigos partagés</h2>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="server-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+							<h4>Frigo appartement</h4>
+							<h6><i>By Leo</i></h6>
+						</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+        <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="server-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+							<h4>Frigo appartement</h4>
+							<h6><i>By Leo</i></h6>
+						</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </div>
+
+</ion-content>
+>>>>>>> 1e40f43 (feat(*): update project and backend)

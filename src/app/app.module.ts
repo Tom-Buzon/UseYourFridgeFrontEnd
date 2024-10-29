@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
 // Importer les modules ngx-translate
@@ -22,8 +23,18 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+import { FrigoDetailsPage } from './pages/frigo-details/frigo-details.page';
+
+import { TypeaheadComponent } from './components/typeahead/typeahead.component';
+import { AuthComponentComponent } from './components/auth-component/auth-component.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { CommonModule } from '@angular/common';
+
+
+import { BarcodeScanningModalComponent } from './components/barcode-scanning-modal/barcode-scanning-modal.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,FrigoDetailsPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent],
   imports: [
     BrowserModule,
     IonicStorageModule.forRoot(),
@@ -40,7 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

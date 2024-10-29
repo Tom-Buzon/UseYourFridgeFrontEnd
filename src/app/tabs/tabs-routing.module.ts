@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { RecettesPage } from '../pages/recettes/recettes.page'; // ajoutez cette ligne
+import { FrigoDetailsPage } from '../pages/frigo-details/frigo-details.page';
 
 const routes: Routes = [
   {
@@ -13,14 +14,21 @@ const routes: Routes = [
        // component: RecettesPage, // ajoutez cette ligne
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
+  
       {
         path: 'tab2',
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
+      
+      {path: 'tab3',
+      children: [
+        {
+          path: '',
+          loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        },
+        {path: 'frigo-details/:id', component: FrigoDetailsPage }
+      ]
+    },
       {
         path: '',
         redirectTo: '/tabs/tab1',

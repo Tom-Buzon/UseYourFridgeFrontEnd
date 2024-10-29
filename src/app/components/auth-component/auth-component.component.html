@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Login Page -->
+  <div class="container" *ngIf="screen == 'signin'">
+    <h1 class="heading">👋 Welcome<br><br></h1>
+    <p class="para">Sign in to continue!</p>
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Email Id</legend>
+          <ion-input class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel"
+            type="email" placeholder="name@domain.com"></ion-input>
+          <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+            Username is required!
+          </div>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend>
+          <ion-input class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+            #password="ngModel" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text">I'm a new user&nbsp;<a (click)="change('signup')">Sign Up?</a></p>
+      <ion-button class="login-button" (click)="onSubmit()" expand="block">Login</ion-button>
+    </form>
+  </div>
+
+  <!-- Sign up page -->
+  <div class="container" *ngIf="screen == 'signup'">
+    <h1 class="heading">🚀 Create Account<br><br></h1>
+    <p class="para">Sign up to get started!</p>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmitRegister()" #f="ngForm" novalidate>
+
+      <div class="form-group">
+        <ion-item lines="none" class="ion-item">
+          <fieldset class="input-item">
+            <legend>Full Name</legend>
+            <ion-input class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+              maxlength="20" #username="ngModel" type="text" placeholder="John Doe"></ion-input>
+          </fieldset>
+        </ion-item>
+      </div>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Email Id</legend>
+          <ion-input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
+            #email="ngModel" placeholder="john@doe.com"></ion-input>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend>
+          <ion-input class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+            #password="ngModel" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+
+      <p class="signup-text">I'm already a member&nbsp;<a (click)="change('signin')">Sign In?</a></p>
+      <ion-button class="login-button" (click)="onSubmitRegister()" expand="block">Sign Up</ion-button>
+    </form>
+  </div>
+
+
+
+</ion-content>

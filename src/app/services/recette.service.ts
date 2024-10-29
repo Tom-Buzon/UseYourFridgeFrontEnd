@@ -25,7 +25,11 @@ export interface Recette {
   providedIn: 'root'
 })
 export class RecetteService {
+
   private baseUrl = 'http://192.168.178.53:3000/api';
+
+  //private apiUrl = 'http://localhost:3000/api/recettes'; // Assurez-vous que l'URL correspond à votre configuration
+
 
   constructor(private http: HttpClient) {}
 

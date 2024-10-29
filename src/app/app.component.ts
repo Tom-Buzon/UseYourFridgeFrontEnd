@@ -1,9 +1,16 @@
+
 // src/app/app.component.ts
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+
+import { AnimationController } from '@ionic/angular';
+import { register } from 'swiper/element/bundle';
+import { tabItemsList } from './models/tabs';
+
+register();
 
 @Component({
   selector: 'app-root',
@@ -40,4 +47,13 @@ export class AppComponent {
     await this.storage.create(); // Initialiser le Storage
     document.body.classList.add('dark');
   }
+ 
+
+
+
+
+ngOnInit(): void {
+}
+
+
 }

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon (click)="goBack()" slot="start" name="arrow-back-outline"></ion-icon>
+   </ion-buttons>
+    <ion-title  *ngIf="frigo">Details du frigo {{frigo.nom | uppercase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="frigo">
+    <ion-item *ngFor="let ingredient of frigo.ingredients">
+      <ion-label>{{ ingredient.nom }}</ion-label>
+      <ion-button slot="end" color="danger" (click)="removeIngredient(frigo.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="scanning ? stopScan() : startScan()">
+        <ion-icon name="barcode-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button id="select-fruits">
+        <ion-icon name="fast-food-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="share"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-modal trigger="select-fruits" #modal>
+    <ng-template>
+      <app-typeahead
+        class="ion-page"
+        title="Favorite Fruits"
+        [items]="fruits"
+        [selectedItems]="selectedFruits"
+        (selectionChange)="fruitSelectionChanged($event)"
+        (selectionCancel)="modal.dismiss()"
+      ></app-typeahead>
+    </ng-template>
+  </ion-modal>
+</ion-content>
