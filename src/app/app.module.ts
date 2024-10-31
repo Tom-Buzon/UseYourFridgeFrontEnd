@@ -15,7 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // Importer SharedModule et RecetteDetailsModalModule
 import { SharedModule } from './shared/shared.module';
-import { RecetteDetailsModalModule } from './recette-details-modal/recette-details-modal.module';
+import { RecetteDetailsModalModule } from './components/recette-details-modal/recette-details-modal.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 // Fonction pour créer le TranslateHttpLoader
@@ -23,7 +23,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-import { FrigoDetailsPage } from './pages/frigo-details/frigo-details.page';
 
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
 import { AuthComponentComponent } from './components/auth-component/auth-component.component';
@@ -41,7 +40,7 @@ import { HeaderComponent } from './components/header/header.component';
 register();
 
 @NgModule({
-  declarations: [AppComponent,FrigoDetailsPage,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,HeaderComponent],
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,HeaderComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

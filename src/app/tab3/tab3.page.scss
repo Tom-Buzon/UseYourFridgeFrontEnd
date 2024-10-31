@@ -6,37 +6,23 @@ body{
   --ion-text-color: 0, 0, 0, 0.5 !important;
   --ion-color-test:  0, 0, 0, 0.5 !important;
 }
-/* Styles généraux du scanner */
-.scan-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent pour la superposition */
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
+
+ion-fab-button[data-desc] {
+  position: relative;
 }
 
-.scan-overlay.active {
-  display: flex;
-  flex-direction: column;
-}
-ion-fab{
-  padding-bottom: 14%;
-}
-.scan-box {
-  border: 2px solid #fff; /* Bordure blanche pour contraster */
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
-  height: 300px;
-  width: 300px;
-  position: center;
-}
 
-.scan-box.active {
-  /* Aucune modification nécessaire si les classes sont correctement gérées */
+ion-fab-button[data-desc]::after {
+  position: absolute;
+  content: attr(data-desc);
+  z-index: 1;
+  right: 55px;
+  bottom: 4px;
+  background-color: var(--ion-color-primary);
+  padding: 9px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
 }
 
 .content-hidden {
@@ -47,32 +33,18 @@ ion-item {
   border-bottom: 0.5px solid #fff;  
 }
 
-/* Styles spécifiques pour le mode sombre */
-.dark .scan-overlay {
-  background-color: rgba(255, 255, 255, 0.1); /* Ajuster la couleur de superposition en mode sombre */
-}
 
-.dark .scan-box {
-  border: 2px solid #ffffff; /* Bordure blanche en mode sombre */
-}
 
-/* Styles pour le bouton Stop Scan en mode sombre */
-.dark .stop-scan-button {
-  --background: #ffffff; /* Fond blanc */
-  --color: #000000; /* Texte noir */
-}
-
-.block {
+ion-select {
   width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: right;
 }
-
+  
 ion-modal {
   --height: 50%;
   --border-radius: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
@@ -82,7 +54,7 @@ ion-modal::part(backdrop) {
 }
 
 ion-modal ion-toolbar {
-  --background: rgb(14 116 144);
+  --background: var(--ion-color-primary);
   --color: white;
 }
 
@@ -118,48 +90,13 @@ ion-header {
   }
 
 }
-ion-content {--overflow: hidden}
-ion-content {
-  --background: linear-gradient(90deg, rgba(43,90,148,1) 0%, rgba(45,112,229,1) 35%, rgba(45,112,229,1) 100%);
 
-  swiper-slide {
-    margin-right:15px;
-  }
-  .slides {
-    background: #f1f5f8;
-    padding: 4px 10px 20px 10px;
-    border-radius: 0 0 28px 28px;
-  }
+.fab-container{
+  top: 85vh;
+  position: sticky;
+  z-index: 999999;
+}
 
-  ion-card {
-    width: 100%;
-    box-shadow: none;
-    border-radius: 14px;
-    padding: 14px;
-    background: rgba(255,255,255,.8);
-    .main {
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      background: #FFFFFF;
-      box-shadow:  7px 7px 20px #dbdfe2, 
-             -7px -7px 20px #ffffff;
-            
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
- 
-
-      
-
-    }
-
-    .files {
-        padding-top: 14px;
-    }
-
-  }
 
   .container {
     padding: 6px 20px;
@@ -193,4 +130,4 @@ ion-content {
 
   }
 
-}
+

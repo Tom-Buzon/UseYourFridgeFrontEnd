@@ -42,13 +42,7 @@
           </fieldset>
         </ion-item>
       </div>
-      <ion-item lines="none" class="ion-item">
-        <fieldset class="input-item">
-          <legend>Email Id</legend>
-          <ion-input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email
-            #email="ngModel" placeholder="john@doe.com"></ion-input>
-        </fieldset>
-      </ion-item>
+
 
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
@@ -63,6 +57,16 @@
     </form>
   </div>
 
-
-
+  <ion-toast
+    [isOpen]="isToastOpen"
+    message="Connexion réussie"
+    [duration]="3000"
+    (didDismiss)="setOpen(false)"
+  ></ion-toast>
+  <ion-toast
+    [isOpen]="isToastOpen2"
+    message="Inscription réussie"
+    [duration]="3000"
+    (didDismiss)="setOpen2(false)"
+  ></ion-toast>
 </ion-content>

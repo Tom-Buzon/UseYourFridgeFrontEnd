@@ -5,8 +5,9 @@ const config: CapacitorConfig = {
   appName: 'UseYourFridge',
   webDir: 'www',
   server: {
-    url: 'http://192.168.178.53:8100', // Remplacez par votre nouvelle IP
-    cleartext: true
+    hostname: '192.168.1.94:8100',
+    cleartext: true,
+    allowNavigation: ['*'],
   }
 
 };

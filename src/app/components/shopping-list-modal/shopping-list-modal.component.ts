@@ -1,8 +1,8 @@
 // shopping-list-modal.component.ts
 import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { FrigoService } from '../services/frigo.service';
-import { ShoppingListService, ShoppingItem } from '../services/shopping-list.service';
+import { FrigoService } from '../../services/frigo.service';
+import { ShoppingListService, ShoppingItem } from '../../services/shopping-list.service';
 import { Subscription } from 'rxjs';
 
 @Component({

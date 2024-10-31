@@ -7,37 +7,48 @@ const Op = db.Sequelize.Op;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+const { frigo } = require("../models");
 
 exports.signup = (req, res) => {
   // Save User to Database
   User.create({
     username: req.body.username,
-    email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(user => {
-      if (req.body.roles) {
-        Role.findAll({
-          where: {
-            name: {
-              [Op.or]: req.body.roles
-            }
-          }
-        }).then(roles => {
-          user.setRoles(roles).then(() => {
-            res.send({ message: "User registered successfully!" });
+      frigo.create({
+        nom: "Mon Frigo",
+        userId: user.id
+      })
+        .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while creating the Ingredient."
           });
         });
-      } else {
-        // user role = 1
-        user.setRoles([1]).then(() => {
-          res.send({ message: "User registered successfully!" });
-        });
+    
+  if (req.body.roles) {
+    Role.findAll({
+      where: {
+        name: {
+          [Op.or]: req.body.roles
+        }
       }
-    })
-    .catch(err => {
-      res.status(500).send({ message: err.message });
+    }).then(roles => {
+      user.setRoles(roles).then(() => {
+        res.send({ message: "User registered successfully!" });
+      });
     });
+  } else {
+    // user role = 1
+    user.setRoles([1]).then(() => {
+      res.send({ message: "User registered successfully!" });
+    });
+  }
+})
+    .catch (err => {
+  res.status(500).send({ message: err.message });
+});
 };
 
 exports.signin = (req, res) => {
@@ -64,12 +75,12 @@ exports.signin = (req, res) => {
       }
 
       const token = jwt.sign({ id: user.id },
-                              config.secret,
-                              {
-                                algorithm: 'HS256',
-                                allowInsecureKeySizes: true,
-                                expiresIn: 86400, // 24 hours
-                              });
+        config.secret,
+        {
+          algorithm: 'HS256',
+          allowInsecureKeySizes: true,
+          expiresIn: 86400, // 24 hours
+        });
 
       var authorities = [];
       user.getRoles().then(roles => {
@@ -79,7 +90,6 @@ exports.signin = (req, res) => {
         res.status(200).send({
           id: user.id,
           username: user.username,
-          email: user.email,
           roles: authorities,
           accessToken: token
         });

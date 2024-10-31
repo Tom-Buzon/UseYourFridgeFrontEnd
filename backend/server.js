@@ -47,6 +47,7 @@ require('./app/routes/auth.routes')(app);
 require('./app/routes/frigo.routes')(app);
 require('./app/routes/recette.routes')(app);
 require('./app/routes/ingredients.routes')(app);
+require('./app/routes/user.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
@@ -65,7 +66,6 @@ function initial() {
     id: 3,
     name: "admin"
   });
- 
 }
 
 // Route pour supprimer un ingrédient

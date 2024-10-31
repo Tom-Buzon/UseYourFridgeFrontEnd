@@ -13,16 +13,19 @@ module.exports = function(app) {
   app.delete("/api/frigo/ingredients/:id", controller.deleteIngredientById);
 
   app.post("/api/frigo/ingredients",controller.addIngredient); 
+  app.post("/api/frigo/",controller.addFrigo); 
 
   app.get("/api/frigo/ingredients",
     controller.getingredients
   );
 
   app.get("/api/frigo/:id",
-  controller.getFrigoById
+  controller.getFrigosByUserId
 );
 
- 
+app.get("/api/frigo/shared/:id",
+controller.getFrigosSharedByUserId
+);
 
 };
 

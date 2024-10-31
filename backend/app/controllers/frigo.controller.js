@@ -1,5 +1,7 @@
 const db = require("../models");
 const Frigo = db.frigo;
+const FrigoUsers = db.frigo_users;
+const User = db.user;
 
 
 
@@ -41,10 +43,39 @@ pool.query(query, [ingredients], (err, result) => {
 };
 
 
-exports.getFrigoById = async (req, res) => {
+exports.addFrigo = async (req, res) => {
+  // Validate request
+  if (!req.body.nom) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+    return;
+  }
+
+  // Create a Ingredient
+  const frigo = {
+    nom: req.body.nom,
+    userId: req.body.userId
+    
+  };
+
+  // Save Ingredient in the database
+  Frigo.create(frigo)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while creating the frigo."
+      });
+    });
+  };
+
+exports.getFrigosByUserId = async (req, res) => {
   const id = req.params.id;
 
-  Frigo.findByPk(id,{include: [{model:db.ingredient}]})
+  Frigo.findAll({where: { userId: id },include: [{model:db.ingredient}]})
     .then(data => {
       res.send(data);
     })
@@ -55,6 +86,50 @@ exports.getFrigoById = async (req, res) => {
     });
  
   }
+
+  exports.shareFridge = (userId, fridgeId) => {
+    return User.findByPk(userId)
+      .then((user) => {
+        if (!user) {
+          console.log("User not found!");
+          return null;
+        }
+        return Frigo.findByPk(fridgeId).then((frigo) => {
+          if (!frigo) {
+            console.log("Fridge not found!");
+            return null;
+          }
+  
+          user.addFrigo(frigo);
+          console.log(`>> added frigo id=${frigo.id} to user id=${user.id}`);
+          return user;
+        });
+      })
+      .catch((err) => {
+        console.log(">> Error while adding Fridge to User: ", err);
+      });
+  };
+
+  exports.getFrigosSharedByUserId = async (req, res) => {
+
+    const id = req.params.id;
+    User.findByPk(id, {
+      include: [
+        {
+          model: Frigo,
+          as: "frigos"
+        },
+      ],
+    }).then(data => {
+      res.send(data.frigos);
+    })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error retrieving Ingredient with id=" + id
+        });
+      });
+   
+    }
 
 exports.getingredients = async (req, res) => {
   Frigo.findAll({include: [{model:db.ingredient}]})

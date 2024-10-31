@@ -18,7 +18,7 @@ export class HeaderComponent  implements OnInit {
   ngOnInit() {}
 
   goToFrigoList() {
-    this.router.navigate(["tabs/tab3/frigo-list"]);
+    this.router.navigate(["tabs/frigo-list"]);
 
   }
 

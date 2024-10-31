@@ -27,7 +27,8 @@ db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.frigo = require("../models/frigo.model.js")(sequelize, Sequelize);
 db.recette = require("../models/recette.model.js")(sequelize, Sequelize);
 db.ingredient = require("../models/ingredients.model.js")(sequelize, Sequelize);
-db.recette_ingredients = require("../models/recette_ingredients.model")(sequelize, Sequelize);
+db.recette_ingredients = require("../models/recette_ingredients.model.js")(sequelize, Sequelize);
+db.frigo_ingredients = require("../models/frigo_ingredients.model.js")(sequelize, Sequelize);
 db.mesure = require("../models/mesure.model.js")(sequelize, Sequelize);
 
 db.role.belongsToMany(db.user, {
@@ -44,17 +45,12 @@ db.frigo.belongsToMany(db.ingredient, {
   through: "frigo_ingredients"
 });
 
-db.frigo.belongsToMany(db.user, {
-  through: "frigo_users"
+db.user.belongsToMany(db.frigo, {
+  through: "frigo_users",
+  foreignKey: "frigoId",
 });
 
 
-
-
-/* db.recette.belongsToMany(db.mesure, {
-  through: "recette_ingredients"
-});
- */
 db.user.belongsToMany(db.role, {
   through: "user_roles"
 });
