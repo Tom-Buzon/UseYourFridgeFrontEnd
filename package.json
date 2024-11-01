@@ -6,7 +6,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:tom": "ng serve --configuration=tom",
+    "start:leo": "ng serve --configuration=leo",
     "build": "ng build",
+    "build:leo": "ng build --configuration=leo",
+    "build:tom": "ng build --configuration=tom",
     "watch": "ng build --watch --configuration development ",
     "test": "ng test",
     "lint": "ng lint"

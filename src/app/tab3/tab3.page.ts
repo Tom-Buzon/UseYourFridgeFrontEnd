@@ -17,7 +17,7 @@ import {
   LensFacing,
 } from '@capacitor-mlkit/barcode-scanning';
 
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { TokenStorageService } from '../services/token-storage.service';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DialogService } from '../services/dialog.service';
@@ -29,8 +29,9 @@ import { IngredientService } from '../services/ingredient.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page implements OnInit {
+export class Tab3Page implements OnInit, OnDestroy {
 
+  @ViewChild('fabComponent') fabComponent: any;
   frigos$: Observable<Frigo[]>;
   ingredients$: Observable<Ingredient[]>;
   newIngredient: string = '';
@@ -45,8 +46,8 @@ export class Tab3Page implements OnInit {
   isLoggedIn = false;
   user: any;
   isItemAvailable = false;
-  allIngredients : any[] = [];
-  users : any[] = [];
+  allIngredients: any[] = [];
+  users: any[] = [];
 
   public readonly barcodeFormat = BarcodeFormat;
   public readonly lensFacing = LensFacing;
@@ -91,7 +92,7 @@ export class Tab3Page implements OnInit {
     private ingredientService: IngredientService,
     private http: HttpClient,
     private _route: ActivatedRoute,
-    private actionsheetCtrl : ActionSheetController,
+    private actionsheetCtrl: ActionSheetController,
     private tokenStorage: TokenStorageService,
     private renderer: Renderer2,
 
@@ -105,23 +106,26 @@ export class Tab3Page implements OnInit {
   ) {
 
     this.ingredientService.getAllingredients().subscribe(
-      (data: any) => { 
+      (data: any) => {
         console.log(data);
-      this.allIngredients = data }
+        this.allIngredients = data
+      }
     )
 
 
     this.id = this._route.snapshot.paramMap.get('id');
     if (!this.id) {
       this.frigoService.loadFrigos().subscribe(
-        (data: any) => { 
-        this.currentFrigo = data[0] }
+        (data: any) => {
+          this.currentFrigo = data[0]
+        }
       )
     }
     else {
       this.frigoService.loadFrigos().subscribe(
-        (data: any) => { 
-        this.currentFrigo = data.filter((item: any) => item.id == this.id)[0] }
+        (data: any) => {
+          this.currentFrigo = data.filter((item: any) => item.id == this.id)[0]
+        }
       )
     }
     this.frigos$ = this.frigoService.frigos$;
@@ -138,22 +142,32 @@ export class Tab3Page implements OnInit {
 
 
 
-getItems(ev: any) {
+  getItems(ev: any) {
 
     // set val to the value of the searchbar
     const val = ev.target.value;
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() !== '') {
-        this.isItemAvailable = true;
-        this.allIngredients = this.allIngredients.filter((item:any) => {
-            return (item.ingredient.toLowerCase().indexOf(val.ingredient.toLowerCase()) > -1);
-        })
+      this.isItemAvailable = true;
+      this.allIngredients = this.allIngredients.filter((item: any) => {
+        return (item.ingredient.toLowerCase().indexOf(val.ingredient.toLowerCase()) > -1);
+      })
     } else {
-        this.isItemAvailable = false;
+      this.isItemAvailable = false;
     }
-}
+  }
+
+  ngOnDestroy() {
+  }
   async ngOnInit() {
+    this.router.events.subscribe((data: any) => {
+      if(data instanceof NavigationStart) {
+        this.fabComponent.close();
+      }
+
+
+    });
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.user = this.tokenStorage.getUser();
@@ -161,17 +175,21 @@ getItems(ev: any) {
 
     this.userService.getAllUsernameAndId().subscribe(
       (data: any) => this.users = data.filter((item: any) => item.id != this.user.id)
-    )
+    );
+
     this.languageService.getPreferredLanguage().then(lang => {
       this.currentLang = lang || 'fr';
     });
+
     BarcodeScanner.isSupported().then((result: any) => {
 
       this.isSupported = result.supported;
     });
+
     BarcodeScanner.checkPermissions().then((result: any) => {
       this.isPermissionGranted = result.camera === 'granted';
     });
+
     BarcodeScanner.removeAllListeners().then(() => {
       BarcodeScanner.addListener(
         'googleBarcodeScannerModuleInstallProgress',
@@ -218,10 +236,7 @@ getItems(ev: any) {
     );
   }
 
-  public async requestPermissions(): Promise<void> {
-    await BarcodeScanner.requestPermissions();
-  }
-
+ 
 
   public async startScan(): Promise<void> {
     const formats = this.formGroup.get('formats')?.value || [];
@@ -249,30 +264,23 @@ getItems(ev: any) {
 
 
 
-  async stopScan() {
-    this.scanning = false;
-    this.renderer.removeClass(this.document.body, 'scanner-active');
-    // await BarcodeScanner.showBackground();
-    await BarcodeScanner.stopScan();
-    document.body.classList.add('dark');
 
-  }
 
   closeModal() {
     this.isModalOpen = false;
     this.scannedProduct = null;
   }
 
- 
+
 
   async getProductInfo(barcode: string) {
     const httpOptions = {
-      headers: new HttpHeaders ({
+      headers: new HttpHeaders({
         "Access-Control-Allow-Origin": "**"
       })
     }
     try {
-      const response: any = await this.http.get(this.API+`${barcode}.json`,httpOptions).toPromise();
+      const response: any = await this.http.get(this.API + `${barcode}.json`, httpOptions).toPromise();
       if (response && response.status === 1) {
         this.scannedProduct = response.product;
         this.isModalOpen = true;

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ipAdress: "192.168.1.94"
+  ipAdress: "192.168.178.53"
 };
 
 /*

@@ -1,39 +1,65 @@
- <ion-header>
-  <ion-toolbar>
-    <ion-title>Listes de courses</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header  title="Mes listes"></app-header>
 
-<!-- <ion-card *ngIf="selectedRecette">
-  <ion-card-header>
-    <ion-card-title>{{ selectedRecette.titre }}</ion-card-title>
-    <ion-card-subtitle>{{ selectedRecette.type }}</ion-card-subtitle>
-  </ion-card-header>
-  <ion-card-content>
-    <p><strong>Prix:</strong> {{ selectedRecette.prix }}</p>
-    <p><strong>Temps de préparation:</strong> {{ selectedRecette.temps }} minutes</p>
-    <p><strong>Ingrédients:</strong> {{ selectedRecette.ingredients }}</p>
-    <p><strong>Étapes:</strong> {{ selectedRecette.etapes }}</p>
-    <p><strong>Notes:</strong> {{ selectedRecette.notes }}</p>
-  </ion-card-content>
-</ion-card>
 
-<ion-content>
-  <ng-container *ngIf="(matchingRecettes$ | async) as recettes">
-    <ion-list *ngIf="recettes.length > 0">
-      <ion-item *ngFor="let recette of recettes" (click)="onRecetteClick(recette)">
-        <ion-label>
-          <h2>{{ recette.titre }}</h2>
-          <p>Type: {{ recette.type }}</p>
-          <p>Prix: {{ recette.prix }}</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-    
-    <ion-item *ngIf="recettes.length === 0">
-      Aucune recette correspondante disponible.
-    </ion-item>
-  </ng-container> 
+<ion-content [fullscreen]="true"  >
+
+  <div class="fab-container">
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" edge #fabComponent>
+      <ion-fab-button>
+        <ion-icon name="chevron-up-circle"></ion-icon>
+
+      </ion-fab-button>
+      <ion-fab-list side="top">
+
+
+
+        <ion-fab-button id="open-modal-add" data-desc="Créer une liste">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
 
   
-</ion-content>-->
+  <ion-list style="text-align:center; padding-top:40%;"  >
+
+    <h2>{{ 'Vous n\'avez aucune liste de courses!' | translate }}</h2>
+    
+
+  
+  <img src="assets/images/list.png" width="50%"/>
+  <br/>
+  <span>{{ 'Cliquez sur le bouton en bas à droite pour créer une nouvelle liste, ou générez en une à partir de la page recette' | translate }}</span>
+  <br/>
+  <img  style="transform: rotate(180deg)" src="assets/images/arrow.png" width="50%"/>
+  </ion-list >
+
+    <ion-modal #modalAdd trigger="open-modal-add">
+      <ng-template>
+        <div class="block">
+          <ion-toolbar>
+            <ion-title>Créer une liste de courses</ion-title>
+            <ion-buttons slot="end">
+              <ion-button color="light" (click)="modalAdd.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+  
+          <ion-list style="text-align:center">
+   
+            <ion-list>
+
+              <ion-item>
+               
+              <ion-input  placeholder="Nom de la liste"></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-button style="align-items: center;">Créer</ion-button>
+          </ion-list>
+        </div>
+      </ng-template>
+    </ion-modal>
+
+
+</ion-content>

@@ -1,0 +1,134 @@
+/* src/app/tab3/tab3.page.scss */
+body{
+    --ion-color-primary: 0, 0, 0, 0.5 !important;
+    --ion-color-primary-rgb: 0, 0, 0, 0.5 !important;
+    --ion-background-color: 0, 0, 0, 0.5 !important;
+    --ion-text-color: 0, 0, 0, 0.5 !important;
+    --ion-color-test:  0, 0, 0, 0.5 !important;
+  }
+  
+  ion-fab-button[data-desc] {
+    position: relative;
+  }
+  
+  
+  ion-fab-button[data-desc]::after {
+    position: absolute;
+    content: attr(data-desc);
+    z-index: 1;
+    right: 55px;
+    bottom: 4px;
+    background-color: var(--ion-color-primary);
+    padding: 9px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+  }
+  
+  .content-hidden {
+    display: none;
+  }
+  
+  ion-item {
+    border-bottom: 0.5px solid #fff;  
+  }
+  
+  
+  
+  ion-select {
+    width: 100%;
+    text-align: right;
+  }
+    
+  ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+  }
+  
+  ion-header {
+  
+    ion-toolbar, ion-item {
+      --background: #f1f5f8;
+      background: #f1f5f8;
+      padding: 0 10px;
+    }
+  
+    ion-toolbar {
+      .bordered {
+        --border-radius: 10px;
+        --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
+      }
+    }
+  
+    ion-item {
+      h3 {
+        font-weight: 700;
+        font-size: 14px;
+      }
+  
+      p {
+        font-weight: 500;
+        font-size: 14px;
+      }
+  
+      ion-avatar {
+        --border-radius: 40%;
+      }
+    }
+  
+  }
+  
+  .fab-container{
+    top: 85vh;
+    position: sticky;
+    z-index: 999999;
+  }
+  
+  
+    .container {
+      padding: 6px 20px;
+      color: #FFFFFF;
+  
+      ion-item {
+        --background: rgba(255,255,255,.1);
+        padding: 0;
+        margin: 14px 0;
+        --border-radius: 14px;
+        color: #FFFFFF;
+        font-weight: 600;
+  
+        ion-label {
+          padding: 6px 0;
+  
+          h4 {
+            font-weight: 600;
+            font-size: 16px;
+          }
+          h6 {
+            color: rgba(255,255,255,.66);
+          }
+        }
+  
+      }
+  
+      h2 {
+        padding-bottom: 8px;
+      }
+  
+    }
+  
+  
+  

@@ -4,10 +4,21 @@
     <ion-buttons slot="start" *ngIf="menu">
       <ion-menu-button auto-hide="false" (click)="goToFrigoList()"></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="start" *ngIf="menuTab1">
+      <ion-menu-button auto-hide="false" (click)="goToShoppingListDetails()"></ion-menu-button>
+    </ion-buttons>
     <ion-buttons slot="start" *ngIf="back" >
       <ion-icon  (click)="goBack()" name="arrow-back-outline"></ion-icon>
     </ion-buttons>
-
+    <ion-buttons slot="end">
+      <ion-button (click)="changeLanguage('en')">
+        🇺🇸
+      </ion-button>
+      <ion-button (click)="changeLanguage('fr')">
+        🇫🇷
+      </ion-button>
+     <!-- <ion-icon  id="open-action-sheet" name="settings-outline"></ion-icon>-->
+    </ion-buttons>
     <ion-title>{{ title | translate }}</ion-title>
 
   </ion-toolbar>

@@ -1,7 +1,11 @@
 /* src/app/tab2/tab2.page.scss */
 
 
+.grid {
+  overflow-y: auto;
+  max-height: 100vh;
 
+}
 /* Fond général pour le contenu */
 ion-content {
   --background: linear-gradient(135deg, #121212, #1e1e2f); /* Dégradé sombre pour un effet de profondeur */

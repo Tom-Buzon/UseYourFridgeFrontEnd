@@ -13,8 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-// Importer SharedModule et RecetteDetailsModalModule
-import { SharedModule } from './shared/shared.module';
 import { RecetteDetailsModalModule } from './components/recette-details-modal/recette-details-modal.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
@@ -36,22 +34,25 @@ import { BarcodeScanningModalComponent } from './components/barcode-scanning-mod
 import { FrigoListPage } from './pages/frigo-list/frigo-list.page';
 import { HeaderComponent } from './components/header/header.component';
 
+import { SharedModule } from './shared/shared.module';
+import { HeaderModule } from './components/header/header.module';
 
 register();
 
 @NgModule({
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,HeaderComponent],
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicStorageModule.forRoot(),
+    SharedModule,
     HttpClientModule, // Nécessaire pour ngx-translate
     IonicModule.forRoot(),
     AppRoutingModule,
-    SharedModule,
     RecetteDetailsModalModule, // Importer le module du modal
+    HeaderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -63,6 +64,6 @@ register();
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  exports: [ HeaderComponent],
+  exports: [ TranslateModule]
 })
 export class AppModule {}

@@ -5,6 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
+import { environment } from 'src/environments/environment';
 
 export interface User {
   id: number;
@@ -18,7 +19,7 @@ export interface User {
 })
 export class UserService {
 
-  private apiUrl = 'http://192.168.1.94:3000/api/user';
+  private apiUrl =   "http://"+  environment.ipAdress+ ":3000/api/user";
 
 
   user: any;

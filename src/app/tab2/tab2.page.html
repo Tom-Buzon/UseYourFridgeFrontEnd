@@ -1,10 +1,6 @@
 <!-- src/app/tab2/tab2.page.html -->
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'ALL_RECIPES' | translate }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true">
+<app-header [back]="false" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
+<ion-content [fullscreen]="true" scroll-y="false">
   <!-- Bouton pour afficher la liste de courses réduite -->
   <ion-button [ngClass]="{'fixable-element': true}"  *ngIf="isReducedIconVisible" (click)="openShoppingListModal()">
     {{ 'VIEW_SHOPPING_LIST' | translate }}
@@ -58,7 +54,7 @@
   </ion-button>
 
   <!-- Liste des recettes -->
-  <ion-list *ngIf="recettes && recettes.length > 0">
+  <ion-list *ngIf="recettes && recettes.length > 0" class="grid">
     <ion-item *ngFor="let recette of recettes">
       <ion-checkbox [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"></ion-checkbox>
       <ion-label class="availability">{{ recette.title }} ({{ recette.rate }})</ion-label>

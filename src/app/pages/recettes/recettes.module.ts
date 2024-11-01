@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RecettesPage } from './recettes.page';
 import { TabsPageRoutingModule } from '../../tabs/tabs-routing.module';
-import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -12,8 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,  // Assurez-vous que IonicModule est importé ici
-    TabsPageRoutingModule ,
-    SharedModule
+    TabsPageRoutingModule 
   ],
   declarations: [RecettesPage]
 })

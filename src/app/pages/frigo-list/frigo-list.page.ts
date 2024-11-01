@@ -7,7 +7,7 @@ import { Frigo, Ingredient } from 'src/app/services/frigo.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { UserService } from 'src/app/services/user.service';
 import { FrigoService } from '../../services/frigo.service';
-import { Item } from '../../types';
+import { Item } from '../../models/types';
 @Component({
   selector: 'app-frigo-list',
   templateUrl: './frigo-list.page.html',

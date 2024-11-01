@@ -1,33 +1,15 @@
-<!-- src/app/tab3/tab3.page.html -->
-
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button auto-hide="false" (click)="goToFrigoList()"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{currentFrigo?.nom}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="changeLanguage('en')">
-        🇺🇸
-      </ion-button>
-      <ion-button (click)="changeLanguage('fr')">
-        🇫🇷
-      </ion-button>
-      <ion-icon  id="open-action-sheet" name="settings-outline"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header [back]="false" [menu]="true" title="{{currentFrigo?.nom}}"></app-header>
 <ion-content [fullscreen]="true" [class.content-hidden]="scanning" >
 
   <div class="fab-container">
-    <ion-fab slot="fixed" vertical="bottom" horizontal="end" edge>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" edge #fabComponent>
       <ion-fab-button>
         <ion-icon name="chevron-up-circle"></ion-icon>
 
       </ion-fab-button>
       <ion-fab-list side="top">
 
-        <ion-fab-button id="open-modal-add" data-desc="Delete fridge">
+        <ion-fab-button data-desc="Delete fridge">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
 
@@ -57,7 +39,7 @@
     </ion-item>
   </ion-list>
   
-  <ion-list style="text-align:center; padding-top:50%;" *ngIf="currentFrigo?.ingredients?.length === 0" >
+  <ion-list style="text-align:center; padding-top:40%;" *ngIf="currentFrigo?.ingredients?.length === 0" >
 
     <h2>{{ 'Votre frigo est vide!' | translate }}</h2>
     
@@ -66,6 +48,8 @@
   <img src="assets/images/fridge.png" width="50%"/>
   <br/>
   <span>{{ 'Cliquez sur le bouton en bas à droite pour ajouter ou scanner des ingrédients' | translate }}</span>
+  <br/>
+  <img  style="transform: rotate(180deg)" src="assets/images/arrow.png" width="50%"/>
   </ion-list >
   <!--   <ion-item>
         <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
@@ -80,30 +64,6 @@
     [buttons]="actionSheetButtons"
   ></ion-action-sheet>
 
-    <ion-modal #modal trigger="open-modal-shared">
-      <ng-template>
-        <div class="block">
-          <ion-toolbar>
-            <ion-title>Partager le frigo</ion-title>
-            <ion-buttons slot="end">
-              <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-  
-          <ion-list style="text-align:center">
-            <ion-item>
-              <ion-select id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
-                placeholder="Selectionner un/des utilisateur(s)">
-                <ion-select-option *ngFor="let item of users" value="{{item.id}}">{{item.username}}
-                </ion-select-option>
-  
-              </ion-select>
-            </ion-item>
-            <ion-button style="align-items: center;">Ajouter</ion-button>
-          </ion-list>
-        </div>
-      </ng-template>
-    </ion-modal>
   <ion-modal class="root" [isOpen]="isModalOpen">
     <ng-template>
       <ion-header>
@@ -131,14 +91,38 @@
     </ng-template>
   </ion-modal>
 
+  <ion-modal #modalShared trigger="open-modal-shared">
+    <ng-template>
+      <div class="block">
+        <ion-toolbar>
+          <ion-title>Partager le frigo</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modalShared.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
 
-  <ion-modal #modal trigger="open-modal-add">
+        <ion-list style="text-align:center">
+          <ion-item>
+            <ion-select id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
+              placeholder="Selectionner un/des utilisateur(s)">
+              <ion-select-option *ngFor="let item of users" value="{{item.id}}">{{item.username}}
+              </ion-select-option>
+
+            </ion-select>
+          </ion-item>
+          <ion-button style="align-items: center;">{{ 'SHARED' | translate }}</ion-button>
+        </ion-list>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal #modalAdd trigger="open-modal-add">
     <ng-template>
       <div class="block">
         <ion-toolbar>
           <ion-title>Ajouter un ingrédient</ion-title>
           <ion-buttons slot="end">
-            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+            <ion-button color="light" (click)="modalAdd.dismiss()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
 

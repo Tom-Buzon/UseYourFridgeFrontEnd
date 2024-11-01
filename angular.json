@@ -64,6 +64,34 @@
               "sourceMap": true,
               "namedChunks": true
             },
+            "leo": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.leo.ts"
+                }
+              ]
+            },
+            "tom": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.tom.ts"
+                }
+              ]
+            },
             "ci": {
               "progress": false
             }
@@ -78,6 +106,12 @@
             },
             "development": {
               "buildTarget": "app:build:development"
+            },
+            "leo": {
+              "buildTarget": "app:build:leo"
+            },
+            "tom": {
+              "buildTarget": "app:build:tom"
             },
             "ci": {
               "progress": false

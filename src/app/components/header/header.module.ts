@@ -2,13 +2,16 @@
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { RecetteDetailsModalComponent } from './recette-details-modal.component';
+import { HeaderComponent } from './header.component';
 
 @NgModule({
-  declarations: [RecetteDetailsModalComponent],
+  declarations: [HeaderComponent],
   imports: [
     SharedModule],
-  exports: [RecetteDetailsModalComponent],
+  exports: [HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // Ajouter ceci pour reconnaître les éléments Ionic
 })
-export class RecetteDetailsModalModule {}
+export class HeaderModule {
+
+  
+}
