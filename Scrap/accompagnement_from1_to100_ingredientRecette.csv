@@ -1,0 +1,8331 @@
+﻿recette_id,unit,quantity,ingredient
+3241,,,poivre
+3241,,,sel
+3241,,1,beurre
+3241,cuillères à soupe,2,crème fraîche
+3241,,100,gruyère râpé
+3241,,3,oignons
+3241,,4,courgettes
+3241,,2,oeufs
+3242,,,sel
+3242,,,poivre
+3242,cuillère,1,huile d'olive
+3242,,50,beurre
+3242,,1,oignon
+3242,,300,courgette
+3242,,500,tomate
+3242,,400,aubergine
+3242,gousses,6,ail
+3242,,,herbes de Provence
+3243,,,sel
+3243,,,poivre
+3243,,,lardons fumés
+3243,,1,poireau
+3243,,1,carotte
+3243,,1,oignon
+3243,,200,lentilles vertes
+3243,,1,bouquet garni
+3243,,,graisse d'oie
+3244,,,sauce piquante
+3244,,,coriandre
+3244,,,sel
+3244,,0.5,oignon
+3244,,2,tomates
+3244,,2,avocats
+3244,,0.5,citron
+3245,,,sel
+3245,,,poivre
+3245,tasse,1,farine
+3245,,2,courgettes
+3245,gousse,1,ail
+3245,,2,oeufs
+3245,cuillères à soupe,3,Fines herbes
+3246,,,gruyère râpé
+3246,cuillère à soupe,1,huile
+3246,,5.5,levure chimique
+3246,pincée,1,sel
+3246,,300,farine
+3246,,1,yaourt nature
+3246,,,eau
+3247,,,sel
+3247,,,poivre
+3247,cuillère à café,1,curcuma
+3247,cuillère à soupe,1,crème fraîche
+3247,,2,courgettes
+3247,cuillères à soupe,3,huile d'olive
+3248,,,sel
+3248,,,poivre
+3248,,1,patate douce
+3248,cuillères à soupe,2,huile d'olive
+3249,,,poivre
+3249,,,sel
+3249,morceau,1,sucre
+3249,,30,beurre
+3249,,1,oignon
+3249,,250,lardons fumés
+3249,kg,1,petits pois
+3249,,1,laitue
+3250,,1,beurre
+3250,pincée,1,muscade
+3250,,,poivre
+3250,,,sel
+3250,,250,farine
+3250,,500,pomme de terre
+3250,,1,jaune d'oeuf
+3251,pincée,,curry
+3251,,,sel
+3251,,,poivre
+3251,,,huile
+3251,,6,pommes de terre
+3252,,,sel
+3252,,15,levure
+3252,cuillère à soupe,1,sel
+3252,,250,farine
+3252,cl,12,eau
+3252,cuillères à soupe,2,huile d'olive
+3252,,,huile d'olive
+3253,cuillères à soupe,3,vinaigre balsamique
+3253,cuillère à café,1,sucre en poudre
+3253,,500,oignon
+3253,,,huile d'olive
+3254,,,sel
+3254,,,poivre
+3254,branche,1,thym
+3254,,4,fenouil
+3254,,1,citron
+3254,verre,1,vin blanc
+3254,gousses,2,ail
+3254,,,huile d'olive
+3255,,,sel
+3255,,,poivre
+3255,,30,beurre
+3255,cl,25,crème fraîche
+3255,,60,fromage râpé
+3255,kg,1,pomme de terre
+3255,gousse,1,ail
+3256,,,gros sel
+3256,,,huile d'olive
+3256,,3,feuilles de laurier
+3256,,24,pommes de terre
+3256,gousses,12,ail
+3257,,,poivre
+3257,,,sel
+3257,cuillères à soupe,2,crème fraîche
+3257,cuillère à soupe,1,moutarde de Dijon
+3257,,30,beurre
+3257,,600,poireau
+3257,cuillères à soupe,2,jus de citron
+3258,cl,10,crème fraîche
+3258,,,fleur de sel
+3258,,200,polenta
+3258,cl,60,eau
+3258,,50,Parmesan
+3259,,,muscade
+3259,,,crème fraîche
+3259,kg,1,pomme de terre
+3259,cl,20,lait
+3260,,,huile de friture
+3260,kg,1,pomme de terre
+3261,cuillères à soupe,2,huile d'olive
+3261,cuillères à café,2,gros sel
+3261,,4,courgettes
+3261,gousses,2,ail
+3262,,,poivre
+3262,,,gros sel
+3262,,,cornichons
+3262,,,estragon
+3263,,,sel
+3263,,,poivre
+3263,pincée,1,gros sel
+3263,,4,piments
+3263,cuillère à café,1,curcuma
+3263,,2,feuilles de laurier
+3263,branches,3,thym
+3263,morceau,1,gingembre
+3263,,2,oignons
+3263,,250,haricots rouges
+3263,gousses,3,ail
+3264,zeste,,orange
+3264,,,poivre
+3264,,,sel
+3264,,,huile d'olive
+3264,cl,20,crème fraîche
+3264,,800,patate douce
+3265,,,vinaigre
+3265,,,poivre
+3265,,,sel
+3265,,1,poivron jaune
+3265,,1,poivron vert
+3265,,1,poivron rouge
+3265,,,ail
+3265,,,huile d'olive
+3266,pincée,1,sucre
+3266,pincée,1,sel
+3266,sachet,1,levure de boulanger
+3266,,500,farine
+3266,cl,25,eau
+3267,,,sucre
+3267,cuillère à soupe,1.5,vinaigre de cidre
+3267,,100,fromage blanc
+3267,,2,carottes
+3267,,400,chou blanc
+3267,,100,mayonnaise
+3267,grosse,1,ciboulette
+3268,,,sel
+3268,verres,2,boulgour
+3268,verres,4,eau
+3268,,,huile d'olive
+3269,,,huile d'olive
+3269,,,sel
+3269,,,poivre
+3269,,1,cube de bouillon
+3269,,1,oignon
+3269,,1,chou chinois
+3269,,300,champignons de Paris
+3269,verre,0.5,riz
+3270,,,sel
+3270,,,huile de friture
+3270,,3,bananes plantain
+3271,,,sel
+3271,,,huile d'olive
+3271,,2,oignons
+3271,,3,tomates
+3271,kg,1,haricots plats
+3271,,1,ail
+3272,cuillère,1.5,sel
+3272,cuillères,4,sucre
+3272,tasse,0.5,vinaigre de riz
+3272,tasses,4,riz
+3272,tasses,4,eau
+3273,cuillères à soupe,5,gros sel
+3273,cuillère à soupe,1,thym
+3273,,200,pomme de terre
+3273,cuillère à soupe,1,huile d'olive
+3274,cuillère à soupe,1,sucre en poudre
+3274,branche,0.6666667,thym
+3274,,,sel
+3274,,,poivre
+3274,cuillères à soupe,2,huile d'olive
+3274,,2,feuilles de laurier
+3274,,2,oignons
+3274,,3,poivrons verts
+3274,petite boîte,1,tomates pelées
+3274,gousses,2,ail
+3274,verre,0.5,eau
+3275,,,huile
+3275,cuillères à café,2,farine
+3275,,,sel
+3275,,,poivre
+3275,cuillère à soupe,1,curry
+3275,,8,pommes de terre
+3275,cuillère à soupe,1,huile d'olive
+3275,cuillère à soupe,1,herbes de Provence
+3275,,,paprika
+3276,cuillères à soupe,2,huile
+3276,,8,pommes de terre
+3276,,,paprika
+3277,,,sel
+3277,,,poivre
+3277,,,muscade
+3277,,,cumin
+3277,,4,oignons
+3277,kg,1,champignons de Paris
+3277,gousse,1,ail
+3277,,,huile d'olive
+3278,,100,comté
+3278,brin,1,thym
+3278,,0.5,oignon
+3278,,1,tomate
+3278,,1,aubergine
+3278,,3,courgettes
+3278,gousse,1,ail
+3278,,1,oeuf
+3278,cl,20,crème fraîche liquide
+3279,cuillère à soupe,1,curry
+3279,,2,carottes
+3279,,1,oignon
+3279,,200,pois cassés
+3279,gousses,2,ail
+3279,,1,pomme
+3280,kg,1,sucre
+3280,kg,2,mirabelle
+3280,cuillère à soupe,1,cannelle
+3280,,2,pommes
+3280,,0.5,citron
+3281,pincée,1,muscade
+3281,cuillère à café,1,cumin
+3281,,1,beurre
+3281,,,sel
+3281,,,poivre
+3281,,6,carottes
+3281,,1,pomme de terre
+3281,cuillères à soupe,2,crème fraîche épaisse
+3282,,,poivre
+3282,,,sel
+3282,,1,oignon
+3282,,1,cube de bouillon
+3282,,6,pommes de terre
+3282,,,eau
+3282,cuillère à soupe,1,huile de colza
+3283,l,1,huile d'olive
+3283,,1,vinaigre de vin
+3283,,100,sel
+3283,kg,3,courgette
+3283,,3,ail
+3284,,,beurre
+3284,cuillère à soupe,1,sucre en poudre
+3284,,500,navet
+3285,,20,sucre
+3285,,10,sel
+3285,,50,beurre
+3285,,20,levure de boulanger
+3285,,500,farine
+3285,,1,eau
+3285,cl,20,lait
+3286,,,sel
+3286,,,poivre
+3286,,1,oignon
+3286,,500,viande hachée
+3286,,3,oeufs
+3286,tranches,4,pain de mie
+3286,cl,50,eau
+3286,,,chapelure
+3287,,,épices
+3287,,,sel
+3287,,,poivre
+3287,filet,1,huile d'olive
+3287,,1,feuille de laurier
+3287,,1,oignon
+3287,cl,50,bouillon de boeuf
+3287,,250,riz
+3288,cuillères à café,2.5,levure de boulanger
+3288,,490,farine
+3288,cuillère à café,1,sucre
+3288,cuillères à café,2,sel
+3288,,300,eau
+3289,,,muscade
+3289,,100,gruyère râpé
+3289,,120,farine
+3289,,100,beurre
+3289,,3,oeufs
+3289,cl,20,eau
+3290,,,sel
+3290,,,poivre
+3290,kg,1,pomme de terre
+3290,,200,fromage frais
+3290,cuillères à soupe,2,huile d'olive
+3291,,,thym
+3291,,,sucre
+3291,,,sel
+3291,,,poivre
+3291,,3,oignons
+3291,kg,1,tomate
+3291,kg,1,courgette
+3291,,,huile d'olive
+3292,,,origan
+3292,,,sel
+3292,,,poivre
+3292,,,persil
+3292,,8,tomates
+3292,,,huile d'olive
+3292,,,ail
+3292,,,chapelure
+3293,,,sucre
+3293,,200,oignon
+3293,,,eau
+3294,,,sel
+3294,,,poivre
+3294,cuillère à soupe,1,farine
+3294,,4,Fleurs
+3294,,1,oeuf
+3294,cl,5,eau
+3294,cuillère à soupe,1,huile d'olive
+3295,,,bouillon de légumes
+3295,,1,oignon
+3295,,3,carottes
+3295,,2,courgettes
+3295,,10,lasagnes
+3295,petite boîte,1,champignons de Paris
+3295,pot,1,crème
+3295,,1,échalote
+3295,gousse,1,ail
+3295,,,toastinette
+3296,cuillères à soupe,2,persil
+3296,,500,pomme de terre
+3296,,50,canard
+3296,gousse,1,ail
+3296,,250,girolles
+3297,,,huile d'olive
+3297,,,muscade
+3297,,,sel
+3297,,,poivre
+3297,,,gruyère râpé
+3297,,1,courgette
+3297,cl,10,crème épaisse
+3297,gousses,2,ail
+3297,,1,oeuf
+3297,,0.5,chèvre
+3298,,,sel
+3298,,,poivre
+3298,kg,2,courgette
+3298,gousses,2,ail
+3298,feuille,,basilic
+3298,cuillères à café,2,huile d'olive
+3299,kg,1,pomme de terre
+3299,,,huile de friture
+3299,,,sel
+3299,,,gros sel
+3300,,,persil
+3300,cuillères à soupe,2,huile
+3300,,,sel
+3300,,,oronge
+3300,,,ail
+3300,cuillère à soupe,1,crème fraîche
+3301,,,huile d'olive
+3301,,1,vinaigre balsamique
+3301,,,sel
+3301,,,poivre
+3301,,600,pomme de terre
+3301,,200,pois gourmands
+3302,,,muscade
+3302,cuillère à soupe,1,vinaigre
+3302,,,sel
+3302,,,poivre
+3302,,50,margarine
+3302,,1,chou rouge
+3302,,2,pommes
+3302,cuillère à soupe,1,cassonade
+3302,verre,0.5,eau
+3303,cuillère à café,1.5,sel
+3303,cuillères à soupe,2,huile d'olive
+3303,,500,farine
+3303,sachet,1,levure de boulanger
+3303,cuillères à soupe,2,sucre
+3303,cl,30,eau
+3303,cuillères à soupe,2,lait en poudre
+3304,,,sel
+3304,cuillère à café,0.5,muscade
+3304,,600,pomme de terre
+3304,cuillère à soupe,1,crème fraîche épaisse
+3304,cl,20,lait
+3305,pincée,1,curry
+3305,,,sel
+3305,,,poivre
+3305,,,gruyère râpé
+3305,,4,courgettes
+3305,,200,fromage de chèvre
+3305,cuillères à soupe,5,huile d'olive
+3305,,100,oignon blanc
+3306,,,sel
+3306,,,poivre
+3306,cl,15,bière
+3306,,150,farine
+3306,,1,aubergine
+3306,,1,oeuf
+3306,,,basilic
+3307,sachet,1,safran
+3307,,2,courgettes
+3307,,0.5,oignon
+3307,,300,riz
+3307,cuillères,4,huile d'olive
+3307,l,1,bouillon
+3307,,100,parmesan râpé
+3307,verre,1,vin blanc sec
+3308,,50,jambon
+3308,,125,courgette
+3308,,,sel
+3308,,,poivre
+3308,,50,beurre
+3308,,250,farine
+3308,cl,25,lait
+3308,,2,oeufs
+3308,,2,blancs d'oeuf
+3308,,75,gruyère
+3309,,0.5,cube de bouillon
+3309,,,sel
+3309,,,poivre
+3309,cuillère à café,0.5,persil
+3309,,,lardons
+3309,,1,oignon
+3309,,1,carotte
+3309,,600,petits pois
+3309,gousse,1,ail
+3310,sachet,1,levure
+3310,cuillère à soupe,1,sel
+3310,,600,farine
+3310,cl,40,eau
+3311,,,crème fraîche
+3311,,,sel
+3311,,,poivre
+3311,,,huile
+3311,,,beurre
+3311,,,sucre
+3311,,3,concombres
+3311,gousses,3,ail
+3311,,,paprika
+3312,,,poivre
+3312,,,sel
+3312,,1,oignon
+3312,,500,tomate
+3312,kg,1,haricots verts
+3312,,,ail
+3312,,,herbes de Provence
+3312,,,huile d'olive
+3313,,1,persil
+3313,,,sel
+3313,,,poivre
+3313,,1,bouillon de légumes
+3313,,1,oignon
+3313,,1,poireau
+3313,,2,pommes de terre
+3313,l,1.5,eau
+3314,cuillère à café,1,épices
+3314,,,sel
+3314,,,poivre
+3314,cl,5,huile d'olive
+3314,,4,carottes
+3314,,300,courge
+3314,,4,pommes de terre
+3314,,6,navets
+3315,cuillères à soupe,2,huile
+3315,,,persil
+3315,,,sel
+3315,,,poivre
+3315,,1,céleri
+3315,,,ail
+3316,,,sel
+3316,,,poivre
+3316,,,persil
+3316,,2,courgettes
+3316,,240,riz basmati
+3316,cl,25,crème fraîche épaisse
+3316,,,basilic
+3316,,,ciboulette
+3317,sachets,2,semoule
+3318,,,muscade
+3318,,,sel
+3318,,,poivre
+3318,,20,beurre
+3318,,1,courgette
+3318,cuillères à soupe,2,crème
+3319,,,romarin
+3319,,,thym
+3319,,,origan
+3319,,,poivre
+3319,,,fleur de sel
+3319,cuillère à café,1,beurre
+3319,,4,pommes de terre
+3319,,,huile d'olive
+3319,,,paprika
+3320,,1,beurre
+3320,,,sel
+3320,,,poivre
+3320,,1,persil
+3320,botte,1,blette
+3320,cuillères à soupe,2,crème épaisse
+3320,gousses,2,ail
+3321,,,sel
+3321,,,poivre
+3321,,60,beurre
+3321,cuillères à soupe,2,huile
+3321,,500,semoule fine
+3321,cuillère,1,café
+3321,pincée,1,cannelle
+3322,cuillères à soupe,3,curry
+3322,tasses,2,sucre
+3322,tasses,3,vinaigre de vin
+3322,tasse,0.5,sel
+3322,tasse,1,oignon
+3322,kg,3,courgette
+3322,tasses,3,eau
+3322,verre,0.5,vin blanc
+3323,,1,beurre
+3323,,,sel
+3323,,150,pâtes
+3323,,100,petits pois
+3324,,,persil
+3324,,,huile
+3324,,1,chou
+3325,,,poivre
+3325,,,sel
+3325,,50,beurre
+3325,,650,pomme de terre
+3325,,3,jaunes d'oeuf
+3326,cuillères à soupe,2,huile d'olive
+3326,,,curry
+3326,,1,cube de bouillon
+3326,tasses,2,riz basmati
+3326,,,eau
+3327,cuillère à café,0.5,piment d'Espelette
+3327,,,fleur de sel
+3327,,1,courge
+3327,,3,pommes de terre
+3327,cuillères à soupe,4,huile d'olive
+3327,cuillère à café,1,ail
+3328,,,muscade
+3328,,,sel
+3328,,,poivre
+3328,,,gruyère râpé
+3328,,,crème fraîche
+3328,,100,lardons
+3328,,2,courgettes
+3329,,,dashi
+3329,,,miso
+3329,,,wakame
+3329,,,shichimi togarashi
+3329,,,tofu
+3329,,,pois mange-tout
+3329,,,autres
+3330,bouquet,1,persil
+3330,,,sel
+3330,,,poivre
+3330,branche,1,thym
+3330,,1,feuille de laurier
+3330,,250,courge
+3330,gousses,2,ail
+3330,cuillères à soupe,2,huile d'olive
+3330,,1,jus de citron
+3331,,50,gruyère râpé
+3331,,,beurre
+3331,,,huile d'olive
+3331,cl,10,crème fraîche
+3331,,200,lardons
+3331,,1,oignon
+3331,,4,carottes
+3331,,2,courgettes
+3332,,1,poireau
+3332,,125,lardons
+3332,,800,flageolet
+3332,gousses,3,ail
+3332,cl,20,crème liquide
+3333,,1,oignon
+3333,cuillère à soupe,1,vinaigre de riz
+3333,,3,gingembre
+3333,cuillères à soupe,2,miel liquide
+3333,cuillères à soupe,4,huile d'arachide
+3333,,5,carottes
+3333,,2,courgettes
+3333,,1,poivron jaune
+3333,,1,poivron vert
+3333,,1,poivron rouge
+3333,,200,haricots verts
+3333,cuillères à soupe,4,soja
+3333,,0.5,citron
+3333,gousses,4,ail
+3333,cuillères à soupe,2,arachide
+3334,bonne,1,sel
+3334,cuillères à soupe,2,vinaigre
+3334,,2,oignons
+3334,kg,1,pomme de terre
+3334,cuillères à soupe,6,mayonnaise
+3334,,10,cornichons
+3335,,,muscade
+3335,,,sel
+3335,,,poivre
+3335,cuillère à soupe,1,huile
+3335,,100,farine
+3335,,30,beurre
+3335,kg,1.2,pomme de terre
+3335,,2,blancs d'oeuf
+3335,,4,jaunes d'oeuf
+3335,,,chapelure
+3336,kg,1,sucre
+3336,kg,2,framboises
+3336,cl,25,eau
+3336,sachet,1,vitpris
+3337,,,poivre
+3337,,,sel
+3337,,30,beurre
+3337,,600,patate douce
+3337,cl,15,crème semi-épaisse
+3338,cuillère à café,1,cumin
+3338,cuillère à café,0.5,gingembre
+3338,,,Ras el Hanout
+3338,,,persil
+3338,,3,tomates
+3338,,1,oignon
+3338,bol,1,lentilles
+3338,morceaux,3,ail
+3338,,1,échalote
+3338,cuillères à soupe,2,huile d'olive
+3338,cuillère à café,0.5,paprika
+3339,,,muscade
+3339,,,sel
+3339,,,poivre
+3339,cuillère à café,1,sucre
+3339,,25,beurre
+3339,kg,1,endive
+3339,gousses,3,ail
+3340,,,sel
+3340,,,poivre
+3340,cuillères à soupe,4,huile d'olive
+3340,cuillère à soupe,1,moutarde à l'ancienne
+3340,cuillères à soupe,3,moutarde de Dijon
+3340,,1,courgette
+3340,,4,tomates
+3340,cuillère à soupe,1,ail
+3340,cuillère à soupe,1,échalote
+3340,cuillère à soupe,1,Fines herbes
+3341,,,sucre
+3341,,,fruits
+3341,,,eau
+3342,goutte,,huile d'olive
+3342,,,sel
+3342,,,poivre
+3342,,2,oignons
+3342,,2,tomates
+3342,,2,courgettes
+3342,,2,patates douces
+3342,,,basilic
+3343,,,sel
+3343,,,poivre
+3343,,,huile d'olive
+3343,,3,poivrons
+3343,,3,oignons
+3343,,2,aubergines
+3343,,3,courgettes
+3343,gousses,5,ail
+3343,,,basilic frais
+3344,,6,bananes plantain
+3344,,1,manioc
+3344,paquet,1,farine de manioc
+3345,cuillère à soupe,1,sésame
+3345,,1,chou chinois
+3345,cuillères à soupe,2,sucre
+3345,pointe,1,piment
+3345,,,sel
+3345,,,poivre
+3345,cuillère à soupe,1,vinaigre
+3345,cuillères à soupe,3,huile d'arachide
+3345,gousses,2,ail
+3346,cuillères à soupe,4,huile
+3346,brin,1,thym
+3346,,2,oignons
+3346,,1,aubergine
+3346,,2,poivrons rouges
+3346,,2,courgettes
+3346,,500,tomate
+3346,gousses,3,ail
+3346,feuille,1,laurier
+3346,,,sel et poivre
+3347,cuillères à soupe,3,sucre
+3347,cuillère à café,0.5,sel
+3347,,150,beurre tendre
+3347,,300,farine
+3347,cl,8,eau
+3348,cuillère à soupe,1,huile
+3348,,30,levure de boulanger
+3348,cuillère à café,1,sel
+3348,kg,1,farine
+3348,cl,50,eau
+3349,,,sel
+3349,,,poivre
+3349,,,huile d'olive
+3349,,0.5,poivron
+3349,,6,tomates
+3349,,5,courgettes
+3349,,2,aubergines
+3349,,4,oignons
+3349,gousses,5,ail
+3350,,,origan
+3350,pincée,1,sel
+3350,cl,7,huile
+3350,,250,farine
+3350,cl,10,eau
+3350,,,Parmesan
+3351,,,sel
+3351,,,betterave
+3352,pincée,1,sel
+3352,,1,oignon
+3352,,2,tomates
+3352,kg,1,blette
+3352,,,crème
+3352,,,huile d'olive
+3353,,4,tomates
+3353,,2,courgettes
+3353,cuillères à soupe,2,herbes de Provence
+3353,gousses,2,ail
+3353,cuillères à soupe,8,huile d'olive
+3353,demi,,citron
+3353,,300,mozzarella
+3353,,,Parmesan
+3354,,,muscade
+3354,,,sel
+3354,,,poivre
+3354,,120,comté
+3354,,4,pommes de terre
+3354,,1,brocoli
+3354,cl,20,crème liquide
+3354,gousse,1,ail
+3355,,,sel
+3355,,,poivre
+3355,,1,beurre
+3355,,100,gruyère râpé
+3355,,700,potiron
+3355,,250,pomme de terre
+3355,,2,oeufs
+3356,,,poivre
+3356,,,sel
+3356,cuillère à soupe,1,miel
+3356,,,curry
+3356,,2,oignons
+3356,,0.25,citrouille
+3356,,1,échalote
+3356,cuillères à soupe,2,huile de noix
+3357,pincée,1,sel
+3357,,100,ail
+3357,,40,pignons
+3357,,40,Parmesan
+3357,cuillères à soupe,5,huile d'olive
+3358,,,sel
+3358,,,poivre
+3358,,,romarin
+3358,,,thym
+3358,cuillères à soupe,3,huile d'olive
+3358,,1,oignon
+3358,,1,poivron rouge
+3358,,3,courgettes
+3358,,1,aubergine
+3358,kg,1,tomate
+3358,gousse,1,ail
+3358,,,sel
+3358,,100,beurre
+3358,,150,farine
+3358,,40,pignons
+3358,,60,Parmesan
+3359,,,huile
+3359,,,sel
+3359,,,poivre
+3359,,75,gruyère râpé
+3359,,1,courgette
+3359,,1,poivron
+3359,,1,oignon
+3359,cuillères à soupe,4,crème fraîche épaisse
+3359,,1,oeuf
+3360,,280,riz pour risotto
+3360,,1,oignon
+3360,cl,56,bouillon de légumes
+3360,,80,parmesan râpé
+3360,,28,queues de crevettes
+3360,cuillères à soupe,4,huile d'olive
+3360,cl,6,whisky
+3360,,4,clémentines
+3360,cuillères à soupe,2,mascarpone
+3360,cuillère à soupe,1,persil
+3361,,,sel
+3361,,,poivre
+3361,,1,aubergine
+3361,,0.6666667,tomate
+3361,boule,1,mozzarella
+3361,,,herbes de Provence
+3361,,,huile d'olive
+3362,cuillère à soupe,1,fromage blanc
+3362,,1,oeuf
+3362,cuillères à soupe,3,avoine
+3362,,,édulcorant
+3363,,,poivre
+3363,,,sel
+3363,cuillère à café,1,curry
+3363,,0.5,piment
+3363,cuillère à soupe,1,huile
+3363,,1,oignon
+3363,,1,tomate
+3363,,200,lentilles corail
+3363,gousses,2,ail
+3364,,,sel
+3364,,,poivre
+3364,,1,oignon
+3364,kg,3,tomates pelées
+3364,,1,bouquet garni
+3364,gousses,4,ail
+3365,cuillère à café,1,vanille
+3365,cuillère à café,1,sel
+3365,kg,1.2,sucre
+3365,kg,2,courgette
+3365,,3,citrons
+3366,,9,sel
+3366,,654,farine
+3366,,346,eau
+3366,,208,levain
+3367,,,sel
+3367,,,poivre
+3367,,500,fromage blanc
+3367,kg,1,courgette
+3367,,4,oeufs
+3368,,,sel
+3368,,,poivre
+3368,pincées,2,muscade
+3368,,100,lardons
+3368,,80,beurre
+3368,branches,2,persil
+3368,,2,oignons
+3368,,700,pomme de terre
+3368,brins,4,ciboulette
+3369,,,poivre
+3369,pincée,1,gros sel
+3369,,1,pomme de terre
+3369,cuillère à soupe,1,crème épaisse
+3369,brin,,ciboulette
+3370,,50,beurre tendre
+3370,,50,sucre
+3370,pincée,1,sel
+3370,sachet,1,levure
+3370,,350,farine
+3370,sachet,1,sucre vanillé
+3370,cl,12.5,lait
+3370,,1,oeuf
+3370,cl,50,crème pâtissière
+3370,,100,noisettes
+3370,,100,raisin
+3370,,50,amandes
+3371,,,sel
+3371,,,poivre
+3371,,,piment de Cayenne
+3371,,1,courgette
+3371,gousses,2,ail
+3371,,2,échalotes
+3371,,,herbes de Provence
+3371,,,huile d'olive
+3372,,,sel
+3372,,,poivre
+3372,,50,beurre
+3372,kg,1,champignons de Paris
+3372,cl,20,crème liquide
+3372,,1,citron
+3373,,,muscade
+3373,,,sel
+3373,,,poivre
+3373,,600,courge
+3373,,2,oeufs
+3373,cuillères à soupe,2,crème fraîche épaisse
+3373,,100,gruyère
+3374,,1,oignon
+3374,,,huile
+3374,,,blé
+3374,,,sauce soja
+3374,,10,kombu
+3375,,20,beurre
+3375,,15,maïzena
+3375,cl,35,crème fraîche
+3375,,3,courgettes
+3375,,3,oeufs
+3375,cl,35,lait
+3375,,,Parmesan
+3376,,,sel
+3376,,,poivre
+3376,cuillère à café,1,sucre en poudre
+3376,,3,carottes
+3376,,6,pommes de terre
+3376,cuillères à soupe,2,huile d'olive
+3376,gousse,1,ail
+3376,cuillère à café,1,graine de fenouil
+3376,verre,0.5,bouillon
+3377,,250,farine de blé
+3377,,450,farine de blé
+3377,cuillère à café,1,sucre
+3377,cuillères à café,2,sel
+3377,sachet,1,levure de boulanger
+3377,,5,eau
+3377,,25,graines de lin
+3378,cuillère à café,1,poivre
+3378,cuillère à café,1,sel
+3378,,45,beurre
+3378,bouquet,0.5,persil
+3378,,1,chou-fleur
+3378,cl,15,huile d'olive
+3379,,,sel
+3379,,,poivre
+3379,,1,oignon
+3379,,1,poivron rouge
+3379,,1,carotte
+3379,,1,courgette
+3379,,125,blé
+3379,,,huile d'olive
+3380,cuillère à soupe,1,miel
+3380,,,sel
+3380,,,huile d'olive
+3380,,1,oignon
+3380,,3,sucrines
+3381,,,sel
+3381,,,poivre
+3381,,1,beurre
+3381,,200,lardons
+3381,,4,christophines
+3381,cl,20,crème épaisse
+3382,pincée,,gingembre
+3382,pincée,1,sel
+3382,cuillères,3,huile d'olive
+3382,,1,potimarron
+3382,gousses,2,ail
+3383,cuillère à café,1,sel
+3383,,40,levure de boulanger
+3383,kg,1,farine
+3383,l,0.75,eau
+3384,,,huile
+3384,,,persil
+3384,,1,oignon
+3384,,,sel
+3384,,,poivre
+3384,,100,crème fraîche
+3384,,500,pomme de terre
+3384,gousse,1,ail
+3384,,3,oeufs
+3385,,,sel
+3385,,,poivre
+3385,cuillères à soupe,3,huile
+3385,kg,1,pomme de terre
+3385,,3,oeufs
+3385,cuillères à soupe,3,fécule de pomme de terre
+3386,,,sel
+3386,,,poivre
+3386,,,persil
+3386,cl,20,crème fraîche
+3386,,500,fromage blanc
+3386,,6,pommes de terre
+3386,,2,échalotes
+3386,,,ciboulette
+3387,,,sel
+3387,,,farine
+3387,,1,gruyère râpé
+3387,,7,pommes de terre
+3387,,3,oeufs
+3388,,,poivre
+3388,,,sel
+3388,feuille,,persil
+3388,,1,beurre
+3388,,6,panais
+3388,cuillère à soupe,1,huile de noix
+3388,cuillères à soupe,2,soja
+3388,gouttes,4,tamari
+3389,,,beurre
+3389,,,crème fraîche
+3389,,,épinards
+3389,gousse,1,ail
+3389,,,parmesan râpé
+3389,,,chapelure
+3390,,,sel
+3390,,,poivre
+3390,morceau,1,sucre
+3390,,200,lardons fumés
+3390,boîte,1,tomate
+3390,,1,oignon
+3390,,2,carottes
+3390,kg,1.2,haricots secs
+3390,,4,huile d'olive
+3390,,1,échalote
+3390,gousses,4,ail
+3390,l,0.5,eau
+3390,,1,bouquet garni
+3391,cuillère à café,1,thym
+3391,cuillère à soupe,1,gros sel
+3391,cuillère à soupe,1,huile d'olive
+3391,pincée,1,poivre
+3391,kg,1,pomme de terre
+3391,gousses,2,ail
+3391,feuille,1,laurier
+3392,cuillère à café,1,moutarde
+3392,cuillère à soupe,1,huile
+3392,,250,tofu
+3392,cuillères à soupe,2,soja
+3392,,,ail
+3392,,,herbes de Provence
+3393,,150,crème fraîche
+3393,cuillère à café,0.5,sel
+3393,,80,vinaigre
+3393,l,2,lait entier
+3393,,80,eau
+3394,,,sel
+3394,,,poivre
+3394,,,beurre
+3394,,,persil
+3394,,1,poireau
+3394,,1,oignon
+3394,,0.5,poivron rouge
+3394,,1,carotte
+3394,,1,haricot
+3394,,2,pommes de terre
+3394,gousses,2,ail
+3394,poignée,1,chou de bruxelles
+3395,,,muscade
+3395,,,poivre
+3395,,,sel
+3395,cuillères à soupe,2,farine
+3395,,1,oignon
+3395,bouquet,1,persil
+3395,,1,courgette
+3395,,2,pommes de terre
+3395,,2,oeufs
+3395,cuillère à soupe,1,avoine
+3396,,,sel
+3396,,,poivre
+3396,cuillères à soupe,4,huile
+3396,cuillère à soupe,1,curcuma
+3396,,1,oignon
+3396,,200,riz
+3396,gousses,2,ail
+3396,cl,50,eau
+3397,,,sel
+3397,,,bouillon de légumes
+3397,,1,tomate
+3397,,4,poivrons verts
+3397,,,huile d'olive
+3397,,160,riz
+3398,,15,sucre
+3398,,50,beurre
+3398,,12,carottes
+3398,,1,bouillon de volaille
+3399,morceau,,lard fumé
+3399,,,poivre
+3399,cuillères à soupe,2,huile d'arachide
+3399,cuillères à café,2,huile de sésame
+3399,cl,40,riz
+3399,,2,oeufs
+3399,cuillères à soupe,2,ciboule
+3400,cuillère,1,crème fraîche
+3400,,50,fromage râpé
+3400,,,sel
+3400,,,poivre
+3400,,25,beurre
+3400,sachets,2,purée
+3400,l,1,lait
+3400,cl,30,eau
+3401,,,sel
+3401,,,poivre
+3401,cuillères à soupe,3,huile d'olive
+3401,,500,igname
+3402,,,sel
+3402,,,poivre
+3402,cuillère à soupe,1,thym
+3402,bouquet,1,persil
+3402,,800,pomme de terre
+3402,gousses,3,ail
+3402,cuillères à soupe,4,huile d'olive
+3403,,1,cube de bouillon
+3403,,100,emmental
+3403,,4,courgettes
+3403,verre,1,riz
+3403,,4,échalotes
+3403,,3,oeufs
+3403,cl,20,crème
+3403,cuillères,2,huile d'olive
+3404,cl,20,purée de tomate
+3404,cuillères à café,4,farine
+3404,,20,beurre
+3404,,,gruyère râpé
+3404,kg,1,courgette
+3404,cl,25,lait
+3404,cuillère à café,1,ail
+3404,cuillère à soupe,1,herbes de Provence
+3404,,,sel
+3404,,,poivre
+3405,,,beurre
+3405,,,poivre
+3405,,,sel
+3405,,3,courgettes
+3405,,3,carottes
+3405,cl,20,crème
+3405,,,ail
+3406,,,crème fraîche
+3406,,,sel
+3406,,6,courgettes
+3406,,,herbes de Provence
+3407,sachet,1,levure
+3407,,85,beurre
+3407,,40,sucre
+3407,,365,farine
+3407,cuillère à café,1,sel
+3407,cl,17,lait
+3407,,3,jaunes d'oeuf
+3407,sachets,2,sucre vanillé
+3408,,,crème fraîche
+3408,cuillère à soupe,1,huile
+3408,pincée,1,sel
+3408,,100,farine
+3408,,1,oignon
+3408,,1,oeuf
+3408,cl,10,lait
+3408,,,mayonnaise
+3409,,11,levure
+3409,,10,sel
+3409,,500,farine
+3409,,300,eau
+3410,,,sel
+3410,,8,levure
+3410,,200,farine
+3410,,50,semoule fine
+3410,cl,15,eau
+3411,demi,1,huile
+3411,cuillère à soupe,1,persil
+3411,cuillère à soupe,1,sel
+3411,cuillère à soupe,1,poivre
+3411,cuillère à café,1,safran
+3411,,2,piments
+3411,,,oignon
+3411,,1,tomate
+3411,,250,haricot
+3411,gousse,,ail
+3411,cuillère à soupe,1,concentré de tomates
+3411,demi,1,huile d'olive
+3411,,,eau
+3412,,,sel
+3412,,,poivre
+3412,,8,feuilles de laurier
+3412,,8,pommes de terre
+3412,l,0.5,bouillon de poule
+3413,,2,courgettes
+3413,,1,oeuf
+3413,,50,gruyère
+3413,,50,chapelure
+3414,,,sel
+3414,,,poivre
+3414,branches,2,romarin
+3414,pincées,2,sucre
+3414,,,tomates cerise
+3414,cuillère,1,thé
+3414,gousses,5,ail
+3414,tasse,,huile d'olive
+3414,,10,cerises de terre
+3415,,,calvados
+3415,boules,2,glace
+3416,,,origan
+3416,,,romarin
+3416,tranches,3,pain
+3416,gousses,6,ail
+3416,cl,50,huile d'olive
+3417,,5,blancs d'oeuf
+3417,gouttes,8,jus de citron
+3418,,0.5,levure de boulanger fraîche
+3418,,8,sel
+3418,,305,farine
+3418,,100,farine de seigle
+3418,,240,eau
+3419,,,sel
+3419,,,poivre
+3419,tranches,8,lard fumé
+3419,,2,cubes de bouillon
+3419,,500,haricots verts
+3419,,,ail
+3419,,,matière grasse
+3420,,,muscade
+3420,,,sel
+3420,,,poivre
+3420,,40,beurre
+3420,,500,chair à saucisse
+3420,,2,oeufs
+3420,tasse,0.5,pain
+3420,,2,échalotes
+3420,gousse,1,ail
+3421,grosses,4,crème fraîche
+3421,cuillères à soupe,3,beurre
+3421,,,sel
+3421,,,poivre
+3421,,1,cube de bouillon
+3421,kg,1.5,carotte
+3421,,,eau
+3421,gousse,1,ail
+3422,,8,feuilles de laurier
+3422,,2,oignons
+3422,,8,pommes de terre
+3423,,10,sel
+3423,,20,levure
+3423,,500,farine
+3423,cl,30,eau
+3424,,120,farine de blé
+3424,,,huile de friture
+3424,lamelles,4,courgette
+3424,,6,gambas
+3424,,12,haricots verts
+3424,,4,feuilles de shiso
+3424,,2,shiitakés
+3424,,1,jaune d'oeuf
+3424,cl,17.5,eau
+3425,cuillères à soupe,3,huile
+3425,cuillère à café,1,levure
+3425,pincée,1,sel
+3425,pincée,1,sucre
+3425,,300,farine
+3425,cl,25,eau
+3425,cl,25,lait
+3426,,,sel
+3426,,,poivre
+3426,,,persil
+3426,,80,farine
+3426,cuillères à soupe,2,huile d'olive
+3426,cuillères à soupe,2,crème fraîche
+3426,,30,beurre
+3426,,3,courgettes
+3426,boule,1,mozzarella
+3426,gousse,1,ail
+3426,,2,oeufs
+3426,cl,20,lait
+3427,cuillères à soupe,2,huile de sésame
+3427,cuillères à soupe,2,miel
+3427,cuillères à soupe,2,vinaigre de riz
+3427,pincée,1,sel
+3427,,75,sésame
+3427,,250,nouilles soba
+3427,cuillères à soupe,5,sauce soja
+3427,,5,ciboule
+3428,,,muscade
+3428,,,sel
+3428,,,poivre
+3428,,25,beurre
+3428,,1,céleri
+3429,,,sel
+3429,,200,farine
+3429,,1,persil
+3429,,1,courgette
+3429,,1,citron
+3429,gousses,2,ail
+3429,cuillères à soupe,3,huile d'olive
+3429,,2,oeufs
+3429,cl,20,eau
+3430,,,sel
+3430,,,poivre
+3430,cuillères à soupe,3,huile d'olive
+3430,,8,courgettes
+3431,,,vinaigre d'alcool
+3431,brin,1,thym
+3431,branche,1,romarin
+3431,,2,oignons
+3431,,,piment
+3431,gousse,1,ail
+3431,feuille,,basilic frais
+3431,brin,1,marjolaine
+3431,cuillère à café,1,poivre en grains
+3432,,200,fromage râpé
+3432,tasse,1,huile
+3432,tasses,2,eau
+3432,cuillère,1,thé
+3432,cuillère,1,thé
+3432,tasse,1,farine de maïs
+3433,,,huile
+3433,,,sel
+3433,,,gingembre
+3433,cuillères à café,2,curry
+3433,,1,oignon
+3433,cl,25,crème fraîche
+3433,verres,2,quinoa
+3433,verres,5,eau
+3433,gousse,1,ail
+3434,,,poivre
+3434,,,sel
+3434,,1,sucre
+3434,branches,2,romarin
+3434,branches,4,thym
+3434,,4,carottes
+3434,cuillères,3,huile d'olive
+3434,,4,échalotes
+3435,,,sel
+3435,,,poivre
+3435,,150,beurre
+3435,cl,80,lait demi-écrémé
+3435,,800,patate douce
+3435,cl,60,crème liquide
+3435,gousse,1,ail
+3436,cuillère à soupe,1,crème fraîche
+3436,cuillère à café,1,cumin en poudre
+3436,cuillère à soupe,1,curry
+3436,,,sel
+3436,cuillère à café,1,huile d'olive
+3436,,1,oignon
+3436,,4,courgettes
+3437,,50,beurre
+3437,,,sel
+3437,,,poivre
+3437,cuillères à soupe,4,miel
+3437,kg,1,carotte
+3438,cuillère à café,1,huile d'olive
+3438,pincée,1,sel
+3438,,300,farine de blé
+3438,,3,oeufs
+3439,cuillères à soupe,3,curry
+3439,,300,sucre
+3439,,100,sel
+3439,,4,oignons
+3439,kg,3,courgette
+3439,cuillère à café,0.5,poivre en grains
+3439,cl,60,vinaigre de vin
+3439,cl,60,eau
+3440,,,sel
+3440,,,poivre
+3440,,1,beurre
+3440,,1,poireau
+3440,,150,riz
+3440,cl,15,crème fraîche épaisse
+3441,goutte,1,huile de tournesol
+3441,,,sel
+3441,tasse,1,sarrasin
+3441,,1.5,eau
+3442,,,sel
+3442,,,poivre
+3442,,,thym
+3442,cuillères à soupe,2,huile
+3442,,1,beurre
+3442,,1,oignon
+3442,cl,10,crème fraîche
+3442,,150,gruyère râpé
+3442,,600,tomate
+3442,botte,1,poireau
+3442,gousse,1,ail
+3443,filet,1,huile
+3443,pincée,1,poivre
+3443,pincée,1,sel
+3443,cuillère à café,0.5,cumin en poudre
+3443,cuillères à soupe,3,farine
+3443,,400,riz
+3443,,1,oeuf
+3443,cuillère à soupe,1,lait
+3443,,70,maroilles
+3443,feuilles,6,menthe
+3444,,1,oignon
+3444,,1,courgette
+3444,,4,pommes de terre
+3444,cl,30,lait
+3444,,,gruyère
+3445,,,sel
+3445,cuillère à café,0.5,gingembre
+3445,cl,40,huile
+3445,,5,bananes plantain
+3446,,0.5,levure
+3446,,10,sel
+3446,,500,farine
+3446,,300,eau
+3447,,8,sel
+3447,sachets,2,levure de boulanger
+3447,,250,farine complète
+3447,,150,farine de seigle complète
+3447,,80,flocons d'avoine
+3447,cl,30,eau
+3447,,,graines de tournesol
+3447,,,graines de sésame
+3447,,,graines de lin
+3448,,,sel
+3448,,,poivre
+3448,,,huile
+3448,bouquet,1,persil
+3448,,2,courgettes
+3448,,3,carottes
+3448,,4,pommes de terre
+3448,,4,oeufs
+3448,,80,parmesan râpé
+3449,,,sel
+3449,,,poivre
+3449,cl,10,crème fraîche
+3449,,5,pommes de terre
+3449,,0.5,courge
+3450,,,sucre en poudre
+3450,,1,endive
+3451,,,gruyère râpé
+3451,,,thym
+3451,,,persil
+3451,,1,oignon
+3451,tranches,2,jambon fumé
+3451,,4,chouchou
+3451,gousse,1,ail
+3451,,,béchamel
+3452,,,poivre
+3452,cuillère à café,0.5,sel
+3452,cuillère à café,1,origan
+3452,,2,poivrons rouges
+3452,,1,poivron vert
+3452,,2,oignons
+3452,,150,riz
+3452,cuillères à soupe,3,huile d'olive
+3452,gousse,1,ail
+3452,,350,champignon
+3452,kg,1,tomates pelées
+3452,,50,olives vertes
+3452,cuillère à café,0.5,basilic
+3453,,15,sucre
+3453,,50,beurre
+3453,,12,carottes
+3453,,1,bouillon de volaille
+3454,cuillère à café,1,sel
+3454,cuillères à café,2,sucre
+3454,sachet,1,levure
+3454,cuillère à café,1,levure chimique
+3454,,500,farine
+3454,cl,50,eau
+3455,cuillère à café,1,sel
+3455,,10,sucre
+3455,sachet,1,levure de boulanger
+3455,,100,farine de blé
+3455,,500,semoule
+3455,cl,20,eau
+3456,cuillère à soupe,1,sel
+3456,cuillères à soupe,2,huile
+3456,,12,levure de boulanger
+3456,,100,farine de blé
+3456,,300,farine d'épeautre
+3456,cl,25,eau
+3457,cuillère à soupe,1,moutarde
+3457,,150,haricots de soja
+3457,cuillères à soupe,3,sauce soja
+3457,,,ciboule
+3458,,,thym
+3458,,,sel
+3458,,,poivre
+3458,,2,oignons
+3458,,3,carottes
+3458,tranches,4,lard fumé
+3458,,250,épeautre
+3458,boîte,1,tomates pelées
+3458,branche,1,céleri
+3458,gousse,1,ail
+3459,,20,beurre
+3459,,,poivre
+3459,,250,farine
+3459,pincées,3,sel
+3459,,350,fromage blanc
+3459,,3,oeufs
+3460,,,sucre
+3460,,,sel
+3460,,,poivre
+3460,,1,oignon
+3460,kg,1,tomate
+3460,gousses,2,ail
+3461,,,sel
+3461,,,poivre
+3461,,40,beurre
+3461,dose,1,safran
+3461,,250,riz thaï
+3461,,1,échalote
+3461,gousse,1,ail
+3461,,1,Volaille
+3461,cl,10,vin blanc sec
+3462,,50,beurre
+3462,,1,cube de bouillon
+3462,,3,oignons
+3462,kg,1,pomme de terre
+3462,,1,bouquet garni
+3463,cuillère à café,1,curry
+3463,cuillère à café,1,moutarde
+3463,cuillère à soupe,1,crème fraîche
+3463,grosse,1,farine
+3463,,40,beurre
+3463,,,poulet
+3463,,125,champignons de Paris
+3463,cl,50,bouillon
+3464,,,sel
+3464,,,poivre
+3464,cuillères à soupe,3,huile
+3464,bouquet,1,persil
+3464,,1,poivron jaune
+3464,,1,poivron rouge
+3464,,1,poivron vert
+3464,,500,champignons de Paris
+3464,gousse,1,ail
+3464,,1,échalote
+3465,cl,30,vin rouge
+3465,,,sel
+3465,,,poivre
+3465,cuillère à café,1,sucre
+3465,cuillères à soupe,4,huile d'olive
+3465,,500,échalote
+3465,cuillères à soupe,4,Xérès
+3465,,1,bouillon de volaille
+3466,cuillère à soupe,1,sucre en poudre
+3466,grosse,1,sel
+3466,sachet,0.5,levure chimique
+3466,cuillères à soupe,2,huile
+3466,,450,farine
+3466,,100,semoule fine
+3466,cl,50,eau
+3467,cuillères à soupe,2,huile d'olive
+3467,,600,riz
+3467,,2,riz
+3468,,,sel
+3468,,,poivre
+3468,cuillères à soupe,3,huile
+3468,,50,beurre
+3468,,300,farine
+3468,,3,oeufs
+3468,,50,tomme
+3468,,750,pomme de terre
+3468,,150,blanc de poireau
+3468,,25,échalote
+3469,,,thym
+3469,,,oignon
+3469,,,vinaigre
+3469,,,salicorne
+3469,,,ail
+3469,,,estragon
+3469,,,laurier
+3469,,,poivre en grains
+3470,l,1.5,huile de friture
+3470,,,sel
+3470,,,poivre
+3470,,400,courgette
+3470,sachet,1,levure chimique
+3470,,250,farine
+3470,,3,oeufs
+3470,,180,lait
+3470,cuillères à soupe,3,salade
+3471,bonne,1,sel
+3471,,50,beurre
+3471,cuillères à soupe,2,ail semoule
+3471,cuillères à soupe,2,piment
+3471,cuillères à soupe,8,farine
+3471,kg,1,pomme de terre
+3471,cuillères à soupe,6,paprika
+3471,,,poivre blanc
+3471,,,sel
+3471,pincée,1,sucre
+3471,cl,30,huile
+3471,cuillère à soupe,1,moutarde
+3471,,1,jaune d'oeuf
+3471,cuillère à café,1,jus de citron
+3471,cuillères à soupe,2,crème fraîche épaisse
+3471,,,ciboulette
+3471,pincée,1,échalote
+3471,pincée,1,ail
+3472,,,sésame
+3472,sachet,1,levure
+3472,cuillère à café,1,sel
+3472,,50,sucre
+3472,,100,beurre
+3472,,600,farine
+3472,cl,30,lait
+3472,,1,oeuf
+3473,,100,beurre
+3473,,60,sucre
+3473,sachet,1,levure
+3473,,500,farine
+3473,,10,sel
+3473,,300,lait
+3474,,,gros sel
+3474,l,0.5,huile d'olive
+3474,l,0.25,vinaigre de vin
+3474,kg,2,aubergine
+3474,l,0.5,eau
+3474,,1,petit piment
+3474,gousses,2,ail
+3475,,,thym
+3475,cuillère à café,0.5,romarin
+3475,,2,feuilles de laurier
+3475,,1,oignon
+3475,,2,carottes
+3475,kg,1,flageolet
+3475,,4,oignons blancs
+3475,cuillère à soupe,1.5,huile d'olive
+3475,cuillère à café,0.5,sarriette
+3475,,2,poule
+3475,l,1,eau
+3476,,2,aubergines
+3476,,4,tomates
+3476,,4,courgettes
+3476,,,sel
+3476,,,poivre
+3476,pincée,,curry
+3476,pincée,1,cumin
+3476,pincée,1,muscade
+3476,,1,oignon
+3476,boîte,1,purée de tomate
+3476,gousses,4,ail
+3476,feuilles,3,basilic
+3476,,,huile d'olive
+3476,cl,15,crème liquide
+3477,,,sel
+3477,,,poivre
+3477,,,huile de sésame
+3477,,1,oignon
+3477,,3,tomates
+3477,,6,pommes de terre
+3477,,500,brocoli
+3477,,150,champignons de Paris
+3477,gousse,1,ail
+3477,,,huile d'olive
+3478,,,sel
+3478,,,poivre
+3478,,2,oignons
+3478,,2,tomates
+3478,,1,courgette
+3478,,4,pommes de terre
+3478,,,huile d'olive
+3478,gousses,2,ail
+3478,,,herbes de Provence
+3478,,,basilic
+3479,,,sel
+3479,,,poivre
+3479,,,muscade
+3479,,,crème fraîche
+3479,,5,pommes de terre
+3479,,1,brocoli
+3479,,,lait
+3480,,50,beurre
+3480,sachet,1,levure chimique
+3480,,500,farine
+3480,kg,1,patate douce
+3480,,6,oeufs
+3481,sachet,1,levure
+3481,cuillère à café,1.5,sel
+3481,cuillères à soupe,2,sucre
+3481,,50,beurre
+3481,,500,farine
+3481,cl,28,lait
+3481,,1,oeuf
+3482,,10,gros sel
+3482,,90,sésame
+3483,,25,beurre
+3483,cuillères à soupe,3,sucre
+3483,cuillère à café,1.5,sel
+3483,,450,farine
+3483,cuillères à café,2,levure de boulanger
+3483,cl,18,eau
+3483,cl,9,lait
+3484,sachet,1,levure de boulanger
+3484,cuillère à café,0.5,sel
+3484,,250,farine
+3484,cl,17.5,eau
+3485,,,origan
+3485,,,sel
+3485,,,gruyère râpé
+3485,,1,poivron rouge
+3485,,1,oignon
+3485,,3,courgettes
+3485,cl,40,crème liquide
+3485,,8,oeufs
+3485,,0.5,chèvre
+3485,,,huile d'olive
+3486,,50,gruyère râpé
+3486,cl,25,crème fraîche
+3486,,,muscade
+3486,,,sel
+3486,,,poivre
+3486,,500,pomme de terre
+3486,,2,patates douces
+3487,,,sel
+3487,,,poivre
+3487,,,muscade
+3487,,30,beurre
+3487,,1,potimarron
+3487,cuillères à soupe,4,crème fraîche épaisse
+3487,,150,parmesan râpé
+3488,,,sel
+3488,,,poivre
+3488,,,huile
+3488,,,beurre
+3488,,1,oignon
+3488,barquette,1,lardons
+3488,,5,pommes de terre
+3488,boîte,1,champignons de Paris
+3489,cuillères à soupe,5,huile d'olive
+3489,cuillère à café,1,sel
+3489,,700,farine
+3489,,300,farine complète
+3489,,625,eau
+3490,,,épices
+3490,kg,2,pomme de terre
+3490,cl,20,crème liquide
+3490,demi,,citron
+3490,botte,1,ciboulette
+3491,,,sel
+3491,cuillères,2,huile d'olive
+3491,,1,céleri branche
+3491,,4,pommes de terre
+3492,cuillère à café,1.5,sel
+3492,cuillère à café,1,sucre
+3492,,20,levure
+3492,,450,farine
+3492,cl,30,eau
+3492,,30,son de blé
+3492,,30,graines de lin
+3492,,30,graines de tournesol
+3492,,40,sarrasin
+3493,,10,levure de boulanger
+3493,cuillère à café,1,sucre
+3493,cuillère à café,1,sel
+3493,,500,farine
+3493,cl,15,eau
+3493,cl,15,lait
+3493,cuillères à soupe,2,huile d'olive
+3494,,2,feuilles de laurier
+3494,,1,thym
+3494,feuille,1,poireau
+3494,,3,queues
+3495,,3,poivre blanc
+3495,pincées,2,sel
+3495,cuillère à café,1,gingembre
+3495,cuillère à café,1,muscade
+3495,,6,vinaigre
+3495,,700,sucre en poudre
+3495,,4,oignons
+3495,kg,2,figue
+3496,,,sel
+3496,,,poivre
+3496,cuillère à soupe,1,huile
+3496,,20,beurre
+3496,,2,oignons
+3496,,2,filets mignons
+3496,gousse,1,ail
+3496,tranches,4,bacon
+3496,,3.5,vin blanc sec
+3497,cuillère à café,0.25,muscade
+3497,cl,10,crème fraîche
+3497,kg,1,pomme de terre
+3497,gousse,1,ail
+3497,cl,65,lait
+3497,,,sel et poivre
+3498,cuillère à soupe,0.5,sucre
+3498,,0.5,sel
+3498,sachet,1,levure
+3498,,300,farine
+3498,cl,20,lait
+3498,,1,oeuf
+3499,,,sel
+3499,,,poivre
+3499,,,gruyère râpé
+3499,,,beurre
+3499,,1,courgette
+3499,,,chapelure
+3500,,10,sucre
+3500,,10,sel
+3500,,15,levure
+3500,,500,farine
+3500,cl,15,lait
+3500,cl,10,eau
+3500,,1,oeuf
+3501,,,sel
+3501,,,poivre
+3501,,1,beurre
+3501,kg,1,potiron
+3501,,2,oeufs
+3501,cuillères à soupe,2,crème fraîche épaisse
+3501,,,Parmesan
+3501,,,gruyère
+3501,,,cannelle
+3502,cuillères à soupe,3,sésame
+3502,pincée,1,poivre
+3502,pincée,1,sel
+3502,,,sésame
+3502,pincées,2,cumin en poudre
+3502,pincées,2,coriandre
+3502,,8,carottes
+3502,cuillères à soupe,4,courge
+3502,cuillères à soupe,2,huile d'olive
+3502,cuillères à soupe,3,graines de tournesol
+3502,cuillères à soupe,4,graines de courge
+3503,,,sel
+3503,cuillère à café,0.5,muscade
+3503,,600,pomme de terre
+3503,cuillère à soupe,1,crème fraîche épaisse
+3503,cl,20,lait
+3504,branches,2,thym
+3504,,1,beurre
+3504,,,poivre
+3504,,1,kub or
+3504,,1,oignon
+3504,,500,haricots verts
+3504,gousses,2,ail
+3504,filet,1,huile d'olive
+3505,,,vinaigre d'alcool
+3505,cuillère à café,1,poivre
+3505,,,gros sel
+3505,kg,1,cornichons
+3505,branche,1,estragon
+3506,cuillère à café,1,huile
+3506,verre,1,riz basmati
+3506,verre,1.5,eau
+3506,,,herbes de Provence
+3507,cuillères à café,3,curcuma
+3507,cuillères à café,2,coriandre
+3507,cuillère à café,1,curry
+3507,,5,clous de girofle
+3507,cuillères à café,2,gingembre
+3507,cuillère à café,1,safran
+3507,,2,oignons
+3507,,300,riz basmati
+3507,grosse,1,raisins secs
+3507,cuillère à café,1,cannelle
+3507,poignée,1,noix de cajou
+3508,cuillère à café,1,vanille
+3508,boîte,1,lait concentré sucré
+3508,boîte,1,lait de coco
+3508,,,cannelle
+3508,zeste,,citron vert
+3508,cuillère à café,1,amandes
+3509,cuillère à soupe,1,farine
+3509,cuillère à café,1,sucre
+3509,branche,1,thym
+3509,,2,oignons
+3509,,5,tomates
+3509,,5,aubergines
+3509,gousse,1,ail
+3509,,,laurier
+3509,cuillère à café,,herbes de Provence
+3509,,,huile d'olive
+3510,,,sel
+3510,,,poivre
+3510,,10,beurre
+3510,,,persil
+3510,,100,bolet
+3510,,,ail
+3511,cuillère à café,1,sel
+3511,cuillères à soupe,4,huile d'olive
+3511,cuillère à café,1,levure de boulanger
+3511,,460,farine
+3511,,250,eau
+3512,,,sel
+3512,,,poivre
+3512,,400,tomates concassées
+3512,,1,courgette
+3512,,10,Fleurs
+3512,tasse,1.5,café
+3512,,1,bouillon
+3512,,1,oeuf
+3512,,,basilic
+3512,,0.5,jus de citron
+3512,,,herbes de Provence
+3512,,,huile d'olive
+3513,,1,oignon
+3513,cl,60,bouillon de volaille
+3513,,200,riz
+3513,zeste,,citron
+3514,,30,beurre
+3514,,600,patate douce
+3514,cl,15,crème semi-épaisse
+3514,,,sel et poivre
+3515,pincée,1,sel
+3515,cuillère à soupe,1,sucre
+3515,,40,beurre
+3515,,400,carotte
+3515,cl,10,eau
+3516,,4,galettes (bretonnes)
+3516,,4,saucisses
+3517,,,sel
+3517,,,poivre
+3517,,20,beurre
+3517,,100,carotte
+3517,,500,brocoli
+3517,,3,échalotes
+3517,,0.25,bouillon
+3517,,0.25,crème fraîche liquide
+3518,,40,lardons fumés
+3518,,30,beurre
+3518,,1,pomme de terre
+3518,cuillère à soupe,1,crème fraîche épaisse
+3518,cuillère à café,1,herbes de Provence
+3519,cuillère à café,0.5,sel
+3519,,100,beurre
+3519,,130,farine
+3519,,55,eau
+3520,pincée,1,sel
+3520,sachet,0.5,levure
+3520,cuillères à soupe,2,sucre
+3520,,300,farine
+3521,,,thym
+3521,,,sel
+3521,,,poivre
+3521,,6,tomates
+3521,,3,poivrons
+3521,,500,torsades
+3521,,3,échalotes
+3521,,12,petits piments
+3521,,250,mayonnaise
+3521,,,ciboulette
+3522,,,poivre
+3522,,,fleur de sel
+3522,,2,courgettes
+3522,,50,parmesan râpé
+3522,,,citron
+3522,cuillères,3,huile d'olive
+3522,,50,pignons
+3522,gousse,1,ail
+3522,feuille,,basilic
+3523,pincées,3,épices
+3523,,,poivre
+3523,,,sel
+3523,cuillère à soupe,1,huile de tournesol
+3523,,400,carotte
+3524,cuillère à café,1,sel
+3524,,12,levure de boulanger fraîche
+3524,,375,farine
+3524,,300,eau
+3525,,,huile de friture
+3525,cuillères à soupe,4,sel
+3525,,,farine
+3525,,2,courgettes
+3526,,400,pâtes
+3526,,,sel
+3526,,,poivre
+3526,,,huile d'olive
+3526,,3,tomates
+3526,pot,1,basilic
+3526,gousses,2,ail
+3527,,,sel
+3527,,,poivre
+3527,,1,feuille de laurier
+3527,branche,1,thym
+3527,,,beurre
+3527,,100,lard fumé
+3527,,3,oignons
+3527,kg,1,haricots coco
+3528,verre,1,huile
+3528,cuillères à soupe,2,huile d'olive
+3528,cuillère à soupe,1,sel
+3528,demi,1,levure
+3528,,100,farine
+3528,,750,semoule fine
+3528,,,eau
+3529,,,colorant alimentaire
+3529,,25,farine
+3529,,8,sucre
+3529,,8,sel
+3529,cl,20,mirin
+3529,,600,cabillaud
+3529,,2,blancs d'oeuf
+3530,,,poivre
+3530,,,sel
+3530,cuillère à café,0.25,muscade
+3530,kg,1,pomme
+3530,gousse,1,ail
+3530,cl,65,lait
+3530,cl,10,crème semi-épaisse
+3531,,750,pomme de terre
+3531,cuillères à soupe,2,huile d'olive
+3531,cuillère à café,0.5,sel
+3531,cuillère à café,0.25,poivre
+3531,cuillère à café,1,herbes de Provence
+3532,pincée,1,poivre
+3532,pincée,1,sel
+3532,,65,farine de blé
+3532,,220,brocoli
+3532,,1,oeuf
+3532,,30,Parmesan
+3532,,1,ail
+3532,,,huile d'olive
+3533,,,sel
+3533,,,poivre
+3533,,,thym
+3533,,1,oignon
+3533,grosse,1,tomates concassées
+3533,,2,poivrons
+3533,,2,courgettes
+3533,,2,aubergines
+3533,gousses,2,ail
+3533,,,laurier
+3533,cuillères à soupe,3,huile d'olive
+3534,cl,10,crème fraîche
+3534,,80,gruyère râpé
+3534,,4,pommes de terre
+3534,,100,roquefort
+3535,,20,levure
+3535,,20,sel
+3535,,30,sucre semoule
+3535,,700,farine
+3535,,300,farine de seigle
+3535,,500,eau
+3535,,150,levain
+3535,,150,crème fraîche épaisse
+3535,,10,poudre à lever
+3535,,10,graine de fenouil
+3536,,,sel
+3536,,,poivre
+3536,,,épices
+3536,,1,oignon
+3536,,3,tomates
+3536,,2,courgettes
+3536,,1,aubergine
+3536,cuillères à soupe,2,crème allégée
+3536,,,basilic
+3536,,,huile d'olive
+3537,cuillère à café,1.5,levure de boulanger
+3537,cuillère à café,1,sel
+3537,,500,semoule
+3537,cuillères à soupe,2,huile d'olive
+3538,,,sel
+3538,,,poivre
+3538,,30,beurre
+3538,,125,farine
+3538,,3,oeufs
+3538,cl,23.5,lait
+3539,pincée,1,poivre
+3539,pincée,1,sel
+3539,,20,beurre
+3539,cuillère à café,1,miel
+3539,botte,1,navet
+3539,cuillères à café,2,sauce soja
+3539,verre,0.5,eau
+3540,,,sel
+3540,,,poivre
+3540,cuillère à soupe,1,sucre glace
+3540,,1,oignon
+3540,,,huile d'olive
+3540,,1,fenouil
+3540,cuillère à café,1,mélange d'épices massala
+3541,,100,gruyère râpé
+3541,,,sel
+3541,,,poivre
+3541,kg,1,pomme de terre
+3541,,1,butternut
+3541,cl,60,crème liquide
+3542,cuillère à café,1,sel
+3542,cuillère à soupe,1,sucre
+3542,sachet,1,levure de boulanger
+3542,,500,farine
+3542,cl,40,eau
+3542,cuillères à soupe,3,huile d'olive
+3542,,,graines de nigelle
+3543,cuillères à café,2,sel
+3543,,400,farine
+3543,sachet,1,levure de boulanger sèche
+3543,cl,33,eau
+3543,,130,semoule
+3544,,,bouillon de légumes
+3544,,1,poivron jaune
+3544,,6,tomates cerise
+3544,,2,carottes
+3544,,1,courgette
+3544,,1,maïs
+3544,,6,échalotes
+3544,,6,champignons de Paris
+3544,,6,pommes de terre
+3544,,,romarin
+3544,,,huile d'olive
+3544,,,herbes
+3544,gousse,1,ail
+3545,,100,beurre tendre
+3545,,15,levure
+3545,,40,sucre
+3545,,10,sel
+3545,,500,farine
+3545,,30,lait
+3545,,300,eau
+3546,,,muscade
+3546,,,sel
+3546,,,poivre
+3546,,1,pâte feuilletée
+3546,,100,lardons
+3546,,2,courgettes
+3546,cl,20,crème fraîche
+3546,,2,oeufs
+3546,,1,fromage de chèvre
+3547,,,sel
+3547,,,poivre
+3547,,,gingembre
+3547,,,cumin
+3547,,2,carottes
+3547,,1,rutabaga
+3547,,1,panais
+3547,,4,topinambours
+3547,,,basilic
+3547,,500,bouillon de volaille
+3547,,,huile d'olive
+3548,,,sel
+3548,,,poivre
+3548,grosses,2,crème fraîche
+3548,,4,tomates
+3548,,3,courgettes
+3548,,100,Parmesan
+3548,,5,oeufs
+3548,,,ail
+3549,,,poivre
+3549,,,sel
+3549,pincée,1,curcuma
+3549,,5,courgettes
+3549,cuillères à soupe,3,huile d'olive
+3550,,1,oignon
+3550,,6,tomates
+3550,cuillères à soupe,4,huile d'olive
+3550,cuillères à soupe,6,chapelure
+3550,cuillères à soupe,4,Parmesan
+3551,cuillères à soupe,2,thym
+3551,,,cumin
+3551,,,sel
+3551,,,poivre
+3551,,2,oignons
+3551,,1,poivron vert
+3551,,2,poivrons rouges
+3551,,,riz basmati
+3551,gousses,2,ail
+3551,,,poivre de Cayenne
+3551,cuillères à soupe,2,huile d'olive
+3552,cuillères à soupe,8,crème fraîche
+3552,,8,pommes de terre
+3552,cuillères à soupe,2,basilic
+3552,gousses,2,ail
+3552,,2,échalotes
+3552,cuillères à soupe,2,ciboulette
+3553,,,muscade
+3553,,,sel
+3553,,,poivre
+3553,,70,fromage râpé
+3553,,40,maïzena
+3553,l,0.5,lait demi-écrémé
+3553,,3,oignons
+3553,,1,chou-fleur
+3553,,4,pommes de terre
+3554,cl,30,crème fraîche
+3554,,,oignon
+3554,,4,courgettes
+3554,,,citron
+3554,,,herbes de Provence
+3554,cuillères à soupe,3,huile d'olive
+3555,,,sel
+3555,,,poivre
+3555,,,gruyère râpé
+3555,cl,20,crème fraîche
+3555,,3,courgettes
+3555,,4,carottes
+3555,,3,oeufs
+3555,,,ail
+3556,pot,1,crème fraîche
+3556,,,huile d'olive
+3556,,500,courgette
+3556,filets,5,anchois
+3556,gousses,3,ail
+3556,feuille,,basilic
+3556,,,Parmesan
+3557,cuillères à soupe,4,huile
+3557,,1,beurre
+3557,,2,oignons
+3557,kg,1,pomme de terre
+3558,,,sel
+3558,l,1,lait entier
+3558,,,présure
+3559,,,sel
+3559,,,poivre
+3559,,1,oignon
+3559,,2,poivrons
+3559,,2,aubergines
+3559,,4,tomates
+3559,,2,courgettes
+3559,,0.5,citron
+3559,,,huile d'olive
+3560,,50,fromage râpé
+3560,,,sel
+3560,,,poivre
+3560,cl,20,crème fraîche
+3560,kg,1,bette à carde
+3560,cuillère à soupe,1,pastis
+3561,,,sel
+3561,,,poivre
+3561,,2,courgettes
+3561,gros,1,crème fraîche épaisse
+3561,,,gruyère
+3561,,,ciboulette
+3562,,,sel
+3562,,,poivre
+3562,cl,25,huile d'olive
+3562,,12,pommes de terre
+3563,,,thym
+3563,,,sel
+3563,,,poivre
+3563,,2,tomates
+3563,,,lardons fumés
+3563,,1,oignon
+3563,kg,1,chanterelle
+3563,,,huile d'olive
+3564,cuillère à café,0.5,levure
+3564,,,sel
+3564,cl,15,huile
+3564,kg,1,semoule
+3564,cl,40,eau
+3565,,,poivre
+3565,,,sel
+3565,,125,farine
+3565,,200,chou-fleur
+3565,,1,oeuf
+3565,,3,lait
+3566,,,sel
+3566,,,coriandre
+3566,,,chili
+3566,,,curcuma
+3566,,3,tomates
+3566,,1,oignon
+3566,,500,aubergine
+3566,,,feuilles de coriandre
+3566,,2,piments verts
+3567,,250,sucre
+3567,,,cerises
+3567,l,1,eau
+3568,,,sel
+3568,,,poivre
+3568,,,huile
+3568,,1,farine
+3568,,2,courgettes
+3568,,2,oeufs
+3569,,,beurre
+3569,,,vin rouge
+3569,,,poivre blanc
+3569,,,gros sel
+3569,,,thym
+3569,,1,oignon
+3569,,1,chou rouge
+3570,pincée,1,muscade
+3570,,,aneth
+3570,,,sel
+3570,,,poivre
+3570,,3,courgettes
+3570,,4,oeufs
+3570,cl,20,crème liquide
+3570,,200,saumon fumé
+3570,cuillère à soupe,1,huile d'olive
+3571,,,sel
+3571,cuillère à soupe,1,vinaigre
+3571,cuillère à soupe,1,huile d'olive
+3571,,1,oignon
+3571,,1,tomate
+3571,,1,fenouil
+3571,cuillère à soupe,1,crème
+3572,,,poivre
+3572,,,sel
+3572,cuillère à café,1,vinaigre balsamique
+3572,,150,lardons
+3572,,500,chou de bruxelles
+3572,,150,champignons de Paris
+3573,,,épices
+3573,,,sel
+3573,,,poivre
+3573,,,lait demi-écrémé
+3573,,2,courgettes
+3573,,1,pomme de terre
+3573,,,herbes
+3574,,,sel
+3574,,,poivre
+3574,,,persil
+3574,,,thym
+3574,,,origan
+3574,,2,poireaux
+3574,,3,courgettes
+3574,,5,carottes
+3574,,4,tomates
+3574,cl,1.5,huile d'olive
+3574,,2,fenouil
+3574,,4,champignons de Paris
+3574,,2,ail
+3574,bouquet,1,basilic
+3574,,,ciboulette
+3575,,,persil
+3575,,,sel
+3575,,,poivre
+3575,cuillères à café,2,curry
+3575,cuillères à soupe,2,farine
+3575,,100,gruyère râpé
+3575,,3,courgettes
+3575,,4,oeufs
+3575,cl,20,crème fleurette
+3575,cuillères à soupe,2,huile d'olive
+3575,,,basilic
+3576,cuillères à soupe,2,huile d'olive
+3576,cuillère à café,1,Ras el Hanout
+3576,,1,poivron
+3576,,1,oignon
+3576,,2,pommes de terre
+3576,,200,potiron
+3576,feuilles,2,chou
+3577,,,sel
+3577,,,poivre
+3577,,1,beurre
+3577,kg,1,petits pois
+3577,,3,échalotes
+3577,,1,bouillon de volaille
+3577,grosse,1,crème fraîche épaisse
+3577,feuille,,salade
+3578,,,sel
+3578,,,poivre
+3578,,1,feuille de laurier
+3578,,1,oignon
+3578,,1,poivron rouge
+3578,,2,poivrons jaunes
+3578,,2,poivrons verts
+3578,gousses,2,ail
+3578,,,huile d'olive
+3579,,1,oignon
+3579,,1,carotte
+3579,,1,chorizo
+3579,bol,1,riz
+3579,bols,2,eau
+3580,,,sel
+3580,,,poivre
+3580,cuillères à soupe,2,farine
+3580,,,muscade
+3580,,150,emmental
+3580,cl,150,crème fraîche
+3580,kg,1,brocoli
+3580,l,0.5,lait
+3581,,,sel
+3581,,,poivre
+3581,,,persil
+3581,,,beurre
+3581,,,lactaire délicieux
+3582,,100,sucre semoule
+3582,cl,20,vinaigre de riz
+3582,cuillère à soupe,1,sel
+3582,,250,gingembre
+3583,,,sel
+3583,,,poivre
+3583,cuillères à soupe,2,huile d'olive
+3583,,1,tomate
+3583,,400,aubergine
+3583,gousse,1,ail
+3584,kg,1,haricots verts
+3584,,2,poivrons rouges
+3584,gousses,6,ail
+3584,,,sel
+3585,,,sel
+3585,,,poivre
+3585,,,persil
+3585,,50,crème fraîche
+3585,,50,beurre
+3585,,4,oignons
+3585,,4,betteraves
+3586,cuillère à café,1,curcuma
+3586,,1,bouillon de légumes
+3586,cuillères à soupe,2,huile
+3586,,350,riz
+3586,,2,échalotes
+3586,cl,5,vin blanc
+3586,,200,petits pois
+3586,,,eau
+3587,,,sel
+3587,,,poivre
+3587,,,huile d'olive
+3587,,2,aubergines
+3587,gousses,2,ail
+3587,,,parmesan râpé
+3588,,,vinaigre d'alcool
+3588,,,gros sel
+3588,,,poivre en grains
+3588,,,carotte
+3588,,,courgette
+3588,,,aubergine
+3588,,,champignon
+3588,,,chou
+3588,,,câpres
+3589,cuillères à soupe,4,huile
+3589,brin,1,thym
+3589,,2,oignons
+3589,,1,aubergine
+3589,,2,poivrons rouges
+3589,,2,courgettes
+3589,,500,tomate
+3589,gousses,3,ail
+3589,feuille,1,laurier
+3589,,,sel et poivre
+3590,cuillère à café,1,curry
+3590,,0.5,piment
+3590,cuillère à soupe,1,huile
+3590,,1,oignon
+3590,,1,tomate
+3590,,200,lentilles corail
+3590,gousses,2,ail
+3590,,,sel et poivre
+3591,,,vinaigre balsamique
+3591,,1,oignon
+3591,,50,champignon noir
+3591,,2,poivrons verts
+3591,,2,poivrons rouges
+3591,,2,carottes
+3591,,300,germes de soja
+3591,,,sauce soja
+3592,,,romarin
+3592,,,thym
+3592,,,sel
+3592,,,poivre
+3592,,,sucre en poudre
+3592,,,huile d'olive
+3592,,300,oignon
+3592,kg,1.5,tomate
+3592,,500,pomme de terre
+3592,gousses,2,ail
+3593,,2,cubes de bouillon
+3593,,50,beurre
+3593,,250,coquillettes
+3593,l,1,eau
+3594,,,muscade
+3594,,,poivre
+3594,,,sel
+3594,,50,fromage râpé
+3594,,30,farine
+3594,,25,beurre
+3594,,1,chou-fleur
+3594,,1,bouillon de volaille
+3594,cl,40,eau
+3594,cl,5,crème
+3595,,,sel
+3595,,,poivre
+3595,cuillère à soupe,1,huile
+3595,,750,courgette
+3596,,60,vermicelles
+3596,,300,riz
+3596,cuillères à soupe,2,huile d'olive
+3596,cuillère à café,1,arôme de légumes
+3596,,,sel et poivre
+3597,,1,romarin
+3597,,1,thym
+3597,pincée,1,gros sel
+3597,,1,piment
+3597,,1,feuille de laurier
+3597,,10,poivre
+3597,,3,ail
+3597,feuilles,4,basilic
+3597,feuille,1,sauge
+3597,,,huile d'olive
+3598,,,sel
+3598,,,poivre
+3598,cuillères,3,huile d'olive
+3598,botte,,radis
+3598,gousse,1,ail
+3598,grosse,1,amandes en poudre
+3598,grosse,1,parmesan râpé
+3599,cuillère à café,1,sucre
+3599,,10,beurre
+3599,cuillère à café,1,gros sel
+3599,kg,1,marrons
+3599,l,1,lait
+3599,cl,50,crème
+3600,,10,sel
+3600,,0.5,levure
+3600,,500,farine
+3600,,300,eau
+3601,cuillère à café,1.5,sel
+3601,,30,levure
+3601,,700,farine
+3601,cl,45,eau
+3601,,1,moules
+3602,pincée,1,sel
+3602,tours de moulin,2,poivre
+3602,cuillère à café,1,persil
+3602,,30,beurre
+3602,,1,oignon
+3602,,300,champignon
+3602,,2,échalotes
+3603,,1,oignon
+3603,,7,bananes plantain
+3603,gousses,2,ail
+3603,,,pieds
+3603,,100,fromage râpé
+3603,,50,beurre
+3603,cuillères à soupe,3,farine
+3603,l,0.75,lait
+3604,,,huile d'olive
+3604,branches,2,persil
+3604,,3,aubergines
+3604,,,citron
+3604,,1,ail
+3605,,1,cube de bouillon
+3605,,100,emmental
+3605,,1,courgette
+3605,cl,20,crème fraîche épaisse
+3606,,100,beurre
+3606,,100,farine
+3606,,100,Parmesan
+3606,,,muscade
+3606,,1,oignon
+3606,,1,courge
+3606,,1,échalote
+3606,,1,bouquet garni
+3606,cl,15,crème fraîche liquide
+3607,cl,20,purée de tomate
+3607,,25,beurre
+3607,,0.5,oignon
+3607,,500,fèves
+3607,,1,bouquet garni
+3607,cl,5,vin blanc sec
+3607,gousse,1,ail
+3608,boîte,1,haricots verts
+3608,tranches,4,lard
+3608,gousses,2,ail
+3608,boîte,1,fromage frais
+3608,,1,brique
+3609,,,sel
+3609,,,poivre
+3609,,1,tomate
+3609,,2,courgettes
+3609,,1,aubergine
+3609,,1,oignon
+3609,gousses,2,ail
+3609,cuillères à soupe,2,huile d'olive
+3609,,,herbes de Provence
+3610,,,sel
+3610,,,poivre
+3610,,,persil
+3610,,8,tomates
+3610,,4,aubergines
+3610,,,huile d'olive
+3610,,,ail
+3611,,,sel
+3611,kg,1.2,cèpes
+3611,,,eau
+3612,,,gruyère râpé
+3612,,,beurre
+3612,,,muscade
+3612,,,sel
+3612,,,poivre
+3612,,1,lardons fumés
+3612,,6,pommes de terre
+3612,cl,20,crème
+3612,,1,jaune d'oeuf
+3613,,20,beurre
+3613,,,sucre
+3613,,8,abricots
+3614,,,gruyère râpé
+3614,,,muscade
+3614,,,sel
+3614,,,poivre
+3614,,1,tomate
+3614,,,persil
+3614,,1,chou-fleur
+3614,pot,1,crème fraîche liquide
+3614,gousse,1,ail
+3615,cuillères à soupe,3,huile
+3615,,1,butternut
+3616,,,fromage râpé
+3616,,,sel
+3616,,,poivre
+3616,,2,courgettes
+3616,,,huile d'olive
+3617,,,huile d'olive
+3617,bottes,2,asperge
+3618,,,persil
+3618,,,sel
+3618,,,poivre
+3618,cuillère à soupe,1,miel
+3618,cuillère à soupe,1,vinaigre de vin
+3618,,30,beurre
+3618,,1,céleri
+3619,,240,farine
+3619,,75,huile d'olive
+3619,,100,eau
+3619,,,sel et poivre
+3619,cuillère à café,1,herbes de Provence
+3620,,1,beurre
+3620,,50,fromage râpé
+3620,,,sel
+3620,,,poivre
+3620,,,thym
+3620,,2,tomates
+3620,,1,céleri
+3620,gousse,1,ail
+3620,,,laurier
+3620,cuillère à soupe,1,jus de citron
+3621,,,sel
+3621,,,poivre
+3621,,100,beurre
+3621,kg,1,topinambour
+3621,cuillères à soupe,4,crème fraîche épaisse
+3622,,,sel
+3622,,1,poivron rouge
+3622,boîte,1,tomates pelées
+3622,gousses,2,ail
+3622,,0.5,sucre en morceaux
+3622,,,huile d'olive
+3623,,3,oignons
+3623,,250,lardons fumés
+3623,,9,pommes de terre
+3623,cl,50,crème liquide
+3624,,,sel
+3624,,150,gruyère râpé
+3624,,60,beurre
+3624,cuillère à café,1,muscade
+3624,cl,25,crème fraîche
+3624,cuillères,3,farine
+3624,branches,3,persil
+3624,kg,3,citrouille
+3624,gousses,6,ail
+3624,,4,oeufs
+3624,cuillères à soupe,3,chapelure
+3624,,,mélange 5 baies
+3625,,,sésame
+3625,,3,sel
+3625,,75,sucre
+3625,,75,huile
+3625,,50,levure
+3625,,500,farine
+3625,,200,eau
+3625,,1,jaune d'oeuf
+3626,,,sel
+3626,cuillère à soupe,1,huile
+3626,cuillère à café,1,sucre roux
+3626,cuillère à café,1,levure
+3626,,2,yaourts
+3626,,300,farine
+3626,,1,oeuf
+3627,cl,5,huile d'olive
+3627,,6,pommes de terre
+3627,gousse,1,ail
+3627,,,basilic
+3628,,4,poivrons rouges
+3628,,2,fromage de chèvre
+3628,,,herbes de Provence
+3629,,,piment d'Espelette
+3629,,,sel
+3629,cuillères à soupe,3,huile de tournesol
+3629,kg,1,pomme de terre
+3629,,,herbes de Provence
+3630,,,sel
+3630,,,poivre
+3630,,,huile d'olive
+3630,,2,tomates
+3630,,1,courgette
+3630,,1,aubergine
+3630,,,mozzarella
+3630,gousses,3,ail
+3630,feuille,,basilic
+3631,,,piment
+3631,goutte,,huile de sésame
+3631,cuillère,1,sucre en poudre
+3631,,,huile de friture
+3631,,2,poivrons
+3631,bottes,2,oignon
+3631,,1,chou chinois
+3631,poignées,2,haricot
+3631,poignées,2,germes de soja
+3631,cuillères,2,sauce soja
+3631,cuillère à café,1,mélange d'épices 5 parfums
+3631,cuillère à café,1,nuoc mam
+3632,,2,cubes de bouillon
+3632,,2,oignons
+3632,,4,riz
+3633,,,sel
+3633,,,poivre
+3633,,100,lardons
+3633,,2,oignons
+3633,,4,tomates
+3633,,2,aubergines
+3633,gousses,2,ail
+3634,cuillère à soupe,1,sucre fin
+3634,,,sel
+3634,,,huile
+3634,sachet,1,levure
+3634,,60,beurre
+3634,,500,farine
+3634,l,0.25,lait
+3634,,2,oeufs
+3635,,,sel
+3635,cuillère à café,0.5,muscade
+3635,,600,pomme de terre
+3635,cuillère à soupe,1,crème fraîche épaisse
+3635,cl,20,lait
+3636,,,sel
+3636,,,poivre
+3636,,,muscade
+3636,,,curry
+3636,cl,20,crème fraîche
+3636,,50,beurre
+3636,,2,carottes
+3636,,1,potimarron
+3636,,1,pomme de terre
+3637,,,lardons
+3637,,,cumin
+3637,,,poivre
+3637,,,sel
+3637,,1,poivron
+3637,,1,courgette
+3637,,1,oignon blanc
+3637,,,champignons de Paris
+3637,,,huile d'olive
+3637,,,pomme de terre
+3638,,10,beurre
+3638,cuillère à café,0.25,muscade
+3638,cuillère à soupe,1,sucre en poudre
+3638,kg,1,navet
+3638,cuillère à café,0.5,cannelle
+3638,,,sel et poivre
+3639,,,gros sel
+3639,,,sel
+3639,,500,farine
+3639,verre,1,eau
+3639,,1,jaune d'oeuf
+3640,,,sel
+3640,,,poivre
+3640,cl,20,crème fraîche
+3640,kg,1,haricots verts
+3640,,3,pommes de terre
+3640,gousses,2,ail
+3641,,,sel
+3641,,,poivre
+3641,cl,20,crème fraîche
+3641,,4,poireaux
+3641,cl,20,lait
+3641,,3,oeufs
+3642,,1,levure
+3642,,500,farine
+3642,,2,oeufs
+3643,,,sucre
+3643,,,sel
+3643,,,poivre
+3643,,,beurre
+3643,,4,endives
+3644,pincées,3,sel
+3644,morceaux,3,sucre
+3644,,5,tomates
+3644,cuillères à soupe,3,huile d'arachide
+3644,,6,poivrons rouges
+3644,gousse,1,ail
+3645,,,poivre
+3645,,,sel
+3645,cuillères à soupe,2,huile d'olive
+3645,,,cumin en poudre
+3645,,60,fromage râpé
+3645,,50,farine
+3645,,350,pois chiches
+3645,,2,oeufs
+3645,cuillères à soupe,4,chapelure
+3646,,1,cube de bouillon
+3646,kg,1,champignons de Paris
+3646,cuillère à soupe,1,huile d'olive
+3646,,,crème végétale
+3647,pincées,2,cumin
+3647,,,beurre
+3647,,,persil
+3647,,,sel
+3647,,,poivre
+3647,kg,1,carotte
+3647,pincées,2,paprika
+3647,,,bouillon
+3648,,,emmental
+3648,,200,polenta
+3648,l,1,lait
+3649,,,sel
+3649,,,poivre
+3649,pincée,1,muscade
+3649,cl,20,crème fraîche
+3649,kg,1,carotte
+3649,,100,gruyère
+3649,,1,fromage de chèvre
+3650,,100,comté
+3650,,1,beurre
+3650,pincée,1,muscade
+3650,gousses,2,ail
+3650,,800,pomme de terre
+3650,cl,22,crème fleurette
+3650,,2,oeufs
+3651,,,sel
+3651,,,poivre
+3651,,100,beurre
+3651,kg,1.5,poireau
+3651,,1,échalote
+3652,,,sel
+3652,,,poivre
+3652,,10,tomates
+3652,,2,aubergines
+3652,,6,courgettes
+3652,cuillères à soupe,6,huile d'olive
+3652,,1,bouquet garni
+3653,,,curry
+3653,,2,cubes de bouillon
+3653,pincées,3,sel
+3653,,2,oignons
+3653,kg,1,patate douce
+3653,cl,20,lait de coco
+3654,,,poivre
+3654,,,sel
+3654,pincée,1,muscade
+3654,brin,1,thym
+3654,,1,feuille de laurier
+3654,,30,beurre
+3654,,2,carottes
+3654,,2,oignons
+3654,,250,lard
+3654,kg,1,topinambour
+3654,,2,échalotes
+3654,gousses,2,ail
+3654,cl,10,vin blanc
+3655,,1,oignon
+3655,,,fromage râpé
+3655,,,muscade
+3655,,,sel
+3655,,,poivre
+3655,cuillères à soupe,3,farine
+3655,,10,carottes
+3655,,2,courgettes
+3655,,2,pommes de terre
+3655,cl,20,crème épaisse
+3655,,2,oeufs
+3655,verre,1,lait
+3655,,1,échalote
+3656,,20,gruyère râpé
+3656,,,sel
+3656,,,poivre
+3656,,190,purée de tomate
+3656,,2,aubergines
+3656,cuillère à café,1,ail
+3656,cuillère à café,1,basilic
+3657,,,beurre
+3657,,,persil
+3657,,,sel
+3657,,,poivre
+3657,,2,oignons
+3657,,2,boulgour
+3657,,2,quinoa
+3657,,,eau
+3658,cuillère à café,1,curry
+3658,,1,oignon
+3658,,120,riz basmati
+3658,cl,20,lait de coco
+3658,cl,75,bouillon de volaille
+3658,,1,pomme
+3658,,,feuilles de coriandre
+3658,cuillères à soupe,3,huile d'olive
+3659,,150,fromage râpé
+3659,cuillères à soupe,2,farine
+3659,,800,cardon
+3659,cl,20,crème liquide
+3659,cl,10,lait
+3660,,2,poivrons
+3660,,2,courgettes
+3660,,200,champignon
+3660,cuillères à soupe,2,huile d'olive
+3660,cuillère à café,0.5,sel
+3660,cuillère à café,0.25,poivre
+3661,,,huile
+3661,,,sel
+3661,,4,maïs
+3662,,,huile d'olive
+3662,,0.5,cube de bouillon
+3662,,1,oignon
+3662,verres,2,riz
+3662,verres,4,eau
+3663,cuillères à soupe,3,huile
+3663,cuillères à soupe,2,sésame
+3663,cuillère à soupe,1,curry
+3663,,500,carotte
+3663,,2,poireaux
+3663,cuillères à soupe,2,soja
+3664,,,poivre
+3664,,,sel
+3664,cuillères à café,3,fond de veau
+3664,,,persil
+3664,,1,oignon
+3664,,30,pommes de terre
+3664,,,ail
+3664,cl,25,eau
+3664,,,huile d'olive
+3665,,5,sel
+3665,,50,vinaigre balsamique
+3665,,3,piments
+3665,,50,gingembre
+3665,,500,tomate verte
+3665,,1,pomme
+3665,,70,cassonade
+3665,,50,raisin
+3666,pincée,1,sel
+3666,,50,sucre
+3666,,250,vinaigre de riz
+3666,,2,gingembre
+3667,cuillères à soupe,2,huile d'olive
+3667,cuillère à café,1,cumin
+3667,,60,sucre
+3667,,800,courgette
+3667,cuillères à café,2,carvi
+3668,,,poivre
+3668,,,sel
+3668,,1,oignon
+3668,,8,pommes de terre
+3668,,60,cheddar
+3668,,200,crème liquide
+3668,cuillères à soupe,2,huile d'olive
+3668,cl,10,eau
+3669,,,sel
+3669,,,poivre
+3669,,200,crème fraîche
+3669,,1,oignon
+3669,,2,brocolis
+3669,cuillères à soupe,2,huile d'olive
+3669,,1,tomates pelées
+3669,,1,ail
+3669,feuilles,4,basilic frais
+3669,,50,Parmesan
+3670,,,sel
+3670,,,poivre
+3670,,75,farine
+3670,,2,courgettes
+3670,,250,gruyère
+3670,,1,oeuf
+3671,cuillère à soupe,1,gros sel
+3671,cuillères à soupe,2,huile d'olive
+3671,,1,beurre
+3671,kg,1,pommes de terre grenailles
+3672,,,sel
+3672,,2,tomates
+3672,,4,poivrons
+3672,gousse,1,ail
+3673,,50,beurre
+3673,,400,petits pois
+3673,,2,laitue
+3673,,12,oignons nouveaux
+3673,bouquet,1,cerfeuil
+3673,cuillère à café,1,sucre en poudre
+3673,,,sel
+3673,,,poivre blanc
+3674,cuillère à soupe,1,safran
+3674,cuillère à café,1,sel
+3674,,150,sucre
+3674,,500,farine
+3674,,3,oeufs
+3674,,250,saindoux
+3675,,,poivre
+3675,cuillères à soupe,2,huile de sésame
+3675,,,coriandre
+3675,,5,gingembre
+3675,kg,1,pois
+3675,gousses,3,ail
+3675,cuillères à soupe,6,sauce soja
+3675,cuillères à soupe,3,sauce d'huître
+3676,,,sel
+3676,,,poivre
+3676,,16,pommes de terre
+3676,,1,oeuf
+3676,,,herbes de Provence
+3677,,,sel
+3677,,,poivre
+3677,,,coriandre
+3677,,,persil
+3677,,,beurre
+3677,,2,oranges
+3677,,2,courgettes
+3677,cl,20,crème fraîche liquide
+3677,,,basilic
+3679,pincée,1,piment d'Espelette
+3679,pincée,1,sel
+3679,,1,oignon
+3679,,500,courgette
+3679,,500,patate douce
+3679,cuillères à soupe,2,matière grasse
+3680,,,sel
+3680,,,poivre
+3680,,2,feuilles de laurier
+3680,branches,3,thym
+3680,cuillères à soupe,2,farine
+3680,,2,carottes
+3680,,500,haricot de soissons
+3680,,4,pommes de terre
+3681,,,muscade
+3681,,,sel
+3681,,,poivre
+3681,,4,navets
+3681,,4,pommes de terre
+3681,morceau,1,poitrine fumée
+3682,,,muscade
+3682,,,gros sel
+3682,,4,pommes de terre
+3682,,4,crème épaisse
+3682,,,oignon
+3682,,,lardons
+3682,,,noix
+3682,,,jambon
+3682,,,champignon
+3682,,,roquefort
+3682,,,chou
+3683,cl,20,farine
+3683,cl,20,lait
+3683,,1,oeuf
+3684,,1,beurre
+3684,cuillères à soupe,2,crème fraîche
+3684,,2,carottes
+3684,,2,courgettes
+3684,,3,tomates
+3684,,1,poivron vert
+3684,,6,pommes de terre
+3685,pincée,1,sel
+3685,sachet,1,levure chimique
+3685,,125,chocolat
+3685,,150,farine
+3685,cuillères à soupe,3,sucre en poudre
+3685,,125,beurre
+3685,,3,cassonade
+3685,,1,oeuf
+3685,sachet,1,sucre vanillé
+3686,,,huile
+3686,cuillère à café,1,sel
+3686,,200,farine de sarrasin
+3686,,200,farine de riz
+3686,cuillère à soupe,1,levain
+3686,cl,40,eau
+3687,,,sel
+3687,,,poivre
+3687,,,huile d'olive
+3687,,,persil
+3687,,2,courgettes
+3687,,8,champignons de Paris
+3687,gousse,1,ail
+3688,,,sel
+3688,,,poivre
+3688,,2,tomates
+3688,,1,oignon
+3688,,1,chèvre frais
+3688,,8,courgettes
+3688,,1,oeuf
+3688,cuillères à soupe,3,huile d'olive
+3688,cuillère à café,1,herbes de Provence
+3689,pincée,1,sel
+3689,,250,farine de maïs
+3689,cl,40,eau
+3689,cuillères à soupe,3,huile d'olive
+3689,,2,oeufs
+3690,,,huile de friture
+3690,pincée,1,poivre
+3690,pincée,1,sel
+3690,,80,farine
+3690,,2,courgettes
+3690,boule,1,mozzarella
+3690,,1,oeuf
+3690,cuillères à soupe,2,Parmesan
+3690,,80,chapelure
+3691,cuillères à soupe,4,huile
+3691,morceau,1,gingembre
+3691,,,sel
+3691,,1,oignon
+3691,gousses,5,ail
+3691,,2,choux chinois
+3691,cl,25,eau
+3692,,,sel
+3692,,,poivre
+3692,,,muscade
+3692,,,thym
+3692,,150,gruyère râpé
+3692,,40,beurre
+3692,,1,oignon
+3692,,700,pomme de terre
+3692,,300,épinards frais
+3692,gousse,1,ail
+3692,cl,30,crème fleurette
+3693,cuillère à café,0.5,poivre
+3693,cuillère à soupe,1,vinaigre
+3693,,100,tomate séchée
+3693,,100,olives vertes
+3693,,80,pignons
+3693,,50,câpres au vinaigre
+3693,tranche,1,pain de mie
+3693,cuillères,3,huile d'olive
+3693,gousse,0.5,ail
+3693,cuillère à café,0.5,fenouil
+3694,,,huile d'olive
+3694,cuillère à café,1,curry
+3694,cuillère à café,1,curcuma
+3694,,1,oignon
+3694,,250,lentilles vertes
+3694,gousse,1,ail
+3694,boîte,1,pulpe de tomate
+3694,l,1,bouillon de volaille
+3695,,,sel
+3695,,,poivre
+3695,,2,oignons
+3695,,4,tomates
+3695,sachet,1,aubergine
+3695,,,huile d'olive
+3695,,,herbes de Provence
+3696,pincée,1,piment
+3696,pincée,1,sel
+3696,,1,huile d'olive
+3696,,2,oignons
+3696,,200,lardons
+3696,,4,courgettes
+3696,,4,oeufs
+3696,l,0.5,lait
+3696,cl,30,crème liquide
+3697,,,sel
+3697,,,poivre
+3697,,,muscade
+3697,,15,beurre
+3697,,1,oeuf
+3697,,450,épinards
+3697,,150,fromage de chèvre
+3697,cl,20,crème
+3698,,,sel
+3698,,,poivre
+3698,cl,10,crème fraîche
+3698,,40,farine
+3698,,40,beurre
+3698,kg,1,brocoli
+3698,cl,50,lait
+3698,cuillère à soupe,1,coulis de tomate
+3698,,3,oeufs
+3698,gousse,1,ail
+3698,,30,chapelure
+3699,,,huile d'olive
+3699,,,truffe noire du périgord
+3700,,,sel
+3700,,,poivre
+3700,,2,beurre
+3700,,1,oignon
+3700,kg,1,manioc
+3700,,6,oeufs
+3700,cl,15,lait
+3701,,,poivre
+3701,,,sel
+3701,cuillère à soupe,1,persil
+3701,pot,1,fromage râpé
+3701,,1,tomate
+3701,pot,1,fromage blanc
+3701,pot,1,avoine
+3701,,2,oeufs
+3702,,,sel
+3702,,,persil
+3702,,50,beurre
+3702,kg,1.5,pomme de terre
+3703,,1,beurre
+3703,,2,chocolat noir
+3703,cl,25,crème liquide
+3704,,200,lardons
+3704,cl,20,crème fraîche
+3704,,450,gnocchi
+3705,cuillère à café,0.5,cumin en poudre
+3705,cuillère à café,1,curry
+3705,cuillère à soupe,1,persil
+3705,bonne,1,huile d'olive
+3705,,1,oignon
+3705,,180,riz
+3705,,0.5,Volaille
+3705,cuillère à café,1,cassonade
+3705,,45,raisins secs
+3705,gousses,2,ail
+3706,,,beurre
+3706,cuillères,2,miel
+3706,,500,oignon blanc
+3707,pointe,1,muscade
+3707,,,sel
+3707,,,poivre
+3707,,20,truffe
+3707,kg,1,pomme de terre
+3707,cl,50,lait
+3707,cuillères à soupe,6,huile d'olive
+3708,,2,oignons
+3708,,300,lardons
+3708,kg,1,courgette
+3708,,100,Parmesan
+3708,pot,1,mascarpone
+3709,cuillère à soupe,1,sel
+3709,kg,1,pomme de terre
+3709,cuillères à soupe,3,matière grasse
+3710,,,huile d'olive
+3710,,,romarin
+3710,,,persil
+3710,,,sel
+3710,,,poivre
+3710,,3,clous de girofle
+3710,l,1,vinaigre
+3710,,,champignon
+3710,feuilles,3,laurier
+3711,,,huile
+3711,,,sel
+3711,,,poivre
+3711,,4,courgettes
+3711,,,chapelure
+3711,,,Parmesan
+3711,,2,oeufs
+3712,,,vinaigre balsamique
+3712,,5,tomates
+3712,kg,1,pâtes
+3712,,200,feta
+3712,,1,concombre
+3712,boîte,1,olives noires
+3712,bouquet,1,ciboulette
+3712,,,huile d'olive
+3712,,1,citron
+3712,,,sel
+3712,,,poivre
+3713,filet,1,huile
+3713,,,sel
+3713,,,poivre
+3713,,,gruyère râpé
+3713,,3,tomates
+3713,cuillère à soupe,1,miel
+3713,,1,poivron rouge
+3713,,2,aubergines
+3713,,125,mozzarella
+3713,,,basilic
+3714,,,moutarde à l'ancienne
+3714,,,lentilles vertes
+3714,,2,échalotes
+3714,cl,20,crème
+3715,,,sel
+3715,,,poivre
+3715,cuillères à café,2,moutarde de Dijon
+3715,,500,carotte
+3715,,500,poireau
+3715,,500,panais
+3715,,500,pomme de terre
+3715,pot,1,crème fraîche épaisse
+3715,,,Parmesan
+3715,,,cannelle
+3716,,,sel
+3716,,,huile de friture
+3716,,1,courgette
+3716,,1,carotte
+3716,,1,pomme de terre
+3717,cuillère à café,1,beurre
+3717,cuillère à café,0.5,thym
+3717,cuillère à café,1,miel liquide
+3717,,8,carottes
+3718,,,huile d'olive
+3718,,,sel
+3718,,,poivre
+3718,botte,1,persil
+3718,,6,tomates
+3718,gousse,1,ail
+3719,filet,1,huile
+3719,,20,courgettes
+3719,,10,persil
+3719,,200,farine
+3719,,3,oeufs
+3719,cl,10,eau
+3719,,60,Parmesan
+3720,cuillère à soupe,1,huile d'arachide
+3720,,250,cacahuète grillée
+3721,cuillère à soupe,1,huile de tournesol
+3721,cuillère à café,1,sel
+3721,,400,farine de blé
+3721,sachet,1,levure de boulanger
+3721,cl,28,eau
+3721,,100,farine d'épeautre
+3721,,1,oeuf
+3722,,,sel
+3722,,,poivre
+3722,,25,beurre
+3722,,1,oignon
+3722,,6,navets
+3723,,200,noix
+3723,cuillère à café,1,sel
+3723,,500,farine
+3723,,1,levure
+3723,cuillère à soupe,1,huile de noix
+3723,cl,30,eau
+3724,,,sel
+3724,,4,citrons
+3725,,,huile d'olive
+3725,,400,pomme de terre
+3725,,,herbes de Provence
+3726,,,poivre
+3726,,,thym
+3726,cuillère à café,0.5,gros sel
+3726,cuillère à soupe,1,sucre en poudre
+3726,cuillères à soupe,2,vinaigre balsamique
+3726,,3,courgettes
+3726,gousses,2,ail
+3726,filet,1,huile d'olive
+3727,,,sel
+3727,,10,sucre
+3727,,30,levure
+3727,cl,8,huile de tournesol
+3727,,600,farine
+3727,cl,35,eau
+3728,,,sel
+3728,,6,pommes de terre
+3728,cuillères à soupe,3,huile d'olive
+3728,cuillère à café,1,paprika
+3728,cuillères à soupe,2,miel
+3728,cuillères à café,2,huile
+3728,cuillère à soupe,1,moutarde
+3728,cuillères à soupe,2,sucre roux
+3728,cuillères à soupe,2,vinaigre blanc
+3729,,,quatre-épices
+3729,,,cumin en poudre
+3729,morceaux,4,sucre roux
+3729,,,coriandre
+3729,,5,clous de girofle
+3729,,3,carottes
+3729,,2,oignons
+3729,,4,pommes de terre
+3729,,1,navet
+3729,cl,10,vin blanc
+3730,kg,1,pomme de terre
+3730,kg,1,patate douce
+3730,,250,lait de coco
+3730,cuillère à café,1,épices à colombo
+3731,pincées,3,sel
+3731,cuillère à café,1,levure
+3731,,200,farine
+3731,,1,yaourt nature
+3731,cuillère à soupe,1,huile d'olive
+3731,,8,Vache qui rit®
+3732,,3,oignons
+3732,,500,févette
+3732,boîte,1,tomates pelées
+3732,cuillère à soupe,1,mélange d'épices pour chili
+3732,l,1,eau
+3732,cuillère,1,café
+3732,cuillère,1,café
+3733,,1,oignon
+3733,,20,beurre
+3733,,,poivre
+3733,,,sel
+3733,,1,bouillon de légumes
+3733,morceau,1,sucre roux
+3733,,4,fenouil
+3733,demi,,citron vert
+3733,pincée,1,mélange 5 baies
+3734,,,muscade
+3734,,,sel
+3734,,,poivre
+3734,,100,gruyère râpé
+3734,,200,jambon
+3734,,100,lardons
+3734,,20,maïzena
+3734,,30,farine
+3734,,2,oeufs
+3734,cl,15,lait
+3734,cl,25,crème allégée
+3734,,400,champignons de Paris
+3735,cuillère à café,1,sel
+3735,sachet,1,levure
+3735,,500,farine
+3735,,320,eau
+3735,,70,graines de lin
+3736,pot,1,miel
+3736,,10,ail
+3737,cuillères à soupe,3,beurre
+3737,,8,La Vache qui rit®
+3737,,320,farine
+3737,,130,lait
+3737,cuillère à café,1,levure de boulanger sèche
+3737,cuillère à soupe,1,huile de tournesol
+3737,,1,yaourt nature
+3737,,,sel
+3738,pincée,1,poivre
+3738,pincée,1,sel
+3738,kg,1,courgette
+3738,gousses,5,ail
+3738,cl,30,crème fraîche épaisse
+3738,,160,fromage ail et fines herbes
+3738,filet,1,huile d'olive
+3739,,5,blancs d'oeuf
+3739,gouttes,8,jus de citron
+3740,,1,beurre
+3740,,1,oignon
+3740,,7,carottes
+3740,,1,patate douce
+3740,,2,pommes de terre
+3740,gousse,1,ail
+3740,,1,bouillon de poule
+3740,cuillères à soupe,3,lait
+3741,,,sel
+3741,,,poivre
+3741,,2,carottes
+3741,cl,30,crème fraîche
+3741,,100,beurre
+3741,,300,lentilles vertes
+3741,,3,échalotes
+3741,gousses,2,ail
+3742,,5,sel
+3742,,500,farine de châtaigne
+3742,l,1,eau
+3743,,100,chocolat
+3744,,,gros sel
+3744,,,fleur de sel
+3744,,20,beurre
+3744,,4,oignons
+3744,cuillères à soupe,2,huile d'olive
+3745,,,muscade
+3745,cuillère à café,0.5,cumin
+3745,l,1.5,bouillon de boeuf
+3745,bouquet,1,coriandre
+3745,,2,tomates
+3745,,1,courgette
+3745,,1,poivron vert
+3745,,1,oignon jaune
+3745,,250,riz
+3745,,50,raisins secs
+3745,pincée,1,cannelle
+3745,,,paprika
+3745,,,huile d'olive
+3746,,1,courgette
+3746,,1,poireau
+3746,,6,carottes
+3746,,8,pommes de terre
+3746,poignée,,soja
+3746,,20,feuilles de riz
+3747,verres,2,vin
+3747,kg,1,sucre
+3747,kg,3,poire
+3748,,,huile d'olive
+3748,,,persil
+3748,,6,carottes
+3748,,,ail
+3749,,,persil
+3749,,,poivre
+3749,,,sel
+3749,,,huile d'olive
+3749,,300,riz
+3749,,200,bolet
+3749,,400,speck
+3749,gousse,1,ail
+3749,,30,parmesan râpé
+3750,,,sel
+3750,,,poivre
+3750,,0.5,oignon
+3750,,3,pommes de terre
+3750,,1,oeuf
+3750,,,huile d'olive
+3751,,,sel
+3751,,,poivre
+3751,moitié,,céleri
+3751,,2,pommes
+3751,gousse,1,ail
+3751,,,huile d'olive
+3752,,15,beurre
+3752,l,1,bouillon de légumes
+3752,,0.5,oignon
+3752,,250,épeautre
+3752,,100,champignons de Paris
+3753,,,sel
+3753,pincée,1,poivre
+3753,,120,pesto
+3753,,100,gruyère râpé
+3753,sachet,1,levure
+3753,,180,farine
+3753,bocal,1,pesto
+3753,,3,oeufs
+3753,cuillères à soupe,3,huile d'olive
+3753,cl,10,lait
+3753,poignée,1,pignons
+3754,cuillère à café,1,curcuma
+3754,cuillère à café,1,curry
+3754,,2,choux
+3754,gousse,1,ail
+3754,cuillère à soupe,1,huile d'olive
+3754,,1,yaourt nature
+3754,feuille,,menthe
+3755,,1,cube de bouillon
+3755,,,huile
+3755,,,cheveux d'ange
+3755,,,riz basmati
+3756,kg,1,asperge verte
+3756,kg,1,asperge blanche
+3756,,1,oeuf
+3756,,100,parmesan râpé
+3756,cuillère à soupe,1,moutarde
+3756,gousse,1,ail
+3756,,,huile de pépin de raisin
+3756,,,huile d'olive
+3756,,,cerfeuil
+3756,,,sel et poivre
+3756,,,sel et poivre
+3757,,,poivre
+3757,,,sel
+3757,,200,emmental
+3757,,50,beurre
+3757,,10,pommes de terre
+3757,cl,50,crème fraîche liquide
+3757,,,ciboulette
+3758,brin,,coriandre
+3758,,1,oignon
+3758,,500,haricots rouges
+3758,cuillères à soupe,5,saindoux
+3759,,50,comté
+3759,,4,courgettes
+3759,cuillère à soupe,1,huile d'olive
+3759,,120,riz
+3759,gousse,1,ail
+3759,,2,oeufs
+3759,,40,parmesan râpé
+3759,cl,20,crème
+3759,,,basilic
+3760,,,riz
+3761,,,poivre
+3761,,,sel
+3761,kg,1,pomme de terre
+3761,l,1,crème liquide
+3761,gousses,2,ail
+3762,,,crème fraîche
+3762,,,poivre
+3762,,,sel
+3762,,300,carotte
+3762,,300,carotte
+3762,,300,carotte
+3762,cuillères à soupe,2,huile d'olive
+3763,,,sel
+3763,,,poivre
+3763,pincée,1,thym
+3763,,1,oignon
+3763,,3,tomates
+3763,,3,fenouil
+3763,gousse,1,ail
+3763,cuillère à soupe,1,basilic
+3763,cuillère à soupe,1,huile d'olive
+3764,,,sel
+3764,,,poivre
+3764,botte,0.5,persil
+3764,tranches,4,jambon
+3764,,1,oignon
+3764,,4,pommes de terre
+3764,,1,champignons de Paris
+3764,gousse,1,ail
+3764,,1,oeuf
+3765,,,cumin
+3765,,75,beurre
+3765,kg,1,carotte
+3765,,,coriandre en grains
+3766,cuillère à café,1,sel
+3766,cuillères à soupe,2,huile de friture
+3766,cuillère à café,1,coriandre
+3766,cuillère à café,1,piment
+3766,cuillères à café,2,curcuma
+3766,pincées,2,cumin
+3766,,1,oignon
+3766,,,tomate
+3766,,2,aubergines
+3766,pincées,2,garam masala
+3767,,1,cube de bouillon
+3767,,1,oignon
+3767,,500,poireau
+3767,,500,pomme de terre
+3767,gousse,1,ail
+3768,,,cube de bouillon
+3768,,,vinaigre
+3768,,1,oignon
+3768,,,lardons
+3768,,,chou rouge
+3769,,50,gruyère râpé
+3769,,50,beurre
+3769,,,sel
+3769,,,poivre
+3769,,1,oignon
+3769,,300,carotte
+3769,,300,pomme de terre
+3769,,150,lait
+3769,,2,oeufs
+3770,,,huile d'olive
+3770,,,sel
+3770,,,poivre
+3770,,1,oignon
+3770,,,thym
+3770,,1,pomme de terre
+3770,gousses,2,ail
+3770,,,paprika
+3771,,,sel
+3771,,,poivre
+3771,cuillères à soupe,4,huile
+3771,,8,courgettes
+3771,,2,oeufs
+3771,pot,1,mascarpone
+3771,l,0.25,lait
+3771,,40,gorgonzola
+3771,gousses,4,ail
+3771,,,herbes de Provence
+3772,,,huile d'olive
+3772,,,sel
+3772,,,poivre
+3772,cuillères à soupe,2,persil
+3772,,3,aubergines
+3772,gousses,4,ail
+3773,,,sel
+3773,,,poivre
+3773,,80,beurre
+3773,,80,farine
+3773,,500,tomate
+3773,,2,courgettes
+3773,,80,chapelure
+3773,,80,Parmesan
+3773,,,herbes de Provence
+3773,cuillères à soupe,2,huile d'olive
+3774,,,sel
+3774,,,poivre
+3774,,150,oignon
+3774,,250,tomate
+3774,,800,courgette
+3774,gousse,1,ail
+3774,cuillères,4,café
+3775,,3,maïs
+3775,,6,beurre demi-sel
+3776,,,fromage râpé
+3776,,100,oignon
+3776,,250,courgette
+3776,,300,poivron
+3776,,2,oeufs
+3776,cl,10,crème fraîche liquide
+3776,,8,Vache qui rit®
+3776,cl,20,lait
+3776,,,herbes de Provence
+3777,,,sel
+3777,,,poivre
+3777,cuillère à café,1,cumin
+3777,cuillère à café,1,curcuma
+3777,cuillère à café,1,gingembre
+3777,,1,bouillon de légumes
+3777,,,coriandre
+3777,cuillères à soupe,2,huile d'olive
+3777,,4,carottes
+3777,,400,topinambour
+3777,gousses,2,ail
+3778,cuillère à café,1,levure
+3778,tasses,3.5,farine
+3778,cuillère à café,1,sel
+3778,cuillère à café,1,sucre
+3779,pincée,1,muscade
+3779,,,poivre
+3779,,,sel
+3779,,50,fromage râpé
+3779,,40,beurre
+3779,grosse,1,farine
+3779,,4,betteraves
+3779,l,0.5,lait
+3780,gousse,0.5,vanille
+3780,,5,gingembre
+3780,,200,sucre semoule
+3780,,200,kumquat
+3780,cl,10,eau
+3781,,30,beurre
+3781,,2,oignons
+3781,,1,chou
+3781,kg,1,pomme de terre
+3782,,,sel
+3782,,,poivre
+3782,,1,tomates concassées
+3782,,1,haricots verts
+3782,,,herbes
+3782,,,huile d'olive
+3782,gousse,0.5,ail
+3783,,5,pommes de terre
+3784,,,muscade
+3784,,,sel
+3784,,,poivre
+3784,,100,gruyère râpé
+3784,,1,oignon
+3784,,1,poivron rouge
+3784,,1,courgette
+3784,,0.5,aubergine
+3784,,1,carotte
+3784,,100,feta
+3784,,2,oeufs
+3784,cl,25,lait
+3784,,,huile d'olive
+3784,,,herbes de Provence
+3784,,,mélange 5 baies
+3785,,,poivre
+3785,,,sel
+3785,cuillères à café,4,vinaigre de vin
+3785,,2,tomates
+3785,,,herbes de Provence
+3786,cuillères à soupe,2,fromage blanc
+3786,,,huile d'olive
+3786,,2,courgettes
+3786,grosse,1,curry
+3786,,1,gingembre
+3786,,1,oignon
+3786,,1,échalote
+3786,gousses,2,ail
+3786,cuillère,1,sauce soja
+3787,,,sel
+3787,,,poivre
+3787,brin,,persil
+3787,cuillères à soupe,2,huile d'olive
+3787,,2,oignons
+3787,,250,lardons fumés
+3787,,1,pâte brisée
+3787,,8,pommes de terre
+3787,gousses,3,ail
+3787,,3,oeufs
+3787,pot,1,crème
+3788,,4,tomates vertes
+3788,cuillère à soupe,1,huile d'olive
+3788,gousse,1,ail
+3788,,,herbes de Provence
+3789,,,poivre
+3789,,,thym
+3789,,,persil
+3789,,150,lardons
+3789,,2,carottes
+3789,,1,navet
+3789,,2,pommes de terre
+3789,bol,1,haricots verts
+3789,bol,1,petits pois
+3789,,,laurier
+3790,cuillère à café,1.5,sel
+3790,sachet,1,levure chimique
+3790,,400,farine
+3790,,280,eau
+3791,,,huile
+3791,,,sel
+3791,bouquet,1,coriandre
+3791,,300,tomates cerise
+3791,,1,mangue
+3791,,4,oignons nouveaux
+3792,cl,20,crème fraîche
+3792,,1,miel liquide
+3792,,2,oignons
+3792,kg,1,carotte
+3792,,2,patates douces
+3792,,2,jaunes d'oeuf
+3793,,50,beurre
+3793,cuillère à café,1,sel
+3793,,300,farine
+3793,,3,oeufs
+3793,cl,7,eau
+3793,l,4,eau
+3793,,,croûtons
+3794,,,sel
+3794,,,piment
+3794,cuillère à café,1,curcuma
+3794,cuillère à café,1,cumin
+3794,cuillères à café,2,curry
+3794,,1,gingembre
+3794,,2,oignons
+3794,,2,tomates
+3794,sachet,1,épinards
+3794,,200,Vache qui rit®
+3794,gousse,1,ail
+3794,cuillères à café,2,fenugreek
+3794,,,huile d'olive
+3795,pincée,1,poivre
+3795,pincée,1,sel
+3795,cuillère à soupe,1,moutarde
+3795,cuillère à soupe,1,huile
+3795,cuillère à soupe,1,vinaigre de vin
+3795,cuillère à soupe,1,sésame
+3795,,0.5,échalote
+3795,cuillères à soupe,2,huile d'olive
+3795,cuillère à soupe,1,Arôme Maggi
+3796,,,sel
+3796,,,poivre
+3796,,,beurre
+3796,,150,lardons
+3796,,2,oignons
+3796,,3,endives
+3796,,4,pommes de terre
+3796,,1,vin blanc
+3797,,,sel
+3797,cuillère à café,1,curcuma
+3797,cuillère à soupe,1,oignon
+3797,cuillères à soupe,3,levure
+3797,cuillères à soupe,5,huile d'olive
+3797,,300,pomme de terre
+3797,,100,lait d'avoine
+3797,,400,eau
+3797,gousses,2,ail
+3797,cuillère à café,1,paprika
+3797,cuillères à soupe,2,sauce soja
+3797,cuillère à soupe,1.5,agar-agar
+3798,,,sel
+3798,,,poivre
+3798,filet,1,vinaigre
+3798,cl,10,vin rouge
+3798,,50,beurre
+3798,,2,oignons
+3798,morceaux,3,sucre
+3798,,1,chou rouge
+3798,,24,châtaignes
+3798,,3,pommes
+3799,,,farine
+3799,cuillère à café,1,fleur de sel
+3799,sachet,1,levure de boulanger
+3799,,500,farine intégrale
+3799,cl,40,eau
+3800,,,sel
+3800,,,poivre
+3800,,,huile d'olive
+3800,cuillères à soupe,2,crème fraîche
+3800,,3,oignons
+3800,,2,courgettes
+3800,,4,pommes de terre
+3800,,2,oeufs
+3800,,50,Parmesan
+3800,,,herbes de Provence
+3801,,500,farine
+3801,cuillère à soupe,1,sel
+3801,,25,levure
+3801,cuillères à soupe,2,huile d'olive
+3801,,2,eau
+3801,,150,olives
+3802,,,muscade
+3802,,,sel
+3802,,,poivre
+3802,,500,crème fraîche
+3802,kg,1,pomme de terre
+3802,cl,50,lait
+3802,gousse,1,ail
+3803,,,vinaigre
+3803,,,sel
+3803,,,poivre
+3803,cuillères,2,huile
+3803,,0.5,potiron
+3803,gousse,1,ail
+3804,cuillère à soupe,1,huile
+3804,cuillère à soupe,1,sésame
+3804,,,champignon noir
+3804,,0.5,oignon
+3804,,80,vermicelles de soja
+3804,,,crème fraîche liquide
+3804,cuillère à soupe,1,sauce soja
+3804,poignée,1,noix de cajou
+3804,cuillère à café,1,pâte de curry
+3805,filet,1,vinaigre balsamique
+3805,,1,beurre
+3805,pincée,1,poivre
+3805,pincée,1,sel
+3805,cl,5,armagnac
+3805,,850,marrons
+3805,,4,échalotes
+3805,,1,pomme
+3805,cuillères à soupe,3,farce
+3806,,50,maïzena
+3806,,100,sucre en poudre
+3806,,4,jaunes d'oeuf
+3806,sachet,1,sucre vanillé
+3806,cl,75,lait
+3807,pincée,1,quatre-épices
+3807,,,sel
+3807,,,poivre
+3807,,125,lardons
+3807,,,huile d'olive
+3807,,1,cube de bouillon
+3807,,2,oignons
+3807,,5,carottes
+3807,,1,chou
+3807,,6,pommes de terre
+3807,cl,10,vin blanc sec
+3807,cuillère à café,1,graines de coriandre
+3807,,5,genièvre
+3808,,,sel
+3808,,,poivre
+3808,botte,1,oignon
+3808,,4,tomates
+3808,kg,1,pomme de terre
+3808,,6,oeufs
+3808,,,mayonnaise
+3809,,,poivre
+3809,,,sel
+3809,,20,sucre
+3809,,1,cube de bouillon
+3809,cl,30,crème fraîche
+3809,,50,beurre
+3809,,1,oignon
+3809,,500,petits pois
+3809,tranches,8,lard
+3809,,100,blanc d'oeuf
+3810,,,épices
+3810,pincée,1,sel
+3810,,300,farine de maïs
+3810,cl,30,eau
+3810,,,ail en poudre
+3810,,,herbes
+3811,,,sel
+3811,cuillère à café,0.5,muscade
+3811,,600,pomme de terre
+3811,cuillère à soupe,1,crème fraîche épaisse
+3811,cl,20,lait
+3812,,,piment d'Espelette
+3812,,1,patate douce
+3813,,100,farine
+3813,cl,6,eau
+3813,pincée,1,sel
+3814,,1,chou-fleur
+3814,,90,chapelure
+3814,cuillère à soupe,1,ail en poudre
+3814,cuillère à soupe,1,paprika
+3814,,100,sauce barbecue
+3814,,,huile d'olive
+3814,,,sel de céleri
+3814,,200,yaourt à la grecque
+3814,,1,citron vert
+3814,,3,coriandre
+3815,,,sel
+3815,,,poivre
+3815,,,thym
+3815,cl,20,sauce tomate
+3815,,10,blette
+3816,brin,,coriandre
+3816,,,sel
+3816,,,gingembre
+3816,cuillères à café,3,curry
+3816,cuillères à café,3,coriandre
+3816,,500,pois chiches
+3816,cl,20,lait de coco
+3817,,,sel
+3817,,,poivre
+3817,cuillère à soupe,1,vinaigre balsamique
+3817,,500,asperge
+3817,poignée,1,noisettes
+3818,,,huile de friture
+3818,,1,mozzarella
+3818,cuillères à soupe,5,chapelure
+3818,,2,oeufs
+3819,,,poivre
+3819,,,sel
+3819,pincée,1,muscade
+3819,,20,beurre
+3819,,200,comté
+3819,,600,courgette
+3819,,400,pomme de terre
+3819,gousses,4,ail
+3819,cl,40,crème fraîche épaisse
+3819,cl,15,lait
+3820,kg,1,anchois
+3820,,,huile d'olive
+3821,poignée,1,sésame
+3821,paquet,1,levure
+3821,cuillères à soupe,2,huile d'olive
+3821,pincée,1,sel
+3821,,400,farine
+3821,,50,farine de sarrasin
+3821,,50,farine de riz
+3821,,500,eau
+3821,poignée,1,graines de courge
+3822,,,thym
+3822,,,sucre
+3822,,,poivre
+3822,,,sel
+3822,,,huile d'olive
+3822,,1,oignon
+3822,kg,1,tomates cerise
+3822,,,basilic
+3823,cuillère à café,1,sel
+3823,cuillères à soupe,2,huile de friture
+3823,cuillère à café,1,coriandre
+3823,cuillère à café,1,piment
+3823,cuillères à café,2,curcuma
+3823,pincées,2,cumin
+3823,,1,oignon
+3823,,2,tomates
+3823,,2,aubergines
+3823,pincées,2,garam masala
+3824,,,sel
+3824,,,poivre
+3824,branches,5,persil
+3824,,1,céleri
+3824,cuillères à soupe,3,huile d'olive
+3824,,1,ail
+3824,,1,yaourt nature
+3825,,,sel
+3825,cuillère à café,1,poivre
+3825,cuillères à soupe,4,farine
+3825,,15,beurre
+3825,sachet,1,purée
+3825,cl,40,eau
+3825,,2,jaunes d'oeuf
+3825,,,chapelure
+3826,,,gros sel
+3826,,12,champignons de Paris
+3826,,,ciboulette
+3826,,,huile d'olive
+3827,cl,50,bouillon de légumes
+3827,,3,carottes
+3827,feuille,,chou
+3827,,400,navet
+3827,,60,beurre
+3827,,30,comté
+3827,,60,farine
+3827,,30,flocons d'avoine
+3828,,,aneth
+3828,cuillères à soupe,6,vinaigre
+3828,cuillères à soupe,3,sucre
+3828,,2,oignons
+3828,kg,1,concombre
+3828,cuillères,2,thé
+3828,cuillères,2,thé
+3828,,,ail
+3829,,,sel
+3829,,,poivre
+3829,,500,haricots plats
+3829,,,huile d'olive
+3829,,1,échalote
+3829,,3,petits piments
+3829,cuillères,3,fond
+3829,,,eau
+3830,,75,beurre
+3830,,100,lardons fumés
+3830,,1,oignon
+3830,,5,pommes de terre
+3831,,0.5,baguette
+3831,cuillères à café,2,huile d'olive
+3831,gousse,1,ail
+3831,cuillère à café,1,herbes de Provence
+3832,,,muscade
+3832,,250,courgette
+3832,,250,lait demi-écrémé
+3832,,2,oeufs
+3832,cuillères à café,2,fond de volaille
+3833,,,sel
+3833,,,poivre
+3833,,75,beurre
+3833,,1,oignon
+3833,,500,carotte
+3833,,500,pomme de terre
+3834,,,sel
+3834,,,poivre
+3834,,1,oignon
+3834,,30,beurre
+3834,cl,20,bouillon de légumes
+3834,,6,endives
+3834,cuillères à soupe,6,cassonade
+3835,,,thym
+3835,,,sel
+3835,,,poivre
+3835,,2,tomates
+3835,,1,oignon
+3835,,1,poivron rouge
+3835,,1,poivron vert
+3835,,2,courgettes
+3835,,2,aubergines
+3835,gousses,2,ail
+3835,,,huile d'olive
+3835,,,laurier
+3835,,,Fines herbes
+3836,,,gruyère râpé
+3836,kg,1,pomme de terre
+3836,,4,blette
+3836,,1,brique
+3836,,,chapelure
+3837,,,sel
+3837,,,poivre
+3837,,,beurre
+3837,,,miel
+3837,,3,courgettes
+3837,,8,carottes
+3838,,,sel
+3838,,1,thym
+3838,,4,pommes de terre
+3838,,4,navets
+3838,,50,gruyère
+3839,cuillère à café,1,piment
+3839,,5,poivre
+3839,,,sel
+3839,,50,gruyère râpé
+3839,,2,courgettes
+3839,,500,carotte
+3839,,1,brocoli
+3839,cl,25,crème fraîche liquide
+3839,,2,oeufs
+3839,,20,Parmesan
+3840,,,gruyère râpé
+3840,,,sel
+3840,,,poivre
+3840,,4,pommes de terre
+3840,,,crème fraîche liquide
+3840,,,ciboulette
+3840,,2,oeufs
+3841,cuillères à soupe,2,huile
+3841,cuillère à café,1,sel
+3841,,30,levure
+3841,,700,farine
+3841,cl,50,eau
+3841,,20,beurre
+3841,,75,fromage râpé
+3841,,200,mozzarella
+3841,,200,feta
+3842,cuillères à soupe,3,huile
+3842,,1,piment
+3842,,2,oignons
+3842,,1,poivron rouge
+3842,,300,nouilles de riz
+3842,,200,crevettes
+3842,,100,calamar
+3842,,100,rôti de porc
+3842,,150,germes de soja
+3842,gousses,2,ail
+3843,,,poivre
+3843,,,sel
+3843,,4,courgettes
+3843,petite boîte,1,tomates pelées
+3843,,200,feta
+3843,,,huile d'olive
+3843,gousses,2,ail
+3844,,1,feuille de laurier
+3844,,0.5,cube de bouillon
+3844,,1,oignon
+3844,,,huile
+3844,,500,épinards frais
+3844,,200,riz
+3845,cuillères à soupe,3,huile
+3845,poignée,1,noix de coco rapée
+3845,,1,oignon
+3845,verres,2,riz basmati
+3845,boîte,1,lait de coco
+3845,verres,3,eau
+3846,,,moutarde
+3846,,,piment de Cayenne
+3846,cuillères à soupe,2,whisky
+3846,brin,,romarin
+3846,,,sel
+3846,,,poivre
+3846,bouquet,1,persil
+3846,kg,1,salsifis
+3846,cuillères à soupe,3,huile d'olive
+3846,gousses,4,ail
+3846,cl,70,concentré de tomates
+3846,,,olives vertes
+3846,verres,2,eau
+3847,,,sel
+3847,,,sucre
+3847,,30,levure
+3847,,500,farine
+3847,cl,25,lait
+3847,,2,oeufs
+3848,,,sel
+3848,,,poivre
+3848,,2,oignons
+3848,,8,pommes de terre
+3848,,,huile d'olive
+3848,,,herbes de Provence
+3849,,,sucre
+3849,,1,beurre
+3849,kg,1,navet
+3850,,1,levure
+3850,,100,farine
+3850,,300,farine de sarrasin
+3850,l,1.5,eau
+3851,,,sel
+3851,,,poivre
+3851,,,thym
+3851,,,origan
+3851,,2,oignons
+3851,,4,tomates
+3851,,4,pommes de terre
+3851,,,basilic
+3851,,,huile d'olive
+3851,,,mozzarella
+3852,,,sel
+3852,,,poivre
+3852,bouquet,1,persil
+3852,pot,1,crème fraîche
+3852,,500,pomme de terre
+3852,,,ail
+3853,,,huile d'olive
+3853,,,sel
+3853,,,poivre
+3853,,1,crème fraîche
+3853,,2,courgettes
+3853,,,ail
+3853,,,gruyère
+3854,pincée,1,poivre
+3854,,1,cube de bouillon
+3854,,1,oignon
+3854,,3,carottes
+3854,,2,courgettes
+3854,,6,pommes de terre
+3854,,8,champignons
+3854,cl,50,eau
+3854,pincée,1,eau
+3855,,,huile
+3855,paquets,2,lardons
+3855,,3,carottes
+3855,,5,pommes de terre
+3855,,,herbes de Provence
+3856,,275,beurre
+3856,cuillère à café,1,sel
+3856,,450,farine
+3856,cl,30,eau
+3857,sachet,1,levure
+3857,,10,sel
+3857,cl,3.6,huile
+3857,cl,15,eau
+3857,cl,30,lait
+3857,,1,oeuf
+3857,,500,pain
+3858,,250,polenta
+3858,,2,bouillon de volaille
+3858,l,1,eau
+3858,cl,40,crème liquide
+3858,,,parmesan râpé
+3859,,,sucre glace
+3859,cl,30,crème liquide
+3859,grosses,2,nutella
+3860,,,muscade
+3860,,,sel
+3860,,,poivre
+3860,,1,cube de bouillon
+3860,kg,1,pomme de terre
+3860,,,eau
+3860,,1,jaune d'oeuf
+3861,,2,tomates ZRP Mon Marché Plaisir®
+3861,,250,farine
+3861,sachet,1,levure de boulanger
+3861,cl,15,eau
+3861,cuillère à soupe,1,thym
+3861,brins,3,romarin
+3861,,,basilic
+3861,,,gros sel
+3861,,,poivre
+3861,cuillères à soupe,3,huile d'olive
+3862,,,persil
+3862,,1,cube de bouillon
+3862,,2,carottes
+3862,,250,lentilles corail
+3862,,1,échalote
+3862,l,0.25,eau
+3862,,,huile d'olive
+3863,,,huile d'olive
+3863,,,sel
+3863,,,poivre
+3863,,,aneth
+3863,,1,concombre
+3863,,500,yaourt nature
+3863,,50,cerneau de noix
+3863,gousse,,ail
+3864,kg,1,sucre
+3864,branches,10,romarin
+3864,l,1,eau
+3864,sachet,1,vitpris
+3865,pincée,1,muscade
+3865,cuillère à café,1,sel
+3865,,40,beurre
+3865,,500,poireau
+3865,gousse,1,ail
+3865,cl,15,vin blanc
+3865,cl,20,crème fraîche épaisse
+3866,,1,muscade
+3866,,,sel
+3866,,,poivre
+3866,cuillères à soupe,3,crème fraîche
+3866,kg,1,oignon
+3867,,,sel
+3867,,,poivre
+3867,feuille,,persil
+3867,,6,courgettes
+3867,,4,oeufs
+3867,,100,Parmesan
+3867,boule,1,mozzarella
+3867,,5,biscottes
+3867,cl,25,crème fraîche épaisse
+3867,bouquet,1,basilic
+3867,gousses,2,ail
+3867,cuillère à soupe,1,huile d'olive
+3868,,30,beurre
+3868,,600,patate douce
+3868,cl,15,crème semi-épaisse
+3868,,,sel et poivre
+3869,cuillères à café,2,sel
+3869,sachet,1,levure de boulanger
+3869,,350,farine
+3869,cuillères à soupe,3,huile d'olive
+3870,pincée,1,sel
+3870,cuillères à soupe,2,sucre
+3870,,1,oignon
+3870,,1,laitue
+3870,,1,citron
+3870,,4,eau
+3871,,2,carottes
+3871,feuilles,5,laitue
+3871,,0.25,concombre
+3871,feuilles,20,menthe
+3871,,1,nuoc mam
+3872,,,huile de tournesol
+3872,pincée,1,piment d'Espelette
+3872,pincée,1,poivre
+3872,pincée,1,sel
+3872,cuillère à soupe,1,fécule de maïs
+3872,,4,pommes de terre
+3872,,1,oeuf
+3872,,,noix de muscade moulue
+3872,cl,5,crème liquide
+3872,,2,scamorza
+3873,,,sel
+3873,,,poivre
+3873,,10,beurre
+3873,brins,2,persil
+3873,,300,radis
+3873,gousse,1,ail
+3874,,,gruyère râpé
+3874,,,sel
+3874,,,poivre
+3874,,,muscade
+3874,pot,1,crème fraîche
+3874,,2,concombres
+3874,,3,oeufs
+3875,cuillères à soupe,3,sucre
+3875,cuillère à café,0.5,sel
+3875,,150,beurre tendre
+3875,,300,farine
+3875,cl,8,eau
+3876,cuillère à café,1,sel
+3876,sachet,0.5,levure chimique
+3876,,250,farine
+3876,cuillères à soupe,2,huile d'olive
+3876,,1,olives noires
+3876,cl,15,eau
+3877,kg,1.4,sucre de canne
+3877,,2,oranges
+3877,,2,tomates vertes
+3877,,1,citron
+3878,,100,gruyère râpé
+3878,,100,lardons
+3878,,1,pâte feuilletée
+3878,,1,maroilles
+3878,cl,15,crème fraîche épaisse
+3879,cuillères à soupe,3,farine
+3879,,500,pomme de terre
+3879,,4,oeufs
+3879,,3,blancs d'oeuf
+3879,cl,5,lait
+3879,cuillères à soupe,3,crème
+3880,,,vinaigre
+3881,,,huile de tournesol
+3881,,,sel
+3881,,,poivre
+3881,,,cumin
+3881,verres,2,farine
+3881,,3,courgettes
+3881,,1,oeuf
+3882,,,sel
+3882,,,poivre
+3882,cuillère à soupe,1,huile d'olive
+3882,,,persil
+3882,,,thym
+3882,,1,oignon
+3882,,4,tomates
+3882,kg,1,pomme de terre
+3882,,,laurier
+3883,,1,cube de bouillon
+3883,,,muscade
+3883,,,huile
+3883,,1,oignon
+3883,,3,courgettes
+3883,,2,carottes
+3883,gousses,2,ail
+3884,filet,1,huile
+3884,sachet,1,levure de boulanger
+3884,cuillère à café,1.5,sel
+3884,,20,sucre roux
+3884,,20,beurre
+3884,,450,farine de blé
+3884,,30,sésame
+3884,,30,flocons d'avoine
+3884,cl,34,eau
+3884,,100,farine de seigle
+3885,,,maïzena
+3885,,400,liseron d'eau
+3885,gousses,3,ail
+3885,,,sauce soja
+3885,,,sauce d'huître
+3886,pincée,1,farine
+3886,,,thym
+3886,,20,beurre
+3886,,2,clous de girofle
+3886,,2,oignons
+3886,,1,cerfeuil
+3886,gousse,1,ail
+3886,,,laurier
+3886,verre,1,vin blanc
+3886,verre,1,bouillon de volaille
+3886,,,cerfeuil
+3887,cuillère à café,1,thym
+3887,,15,tomates
+3887,cuillères à soupe,2,sucre roux
+3887,,200,oignon
+3887,cuillère à soupe,1,huile d'olive
+3887,gousses,2,ail
+3887,,100,beurre
+3887,,120,farine
+3887,,120,Parmesan
+3888,kg,1,sucre
+3888,kg,1,figue
+3888,cl,25,eau
+3888,,1,jus de citron
+3889,,,sel
+3889,,,poivre
+3889,cuillères à soupe,2,huile d'olive
+3889,demi,1,cube de bouillon
+3889,,3,poivrons rouges
+3889,,10,pommes de terre
+3889,cl,25,crème liquide
+3889,brins,20,ciboulette
+3890,,,piment
+3890,,,huile d'olive
+3890,,,cumin
+3890,,,sel
+3890,,,poivre
+3890,bouquet,,persil
+3890,kg,1,poivron vert
+3890,kg,2,poivron rouge
+3890,kg,2,tomate
+3890,,,bouquet garni
+3890,,4,ail
+3891,cl,4,huile
+3891,,4,sel
+3891,,1.5,bière
+3891,,200,farine
+3891,,1.5,eau
+3891,,2,oeufs
+3891,,4,oeufs
+3892,cl,5,huile
+3892,cuillères à soupe,2,sésame
+3892,cuillères à soupe,2,sucre
+3892,cuillère à soupe,1,sel
+3892,,50,levure
+3892,kg,1,farine
+3892,cuillère à soupe,1,graines d'anis
+3892,cl,60,eau
+3892,,1,oeuf
+3893,,800,châtaignes
+3894,gousse,1,vanille
+3894,,1,sucre
+3894,,500,abricot
+3894,,500,figue
+3894,,500,rhubarbe
+3895,,,fromage râpé
+3895,,,sel
+3895,,,poivre
+3895,cuillères à soupe,2,crème fraîche
+3895,,100,lardons
+3895,kg,1,bette à carde
+3896,pincée,1,sel
+3896,cuillères à soupe,4,vin rouge
+3896,kg,1,sucre en poudre
+3896,cl,75,tomate
+3896,kg,1,poivron vert
+3897,,,beurre
+3897,,,sel
+3897,,250,farine
+3897,,1,oeuf
+3897,cl,33,eau
+3898,pincée,1,poivre
+3898,pincée,1,sel
+3898,,1,oignon
+3898,,1,courgette
+3898,,60,feta
+3898,,2,oeufs
+3898,,70,chapelure
+3898,feuille,,basilic frais
+3899,,21,levure de boulanger
+3899,,10,sel
+3899,cuillères à soupe,2,huile d'olive
+3899,,250,farine
+3899,,250,semoule
+3899,cl,45,eau
+3900,,80,beurre
+3900,,,persil
+3900,,,poivre
+3900,,,sel
+3900,,,huile d'olive
+3900,,100,farine
+3900,,2,courgettes
+3900,,4,échalotes
+3900,,80,Parmesan
+3900,,,basilic
+3901,,100,carottes
+3901,,100,pomme de terre
+3902,,,sel
+3902,,3,huile
+3902,,1,oignon
+3902,,3,carottes
+3902,bols,3,riz
+3902,,3,oeufs
+3903,cuillères à soupe,2,farine
+3903,,1,carotte
+3903,,150,quinoa
+3903,,1,blanc de poireau
+3903,cuillères à soupe,3,huile d'olive
+3903,,1,oeuf
+3903,,50,gruyère
+3904,,80,figue
+3904,cuillère à café,1,sel
+3904,cuillère à soupe,1,huile de tournesol
+3904,,40,sucre semoule
+3904,sachet,1,levure de boulanger
+3904,,400,farine de blé
+3904,,50,farine de sarrasin
+3905,,,sel
+3905,,,poivre
+3905,cuillère à soupe,1,vinaigre
+3905,cuillère à soupe,1,moutarde
+3905,,,chapelure
+3905,,1,oeuf
+3905,,1,jus de citron
+3905,,,herbes
+3906,,,thym
+3906,,,huile
+3906,,,poivre
+3906,,,sel
+3906,cuillères à soupe,3,farine
+3906,,1,courgette
+3906,,1,oeuf
+3906,,1,échalote
+3907,cuillères à soupe,2,huile
+3907,,1,cube de bouillon
+3907,cuillère à café,1,coriandre
+3907,,,sel
+3907,,,poivre
+3907,,400,carotte
+3907,,2,oignons
+3907,,500,chou de bruxelles
+3907,cuillère à soupe,1,ciboulette
+3908,,,sel
+3908,,,poivre
+3908,,,thym
+3908,,1,oignon
+3908,,3,courgettes
+3908,,200,champignons de Paris
+3908,,2,oeufs
+3908,cl,20,crème liquide
+3908,tasse,1,quinoa
+3908,,,huile d'olive
+3909,,,muscade
+3909,,,sel
+3909,,,poivre
+3909,,,huile d'olive
+3909,,1,oignon
+3909,,2,courgettes
+3909,,3,tomates pelées
+3909,gousses,2,ail
+3909,,1,pignons
+3910,,,sel
+3910,,,poivre
+3910,cuillère à café,0.5,cumin en poudre
+3910,,1,aubergine
+3910,cuillère à soupe,1,concentré de tomates
+3910,cuillère à café,0.5,cannelle
+3911,,,sel
+3911,sachet,0.5,levure
+3911,,600,farine
+3911,kg,2,pomme de terre
+3911,feuilles,4,chou
+3911,,200,lard
+3912,,,sel
+3912,,,poivre
+3912,tranches,2,jambon
+3912,,500,carotte
+3912,,500,pomme de terre
+3912,,7,gruyère
+3913,,,sel
+3913,,,poivre
+3913,,,vinaigre
+3913,,,huile d'olive
+3913,,500,tomate
+3913,,2,courgettes
+3913,,2,poivrons verts
+3913,,2,aubergines
+3913,filets,10,anchois
+3913,,0.5,ail
+3913,,,herbes de Provence
+3914,,,sel
+3914,,,poivre
+3914,sachet,0.5,levure chimique
+3914,,30,emmental
+3914,,100,fromage blanc
+3914,,70,farine
+3914,,3,oignons
+3914,,2,poireaux
+3914,,3,oeufs
+3914,cuillères à café,2,beurre allégé
+3915,,,sel
+3915,kg,1,cèpes
+3915,,,eau
+3916,,,poivre
+3916,,,sel
+3916,,1,oignon jaune
+3916,morceaux,9,sucre
+3916,,40,beurre
+3916,,300,lard fumé
+3916,,4,carottes
+3916,,800,petits pois
+3916,,1,bouquet garni
+3916,feuilles,3,salade
+3917,,175,beurre
+3917,,,sel
+3917,kg,1,châtaignes
+3917,l,1,lait
+3918,pincée,1,poivre
+3918,pincée,1,sel
+3918,,1,aubergine
+3918,,2,tomates
+3918,,1,courgette
+3918,,300,mozzarella
+3918,feuilles,5,basilic
+3918,gousses,2,ail
+3918,cuillère à soupe,1,huile d'olive
+3919,,,sel
+3919,,,poivre
+3919,,100,lardons
+3919,,,huile d'olive
+3919,,1,oignon
+3919,,2,carottes
+3919,,5,pommes de terre
+3919,,400,champignons de Paris
+3920,,,sel
+3920,,,poivre
+3920,,2,tomates
+3920,,100,beurre
+3920,,8,poireaux
+3920,,2,oignons nouveaux
+3921,gouttes,6,colorant alimentaire
+3921,feuilles,3,gélatine
+3921,,30,beurre
+3921,,40,maïzena
+3921,,100,sucre de canne
+3921,,200,pistaches
+3921,,500,lait
+3921,cl,40,crème liquide
+3921,,6,jaunes d'oeuf
+3921,,,framboises
+3922,,,poivre
+3922,,,sel
+3922,morceau,1,sucre
+3922,,,vinaigre balsamique
+3922,,30,beurre
+3922,,1,poivron rouge
+3922,,2,carottes
+3922,,1,aubergine
+3922,,2,courgettes
+3922,,1,oignon nouveau
+3922,,1,navet
+3922,poignée,1,haricot
+3923,,50,noix
+3923,,50,beurre
+3923,,40,comté
+3923,,1,chou-fleur
+3923,,400,pomme de terre
+3924,,,crème fraîche
+3924,,,curry
+3924,,2,oignons
+3924,,4,carottes
+3924,,1,fenouil
+3924,,,huile d'olive
+3925,pincée,1,poivre
+3925,pincée,1,sel
+3925,,1,cube de bouillon
+3925,cuillères à soupe,3,huile d'olive
+3925,,1,oignon
+3925,,250,riz
+3925,,1,citron
+3925,,50,basilic frais
+3925,cl,15,vin blanc
+3926,,15,sucre
+3926,,50,beurre
+3926,,12,carottes
+3926,,1,bouillon de volaille
+3927,,25,farine
+3927,,25,beurre
+3927,,400,munster
+3927,cl,30,crème
+3927,cl,5,marc
+3928,,,sel
+3928,,,poivre
+3928,,2,fenouil
+3928,,0.5,citron
+3929,pincée,1,poivre
+3929,pincée,1,sel
+3929,cl,5,vinaigre de xérès
+3929,cl,25,vin rouge
+3929,,100,beurre
+3929,,120,sucre en poudre
+3929,,800,oignon rouge
+3929,cl,3,grenadine
+3930,,2,tomates
+3930,,500,pomme de terre
+3930,,200,dés de jambon
+3930,,2,oeufs
+3930,,3,mayonnaise
+3930,,2,cornichons
+3931,cuillère à café,1,sel
+3931,cuillères à soupe,2,coriandre
+3931,cuillères à café,2,origan
+3931,,,huile d'olive
+3931,,1,courge
+3931,gousse,1,ail
+3931,cuillère à café,1,carvi
+3931,,1,petit piment
+3932,cuillères à soupe,3,sucre
+3932,cuillère à café,0.5,sel
+3932,,150,beurre tendre
+3932,,300,farine
+3932,cl,8,eau
+3933,goutte,,extrait d'amande amère
+3933,,200,sucre
+3933,,100,amandes en poudre
+3933,,100,poudre de noisette
+3933,,2,blancs d'oeuf
+3933,,50,nappage chocolat
+3934,,,sel
+3934,,,poivre
+3934,cl,10,crème fraîche
+3934,,50,farine
+3934,,50,beurre
+3934,,80,gruyère râpé
+3934,,6,poireaux
+3934,bouteille,0.5,vin blanc
+3935,pincée,,sel
+3935,,,sucre
+3935,,1,pomme de terre
+3936,,,sel
+3936,,,poivre
+3936,,100,beurre
+3936,,100,farine
+3936,,80,poudre de noisette
+3936,,80,Parmesan
+3936,,,herbes de Provence
+3936,,700,ratatouille
+3937,,,sel
+3937,,,poivre
+3937,cuillères à soupe,4,vinaigre
+3937,,2,oignons
+3937,,500,pâtes
+3937,,300,crevettes
+3937,cuillères à soupe,4,ketchup
+3937,cuillères à soupe,4,mayonnaise
+3938,,,sel
+3938,,,poivre
+3938,,,oignon
+3938,,2,tomates
+3938,,2,oeufs
+3938,cuillère à soupe,1,huile d'olive
+3938,,,herbes de Provence
+3939,tranches,6,jambon cru
+3940,,,persil
+3940,,30,gruyère râpé
+3940,cuillères à soupe,2,crème fraîche
+3940,cuillère à soupe,1,margarine
+3940,,3,courgettes
+3940,,,ciboulette
+3941,cuillère à soupe,1,cardamome
+3941,cuillère à soupe,1,quatre-épices
+3941,,2,étoiles de badiane
+3941,kg,1,sucre roux
+3941,kg,2,figue
+3942,,100,sucre
+3942,,400,tomate
+3942,,0.5,jus de citron
+3942,cl,10,eau
+3943,,5,blancs d'oeuf
+3943,gouttes,8,jus de citron
+3944,,,sel
+3944,,,poivre
+3944,,40,beurre
+3944,,2,fenouil
+3944,,6,pommes de terre
+3944,cuillères à soupe,2,crème fraîche épaisse
+3945,,,coriandre
+3945,cuillères à café,6,vinaigre
+3945,cuillères à café,6,sucre
+3945,,1,concombre
+3945,,2,échalotes
+3945,,20,arachide
+3946,,,poivre
+3946,,,sel
+3946,cuillère à soupe,1,vinaigre de xérès
+3946,,100,beurre
+3946,,1,chou-fleur
+3947,pincée,1,poivre
+3947,pincée,1,sel
+3947,cl,20,crème fraîche
+3947,,60,beurre
+3947,cuillère à café,1,moutarde
+3947,sachet,1,purée
+3947,cl,45,eau
+3947,cl,25,lait
+3947,cuillère à café,1,huile de pépin de raisin
+3947,cuillère à café,1,échalote
+3947,cuillère à café,1,Moutarde au miel
+3948,,,sel
+3948,,,poivre
+3948,,50,beurre
+3948,,100,gruyère râpé
+3948,kg,11,pomme de terre
+3948,,40,cèpes
+3948,cl,25,crème fraîche épaisse
+3948,,250,lait
+3948,gousse,1,ail
+3949,,,vinaigre
+3949,,,champignon
+3950,,,beurre
+3950,boîte,,maïs
+3950,,,feta
+3951,,1,gros sel
+3951,,4,sel
+3951,,1,chou
+3951,poignée,1,baie de genévrier
+3952,,,sel
+3952,,,clou de girofle
+3952,,,vinaigre
+3952,,,chou-fleur
+3952,,,oignon blanc
+3952,,,laurier
+3953,,,sel
+3953,,,huile de friture
+3953,kg,1.2,carotte
+3954,,,sel
+3954,,,poivre
+3954,,5,courgettes
+3954,,,ail
+3954,,,menthe
+3954,,,huile d'olive
+3955,,50,beurre
+3955,,800,pomme de terre
+3955,gousses,2,ail
+3955,botte,0.5,cresson
+3955,,0.5,chaource
+3955,,,sel gris
+3955,,,gros sel
+3955,,,poivre du moulin
+3956,,,sel
+3956,,,poivre
+3956,pincées,2,sucre
+3956,,25,beurre
+3956,,2,carottes
+3956,,600,petits pois
+3956,,4,pommes de terre
+3956,,12,oignons nouveaux
+3956,,1,laitue
+3956,gousse,1,ail
+3956,feuilles,2,sauge
+3957,,,farine
+3957,cuillère à soupe,1,sel
+3957,,80,huile
+3957,,200,fromage râpé
+3957,,400,farine de tapioca
+3957,,160,lait
+3957,,80,eau
+3957,,1,oeuf
+3958,,20,levure
+3958,,18,sel
+3958,kg,1,farine de blé
+3958,,600,eau
+3959,,8,beurre
+3959,,8,sel
+3959,sachet,1,levure
+3959,,400,farine
+3959,,300,eau
+3960,,1,poivron
+3960,,4,carottes
+3960,,4,tomates
+3960,,240,lentilles vertes
+3960,,2,échalotes
+3960,cl,75,bouillon
+3960,pincée,1,harissa
+3960,cuillères à café,2,Ras el Hanout
+3960,cuillères à soupe,3,huile d'olive
+3961,,,sel
+3961,cuillères,7,huile
+3961,,5.5,levure
+3961,,250,farine
+3961,cuillères,7,eau
+3962,,200,haricots rouges
+3962,,200,pois chiches
+3962,,1,poivron rouge
+3962,,1,tomate
+3962,,140,maïs
+3962,,150,olives vertes
+3962,,100,feta
+3962,,1,vinaigrette
+3963,,,sel
+3963,,,poivre
+3963,verres,2,huile
+3963,,4,artichauts
+3963,,1,citron
+3963,gousses,2,ail
+3964,,,huile
+3964,,,poivre
+3964,,,sel
+3964,cuillère à café,1,coriandre
+3964,cuillère à café,1,gingembre
+3964,cuillère à café,1,cumin en poudre
+3964,verre,1,farine de pois chiches
+3964,verre,1.5,eau
+3965,,,sel
+3965,,,poivre
+3965,,1,courgette
+3966,,1,beurre
+3966,,2,sucre
+3966,kg,1,clémentine
+3966,,2,cannelle
+3966,,2,muscat
+3966,,,eau
+3967,,80,beurre
+3967,,100,farine
+3967,,100,sucre
+3967,,2,jaunes d'oeuf
+3967,,100,amandes en poudre
+3968,cuillère à café,0.5,sel
+3968,cuillère à café,0.5,bicarbonate
+3968,sachet,1,levure chimique
+3968,,180,farine
+3968,,180,farine complète
+3968,cl,30,babeurre
+3969,,,poivre
+3969,,,sel
+3969,,,thym
+3969,,2,carottes
+3969,,500,topinambour
+3969,,250,pomme de terre
+3969,,1,citron
+3969,,,ail
+3969,,,huile d'olive
+3970,,,sel
+3970,,,poivre
+3970,,,thym
+3970,,250,lardons
+3970,,10,carottes
+3970,,,huile d'olive
+3971,pincée,1,sel
+3971,,2,pâtes feuilletées
+3971,,100,sucre en poudre
+3971,,75,beurre doux
+3971,,125,amandes
+3971,,3,jaunes d'oeuf
+3971,cuillère à soupe,1,fécule de pomme de terre
+3971,cuillères à soupe,2,arôme amande amère
+3972,cuillères à soupe,4,beurre
+3972,cuillères à soupe,2,sucre
+3972,,3,levure
+3972,,525,farine
+3972,cuillère à café,1,sel
+3972,,1,oeuf
+3972,,,eau
+3972,cuillère à café,1,cannelle
+3972,,1,jaune d'oeuf
+3973,,0.5,levure
+3973,,8,sel
+3973,,305,farine
+3973,,100,farine de seigle
+3973,,240,eau
+3974,,,poivre
+3974,,,sel
+3974,morceau,1,sucre
+3974,,1,oignon
+3974,cl,10,bouillon de légumes
+3974,cuillères à soupe,5,sauce tomate
+3974,,1,haricots verts
+3974,gousses,2,ail
+3975,,1,pâte feuilletée
+3975,,2,pommes de terre
+3975,,1,oeuf
+3975,cl,15,lait
+3975,,1,jaune d'oeuf
+3976,cuillère à soupe,1,miel
+3976,cuillères à café,2,levure
+3976,cuillère à café,1,sel
+3976,,250,farine
+3976,cuillère à soupe,1,huile d'olive
+3976,,,eau
+3977,,,huile
+3977,cl,10,cognac
+3977,,,thym
+3977,kg,1,pomme de terre
+3977,,,laurier
+3977,,3,échalotes
+3978,pincée,1,poivre
+3978,pincée,1,sel
+3978,,250,pomme de terre
+3978,,2,panais
+3978,cl,10,crème fraîche liquide
+3979,,,sel
+3979,,,poivre
+3979,cuillère à café,1,sucre
+3979,,1,oignon
+3979,,500,épinards frais
+3979,,,huile d'olive
+3980,cuillère à soupe,1,beurre
+3980,cuillères à soupe,2,sucre roux
+3980,,3,pommes
+3980,sachet,1,sucre vanillé
+3980,cuillère à café,0.5,cannelle
+3981,cuillères à café,2,sel
+3981,sachet,1,levure de boulanger
+3981,cuillères à soupe,3,huile d'olive
+3981,,350,farine
+3982,,,curry
+3982,,1,oignon
+3982,grosses,5,crème fraîche
+3982,,10,sucre
+3982,,5,sel
+3982,,30,beurre
+3982,,25,levure
+3982,,600,farine
+3982,,180,lait
+3982,,150,eau
+3982,,1,oeuf
+3982,,4,escalopes de poulet
+3983,tranches,20,pain
+3984,,,sel
+3984,cuillères à soupe,2,huile de sésame
+3984,cuillères à soupe,2,huile
+3984,botte,1,coriandre
+3984,,2,carottes
+3984,,1,poivron
+3984,,200,nouilles de riz
+3984,,1,oignon rouge
+3984,,100,haricot
+3984,branches,2,céleri
+3984,,,menthe
+3984,,30,cacahuètes
+3984,cuillères à soupe,2,sauce soja
+3984,cuillères à soupe,2,sucre brun
+3984,,1,petit piment
+3984,,1,citron vert
+3985,,,fromage râpé
+3985,,1,bouillon de légumes
+3985,,0.5,oignon
+3985,,1,céleri
+3985,,,huile d'olive
+3985,,,fromage frais
+3986,,190,margarine
+3986,cuillère à café,0.5,sel
+3986,,250,farine
+3986,,125,eau
+3987,pincée,1,poivre
+3987,pincée,1,sel
+3987,,3,tomates
+3987,,1,poivron jaune
+3987,,1,poivron rouge
+3987,,2,oignons
+3988,,,sel
+3988,,,poivre
+3988,,400,purée
+3988,,3,oeufs
+3988,verre,0.5,lait
+3988,,,Parmesan
+3989,,,sel
+3989,,,poivre
+3989,cuillères à soupe,3,farine
+3989,,50,beurre
+3989,,100,gruyère râpé
+3989,kg,1,blette
+3989,l,0.5,lait
+3989,,1,jaune d'oeuf
+3990,,,huile d'olive
+3990,,150,chèvre frais
+3990,,2,aubergines
+3990,,,basilic frais
+3991,,,sel
+3991,,,poivre
+3991,,50,beurre
+3991,kg,1,pomme de terre
+3991,gousses,3,ail
+3992,,,sel
+3992,cuillère à café,1,gingembre
+3992,cuillères à café,2,piment
+3992,,2,oignons
+3992,,1,chou chinois
+3992,gousses,2,ail
+3993,,,sel
+3993,,,poivre
+3993,,,thym
+3993,,200,oignon
+3993,,400,tomate
+3993,,750,courgette
+3993,,,fenouil
+3993,,,ail
+3994,,,sel
+3994,,,poivre
+3994,brins,4,coriandre
+3994,,100,beurre
+3994,,2,oignons
+3994,pincée,1,cumin en poudre
+3994,,1,clou de girofle
+3994,,0.5,anis étoilé
+3994,pincée,1,cannelle
+3994,,40,raisins secs
+3994,,500,semoule
+3995,,,persil
+3995,,,fond de veau
+3995,,,sel
+3995,,,poivre
+3995,cl,25,crème fraîche
+3995,cl,12,porto
+3995,,1,beurre
+3995,,500,champignon
+3995,cl,12,vin blanc
+3996,,,sel
+3996,,,poivre
+3996,cuillère,0.5,muscade
+3996,,500,topinambour
+3996,,500,pomme de terre
+3996,,100,lait
+3996,,1,jaune d'oeuf
+3997,,1,beurre
+3997,pincée,1,poivre
+3997,pincée,1,fleur de sel
+3997,pincée,1,muscade
+3997,,0.5,échalote
+3997,pincée,1,herbes de Provence
+3998,,,sel
+3998,,,poivre
+3998,,,thym
+3998,petite boîte,1,haricots verts
+3998,grosse,1,flageolet
+3998,boîte,1,tomates pelées
+3998,,1,oignon blanc
+3998,gousses,2,ail
+3998,,,basilic
+3998,,,huile d'olive
+3999,,,poivre
+3999,,,huile de sésame
+3999,,,sucre en poudre
+3999,,1,cube de bouillon
+3999,,,champignon frais
+3999,,,sauce soja
+4000,,,sel
+4000,,5,pommes de terre
+4000,,4,pommes
+4000,cuillères à soupe,3,huile d'olive
+4000,feuille,,basilic
+4001,pincée,1,poivre
+4001,pincée,1,sel
+4001,,1,oignon
+4001,filet,1,huile d'olive
+4001,,2,tomates
+4001,,1,aubergine
+4001,,2,courgettes
+4001,,1,pain
+4001,bouquet,1,menthe
+4001,,10,olives noires
+4001,,1,mozzarella
+4002,,,sel
+4002,,,poivre
+4002,,12,beurre tendre
+4002,,20,gruyère râpé
+4002,cuillères à soupe,4,crème fraîche
+4002,,8,pommes de terre
+4002,cl,25,fromage ail et fines herbes
+4002,,2,oeufs
+4003,,,huile de friture
+4003,,,sel
+4003,,2,aubergines
+4004,,,huile d'olive
+4004,cuillère à soupe,1,maïzena
+4004,,,safran
+4004,cuillère à soupe,1,crème fraîche
+4004,,,sel
+4004,,,poivre
+4004,,100,jambon
+4004,cuillère à café,0.5,curcuma
+4004,,2,oignons
+4004,verre,1,avoine
+4004,cl,10,eau
+4004,cl,10,lait
+4004,,100,céleri branche
+4004,,30,parmesan râpé
+4005,,3,beurre
+4005,pincée,1,piment de Cayenne
+4005,pincée,1,gingembre
+4005,pincée,1,muscade
+4005,pincées,3,sel
+4005,,2,oignons
+4005,kg,1,patate douce
+4005,cl,20,lait de coco
+4006,,45,farine
+4006,,650,potiron
+4006,verre,1,lait
+4006,,2,oeufs
+4006,,50,gruyère
+4006,,45,beurre demi-sel
+4006,,45,chapelure
+4006,,30,parmesan râpé
+4007,,,beurre
+4007,,,sel
+4007,,,poivre
+4007,,,crème fraîche
+4007,cuillère à soupe,1,farine
+4007,,400,épinards
+4007,,400,oseille
+4007,,400,bette à carde
+4007,,1,oignon blanc
+4007,cl,10,lait
+4008,,20,sésame
+4008,paquet,1,levure
+4008,cuillères à café,2,sel
+4008,,380,farine
+4008,,30,beurre tendre
+4008,,500,eau
+4008,,380,farine complète
+4009,goutte,,vinaigre balsamique
+4009,,,thym
+4009,,,persil
+4009,,,sel
+4009,,,poivre
+4009,,2,oignons
+4009,,2,tomates
+4009,,3,aubergines
+4009,gousses,3,ail
+4009,cuillère à soupe,1,huile d'olive
+4009,,,basilic
+4010,sachet,1,vanille
+4010,cuillères à soupe,5,sucre
+4010,,150,flocons d'avoine
+4010,l,1,lait
+4010,,,poudre de pudding
+4011,,,sel
+4011,,,poivre
+4011,cuillère à soupe,,huile
+4011,cuillère à soupe,,curry
+4011,,6,pommes de terre
+4011,,3,échalotes
+4011,gousses,3,ail
+4012,,1,tomate
+4012,cuillère à soupe,1,huile
+4012,,1,piment
+4012,pincée,1,gros sel
+4012,lamelle,,combava
+4012,,1,échalote
+4013,cuillère à café,1,tabasco
+4013,,1,chou
+4013,cuillères à soupe,2,mayonnaise
+4013,botte,1,ciboulette
+4013,,30,raisins secs
+4014,,,muscade
+4014,,,sel
+4014,,,poivre
+4014,,,beurre
+4014,,,fromage râpé
+4014,,1,courgette
+4014,verre,1,lait
+4014,,1,oeuf
+4014,,1,biscotte
+4015,,,coriandre
+4015,,,orange
+4015,,4,carottes
+4015,,4,poireaux
+4015,,2,échalotes
+4015,,100,lait de coco
+4016,,50,gruyère râpé
+4016,,,sel
+4016,,,poivre
+4016,,1,oignon
+4016,cl,25,crème fraîche
+4016,,6,courgettes
+4016,,3,oeufs
+4016,,12,feta marinée
+4016,,,huile d'olive
+4017,,30,beurre
+4017,,10,sel
+4017,,10,sucre
+4017,,20,levure de boulanger fraîche
+4017,,500,farine
+4017,,100,eau
+4017,,100,lait
+4017,,75,bicarbonate
+4017,l,2,eau
+4017,poignée,1,gros sel
+4017,,1,jaune d'oeuf
+4017,cuillères à soupe,2,lait
+4018,,,sel
+4018,,,poivre
+4018,,,huile d'olive
+4018,,,crème fraîche
+4018,,1,artichaut
+4018,cuillère,,artichaut
+4018,,1,citron
+4019,,,sel
+4019,,,poivre
+4019,cuillère à soupe,1,gros sel
+4019,,70,beurre
+4019,,6,pommes de terre
+4019,,0.5,citron
+4019,,,ciboulette
+4020,cuillères à soupe,2,origan
+4020,,140,fromage râpé
+4020,tranches,4,jambon blanc
+4020,sachet,1,levure
+4020,,170,farine
+4020,,3,oeufs
+4020,,1,yaourt nature
+4020,cuillères à soupe,6,huile d'olive
+4020,,5,champignons de Paris
+4020,,140,concentré de tomates
+4020,,20,olives vertes
+4021,,10,levure
+4021,,760,farine
+4021,,20,sucre
+4021,,20,beurre
+4021,,14,sel
+4021,,300,eau
+4021,,145,lait
+4022,,,sel
+4022,,,poivre
+4022,cuillère à café,0.5,maïzena
+4022,cuillère à café,0.5,orange
+4022,,20,beurre
+4022,cuillères à soupe,2,miel
+4022,,6,carottes
+4022,cuillères à soupe,2,cassonade
+4023,cuillères à soupe,2,huile
+4023,cuillère à café,1,sel
+4023,,500,farine
+4023,cl,26.5,eau
+4024,,200,sucre
+4024,,3,citrons
+4024,cl,10,eau
+4024,cl,10,eau
+4024,cuillères à soupe,3,crème
+4024,,2,agar-agar
+4025,,0.5,levure
+4025,,8,sel
+4025,,305,farine
+4025,,100,farine de seigle
+4025,,240,eau
+4026,,,sel
+4026,,,poivre
+4026,cuillère à soupe,1,persil
+4026,,2,pommes de terre
+4026,,150,champignons de Paris
+4026,,1,échalote
+4026,cuillère à café,1,huile d'olive
+4026,,0.5,crottin de Chavignol
+4027,cl,15,huile d'olive
+4027,bouquet,1,persil
+4027,,4,artichauts violets
+4027,gousses,5,ail
+4028,cl,10,fond de veau
+4028,cuillère à soupe,1,vinaigre
+4028,,50,beurre
+4028,,,sel
+4028,,,poivre
+4028,,30,sucre en poudre
+4028,,3,oignons
+4028,cl,20,vin blanc
+4029,,,sel
+4029,,,poivre
+4029,,,thym
+4029,,,origan
+4029,verre,0.5,vinaigre balsamique
+4029,,4,oignons
+4029,,4,aubergines
+4029,,100,raisins secs
+4029,gousses,5,ail
+4029,,800,tomates pelées
+4029,verre,1,olives
+4029,verre,1,câpres
+4029,,,huile d'olive
+4029,,,laurier
+4029,,,sauge
+4030,,,romarin
+4030,,,thym
+4030,,,gros sel
+4030,,,tomate
+4030,,,huile d'olive
+4030,,,ail
+4031,,,sel
+4031,,1,feuille de laurier
+4031,,4,clous de girofle
+4031,,1,oignon
+4031,,800,pomme
+4031,kg,1,graisse à friteuse
+4032,pincée,1,muscade
+4032,,,sel
+4032,,,poivre
+4032,l,0.5,lait entier
+4032,cl,20,crème
+4032,,7,pommes de terre
+4032,l,,ail
+4032,pincée,1,poivre de Cayenne
+4033,,,sel
+4033,,,poivre
+4033,cuillère à soupe,1,crème fraîche
+4033,cuillères à soupe,2,persil
+4033,,20,beurre
+4033,,200,courgette
+4033,,1,oeuf
+4033,gousse,1,ail
+4034,,,piment d'Espelette
+4034,,,sel
+4034,,1,oignon
+4034,,1,feuille de laurier
+4034,,1,courgette
+4034,,100,lardons
+4034,,120,riz basmati
+4034,cl,30,eau
+4034,cl,10,vin blanc
+4034,gousses,2,ail
+4034,,1,bouillon
+4035,,,sel
+4035,,,poivre
+4035,,2,coriandre
+4035,cuillères à soupe,3,huile d'olive
+4035,cuillères à soupe,3,miel liquide
+4035,,1,oignon
+4035,,500,courgette
+4035,,500,carotte
+4035,pointe,1,cannelle
+4036,,,sel
+4036,kg,1,farine de blé
+4037,,,thym
+4037,,,sel
+4037,,,poivre
+4037,,3,feuilles de laurier
+4037,,0.5,poivron vert
+4037,,1,oignon
+4037,,1,tomate
+4037,,3,pommes de terre
+4037,gousse,1,ail
+4037,verre,0.3333333,huile d'olive
+4037,verre,0.25,vin blanc
+4037,cuillère à soupe,1,fond de volaille
+4037,,,herbes de Provence
+4038,,,sel
+4038,,,poivre
+4038,,,persil
+4038,,1,oignon
+4038,,800,pomme de terre
+4038,gousse,1,ail
+4038,,,graisse d'oie
+4039,,0.5,oignon
+4039,cuillères à soupe,2,moutarde à l'ancienne
+4039,,5,pommes de terre
+4039,cuillères à soupe,5,mayonnaise
+4039,,3,cornichons
+4040,,,sel
+4040,,,poivre
+4040,,,fromage râpé
+4040,cuillères à soupe,3,crème fraîche
+4040,,4,patates douces
+4040,,1,courge
+4041,,,épices
+4041,,0.5,bouillon de légumes
+4041,sachet,0.5,levure chimique
+4041,,50,farine
+4041,,1,carotte
+4041,,100,lentilles corail
+4041,,1,oeuf
+4041,,25,lait végétal
+4042,,,sel
+4042,,,poivre
+4042,,,huile d'olive
+4042,,3,feuilles de laurier
+4042,,,thym
+4042,,1,courge
+4043,,,sel
+4043,cuillères à soupe,5,miel
+4043,,1,potimarron
+4043,cuillères à soupe,6,huile d'olive
+4043,cuillère à soupe,1,épices à pain d'épices
+4044,,,sel
+4044,cuillère à soupe,1,vinaigre
+4044,cuillères à soupe,6,huile
+4044,cuillère à café,1,safran
+4044,cuillère à café,1,moutarde
+4044,,50,gingembre
+4044,,1,oignon
+4044,,4,courgettes
+4044,botte,1,carotte
+4044,,2,choux romanesco
+4044,,2,choux
+4044,,2,choux-fleurs
+4044,gousses,4,ail
+4044,,0.5,piment vert
+4045,,,sel
+4045,,,poivre
+4045,,10,beurre
+4045,,2,pommes de terre
+4045,cl,5,lait
+4045,cl,5,crème
+4046,,,persil
+4046,cuillères à soupe,3,persil
+4046,,,beurre
+4046,,1,oignon
+4046,,10,carottes
+4046,,1,jaune d'oeuf
+4047,,,poivre
+4047,,,sel
+4047,cuillères à soupe,2,poivron rouge
+4047,cuillères à soupe,3,beurre
+4047,cuillères à soupe,3,huile d'olive
+4047,,200,spaghetti
+4047,gousses,3,ail
+4047,cuillères à soupe,2,concentré de tomates
+4047,cl,10,eau
+4047,tasse,0.5,crème fraîche épaisse
+4047,,400,crevettes
+4048,,,sel
+4048,,,poivre
+4048,,,thym
+4048,,1,oignon
+4048,,4,pommes de terre
+4048,,,bouillon de volaille
+4048,,,huile d'olive
+4049,,100,lardons fumés
+4049,,2,oignons jaunes
+4049,,200,tomates concassées
+4049,,250,lentilles vertes
+4049,,200,lait de coco
+4049,cuillères à soupe,2,poudre de colombo
+4050,,200,sucre en poudre
+4051,,,sel
+4051,,100,beurre
+4051,bocal,1,asperge
+4051,,400,pomme de terre
+4052,cuillères à soupe,4,curry
+4052,,600,sucre
+4052,cl,75,vinaigre
+4052,cuillères à soupe,4,sel
+4052,,3,oignons
+4052,kg,3,courgette
+4052,cl,75,eau
+4052,cuillères à soupe,2,poivre au citron
+4053,,,sel
+4053,,,poivre
+4053,,300,farine de pois chiches
+4053,l,1,eau
+4053,,,huile d'olive
+4054,,1,beurre
+4054,,,sel
+4054,,,poivre
+4054,,50,fromage râpé
+4054,,4,pommes de terre
+4054,l,0.25,lait
+4054,gousse,1,ail
+4055,,30,beurre
+4055,,600,patate douce
+4055,cl,15,crème semi-épaisse
+4055,,,sel et poivre
+4056,,,sel
+4056,,,épices
+4056,,6,tomates
+4056,paquets,2,mozzarella
+4056,,,ail
+4057,,,sel
+4057,,,poivre
+4057,,2,pâtes feuilletées
+4057,cl,50,crème épaisse
+4057,kg,1,pomme de terre
+4057,gousse,1,ail
+4057,,500,tomme
+4058,,,thym
+4058,,,sel
+4058,,,poivre
+4058,,1,poireau
+4058,kg,1,potiron
+4058,,500,pomme de terre
+4058,,,autres
+4058,,1,knacki
+4059,cl,10,vinaigre
+4059,,4,oeufs
+4059,,1,eau
+4060,brins,4,persil
+4060,,4,oignons
+4060,,0.5,citron
+4061,,,poivre
+4061,,,sel
+4061,,,curry
+4061,,,cumin
+4061,,,persil
+4061,,200,pois chiches
+4061,,250,lentilles corail
+4061,,2,pulpe de tomate
+4061,cl,10,lait de coco
+4061,cuillères à soupe,2,raisins secs
+4061,,,cannelle
+4062,,,sel
+4062,cuillères à soupe,2,huile d'arachide
+4062,cuillère à soupe,1,huile de sésame
+4062,tranches,2,jambon blanc
+4062,,250,riz
+4062,,50,petits pois
+4062,,1,oeuf
+4063,,,sel
+4063,,,poivre
+4063,,,piment
+4063,,4,épices
+4063,,,coriandre
+4063,,2,sucre
+4063,,0.5,oignon
+4063,,400,boeuf haché
+4063,gousse,1,ail
+4063,,800,pulpe de tomate
+4063,petite boîte,1,concentré de tomates
+4063,,,herbes de Provence
+4063,,1,bouquet garni
+4063,,,huile d'olive
+4064,,,sel
+4064,,,poivre
+4064,,4,feuilles de laurier
+4064,,250,lardons
+4064,kg,2,pomme de terre
+4064,l,1,crème fraîche liquide
+4064,gousse,1,ail
+4065,,,gingembre
+4065,boule,1,céleri
+4065,,6,pommes de terre
+4066,cuillère à soupe,1,huile
+4066,,,sel
+4066,,,poivre
+4066,cuillère à soupe,1,farine
+4066,,1,pomme de terre
+4066,poignée,1,haricots verts
+4066,,1,oeuf
+4067,,,huile
+4067,,,sel
+4067,,,poivre
+4067,,1,oignon
+4067,cuillère à soupe,1,farine
+4067,,600,pomme de terre
+4067,,2,oeufs
+4067,cuillères à soupe,4,lait
+4068,,,sel
+4068,,,poivre
+4068,,,curry
+4068,,50,gruyère râpé
+4068,,50,sauce tomate
+4068,,1,fenouil
+4068,kg,1,pomme de terre
+4068,l,0.3333333,lait
+4069,,,muscade
+4069,,,poivre
+4069,,,sel
+4069,,30,gruyère râpé
+4069,cl,20,crème fraîche
+4069,,1,oignon
+4069,,2,courgettes
+4069,,3,fenouil
+4069,,,huile d'olive
+4070,,,sel
+4070,,,poivre
+4070,poignée,1,persil
+4070,,3,courgettes
+4070,gousses,2,ail
+4070,cuillère à soupe,1,huile d'olive
+4071,,,sel
+4071,,,huile de friture
+4071,,500,potimarron
+4072,,,sel
+4072,,,poivre
+4072,morceau,1,comté
+4072,cl,20,crème fraîche
+4072,,30,beurre
+4072,bonne,1,persil
+4072,kg,1,blette
+4072,gousse,1,ail
+4072,verre,1,lait
+4072,morceau,1,pain
+4073,,1,oignon
+4073,,3,courgettes
+4073,,2,aubergines
+4073,gousses,2,ail
+4073,,5,oeufs
+4073,,1,crème épaisse
+4074,,,origan
+4074,,1,oignon
+4074,,4,fenouil
+4074,boîte,1,tomates pelées
+4074,gousses,2,ail
+4074,pot,1,crème
+4074,paquet,1,parmesan râpé
+4075,,,sel
+4075,cuillères à soupe,2,huile
+4075,cuillères à café,2,coriandre
+4075,cuillère à café,1,curcuma
+4075,,1,oignon
+4075,,3,tomates
+4075,,250,lentilles
+4075,,1,piment vert
+4075,,6,feuilles de curry
+4076,,2,pâte feuilletée
+4076,,,sel
+4076,,,poivre
+4076,,3,oignons
+4076,kg,2,poireau
+4076,cl,50,crème fraîche épaisse
+4076,gousses,2,ail
+4076,,1,jaune d'oeuf
+4077,pincée,1,sucre
+4077,cuillère à café,1,sel
+4077,pincée,1,poivre
+4077,pincée,1,piment de Cayenne
+4077,,3,tomates
+4077,,1,poivron vert
+4077,,1,oignon
+4077,,50,huile
+4077,gousse,1,ail
+4077,,700,maïs
+4077,cl,20,lait
+4077,pincée,1,cannelle
+4078,cl,20,huile
+4078,,,comté
+4078,pincée,1,poivre
+4078,pincée,1,sel
+4078,cuillère à café,1,persil
+4078,,4,pommes de terre
+4078,,1,oeuf
+4078,gousse,1,ail
+4079,,15,beurre
+4079,cuillère à café,0.5,sucre
+4079,cuillère à café,1,sel
+4079,,15,levure
+4079,,300,farine
+4079,,225,eau
+4080,,,sel
+4080,,,poivre
+4080,,,huile d'olive
+4080,kg,1,fenouil
+4081,,,sel
+4081,verre,1,riz
+4081,verres,2,eau
+4082,,,sel
+4082,,,poivre
+4082,cuillères à soupe,2,vin
+4082,cuillère à soupe,1,sucre
+4082,tasse,0.5,persil
+4082,cuillères à soupe,4,huile d'olive
+4082,,4,oignons
+4082,,5,poivrons
+4082,,125,eau
+4082,gousses,4,ail
+4082,cuillères à soupe,2,câpres
+4083,,,sel
+4083,,,poivre
+4083,,,beurre
+4083,,1,pomme
+4083,,,sirop
+4083,,,rose
+4084,pincée,1,poivre
+4084,,40,lardons
+4084,cuillères à soupe,3,crème fraîche
+4084,,3,pommes de terre
+4084,,30,gruyère
+4084,,3,oeufs
+4085,cuillères à soupe,2,huile
+4085,,,sel
+4085,,,poivre
+4085,,,persil
+4085,,1,oignon
+4085,kg,1,pomme de terre
+4085,branche,,chou-fleur
+4085,gousse,1,ail
+4085,,1,échalote
+4085,,,ciboulette
+4085,cuillères à café,2,poudre à colombo
+4085,,12,olives vertes
+4086,,5,courgettes
+4086,bocal,1,feta
+4086,,,pignons
+4087,cuillères à soupe,2,huile d'olive
+4087,,1,oignon
+4087,,200,semoule
+4087,boîte,1,pulpe de tomate
+4087,,,citron
+4087,,,menthe
+4088,,,vinaigre
+4088,,3,poivrons verts
+4088,,3,poivrons rouges
+4089,cuillère à soupe,1,épices
+4089,,,poivre
+4089,cuillères à soupe,2,gros sel
+4089,,1,aubergine
+4089,cuillère à café,1,herbes
+4089,cuillères à soupe,2,lait
+4089,cuillères à soupe,2,Parmesan
+4090,,,poivre
+4090,,1,cube de bouillon
+4090,,3,oignons
+4090,,1,tomates pelées
+4090,,3,pommes
+4091,,,sel
+4091,,,poivre
+4091,,150,Fruits de mer
+4091,tasses,2,riz basmati
+4091,cl,15,crème liquide
+4091,,,ciboulette
+4091,,,huile d'olive
+4092,,500,haricots verts
+4092,,,eau
+4093,,,sel
+4093,,,poivre
+4093,kg,1,cardon
+4093,cl,30,bouillon de volaille
+4093,,150,moelle de boeuf
+4094,,,persil
+4094,,,poivre
+4094,,,sel
+4094,,1,oignon
+4094,cl,10,crème fraîche
+4094,kg,1,pomme de terre
+4094,,100,lard
+4094,,200,poitrine fumée
+4094,,1,échalote
+4094,,1,blanc de poireau
+4095,,,sel
+4095,,200,crème fraîche
+4095,,1,pâte brisée
+4095,,200,carotte
+4095,,300,courgette
+4095,,2,oeufs
+4096,,,sel
+4096,,,poivre
+4096,,,origan
+4096,,,thym
+4096,,1,oignon
+4096,,6,tomates
+4096,,2,aubergines
+4096,gousse,1,ail
+4096,,,Parmesan
+4096,,,laurier
+4096,,,huile d'olive
+4097,,,sucre
+4097,,1,tomate
+4097,,1,cube de bouillon
+4097,,,gingembre
+4097,,1,oignon
+4097,,9,piments
+4097,gousses,7,ail
+4098,,,trompette de la mort
+4099,,,huile
+4099,,4,pommes de terre
+4099,,,muscadet
+4100,,,épices
+4100,,,sel
+4100,,,huile d'olive
+4100,,2,oignons
+4100,,1,courgette
+4100,,2,carottes
+4101,sachet,1,levure de boulanger
+4101,bonne,1,sel
+4101,,250,farine
+4101,verres,2,eau
+4101,verre,0.5,lait
+4101,,,chorizo
+4102,,,sel
+4102,,,poivre
+4102,kg,1,pomme de terre
+4102,,2,jaunes d'oeuf
+4102,,,lait
+4103,,,huile d'olive
+4103,,,piment de Cayenne
+4103,,,sel
+4103,,,poivre
+4103,boîte,1,tomates concassées
+4103,,2,oignons
+4103,,,flageolet
+4103,gousse,1,ail
+4104,,,sel
+4104,,,poivre
+4104,,,muscade
+4104,,30,beurre
+4104,,450,potiron
+4104,,250,pomme de terre
+4104,gousse,1,ail
+4104,,3,oeufs
+4104,,50,gruyère
+4104,,25,Parmesan
+4104,,,huile d'olive
+4105,,,sel
+4105,,,poivre
+4105,cuillère à café,0.5,curcuma
+4105,,,coriandre
+4105,,,huile de friture
+4105,,1,oignon
+4105,,1,poivron vert
+4105,,2,tomates
+4105,,3,aubergines
+4105,,1,piment vert
+4105,gousse,1,ail
+4105,,2,yaourts à la grecque
+4106,,1,piment
+4106,,,poivre
+4106,cuillère à café,1,sel
+4106,,50,maïzena
+4106,,200,farine
+4106,,500,patate douce
+4106,gousses,2,ail
+4106,,,oignon cébette
+4106,,2,oeufs
+4106,,250,lait de coco
+4106,,,crevettes
+4107,pincée,1,poivre
+4107,pincée,1,sel
+4107,,2,feuilles de laurier
+4107,branches,2,thym
+4107,,6,tomates
+4107,,2,oignons
+4107,,3,poivrons
+4107,,6,courgettes
+4107,,6,aubergines
+4107,gousses,3,ail
+4107,cuillères à soupe,8,huile d'olive
+4108,cuillère à café,0.5,piment
+4108,feuilles,5,persil
+4108,pincée,1,poivre
+4108,pincée,1,sel
+4108,cuillères à soupe,5,huile
+4108,,1,citron
+4108,,600,gombo
+4109,cuillère à soupe,1,sel
+4109,,800,semoule fine
+4109,,,eau
+4110,boîte,1,purée de tomate
+4110,kg,1,aubergine
+4110,gousse,1,ail
+4110,,,herbes de Provence
+4111,,,muscade
+4111,,,sel
+4111,,,poivre
+4111,,3,pommes de terre
+4111,gousse,1,ail
+4111,cl,40,crème liquide
+4112,,,sel
+4112,cuillères à soupe,3,persil
+4112,,2,radis
+4112,gousses,2,ail
+4112,cuillères à soupe,2,ciboulette
+4112,,150,yaourt à la grecque
+4113,,,sel
+4113,,,poivre
+4113,,,gruyère râpé
+4113,,250,pâtes
+4113,,250,chou-fleur
+4113,,250,brocoli
+4113,,1,oeuf
+4113,cl,20,crème fraîche liquide
+4113,,,herbes de Provence
+4114,,,sel
+4114,,,betterave
+4114,,,eau
+4115,,,sel
+4115,,,poivre
+4115,,3,bananes
+4115,,50,beurre
+4115,,1,oignon
+4115,,250,farine de manioc
+4115,,50,bacon
+4115,gousse,1,ail
+4116,,150,lardons fumés
+4116,,100,comté
+4116,cuillère à café,1,sel
+4116,cuillère à soupe,1,sucre
+4116,sachet,1,levure
+4116,,500,farine
+4116,,250,eau
+4117,cuillère à soupe,1,vinaigre balsamique
+4117,,,poivre
+4117,,,sel
+4117,,3,courgettes
+4117,,4,carottes
+4117,,1,cube de bouillon
+4117,bouquet,1,romarin
+4117,kg,1,tomates pelées
+4117,bouquet,1,basilic
+4117,,,huile d'olive
+4117,gousse,1,ail
+4117,,200,champignons de Paris
+4118,,1,oignon
+4118,goutte,1,tabasco
+4118,,,sel
+4118,,,poivre
+4118,,1,avocat
+4118,cl,20,crème
+4119,,,poivre
+4119,cuillères à soupe,2,huile
+4119,,1,curcuma
+4119,,4,thym
+4119,,200,lardons
+4119,,1,oignon
+4119,,2,concombres
+4119,gousses,8,ail
+4120,pincées,2,poivre
+4120,branches,3,thym
+4120,,250,polenta
+4120,,4,échalotes
+4120,,1,bouillon
+4120,cuillères à soupe,2,huile de pépin de raisin
+4121,,,sel
+4121,,,poivre
+4121,,1,cube de bouillon
+4121,,5,beurre
+4121,,400,riz basmati
+4121,,400,champignons de Paris
+4121,,2,briques
+4122,,250,sel
+4122,kg,1,pomme de terre
+4122,,1,eau
+4123,,10,levure
+4123,,10,sel
+4123,,500,farine
+4123,,350,eau
+4124,,,sel
+4124,,,poivre
+4124,,,gruyère râpé
+4124,,,sucre
+4124,,,huile d'olive
+4124,cuillères,2,farine
+4124,cl,20,crème fraîche
+4124,,2,cubes de bouillon
+4124,,1,oignon
+4124,,4,courgettes
+4124,,1,chou-fleur
+4124,cl,75,eau
+4124,,,paprika
+4125,,0.5,levure
+4125,,8,sel
+4125,,305,farine
+4125,,100,farine de seigle
+4125,,240,eau
+4126,cl,10,huile d'olive
+4126,,1,oignon
+4126,,200,beaufort
+4126,,400,crozet
+4126,cl,20,vin blanc sec
+4126,,750,bouillon de poule
+4127,bouquet,1,persil
+4127,,8,tomates
+4127,,6,courgettes
+4127,,2,poivrons
+4127,,2,aubergines
+4127,,50,lardons
+4127,bouquet,1,basilic
+4127,gousses,2,ail
+4127,,,huile d'olive
+4128,,,sel
+4128,,,poivre
+4128,,,muscade
+4128,cl,25,lait demi-écrémé
+4128,,500,pomme de terre
+4128,,2,oeufs
+4128,,30,gruyère
+4128,gousse,1,ail
+4129,,1,poivre
+4129,pincée,1,sel
+4129,cuillère à café,1,thym
+4129,,45,beurre tendre
+4129,,8,pommes de terre
+4129,,25,Parmesan
+4129,gousse,1,ail
+4130,cuillère,0.5,gros sel
+4130,cuillère à café,1,gingembre
+4130,cuillère à café,1,curcuma
+4130,cuillères à soupe,3,huile
+4130,,2,fenouil
+4130,,1,oignon rouge
+4130,cuillère à café,0.5,cannelle
+4131,,,sel
+4131,,,poivre
+4131,,500,pomme de terre
+4131,,50,graisse d'oie
+4132,pincées,3,sel
+4132,cuillères à soupe,2,sucre
+4132,,60,beurre
+4132,,1,orange
+4132,kg,1.5,patate douce
+4132,cuillère à café,1,cannelle
+4133,,,sucre
+4133,,,fruits rouges
+4133,pot,1,mascarpone
+4133,,,caramel
+4134,,,sel
+4134,,,poivre
+4134,,6,courgettes
+4134,gousses,2,ail
+4134,,,huile d'olive
+4134,,,bouillon
+4134,,,crème fraîche allégée
+4135,,5,beurre
+4135,,,gruyère râpé
+4135,,,sel
+4135,,,poivre
+4135,,1,persil
+4135,,,huile
+4135,kg,1,courge
+4135,gousses,2,ail
+4135,,1,lait
+4135,poignées,2,riz
+4135,,,chapelure
+4136,,1,chou-fleur
+4136,,1,oeuf
+4136,,100,farine
+4136,,100,poudre de noisette
+4136,,50,chapelure
+4136,,,huile
+4136,,1,citron
+4136,,,sel
+4136,,,poivre
+4137,cuillères à soupe,3,huile d'olive
+4137,,50,levure
+4137,,200,oignon
+4137,,100,carotte
+4137,,200,champignon
+4137,,80,olives noires
+4137,,12,biscottes
+4138,,,muscade
+4138,,,sel
+4138,,,poivre
+4138,,,persil
+4138,cuillères à soupe,2,crème fraîche
+4138,,4,pommes de terre
+4138,,4,rutabagas
+4138,cl,25,lait
+4139,poignée,1,coriandre
+4139,,1,oignon
+4139,,,sel
+4139,,200,riz thaï
+4139,cl,20,lait de coco
+4139,cuillère à soupe,1,pâte de curry
+4139,,1,mangue
+4140,,,poivre
+4140,,,sel
+4140,cuillères à soupe,2,curry
+4140,cl,10,huile d'olive
+4140,,1,oignon
+4140,,2,tomates
+4140,,2,courgettes
+4140,,1,aubergine
+4140,,3,poivrons
+4140,gousse,1,ail
+4141,,,muscade
+4141,,,sel
+4141,,,poivre
+4141,cuillère à soupe,1,farine
+4141,cuillère à soupe,1,beurre
+4141,cuillères à soupe,2,persil
+4141,,0.5,oignon
+4141,,1,baguette
+4141,cl,25,lait
+4141,zeste,,citron
+4141,,2,oeufs
+4142,grosse,1,sel
+4142,cuillère à café,1,levure chimique
+4142,cuillères à soupe,2,Ras el Hanout
+4142,cuillère à soupe,1,huile
+4142,,250,farine
+4142,,2,aubergines
+4142,,1,blanc d'oeuf
+4142,cuillère à café,1,cannelle
+4142,,,eau
+4143,,1,bouillon de légumes
+4143,,,sel
+4143,,,poivre
+4143,bouquet,1,persil
+4143,,1,oignon
+4143,,320,riz pour risotto
+4143,bocal,1,coeur d'artichaut
+4143,cuillère à soupe,1,huile d'olive
+4143,verre,1,vin blanc sec
+4143,,60,parmesan râpé
+4143,cl,20,crème liquide
+4143,gousse,1,ail
+4143,,1,basilic
+4144,,,poivre
+4144,,,sel
+4144,,4,aubergines
+4144,gousses,4,ail
+4144,,4,piments verts
+4144,,,huile d'olive
+4145,,1,sel
+4145,pincée,1,bicarbonate
+4145,,55,beurre
+4145,,115,farine
+4145,,250,flocons d'avoine
+4146,,400,tomates cerise
+4146,cuillères à soupe,4,sucre roux
+4146,cl,10,vinaigre balsamique
+4146,filet,1,huile d'olive
+4147,,,muscade
+4147,,,sel
+4147,,,poivre
+4147,,800,courgette
+4147,,40,margarine
+4147,,2,oignons
+4147,,800,pomme de terre
+4147,,1,bouillon de volaille
+4147,cuillères à soupe,4,crème fraîche allégée
+4148,,,persil
+4148,,,sel
+4148,,,poivre
+4148,,,huile
+4148,,3,poireaux
+4148,,500,champignon
+4148,,,crème végétale
+4148,,,soja
+4148,,,herbes de Provence
+4149,,,sel
+4149,,,poivre
+4149,,,gruyère râpé
+4149,cl,20,crème fraîche
+4149,,4,courgettes
+4149,tranches,2,jambon cru
+4149,,2,oeufs
+4149,,20,parmesan râpé
+4149,,,huile d'olive
+4149,gousse,1,ail
+4150,,,sel
+4150,,,poivre
+4150,pincées,3,muscade
+4150,,30,beurre
+4150,,200,purée
+4150,,6,oeufs
+4150,,150,crème fraîche épaisse
+4150,cuillères à soupe,3,vermouth
+4151,,,sel
+4151,,,poivre
+4151,,,fromage râpé
+4151,,4,courgettes
+4151,,1,fromage ail et fines herbes
+4151,,100,mimolette
+4151,,,chapelure
+4151,cuillères à café,4,semoule fine
+4152,,600,sucre fin
+4152,,4,citrons
+4152,l,1,eau
+4153,,1,beurre
+4153,,60,sucre glace
+4153,cuillères à soupe,4,vinaigre de vin
+4153,,250,oignon rouge
+4153,cuillère à soupe,1,grenadine
+4154,,,sel
+4154,,,poivre
+4154,,50,beurre tendre
+4154,,6,pommes de terre
+4154,cuillères à soupe,2,huile d'olive
+4155,,,sel
+4155,,,poivre
+4155,pincée,1,muscade
+4155,,60,farine
+4155,,250,lardons
+4155,kg,1,pomme de terre
+4155,,200,gruyère
+4155,,60,mozzarella
+4155,,60,beurre demi-sel
+4155,cl,75,lait
+4156,,,poivre
+4156,,,sel
+4156,cuillères à soupe,4,curry
+4156,,3,courgettes
+4156,cl,40,lait
+4156,cl,10,crème liquide
+4156,,1,oeuf
+4156,,100,gruyère
+4156,cuillères à soupe,3,huile d'olive
+4157,,,vinaigre
+4157,,,piment
+4158,cuillère à café,0.25,muscade
+4158,cl,10,crème fraîche
+4158,kg,1,pomme de terre
+4158,gousse,1,ail
+4158,cl,65,lait
+4158,,,sel et poivre
+4159,pincée,1,poivre
+4159,pincée,1,sel
+4159,,50,beurre
+4159,,900,patate douce
+4159,cl,20,crème semi-épaisse
+4160,cuillère,1,huile
+4160,,,sel
+4160,,,poivre
+4160,,50,beurre
+4160,,2,poireaux
+4160,gousse,1,ail
+4160,,4,oeufs
+4160,,500,patate douce
+4160,briquette,1,crème liquide
+4160,,250,feta
+4161,,200,sucre
+4161,,8,pommes
+4161,,350,airelles
+4161,cl,25,eau
+4162,,,sel
+4162,,10,beurre
+4162,cuillère à soupe,1,curry
+4162,,1,oignon
+4162,,1,chou-fleur
+4162,cl,50,lait de coco
+4162,,,soja
+4162,,1,citron vert
+4163,,1,beurre
+4163,pincée,1,poivre
+4163,pincée,1,sel
+4163,,2,feuilles de laurier
+4163,,2,oignons
+4163,,200,lardons
+4163,,500,pois cassés
+4163,,6,pommes de terre
+4163,gousses,4,ail
+4163,cl,15,lait
+4164,cuillère à soupe,1,huile
+4164,bouquet,1,coriandre
+4164,cuillère à soupe,1,gingembre
+4164,cuillère à café,1,cumin
+4164,,,sel
+4164,,,poivre
+4164,,2,oignons
+4164,,500,farine de manioc
+4164,,2,oeufs
+4165,,1,courgette
+4165,,1,potiron
+4166,,,huile
+4166,cuillère à soupe,1,farine
+4166,,150,lardons
+4166,,5,pommes de terre
+4166,,2,brocolis
+4166,,200,gruyère
+4166,,,lait
+4167,,150,gruyère râpé
+4167,,1,oignon jaune
+4167,,200,lardons fumés
+4167,boule,0.5,céleri
+4167,,10,pommes de terre
+4167,cl,25,crème liquide
+4167,verre,1,lait
+4168,cuillère à café,0.25,muscade
+4168,cl,10,crème fraîche
+4168,kg,1,pomme de terre
+4168,gousse,1,ail
+4168,cl,65,lait
+4168,,,sel et poivre
+4169,,,sel
+4169,,,poivre
+4169,kg,1,lactaire délicieux
+4169,grosses,2,huile d'olive
+4169,,,persillade
+4170,,,huile d'olive
+4170,,,poivron
+4170,,1,cube de bouillon
+4170,,,oignon
+4170,verres,3,riz
+4170,,,champignon
+4171,,,sel
+4171,,,poivre
+4171,,6,tomates
+4171,,2,aubergines
+4171,,2,courgettes
+4171,,,huile d'olive
+4172,,,poivre
+4172,,,fleur de sel
+4172,,50,beurre
+4172,,2,patates douces
+4173,cuillères à soupe,4,huile
+4173,brin,1,thym
+4173,,2,oignons
+4173,,1,aubergine
+4173,,2,poivrons rouges
+4173,,2,courgettes
+4173,,500,tomate
+4173,gousses,3,ail
+4173,feuille,1,laurier
+4173,,,sel et poivre
+4174,,50,beurre
+4174,,1,oignon
+4174,,1,carotte
+4174,,18,écrevisses
+4174,,1,échalote
+4174,gousse,1,ail
+4174,,,thym
+4174,,,persil
+4174,,,croûtons
+4174,,,laurier
+4174,,,sel
+4174,,,poivre
+4174,cuillères à soupe,2,cognac
+4174,cl,20,vin blanc sec
+4174,cl,20,fumet
+4174,cuillères à soupe,3,crème
+4175,cuillère à soupe,1,huile
+4175,,2,oignons
+4175,boules,4,nouilles chinoises
+4175,gousse,1,ail
+4175,cuillères à soupe,3,soja
+4175,cuillère à café,1,glutamate
+4176,,,poivre
+4176,,,sel
+4176,cuillères à soupe,2,huile
+4176,,2,panais
+4176,cuillère à soupe,1,paprika
+4177,pointe,1,colorant alimentaire
+4177,cuillère à soupe,1,huile d'olive
+4177,sachet,1,levure de boulanger sèche
+4177,cuillère à café,1,sel
+4177,,500,farine
+4177,cl,50,eau
+4177,,2,jaunes d'oeuf
+4178,,,crème fraîche
+4178,,,poivre
+4178,,,sel
+4178,cuillères à soupe,2,huile d'olive
+4178,,3,tomates
+4178,,,thym
+4178,,,oignon
+4178,,6,courgettes
+4178,gousse,1,ail
+4178,,,laurier
+4178,,,olives noires
+4179,kg,1.3,sucre
+4179,kg,2,tomate verte
+4179,kg,1.5,pomme
+4179,sachets,2,agar-agar
+4180,pincée,1,sel
+4180,,120,beurre
+4180,,240,farine
+4180,,240,petit suisse
+4181,,,poivre
+4181,,,sel
+4181,,,persil
+4181,cuillères à soupe,3,huile d'olive
+4181,,1,courge
+4181,,50,Parmesan
+4181,,1,ail
+4182,cuillère à café,0.5,sel
+4182,,50,beurre
+4182,cuillères à soupe,2,sucre
+4182,,40,levure
+4182,,450,farine
+4182,cl,25,lait entier
+4182,,1,oeuf
+4183,,,persil
+4183,,,sel
+4183,,,poivre
+4183,morceau,1,sucre
+4183,,1,oignon
+4183,,2,tomates
+4183,,1,carotte
+4183,,300,chou de bruxelles
+4183,,1,échalote
+4183,cl,20,eau
+4184,,500,fromage râpé
+4184,pincée,1,gros sel
+4184,,2,oignons
+4184,,1,maïs
+4184,cuillère,1,huile d'olive
+4184,cl,45,lait
+4184,,4,oeufs
+4185,,,muscade
+4185,,,sel
+4185,,,poivre
+4185,,100,beurre
+4185,,8,pommes de terre
+4185,,2,jaunes d'oeuf
+4185,cl,20,lait
+4185,,,blanc d'oeuf
+4186,cl,15,huile
+4186,,,persil
+4186,,,sel
+4186,,,poivre
+4186,,,épices
+4186,,1,poivron
+4186,,1,oignon
+4186,,7,pommes de terre
+4186,gousse,1,ail
+4187,,,sel
+4187,,,poivre
+4187,,,vinaigre
+4187,,,huile
+4187,,,persil
+4187,,1,tomate
+4187,,4,carottes
+4187,,4,betteraves
+4188,,,huile
+4188,pincée,1,sel
+4188,cuillère à soupe,1,farine
+4188,,5,pommes de terre
+4188,,1,oeuf
+4189,,,sel
+4189,,,poivre
+4189,,6,clous de girofle
+4189,,100,sucre
+4189,l,1,vinaigre
+4189,,1,melon
+4189,l,2.5,eau
+4189,bâton,1,cannelle
+4190,cuillères à soupe,4,huile
+4190,brin,1,thym
+4190,,2,oignons
+4190,,1,aubergine
+4190,,2,poivrons rouges
+4190,,2,courgettes
+4190,,500,tomate
+4190,gousses,3,ail
+4190,feuille,1,laurier
+4190,,,sel et poivre
+4191,,,huile d'olive
+4191,,,sel
+4191,,,poivre
+4191,,,persil
+4191,,3,aubergines
+4191,poignée,1,menthe
+4192,,,sel
+4192,,,poivre
+4192,cuillère à café,1,cumin en poudre
+4192,cuillères à café,2,persil
+4192,,5,tomates
+4192,,1,courgette
+4192,,1,poivron jaune
+4192,,3,carottes
+4192,cuillères à café,2,basilic
+4192,cuillères à soupe,3,huile d'olive
+4193,,5,clous de girofle
+4193,,5,feuilles de laurier
+4193,,500,sucre
+4193,cl,75,vinaigre de vin
+4193,,,cerises
+4193,bâton,1,cannelle
+4194,,,sel
+4194,,,poivre
+4194,cuillères à soupe,4,farine
+4194,,3,courgettes
+4194,,2,oeufs
+4194,boule,0.5,mozzarella
+4194,,,herbes de Provence
+4194,,,ail
+4194,,,échalote
+4195,,,poivre
+4195,pincée,1,origan
+4195,cuillère à soupe,1,maïzena
+4195,cuillères à soupe,3,porto
+4195,cuillère à soupe,1,margarine
+4195,,1,oignon
+4195,,400,chou
+4195,,2,tomates pelées
+4195,cuillères à soupe,2,crème
+4196,,,sel
+4196,,,poivre
+4196,,1,céleri
+4196,,2,pommes
+4196,,,ciboulette
+4196,,1,brique
+4197,,150,crème fraîche
+4197,,600,pomme de terre
+4197,,150,navet
+4197,,100,fruits secs
+4197,bol,1,bouillon de volaille
+4198,,,gros sel
+4198,feuille,,basilic
+4198,,,huile d'olive
+4199,pincées,3,poivre
+4199,cuillères à café,2,sel
+4199,cuillères à soupe,2,curcuma
+4199,,400,riz
+4199,,2,pommes de terre
+4199,,100,petits pois
+4200,,,sel
+4200,,,poivre
+4200,,,huile d'olive
+4200,,,thym
+4200,cl,50,crème fraîche
+4200,,2,tomates
+4200,,300,poivron
+4200,,300,aubergine
+4200,,300,courgette
+4200,,400,fromage de chèvre
+4200,,200,échalote
+4200,,,basilic
+4200,,,estragon
+4201,cuillère à café,1.5,levure
+4201,,500,farine
+4201,cuillère à soupe,1,sucre
+4201,cuillère à café,1.5,sel
+4201,cuillère à soupe,1.5,huile de tournesol
+4201,cl,27,eau
+4201,cuillères à soupe,2,lait en poudre
+4202,,,sel
+4202,,200,semoule
+4202,tranche,1,pastèque
+4202,cl,8,huile d'olive
+4202,,0.5,citron
+4202,feuilles,10,menthe
+4203,,500,farine
+4203,sachet,1,levure
+4203,,40,sucre
+4203,,100,beurre
+4203,cuillère à café,1,sel
+4203,cuillères à café,2,curcuma
+4203,cuillères à café,2,cumin
+4203,cl,30,lait
+4203,,1,jaune d'oeuf
+4204,,,cardamome
+4204,cuillère à soupe,1,gingembre
+4204,cuillère à soupe,0.5,curcuma
+4204,cuillères à soupe,2,vinaigre de vin
+4204,cuillères à soupe,2,vinaigre de vin
+4204,cuillères à soupe,3,miel liquide
+4204,,500,oignon rouge
+4204,,75,raisins secs
+4204,cuillères à soupe,3,cassonade
+4205,,5,sel
+4205,,50,sucre
+4205,cl,8,huile d'arachide
+4205,cl,5,vinaigre
+4205,,1,oignon
+4205,kg,1,poivron
+4206,,1,oignon
+4206,,3,carottes
+4206,,4,courgettes
+4206,gousses,2,ail
+4206,cuillères à soupe,3,huile d'olive
+4207,,,poivre
+4207,,,sel
+4207,,1,oignon
+4207,,1,chou rouge
+4207,gousses,5,ail
+4207,,0.25,pomme
+4207,,4,saucisses de Toulouse
+4208,,,muscade
+4208,,,sel
+4208,,,poivre
+4208,,1,poivron rouge
+4208,,2,oignons
+4208,,3,tomates
+4208,,3,fenouil
+4208,,40,parmesan râpé
+4208,,2,oeufs
+4208,,10,olives noires
+4208,,50,crème fraîche liquide
+4209,,,sel
+4209,,,poivre
+4209,,60,beurre
+4209,cuillères à soupe,6,persil
+4209,kg,1,pomme de terre
+4209,gousses,6,ail
+4210,cuillères à soupe,3,sel
+4210,,5,piments
+4210,cuillères à soupe,5,vinaigre
+4210,cl,25,huile
+4211,cuillère à café,0.25,sel
+4211,,250,farine
+4211,,,eau
+4212,,,sel
+4212,,,poivre
+4212,cuillère,1,sucre
+4212,cl,30,crème fraîche
+4212,,40,beurre
+4212,,4,endives
+4212,,,citron
+4213,,,sel
+4213,,1,cube de bouillon
+4213,,2,feuilles de laurier
+4213,,1,oignon
+4213,,500,pâte grecque
+4213,,1,brique
+4213,gousses,2,ail
+4213,cuillères à soupe,2,huile d'olive
+4213,l,1,eau
+4214,,,gruyère râpé
+4214,,1,poivron rouge
+4214,,2,courgettes
+4214,,250,champignons de Paris
+4214,cl,15,crème liquide
+4215,cuillères à soupe,2,fromage blanc
+4215,,0.25,poivron rouge
+4215,,2,tomates
+4215,,1,aubergine
+4215,filets,4,anchois
+4215,cuillère à soupe,1,parmesan râpé
+4216,,,sel
+4216,,,poivre
+4216,cuillère,1,piment
+4216,cuillères à soupe,3,moutarde
+4216,cuillère à café,1,maïzena
+4216,,200,gruyère râpé
+4216,cl,80,crème fraîche
+4216,,250,courgette
+4216,,250,courgette
+4216,,250,pomme de terre
+4216,cl,30,lait
+4217,cuillère à soupe,1,purée de piment
+4217,,,sel
+4217,,,poivre
+4217,cuillère à café,1,sucre
+4217,cuillère à soupe,1,gingembre
+4217,cuillères à soupe,5,huile
+4217,,500,haricots verts
+4217,gousse,1,ail
+4217,,3,échalotes
+4217,cuillère à soupe,1,sauce soja
+4218,,,persil
+4218,,,coriandre
+4218,,2,tomates
+4218,,300,vermicelles de riz
+4218,,0.5,concombre
+4218,,100,arachide
+4218,,,noix de cajou
+4218,,,noisettes
+4218,,12,oreilles
+4218,cuillères à soupe,3,huile de sésame
+4218,cuillères à soupe,2,vinaigre
+4218,cuillère à soupe,0.5,moutarde
+4219,,,muscade
+4219,,,poivre
+4219,,,sel
+4219,,80,beurre
+4219,,150,emmental
+4219,kg,1,pomme de terre
+4219,,3,oeufs
+4219,cl,50,lait
+4220,,,sel
+4220,,,poivre
+4220,cuillère à soupe,1,moutarde à l'ancienne
+4220,,50,beurre
+4220,kg,1,pomme de terre
+4220,gousses,4,ail
+4220,cl,25,crème liquide
+4221,,,margarine
+4221,pot,0.25,crème fraîche
+4221,,1,oignon
+4221,,,lardons fumés
+4221,,1,petits pois
+4221,,1,bouquet garni
+4221,,,menthe
+4222,cuillères à soupe,2,persil
+4222,,20,champignons de Paris
+4222,gousse,1,ail
+4222,cuillère à soupe,1,basilic
+4222,cuillères à soupe,3,huile d'olive
+4223,,,gruyère râpé
+4223,,,muscade
+4223,,,sel
+4223,,,poivre
+4223,cuillères à soupe,2,farine
+4223,,100,beurre
+4223,,3,oignons
+4223,,1,chou-fleur
+4223,cl,50,bouillon de volaille
+4223,cl,10,crème fraîche liquide
+4223,,,chapelure
+4224,,,crème fraîche
+4224,,6,carottes
+4224,,350,pois cassés
+4224,,4,navets
+4224,,2,pommes de terre
+4224,,,bouquet garni
+4225,,,poivre
+4225,,,sucre
+4225,cuillère à soupe,1,miel
+4225,,3,gingembre
+4225,,500,chou
+4225,gousses,6,ail
+4225,cuillères à soupe,3,huile de coco
+4225,branche,0.5,citronnelle
+4225,cuillère à soupe,1,sauce soja
+4225,cuillère à soupe,1,nuoc mam
+4226,,,sel
+4226,,,poivre
+4226,,250,lardons
+4226,,8,carottes
+4226,,8,courgettes
+4226,,2,échalotes
+4226,pot,1,morilles
+4226,,1,brique
+4227,,,sel
+4227,,,poivre
+4227,cuillères à soupe,5,huile d'olive
+4227,,6,emmental
+4227,,1,aubergine
+4227,,1,courgette
+4227,cuillères à soupe,2,herbes de Provence
+4228,,,sel
+4228,,,poivre
+4228,,,persil
+4228,,2,feuilles de laurier
+4228,,50,beurre
+4228,,2,carottes
+4228,,1,poireau
+4228,,2,pommes de terre
+4228,,2,navets
+4228,,3,échalotes
+4229,,,sel
+4229,,,poivre
+4229,cuillères à soupe,2,huile d'olive
+4229,cuillères à café,2,vinaigre balsamique
+4229,cuillères à café,2,miel
+4229,,1,oignon
+4229,,1,poivron
+4229,,5,carottes
+4229,gousse,1,ail
+4229,,,paprika
+4230,sachet,1,levure
+4230,,20,sucre en poudre
+4230,,15,sel
+4230,,400,farine
+4230,,15,huile
+4230,,370,eau
+4230,,200,farine de sarrasin
+4230,,25,lait en poudre écrémé
+4231,,,sel
+4231,,,poivre
+4231,,6,tomates
+4231,,6,pommes de terre
+4231,,4,oeufs
+4231,boîte,1,thon
+4231,cuillère à soupe,1,câpres
+4231,cuillère à café,1,graines de coriandre
+4231,,,huile d'olive
+4232,,,sel
+4232,,,poivre
+4232,,3,oignons
+4232,,1,poivron vert
+4232,,1,poivron rouge
+4232,,1,aubergine
+4232,,,tomates pelées
+4232,,,huile d'olive
+4233,,,beurre
+4233,cuillères à soupe,2,beurre
+4233,tasses,2,thé
+4233,tasses,4,thé
+4233,,4,pommes
+4233,,2,coings
+4233,tasse,0.5,thé
+4233,tasse,0.5,thé
+4233,tasse,0.5,thé
+4233,tasse,0.5,thé
+4234,,60,vermicelles
+4234,,300,riz
+4234,cuillères à soupe,2,huile d'olive
+4234,cuillère à café,1,arôme de légumes
+4234,,,sel et poivre
+4235,pincée,1,gruyère râpé
+4235,pincée,1,poivre
+4235,pincée,1,sel
+4235,,4,tomates
+4235,,2,courgettes
+4235,cuillère à café,1,herbes de Provence
+4235,gousse,1,ail
+4236,,1,cube de bouillon
+4236,cl,50,riz basmati
+4236,,1,ail
+4236,,,huile de pépin de raisin
+4236,cl,75,eau
+4237,,,coriandre
+4237,cuillère,1,sucre
+4237,,1,oignon
+4237,,3,tomates
+4237,,1,aubergine
+4237,gousses,2,ail
+4237,,,huile d'olive
+4238,,,sel
+4238,,,poivre
+4238,,50,fromage râpé
+4238,,1,purée
+4238,,3,oeufs
+4238,cuillère à soupe,1,herbes
+4239,cuillères à soupe,3,huile d'olive
+4239,,1,poivron
+4239,,2,Vache qui rit®
+4239,,,herbes de Provence
+4240,cuillère à café,1.5,levure
+4240,cuillère à café,1.5,sel
+4240,tasses,3,farine
+4240,cuillères à soupe,2,sucre
+4240,cuillère à soupe,1,huile
+4240,tasse,1.5,eau
+4240,cuillère à soupe,1,lait en poudre
+4240,tasse,0.5,pomme de terre
+4241,cuillère à café,1,miel liquide
+4241,cuillère à café,1,sel
+4241,sachet,1,levure chimique
+4241,,450,farine de blé
+4241,cl,33,bière blonde
+4242,,150,farine
+4242,,2.5,miel
+4242,cl,15,eau
+4242,,20,sel
+4242,,2.5,levure de boulanger
+4242,,600,farine
+4242,cl,35,eau
+4242,filet,1,huile d'olive
+4243,,,sel
+4243,,,poivre
+4243,,,persil
+4243,,,crème fraîche
+4243,,,beurre
+4243,cuillères à café,2,fond de veau
+4243,,6,pommes de terre
+4243,boîte,1,champignon
+4243,,,ail
+4244,,,sel
+4244,,,poivre
+4244,boîte,1,tomate
+4244,,200,fonio
+4244,sachet,1,olives vertes
+4244,cuillère à soupe,1,huile d'olive
+4245,pincées,2,sel
+4245,sachet,1,levure
+4245,,60,beurre
+4245,,300,farine
+4245,,2,oeufs
+4245,cl,20,lait
+4245,,100,emmental
+4245,,2,chèvres
+4245,,100,feta
+4246,,,poivre
+4246,branches,4,thym
+4246,branches,4,romarin
+4246,,4,feuilles de laurier
+4246,,4,ail
+4246,,4,petits piments
+4246,l,0.5,huile d'olive
+4247,,,gruyère râpé
+4247,,400,topinambour
+4247,,400,pomme de terre
+4247,cl,10,crème liquide
+4247,,,chapelure
+4248,,,sel
+4248,,,poivre
+4248,,5,sucre
+4248,,10,beurre
+4248,,1,persil
+4248,,2,bouillon de légumes
+4248,,600,carotte
+4248,,250,échalote
+4248,branche,1,estragon
+4249,kg,1,carotte
+4249,,2,pommes de terre
+4249,cuillère à soupe,1,crème fraîche épaisse
+4249,,50,lentilles vertes
+4250,,,poivre
+4250,,,sel
+4250,cuillères à soupe,2,crème fraîche
+4250,,1,pâtisson
+4251,,,poivre
+4251,,,sel
+4251,tasse,0.5,huile d'olive
+4251,kg,2,poivron rouge
+4252,,,thym
+4252,,,sel
+4252,,,poivre
+4252,,2,oignons
+4252,,1,carotte
+4252,,500,châtaignes
+4252,branche,1,céleri branche
+4252,,2,ail
+4252,,,huile d'olive
+4252,,,eau
+4253,gousse,1,vanille
+4253,,150,sucre
+4253,,,fraises
+4253,,350,groseilles
+4253,,,framboises
+4253,cuillère à café,1,cannelle
+4254,,100,pesto
+4254,,4,tomates
+4254,,200,parmesan râpé
+4255,,,gros sel
+4255,cuillères à soupe,2,curry
+4255,cl,50,huile
+4255,,15,citrons
+4255,,1,ail
+4255,,5,petits piments
+4256,,8,artichauts violets
+4256,,1,oignon
+4256,,2,carottes
+4256,verre,1,vin blanc
+4256,gousses,2,ail
+4256,,10,eau
+4257,brin,,persil
+4257,,,sel
+4257,,,poivre
+4257,cuillères à café,2,cumin
+4257,cuillères à soupe,4,huile d'olive
+4257,,4,courgettes
+4257,,1,échalote
+4257,,2,oeufs
+4258,,,sel
+4258,,,poivre
+4258,,1,beurre
+4258,,1,courge spaghetti
+4258,grosse,1,Parmesan
+4259,,1,cube de bouillon
+4259,,,muscade
+4259,,,sel
+4259,,,poivre
+4259,,150,gruyère râpé
+4259,,1,chou-fleur
+4259,,6,Vache qui rit®
+4260,,,sel
+4260,,,poivre
+4260,cuillère à café,1,persil
+4260,cuillères à soupe,2,huile
+4260,,40,beurre
+4260,,50,gruyère râpé
+4260,,100,lardons
+4260,,2,oignons
+4260,,4,christophines
+4260,cuillère à soupe,1,chapelure
+4261,,,origan
+4261,,,thym
+4261,,,sel
+4261,,,poivre
+4261,,,huile d'olive
+4261,,500,purée
+4261,,2,aubergines
+4261,,100,mozzarella
+4261,,,herbes de Provence
+4262,cuillère à café,0.5,sel
+4262,,100,beurre
+4262,,130,farine
+4262,,55,eau
+4263,,,poivre
+4263,,,sel
+4263,,1,céleri
+4263,cuillères à soupe,3,huile d'olive
+4264,,1,beurre
+4264,,,sel
+4264,,,poivre
+4264,pincée,1,curry
+4264,pincée,1,cumin
+4264,,1,tomate
+4264,,1,courgette
+4264,,125,riz sauvage
+4264,cl,15,vin blanc sec
+4264,cuillères à soupe,3,huile d'olive
+4265,,,huile de friture
+4265,pincée,1,cumin en poudre
+4265,,,persil
+4265,cuillère à soupe,1,farine
+4265,,1,purée
+4265,,1,oeuf
+4266,,400,châtaignes
+4266,cl,40,crème fleurette
+4266,cl,20,bouillon de volaille
+4267,pincée,1,muscade
+4267,,30,beurre
+4267,,20,maïzena
+4267,,20,farine
+4267,,,sel
+4267,,,poivre
+4267,,5,beurre
+4267,,,coriandre
+4267,filet,1,huile d'olive
+4267,,1,oignon
+4267,,1,brocoli
+4267,cl,50,lait
+4268,,,poivre
+4268,,,sel
+4268,,,vinaigre de cidre
+4268,,,huile d'olive
+4268,,2,carottes
+4268,,2,panais
+4268,,1,citron
+4268,,1,ail
+4269,,,poivre
+4269,,,sel
+4269,,60,beurre
+4269,,350,farine
+4269,,675,pomme de terre
+4269,cuillère,1,thé
+4269,,,lait
+4270,,,oignon
+4271,,75,beurre
+4271,,2,oignons
+4271,pot,1,crème fraîche
+4271,,,sel
+4271,,150,farine
+4271,kg,1,pomme de terre
+4271,,500,pomme de terre
+4272,cuillère à café,1,sel
+4272,cuillère à café,1,sucre
+4272,,20,levure de boulanger
+4272,,120,sésame
+4272,,350,farine
+4272,cl,30,eau
+4273,,,sel
+4273,,1,romarin
+4273,cuillères à soupe,2,pesto
+4273,,5,levure chimique
+4273,,150,farine de blé
+4273,,300,butternut
+4273,,2,oeufs
+4273,,60,huile de colza
+4274,pincée,1,poivre
+4274,pincée,1,sel
+4274,,50,fromage râpé
+4274,cuillère à café,0.5,muscade
+4274,,70,reblochon
+4274,,500,pomme de terre
+4274,,80,beurre demi-sel
+4274,,2,jaunes d'oeuf
+4275,,,poivre
+4275,,,fromage
+4275,verres,2,marc
+4275,,,herbes de Provence
+4276,,,sel
+4276,,,poivre
+4276,,,persil
+4276,,,beurre
+4276,,2,oignons
+4276,,4,carottes
+4276,,1,laitue
+4276,,150,petits pois
+4276,,,bouillon
+4277,cuillère à café,1,curry
+4277,,2,poireaux
+4277,pincée,1,poivre
+4277,pincée,1,sel
+4277,,1,oignon jaune
+4277,cl,20,crème semi-épaisse
+4278,pincée,1,muscade
+4278,cuillères à soupe,2,farine
+4278,,20,beurre
+4278,,100,gruyère râpé
+4278,,40,lardons fumés
+4278,,1,oignon
+4278,botte,1,blette
+4278,,4,pommes de terre
+4278,,1,échalote
+4278,,1,oeuf
+4278,cl,25,lait
+4279,,,sel
+4279,,,poivre
+4279,,2,tomates
+4279,,1,oignon
+4279,,2,courgettes
+4279,,1,potimarron
+4279,,,huile d'olive
+4280,cuillère à soupe,1,persil
+4280,,,sel
+4280,,,poivre
+4280,,50,beurre
+4280,,750,tomate
+4281,,,sel
+4281,,,poivre
+4281,,2,oignons
+4281,,4,aubergines
+4281,,1,tomates pelées
+4281,,200,gruyère
+4281,cuillères à soupe,2,huile d'olive
+4281,cuillère à soupe,1,chapelure
+4282,,,sel
+4282,,,poivre
+4282,cuillères à soupe,2,aneth
+4282,,2,oignons
+4282,,5,carottes
+4282,,1,chou blanc
+4282,cuillères à soupe,3,raisins secs
+4282,cuillères à soupe,3,pignons
+4282,,250,mayonnaise
+4283,,,bouillon de légumes
+4283,,1,oignon
+4283,,4,poireaux
+4283,,100,tomme
+4283,feuilles,5,brick
+4283,,1,oeuf
+4284,,,persil
+4284,,,thym
+4284,,,sel
+4284,,,poivre
+4284,cuillères à café,6,huile d'olive
+4284,boîte,1,tomate
+4284,,4,aubergines
+4284,,450,mozzarella
+4284,,,basilic
+4285,,,huile d'olive
+4285,,,poivre
+4285,,,sel
+4285,,1,orange
+4285,,2,fenouil
+4285,cl,20,crème fleurette
+4285,cuillère à soupe,1,cassonade
+4286,,,sel
+4286,,,poivre
+4286,,,huile
+4286,kg,1,tomate
+4286,,250,penne
+4286,,500,betterave
+4286,gousse,1,ail
+4287,,22,levure
+4287,cuillère à soupe,1,sucre glace
+4287,,500,farine
+4287,,75,beurre
+4287,cl,30,lait entier
+4287,cuillère,1,thé
+4287,,1,jaune d'oeuf
+4288,,,muscade
+4288,,,sel
+4288,,,beurre
+4288,,50,gruyère râpé
+4288,,1,chou-fleur
+4288,,2,pommes de terre
+4288,cl,15,crème liquide
+4288,,1,bouillon de poule
+4288,cuillères à soupe,2,Parmesan
+4289,cuillère à soupe,1,miel
+4289,,1,oignon rouge
+4289,cuillères à soupe,2,huile d'olive
+4289,,200,betterave
+4289,cuillères à soupe,2,vinaigre balsamique
+4289,cuillère à café,0.5,sel
+4289,cuillère à café,0.5,poivre
+4289,cuillères à soupe,2,fromage frais
+4290,,,poivre
+4290,,40,farine de blé
+4290,,40,beurre demi-sel
+4290,,40,parmesan râpé
+4290,,1,patate douce
+4290,cuillère à soupe,1,huile d'olive
+4291,,,cumin
+4291,,,sel
+4291,,,poivre
+4291,,50,gruyère râpé
+4291,,1,potimarron
+4291,,50,champignons de Paris
+4291,cl,20,crème fraîche liquide
+4292,,,sel
+4292,,,poivre
+4292,,,curry
+4292,,1,oignon
+4292,,1,poivron rouge
+4292,,2,pommes de terre
+4292,cl,10,lait de coco
+4292,gousse,1,ail
+4293,,,sel
+4293,,,poivre
+4293,cuillère à soupe,1,moutarde
+4293,cuillères à soupe,2,farine
+4293,,20,beurre
+4293,,2,brocolis
+4293,verre,1,lait
+4293,,,gruyère
+4293,,,mozzarella
+4294,,140,farine
+4294,,140,farine de pois chiches
+4294,,160,farine complète
+4295,,20,levure
+4295,,50,beurre
+4295,cuillères à café,2,sel
+4295,,10,sucre
+4295,cl,10,huile
+4295,,250,farine
+4295,cl,15,huile d'olive
+4295,cl,10,lait
+4296,,30,feuilles de laurier
+4296,kg,1,gros sel
+4296,,6,citrons
+4296,cl,50,huile d'olive
+4297,,10,coriandre
+4297,,,sel
+4297,cuillère à soupe,0.5,piment
+4297,cuillère à soupe,0.5,curcuma
+4297,,1,oignon
+4297,cuillère à soupe,0.5,cumin
+4297,cuillère à soupe,1.5,huile
+4297,,6,pommes de terre
+4297,cuillère à soupe,1,piment vert
+4297,cuillère à café,1,massala
+4297,,,citron
+4298,,1,orange
+4298,,20,sucre
+4298,,20,beurre
+4298,,400,marrons
+4299,cl,20,vinaigre balsamique
+4299,,100,sucre
+4300,,750,sucre
+4300,kg,4,mirabelle
+4300,,1,citron
+4301,,,persil
+4301,,20,beurre
+4301,cuillère à soupe,1,farine
+4301,,1,bouillon de légumes
+4301,,6,carottes
+4301,,1,céleri
+4301,gousse,1,ail
+4302,cuillère à café,1,levure chimique
+4302,,125,farine
+4302,,1,yaourt nature
+4303,,,sel
+4303,,10,beurre
+4303,,1,courgette
+4303,,2,pommes de terre
+4303,,1,Vache qui rit®
+4304,,,poivre
+4304,,,sel
+4304,,1,oignon
+4304,cl,15,crème fraîche
+4304,kg,1,patate douce
+4304,,750,brocoli
+4304,,150,fromage ail et fines herbes
+4304,,4,oeufs
+4305,cl,625,vinaigre
+4305,cuillères à café,2,sel
+4305,,500,ail
+4305,,,sucre en morceaux
+4306,,,sel
+4306,,,poivre
+4306,bouquet,1,persil
+4306,,,beurre
+4306,kg,1,ratte
+4306,pot,1,crème épaisse
+4306,gousses,2,ail
+4307,,,sel
+4307,,,poivre
+4307,cuillères à soupe,3,huile
+4307,cuillères à soupe,2,farine
+4307,,8,pommes de terre
+4307,,2,oeufs
+4307,,100,gruyère
+4308,,50,emmental
+4308,,1,tomate
+4308,,1,pâte brisée
+4308,,200,épinards
+4308,,3,oeufs
+4308,,300,crème liquide
+4308,pincée,1,sel et poivre
+4308,,,basilic
+4308,,,herbes de Provence
+4308,,1,chèvre
+4308,boule,1,mozzarella
+4309,,15,sucre
+4309,,50,beurre
+4309,,12,carottes
+4309,,1,bouillon de volaille
+4310,,,sel
+4310,,,poivre
+4310,cuillère à soupe,1,beurre
+4310,,250,lardons fumés
+4310,,250,tagliatelles
+4310,,400,champignon
+4310,,3,échalotes
+4310,,250,crème liquide
+4311,,,sel
+4311,,,poivre
+4311,cuillères à soupe,2,huile d'olive
+4311,,,gruyère râpé
+4311,,1,oignon
+4311,,2,tomates
+4311,,,riz
+4311,cl,10,crème fraîche épaisse
+4311,,,herbes de Provence
+4311,,,sauce soja
+4312,,,sel
+4312,,,poivre
+4312,,,piment
+4312,,5,pommes de terre
+4312,,,herbes de Provence
+4312,,,paprika
+4313,,,sel
+4313,,,poivre
+4313,,1,bûche de chèvre
+4313,cuillères à soupe,3,miel
+4313,,1,poivron rouge
+4313,,3,tomates
+4313,,2,oignons
+4313,,2,aubergines
+4313,,2,courgettes
+4313,,,herbes de Provence
+4313,cuillères à soupe,3,huile d'olive
+4314,,150,gruyère râpé
+4314,,,piment
+4314,,,sel
+4314,,,poivre
+4314,poignée,1,farine
+4314,cl,20,crème fraîche
+4314,,2,oignons
+4314,,3,tomates
+4314,,1,aubergine
+4314,,1,oeuf
+4314,,,basilic
+4314,,,herbes de Provence
+4314,cl,10,huile d'olive
+4315,,,gros sel
+4315,,,persil
+4315,,1,feuille de laurier
+4315,cuillère à soupe,1,sucre roux
+4315,,1,cube de bouillon
+4315,kg,1,pomme de terre
+4315,kg,1.5,potiron
+4315,tranches,10,bacon
+4315,,,sel
+4315,,,poivre
+4315,pincée,1,muscade
+4315,cuillère à soupe,1,cumin
+4315,cuillères à soupe,2,farine
+4315,,80,beurre
+4315,l,0.5,lait
+4315,,150,mozzarella
+4316,pincée,1,sel
+4316,cuillères à soupe,2,sucre
+4316,sachet,1,levure chimique
+4316,,120,farine de blé
+4316,cl,15,lait de soja
+4316,,2,oeufs
+4316,,10,beurre salé
+4317,cuillères à soupe,3,huile
+4317,,,vinaigre
+4317,,,piment de Cayenne
+4317,,,poivre
+4317,kg,1,fromage blanc
+4317,,,rascalat
+4317,gousse,1,ail
+4317,,,piment vert
+4318,,,sel
+4318,,,poivre
+4318,pincée,1,muscade
+4318,,50,beurre
+4318,kg,1.5,pomme de terre
+4318,cl,30,lait entier
+4319,,250,gruyère râpé
+4319,pincée,1,gros sel
+4319,,2,oignons
+4319,,500,farine de maïs
+4319,cuillère à soupe,1,huile d'olive
+4319,,3,oeufs
+4319,cl,50,lait entier
+4320,,1,cube de bouillon
+4320,,,thym
+4320,,,sel
+4320,,,poivre
+4320,,,muscade
+4320,,2,tomates
+4320,,300,pois gourmands
+4320,gousses,2,ail
+4320,,2,échalotes
+4320,cl,15,eau
+4321,cuillère à café,1,épices
+4321,,2,tomates
+4321,,1,aubergine
+4321,bocal,1,feta
+4321,cuillères à soupe,2,ciboulette
+4321,feuille,,basilic
+4322,,40,beurre
+4322,,50,sucre
+4322,,400,oignon
+4322,,150,pomme
+4323,,,sel
+4323,,,poivre
+4323,cuillères à soupe,3,huile d'olive
+4323,cuillère à café,0.5,piment
+4323,,2,oignons
+4323,,5,pommes de terre
+4323,,50,chorizo
+4324,,,crème fraîche épaisse
+4324,,,roquefort
+4324,,,mascarpone
+4324,,,Parmesan
+4324,,,penne
+4325,,,sel
+4325,,,poivre
+4325,,,beurre
+4325,,,crème fraîche
+4325,,1,reblochon
+4325,,,lardons
+4325,kg,1,endive
+4326,pincées,2,poivre
+4326,pincées,3,sel
+4326,,50,beurre
+4326,,4,échalotes
+4326,bocal,1,marrons
+4326,cl,25,vin blanc
+4326,cl,25,eau
+4327,,,sel
+4327,,,poivre
+4327,,,thym
+4327,,1,oignon
+4327,,1,poivron
+4327,,1,courgette
+4327,,2,tomates
+4327,gousse,1,ail
+4327,cuillères à café,10,vin blanc
+4327,feuilles,2,basilic
+4327,,,huile d'olive
+4328,,4,poireaux
+4328,,,muscade
+4328,,,sel
+4328,,,poivre
+4328,,,moutarde
+4328,cl,30,crème fraîche
+4328,,2,pâtes feuilletées
+4329,,,sel
+4329,,,poivre
+4329,,1,oignon
+4329,,300,carotte
+4329,,1,poireau
+4329,,0.5,citrouille
+4329,,3,pommes de terre
+4329,,,matière grasse
+4329,,1,bouillon
+4329,,,eau
+4329,bonnes,4,crème épaisse
+4330,,50,gruyère râpé
+4330,,1,bouillon de boeuf
+4330,,,sel
+4330,,,poivre
+4330,,,beurre
+4330,,500,chou
+4330,,400,pomme de terre
+4330,,50,chapelure
+4331,,1,moules
+4331,l,1,lait entier
+4331,,1,petit suisse
+4331,gouttes,3,présure
+4331,l,1,lait de chèvre
+4331,gouttes,3,présure
+4331,cuillère à soupe,1,faisselle
+4332,,,sel
+4332,,,poivre
+4332,,5,curry
+4332,,1,betterave
+4332,cl,20,crème fraîche épaisse
+4333,,,poivre
+4333,,,sel
+4333,,,beurre
+4333,cl,10,crème fraîche
+4333,,1,oignon
+4333,,500,chou de bruxelles
+4333,,,sauce soja
+4334,,,sel
+4334,,,poivre
+4334,,50,farine
+4334,,100,beurre
+4334,kg,1,poire
+4334,kg,1,pomme de terre
+4334,cl,20,eau
+4335,,,sel
+4335,,,poivre
+4335,cuillère à café,1,moutarde à l'ancienne
+4335,cuillère à soupe,1,vinaigre d'alcool
+4335,bottes,2,cresson
+4335,,3,anchois
+4335,gousses,2,ail
+4335,cuillères à soupe,2,huile d'olive
+4335,,1,échalote
+4336,,,huile d'olive
+4336,pincées,2,cumin
+4336,,,sel
+4336,,,poivre
+4336,,,coriandre
+4336,,,persil
+4336,kg,1,carotte
+4336,,1,citron
+4336,gousse,1,ail
+4337,,,sel
+4337,,,poivre
+4337,,,beurre
+4337,,4,endives
+4337,,0.5,camembert
+4337,gousse,1,ail
+4338,cuillères à soupe,3,sucre
+4338,cuillère à café,0.5,sel
+4338,,150,beurre tendre
+4338,,300,farine
+4338,cl,8,eau
+4339,,,sel
+4339,pincée,1,origan
+4339,cl,20,sauce tomate
+4339,,110,farine
+4339,,250,ricotta
+4339,,1,oeuf
+4339,,,parmesan râpé
+4340,,,sel
+4340,,,poivre
+4340,,,beurre
+4340,,3,carottes
+4340,,2,rutabagas
+4340,,4,pommes de terre
+4340,,,crème fraîche liquide
+4340,cuillères à soupe,2,Parmesan
+4340,,100,gouda
+4341,pincées,2,poivre
+4341,pincées,4,sel
+4341,,5,margarine
+4341,pincées,2,curry
+4341,pincées,4,coriandre
+4341,cl,10,crème fraîche
+4341,,6,pommes de terre
+4341,,10,champignons de Paris
+4341,,1,échalote
+4342,,,polenta
+4342,poignée,1,brocoli
+4342,poignée,1,épinards
+4342,,4,champignons de Paris
+4342,,,basilic
+4342,cl,25,lait
+4342,cl,25,eau
+4343,,,sel
+4343,,,poivre
+4343,cuillères à soupe,2,vinaigre de vin
+4343,cuillères à soupe,2,miel
+4343,,4,clous de girofle
+4343,,4,feuilles de laurier
+4343,,24,échalotes
+4344,,,sel
+4344,,,poivre
+4344,,,thym
+4344,,,fromage râpé
+4344,cuillères à soupe,4,huile d'olive
+4344,,1,oignon
+4344,,2,tomates
+4344,,1,poivron rouge
+4344,,4,courgettes
+4344,,300,champignons de Paris
+4344,gousse,1,ail
+4344,,,laurier
+4345,cuillère à café,1,moutarde
+4345,cuillères à soupe,2,vinaigre balsamique
+4345,cuillères à soupe,4,huile d'olive
+4345,sachet,1,salade
+4345,,30,pignons
+4345,,80,Parmesan
+4345,brins,2,basilic frais
+4346,,,poivre
+4346,,4,ail
+4346,,,huile d'olive
+4346,,,estragon
+4347,,,persil
+4347,,,sel
+4347,,,poivre
+4347,cuillères à soupe,2,maïzena
+4347,boîte moyenne,1,macédoine
+4347,cl,40,lait
+4347,,2,oeufs
+4348,,,persil
+4348,cuillère à soupe,1,moutarde de Dijon
+4348,,100,beurre
+4348,,1,chou-fleur
+4348,,1,citron
+4348,,2,échalotes
+4349,,,poivre
+4349,,,sel
+4349,cuillère à café,1,sucre
+4349,,6,carottes
+4349,,4,endives
+4349,,2,fenouil
+4349,,800,tomates pelées
+4349,,,basilic frais
+4350,,400,tomates concassées
+4350,,1,oignon
+4350,kg,1,fèves
+4350,gousses,2,ail
+4350,pincée,1,herbes de Provence
+4350,,3,huile d'olive
+4350,,,basilic
+4351,pincées,2,sel
+4351,cuillères à soupe,4,huile
+4351,cuillère à café,1,bicarbonate
+4351,,500,farine
+4351,,1,oeuf
+4351,,,lait
+4352,,,sel
+4352,,,poivre
+4352,,100,crème fraîche
+4352,,1,chou-fleur
+4352,,4,oeufs
+4353,cl,5,vinaigre de vin
+4353,,,sel
+4353,,,poivre
+4353,cl,10,huile d'olive
+4353,,1,oignon
+4353,kg,1,fèves
+4353,gousses,2,ail
+4353,cl,5,eau
+4354,cuillère à soupe,1,moutarde
+4354,cuillère à soupe,1,vinaigre balsamique
+4354,cuillère à soupe,0.25,coriandre
+4354,cuillère à soupe,0.25,gingembre
+4354,cuillères à soupe,2,huile d'olive
+4354,,1,oignon rouge
+4354,,0.5,pomme
+4354,cuillère à soupe,0.25,paprika
+4354,cuillères à soupe,2,cassonade
+4354,cuillère à soupe,1,ketchup
+4354,cuillères à soupe,2,sauce soja
+4355,,250,gruyère râpé
+4355,,1,pâte feuilletée
+4355,,1,pâte brisée
+4355,,5,oeufs
+4355,,200,petits pois
+4355,,200,brousse
+4356,,1,oignon
+4356,,1,courgette
+4356,,5,tomates
+4356,,1,aubergine
+4356,gousse,1,ail
+4356,cuillère à soupe,1,herbes de Provence
+4356,cuillère à soupe,1,huile d'olive
+4356,,,sel et poivre
+4357,pincée,1,poivre
+4357,pincée,1,sel
+4357,pincée,1,muscade
+4357,,50,beurre
+4357,,800,pomme de terre
+4357,cuillères à soupe,8,crème épaisse
+4357,,1,citron
+4358,,,thym
+4358,,,romarin
+4358,,,sel
+4358,,,poivre
+4358,,1.5,bûche de chèvre
+4358,,1,tomate
+4358,,1,courgette
+4358,,1,courgette
+4358,,,herbes de Provence
+4358,,,huile d'olive
+4359,,,sel
+4359,,,poivre
+4359,,,persil
+4359,cuillères à soupe,3,carotte
+4359,,4,tomates
+4359,,200,pomme de terre
+4359,,1,oeuf
+4359,,120,fromage frais
+4359,,,huile d'olive
+4360,,,muscade
+4360,,,sel
+4360,,,poivre
+4360,,100,beurre
+4360,,4,oignons
+4360,kg,1.5,pomme de terre
+4360,tasse,1,bouillon
+4360,verre,1,vin blanc
+4360,,100,gruyère
+4361,,,sel
+4361,,300,farine
+4361,,300,fromage blanc
+4361,,3,oeufs
+4362,cuillère à café,0.5,poivre blanc
+4362,cuillère à café,1,gingembre
+4362,cuillère à soupe,1,gros sel
+4362,,2,clous de girofle
+4362,cl,30,vinaigre
+4362,kg,1,mirabelle
+4362,,2,oignons blancs
+4362,gousses,2,ail
+4362,,100,raisins secs
+4362,,250,vergeoise blonde
+4362,cuillère à café,0.5,carvi
+4363,,1,gingembre
+4363,verres,3,riz blanc
+4363,bâton,1,cannelle
+4363,,1,bouillon de poule
+4364,sachet,1,levure
+4364,,,sésame
+4364,,500,farine
+4364,,30,beurre
+4364,cuillères à soupe,2,sucre
+4364,cuillères à café,2,sel
+4364,cl,16,eau
+4364,cl,20,lait
+4364,,30,pavot
+4364,,,quinoa
+4364,,,millet
+4365,grosses,2,pesto
+4365,,250,tomates cerise
+4365,,1,courgette
+4365,,250,polenta
+4365,,250,champignons de Paris
+4365,,1,petit piment
+4366,,,poivre
+4366,,,sel
+4366,,,thym
+4366,,2,feuilles de laurier
+4366,,25,huile
+4366,,25,beurre
+4366,,2,oignons
+4366,,8,pommes de terre
+4366,gousses,6,ail
+4367,cuillères à soupe,2,huile d'olive
+4367,,,sel
+4367,,,poivre
+4367,morceaux,2,sucre
+4367,,500,sauce tomate
+4367,,,fenouil
+4367,verre,1,anchois
+4367,gousses,4,ail
+4367,boîte,1,chapelure
+4367,,500,spaghetti
+4368,,,cognac
+4368,,125,sucre glace
+4368,,125,beurre
+4368,cuillères à soupe,3,brandy
+4369,bouquet,0.5,persil
+4369,kg,1,cèpes
+4369,gousses,2,ail
+4369,,,huile d'olive
+4370,sachets,2,levure
+4370,cuillère à café,1.5,sel
+4370,,700,farine
+4370,cl,30,eau
+4371,botte,0.5,cresson
+4371,,15,noix
+4371,,5,huile d'olive
+4371,cuillères à soupe,3,eau
+4371,,,sel
+4371,,,poivre
+4372,cuillère à café,1,curry
+4372,,0.5,piment
+4372,cuillère à soupe,1,huile
+4372,,1,oignon
+4372,,1,tomate
+4372,,200,lentilles corail
+4372,gousses,2,ail
+4372,,,sel et poivre
+4373,,,sel
+4373,,,poivre
+4373,,,muscade
+4373,,5,panais
+4373,,5,pommes de terre
+4373,,1,patate douce
+4373,cl,10,crème liquide
+4374,,,huile de friture
+4374,,,sel
+4374,,,poivre
+4374,,200,farine de blé
+4374,kg,1.2,pomme de terre
+4374,,200,chapelure
+4374,,4,oeufs
+4375,cuillère à soupe,1,farine
+4375,,,thym
+4375,,6,carottes
+4375,,2,oignons
+4375,gousses,2,ail
+4375,,6,pommes de terre
+4375,,800,champignon frais
+4375,,2,bouillon
+4375,,,laurier
+4375,cl,15,vin blanc
+4375,verres,3,eau
+4376,,,sel
+4376,,,poivre
+4376,,10,beurre
+4376,cl,25,crème fraîche
+4376,,75,gruyère râpé
+4376,,8,courgettes
+4376,,2,crottins de chèvre
+4376,cl,25,coulis de tomate
+4377,,,huile
+4377,,,sel
+4377,,100,farine
+4377,kg,1,champignon
+4377,,10,noisettes
+4377,,,ail
+4378,,,huile d'olive
+4378,,1,oignon
+4378,,4,courgettes
+4378,,,chèvre
+4378,,,olives noires
+4378,,,herbes de Provence
+4379,,,sel
+4379,,,poivre
+4379,cuillère à soupe,1,huile
+4379,,30,beurre
+4379,,30,pommes de terre
+4379,,6,échalotes
+4379,verres,2,bouillon
+4380,,,sel
+4380,,,poivre
+4380,,1,tomate
+4380,,1,poivron
+4380,,1,courgette
+4380,,1,carotte
+4380,,200,germes de soja
+4380,,1,blanc de poireau
+4380,gousse,1,ail
+4380,cuillères à soupe,3,huile d'olive
+4380,cuillère à soupe,1,sauce soja
+4381,,,sel
+4381,,,poivre
+4381,,200,gruyère râpé
+4381,,1,crème fraîche
+4381,kg,1,pomme de terre
+4381,,3,oeufs
+4381,l,0.5,lait
+4381,,,ail
+4382,,,sel
+4382,,,poivre
+4382,pincées,2,sucre
+4382,cuillère à soupe,1,huile
+4382,,50,farine
+4382,,50,beurre
+4382,,2,oignons
+4382,,500,tomate
+4382,,70,fromage de chèvre
+4382,,50,parmesan râpé
+4382,cuillères à soupe,2,chapelure
+4383,,200,sucre
+4383,,3,oranges
+4383,,,eau
+4384,cuillère à café,1,curry
+4384,,0.5,piment
+4384,cuillère à soupe,1,huile
+4384,,1,oignon
+4384,,1,tomate
+4384,,200,lentilles corail
+4384,gousses,2,ail
+4384,,,sel et poivre
+4385,,,sel
+4385,,,poivre
+4385,,20,beurre
+4385,,1,oignon
+4385,,6,carottes
+4385,,2,poireaux
+4385,gousses,2,ail
+4386,,,sel
+4386,cuillère à soupe,1,épices
+4386,,320,riz
+4386,,,eau
+4387,,,sel
+4387,,,poivre
+4387,cl,25,tomate
+4387,,1,oignon
+4387,,200,quinoa
+4387,,,huile d'olive
+4388,cuillère à soupe,1,sésame
+4388,goutte,,tabasco
+4388,cuillères à soupe,3,huile de sésame
+4388,bouquet,1,brocoli
+4388,cuillères à soupe,3,sauce soja
+4389,cuillère à café,1,cumin en poudre
+4389,,,sel
+4389,,,poivre
+4389,,500,carotte
+4389,cuillères à soupe,2,huile
+4389,,1,oignon
+4389,verres,2,semoule
+4389,verres,2,eau
+4389,,1,jus de citron
+4389,cuillères à café,2,graines de coriandre
+4389,,,feuilles de coriandre
+4390,,,safran
+4390,,,persil
+4390,,1,oignon
+4390,cl,20,crème fraîche
+4390,,200,sauce tomate
+4390,,300,poulet
+4390,boîte,1,champignon
+4390,,,ciboulette
+4391,,,gingembre
+4391,,4,carottes
+4391,,1,fenouil
+4392,,,sel
+4392,,,poivre
+4392,,2,courgettes
+4392,,2,patates douces
+4392,,2,pommes de terre
+4392,,1,bouillon
+4392,,,herbes de Provence
+4393,,250,chocolat noir
+4393,cuillère à café,1,vanille
+4393,cl,20,crème d'amande
+4393,,60,sucre complet
+4393,cuillères à soupe,2,amandes en poudre
+4393,cuillère à soupe,1,huile de noix
+4393,,12,noisettes
+4394,,1,cube de bouillon
+4394,,1,cube de bouillon
+4394,,1,oignon
+4394,cuillère à soupe,1,huile
+4394,,250,riz
+4394,,,eau
+4394,,,champignon
+4395,,,liqueur
+4395,,,sorbet mirabelle
+4396,,,poivre
+4396,,,sel
+4396,,,huile d'olive
+4396,,10,feuilles de laurier
+4396,tranches,4,lard
+4396,,16,pommes de terre
+4397,,,sel
+4397,,,poivre
+4397,,1,cube de bouillon
+4397,,65,beurre
+4397,,4,poireaux
+4397,cuillères à soupe,3,crème fraîche épaisse
+4397,,0.5,citron
+4398,,50,piment d'Espelette
+4398,bouteille,1,vin blanc
+4398,sachet,1,vitpris
+4399,cuillères à soupe,3,sucre
+4399,,,sel
+4399,cuillère à café,1,cumin
+4399,cuillère à café,1,curcuma
+4399,cuillères à café,2,quatre-épices
+4399,cuillères à soupe,3,beurre
+4399,,2,piments
+4399,,500,pomme
+4399,,500,poire
+4399,cuillères à soupe,2,jus de citron
+4400,,,huile d'olive
+4400,,,origan
+4400,,,persil
+4400,,,sel
+4400,,,poivre
+4400,cuillères à soupe,2,vinaigre balsamique
+4400,,250,lardons
+4400,,1,poivron
+4400,,1,oignon blanc
+4400,,250,tomates pelées
+4400,,,basilic
+4401,,,sel
+4401,,,poivre
+4401,,500,brocoli
+4401,cl,25,crème fraîche liquide
+4402,,,sel
+4402,,,poivre
+4402,morceau,1,beurre
+4402,,2,oignons
+4402,,1,potimarron
+4402,l,0.5,eau
+4402,l,0.5,lait
+4402,,,basilic
+4402,,,gruyère
+4403,,,sel
+4403,,,poivre
+4403,,,huile
+4403,,,beurre
+4403,kg,1,ratte
+4403,,125,mascarpone
+4403,bouquet,1,basilic
+4403,gousses,4,ail
+4404,,60,persil
+4404,,7,pruneaux
+4404,,,sel
+4404,,,poivre
+4404,,1,poivron
+4404,,2,carottes
+4404,,1,oignon
+4404,,,huile d'olive
+4404,,250,boulgour
+4404,cl,40,bouillon de poule
+4404,,10,basilic
+4405,pincée,1,sel
+4405,,100,margarine
+4405,,200,farine
+4405,cuillères à soupe,8,eau
+4406,cuillère à soupe,1,miel
+4406,cuillère à soupe,1,levure
+4406,cuillère à soupe,1,sel
+4406,,750,farine
+4406,cl,50,eau
+4406,cl,10,lait
+4407,sachet,1,levure de boulanger
+4407,cuillère à soupe,1,sucre
+4407,bonne,1,sel
+4407,,250,farine de riz
+4407,,50,fécule de pomme de terre
+4407,,50,amidon
+4407,,50,farine de sarrasin
+4407,,50,farine de pois chiches
+4407,cuillère à soupe,1,arrow root
+4407,cuillères à café,2,gomme de guar
+4407,,400,eau
+4408,cuillère à soupe,1,huile
+4408,,100,gruyère râpé
+4408,,100,farine
+4408,sachet,1,levure
+4408,boîte,1,thon
+4408,,3,oeufs
+4408,demi,1,jus de citron
+4408,verre,1,lait
+4409,poignées,2,gruyère râpé
+4409,cuillère à soupe,1,crème fraîche
+4409,,1,beurre
+4409,cuillères à soupe,3,farine
+4409,,1,chou-fleur
+4409,,100,protéine de soja
+4409,cl,50,lait
+4410,,,sel
+4410,bouquet,1,persil
+4410,cuillères à soupe,2,huile
+4410,,1,cube de bouillon
+4410,cuillère à soupe,1,farine
+4410,,1,oignon
+4410,kg,1,pomme de terre
+4410,,200,petits pois
+4410,gousses,2,ail
+4411,,100,emmental
+4411,cl,20,crème fraîche
+4411,,,feuille de laurier
+4411,,,muscade
+4411,,,sel
+4411,,,poivre
+4411,kg,2,pomme de terre
+4411,gousse,1,ail
+4411,l,0.5,bouillon de poule
+4411,,,lait
+4412,,,romarin
+4412,,,thym
+4412,,,poivre
+4412,,,sel
+4412,cuillères à soupe,2,huile d'olive
+4412,,50,beurre
+4412,,100,comté
+4412,,500,pomme de terre
+4412,,0.5,chorizo
+4412,,,paprika
+4413,,600,farine
+4413,,125,gruyère râpé
+4413,sachet,1,levure
+4413,cuillère à café,1,gros sel
+4413,,1,pain
+4413,cl,30,eau
+4413,cuillère à soupe,1,cassonade
+4413,,50,lait entier
+4414,,1,moutarde de Dijon
+4414,,,huile de tournesol
+4414,,,poivre
+4414,,,sel
+4414,,3,bouillon de boeuf
+4414,,8,oignons blancs
+4414,,2,oeufs
+4414,,,Condiments
+4415,cuillères à café,2,miel
+4415,,20,beurre
+4415,sachet,1,levure de boulanger
+4415,,400,farine
+4415,,100,farine de maïs
+4415,cl,20,eau
+4416,,100,sucre glace
+4416,,1,pâte feuilletée
+4416,,3,pommes
+4416,sachet,1,poudre de noisette
+4416,,100,beurre salé
+4416,,1,oeuf
+4417,,,sel
+4417,,,poivre
+4417,cuillères à soupe,2,miel
+4417,,8,figues
+4417,gousses,3,ail
+4417,,,feuilles de coriandre
+4418,,,sel
+4418,,,poivre
+4418,,,muscade
+4418,cuillères à soupe,2,crème fraîche
+4418,,150,lardons
+4418,,3,courgettes
+4419,,,sel
+4419,,,poivre
+4419,,150,gruyère râpé
+4419,,2,courgettes
+4419,,500,riz
+4419,,2,oeufs
+4419,gousse,1,ail
+4419,,,huile d'olive
+4420,,,fromage râpé
+4420,,2,oignons
+4420,,200,lardons fumés
+4420,,4,tomates
+4420,,4,courgettes
+4420,,100,gorgonzola
+4420,cl,50,crème
+4421,,,sel
+4421,,,poivre
+4421,bouquet,0.5,coriandre
+4421,bouquet,0.5,persil
+4421,cuillères à soupe,2,vinaigre
+4421,,500,faisselle
+4421,cuillères à soupe,3,huile d'olive
+4421,,1,échalote
+4421,bouquet,0.5,basilic
+4422,,100,lardons
+4422,,600,giromon
+4422,bouquet,1,cive
+4423,,50,sésame
+4423,sachet,1,levure
+4423,cl,30,farine
+4423,cuillère à café,1,sel
+4423,cuillères à café,2,sucre
+4423,cl,30,eau
+4423,cuillères à soupe,2,lait en poudre
+4423,cuillères à soupe,2,végétaline
+4423,,50,pavot
+4423,,50,graines de lin
+4424,,300,farine
+4424,,150,beurre
+4424,cuillères à soupe,3,sucre
+4424,cuillère à café,1,sel
+4424,cl,8,lait
+4425,,,poivre
+4425,,,sel
+4425,cuillères à soupe,2,farine
+4425,,300,maïs
+4425,,2,oeufs
+4426,,,sel
+4426,,,poivre
+4426,,2,yaourts
+4426,,,crème fraîche
+4426,,,céleri-rave
+4427,,,sel
+4427,,,huile d'olive
+4427,,3,tomates
+4427,,1,pain
+4427,,,baguette
+4427,,1,ail
+4428,sachet,0.25,levure de boulanger
+4428,,250,farine
+4428,,250,eau
+4428,sachet,0.25,levure de boulanger
+4428,,10,sucre en poudre
+4428,,20,sel
+4428,,10,sucre
+4428,,100,farine
+4428,,200,farine
+4428,,250,farine
+4428,,200,farine
+4428,,250,lait
+4428,,200,eau
+4428,,,oignon
+4428,,,tomate séchée
+4428,,,épices
+4428,,,sésame
+4428,,,noix
+4428,,,lardons
+4428,zeste,,citron
+4428,,,olives
+4429,,200,gruyère râpé
+4429,,,pâtes à lasagnes
+4429,,1,courge spaghetti
+4429,,500,légumes
+4429,,250,crème végétale
+4430,,2,saucisses de Montbéliard
+4430,,1,chou chinois
+4430,,2,carottes
+4430,cl,10,vinaigre de riz
+4430,cuillère à soupe,1,huile de sésame toasté
+4430,cuillère à soupe,1,huile d'arachide
+4430,,40,sucre en poudre
+4430,gousse,1,ail
+4430,,1,citron vert
+4430,,,sel et poivre
+4430,,,graines de sésame
+4430,,,coriandre
+4431,,,sel
+4431,,,poivre
+4431,,25,beurre
+4431,,3,carottes
+4431,,1,oignon
+4431,,250,pois cassés
+4431,,2,pommes de terre
+4431,,1,bouquet garni
+4432,cuillères à soupe,2,vinaigre balsamique
+4432,,10,tomates séchées
+4432,,1,aubergine
+4432,,500,courgette
+4432,,1,oignon
+4432,gousses,2,ail
+4432,,100,olives noires
+4432,,170,champignon
+4432,,,herbes de Provence
+4432,,,huile d'olive
+4432,cuillères à soupe,2,bouillon de poule
+4433,cuillère à soupe,1,persil
+4433,,,poivre
+4433,cuillère à café,0.5,sel
+4433,cuillères à soupe,3,huile d'olive
+4433,cuillères à soupe,3,beurre
+4433,,500,pomme de terre
+4434,,,muscade
+4434,,,sel
+4434,,,poivre
+4434,,150,fromage râpé
+4434,cuillères à soupe,2,huile d'olive
+4434,cuillères à soupe,2,farine
+4434,cuillère à soupe,1,margarine
+4434,,1,oignon
+4434,,1,courgette
+4434,,200,champignon
+4434,l,0.5,lait
+4434,,70,concentré de tomates
+4434,gousses,3,ail
+4434,,300,eau
+4434,,300,penne
+4434,,,paprika
+4435,cuillère à café,1,farine
+4435,cuillère à café,1,sel
+4435,,7,levure
+4435,,450,farine
+4435,cl,30,lait
+4435,cuillère à café,1,semoule
+4436,,,piment de Cayenne
+4436,,,sel
+4436,,,poivre
+4436,cuillères à soupe,2,cumin
+4436,,800,pois chiches
+4436,gousses,12,ail
+4436,cl,10,coulis de tomate
+4437,,,sel
+4437,,,poivre
+4437,cuillères à soupe,2,persil
+4437,cuillère à café,1,origan
+4437,,4,tomates
+4437,,1,oignon
+4437,,1,poivron vert
+4437,,1,poivron jaune
+4437,,1,poivron rouge
+4437,gousses,4,ail
+4437,,200,feta
+4437,cuillères à soupe,4,huile d'olive
+4438,,,sel
+4438,,,poivre
+4438,cuillères à soupe,2,vinaigre
+4438,,100,oignon
+4438,,500,betterave
+4438,,75,boursin
+4439,,,poivre
+4439,,,sel
+4439,,400,purée de tomate
+4439,,3,tomates
+4439,,0.5,poivron
+4439,,1,oignon
+4439,,1,aubergine
+4439,,1,courgette
+4439,gousses,2,ail
+4439,,1,huile d'olive
+4440,,75,fromage râpé
+4440,,6,pommes de terre
+4440,,1,chou-fleur
+4440,cl,40,beurre
+4440,,40,farine
+4440,cl,60,lait

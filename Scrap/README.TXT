@@ -36,7 +36,7 @@ Also a ingredient csv file is deliver with a split unit/quantity/ingredient and 
 ///////////////////////////////////////////////------------------------Open admin powerShell------------------------------\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Ouvrir PowerShell en tant qu'administrateur
-$path = "C:\Users\suean\OneDrive\Desktop\tom\useYourFridgeProd\UseYourFridgeFrontEnd\fullingrFRandEN.csv" #------------------ ADD YOUR PATH HERE
+$path = "C:\Users\suean\OneDrive\Desktop\tom\useYourFridgeProd\UseYourFridgeFrontEnd\Scrap\platprincipal_from1_to50.csv" #------------------ ADD YOUR PATH HERE
 $user = "NT AUTHORITY\NetworkService"  # ou "postgres" selon votre configuration
 
 # Donner les permissions
@@ -61,11 +61,14 @@ CREATE TABLE recetteFormat (
     Tag4 TEXT,
     Tag5 TEXT,
     difficulty TEXT,
+    steps TEXT, 
     budget TEXT,
     people INTEGER,
     prep_time INTEGER,
     cooking_time INTEGER,
-    total_time INTEGER
+    total_time INTEGER,
+    images  TEXT
+
 );
 
 AND
@@ -89,7 +92,7 @@ WHERE rf.id = 42
 ///////////////////////////////////////////////////------------------then push the data-----------------\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-------------ADD YOUR PATH IN FROM--------------///////////////////////////////////////////////////////////////
 
-COPY recetteFormat (title, url, rate, Tag1, Tag2, Tag3, Tag4, Tag5, difficulty, budget, people, prep_time, cooking_time, total_time)
+COPY recetteFormat (title, url, rate, Tag1, Tag2, Tag3, Tag4, Tag5, difficulty, budget, people, prep_time, cooking_time, total_time, steps, images)
 FROM 'C:\Users\suean\OneDrive\Desktop\tom\Scrap\modified_igrdtRecette3.csv'
 DELIMITER ','
 CSV HEADER;

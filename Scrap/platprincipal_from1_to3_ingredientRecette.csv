@@ -1,0 +1,318 @@
+﻿recette_id,ingredient,quantity,unit
+1,poivre,,
+1,sel,,
+1,muscade,,
+1,crème fraîche,20,
+1,beurre,30,
+1,lardons,200,
+1,pâte brisée,200,
+1,oeufs,3,
+1,lait,20,
+2,sel,,
+2,poivre,,
+2,clous de girofle,4,
+2,oignon,1,
+2,poireaux,2,
+2,carottes,5,
+2,boeuf,1,
+2,os à moelle,,
+2,rave,4,
+2,céleri,2,branches
+2,ail,1,gousse
+2,bouquet garni,1,
+3,poivre,,
+3,sel,,
+3,beurre,100,
+3,vin rouge,1,bouteille
+3,carottes,4,
+3,oignons,4,
+3,bourguignon,600,
+3,bouquet garni,1,
+4,sel,,
+4,poivre,,
+4,feuille de laurier,1,
+4,thym,1,brin
+4,tomate,500,
+4,oignon,350,
+4,poivron,350,
+4,courgette,350,
+4,aubergine,350,
+4,ail,3,gousses
+4,huile d'olive,6,cuillères à soupe
+5,sucre,3,cuillères à soupe
+5,sel,0.5,cuillère à café
+5,beurre,150,
+5,farine,300,
+5,eau,8,
+6,poivre,,
+6,sel,,
+6,persil,,
+6,farine,1,cuillère à café
+6,beurre,30,
+6,moules,4,
+6,échalotes,2,
+6,vin blanc sec,15,
+7,huile d'olive,3,cuillères à soupe
+7,levure,1,sachet
+7,sel,2,cuillères à café
+7,farine,350,
+7,eau,25,
+8,fromage râpé,50,
+8,oignon,1,
+8,huile d'olive,50,
+8,sel,,
+8,poivre,,
+8,courgettes,2,
+8,porc,600,
+8,coulis de tomate,20,
+9,pomme de terre,500,
+10,beurre,,
+10,moutarde,,
+10,crème fraîche,40,
+10,bouillon de légumes,1,
+10,filet mignon,1,
+10,vin blanc sec,25,
+10,champignon,500,
+10,huile d'olive,,
+11,beurre,125,
+11,farine,100,
+11,poivre,,
+11,sel,,
+11,fromage râpé,70,
+11,muscade,3,pincées
+11,thym,,
+11,feuilles de laurier,2,
+11,vin rouge,20,
+11,purée de tomate,800,
+11,carotte,1,
+11,oignons jaunes,3,
+11,lasagnes,1,paquet
+11,ail,2,gousses
+11,céleri,1,branche
+11,boeuf haché,600,
+11,eau,15,
+11,basilic,,
+11,Parmesan,125,
+11,lait,1,
+12,poivre,,
+12,sel,,
+12,muscade,,
+12,beurre,100,
+12,pomme de terre,1.5,
+12,ail,2,gousses
+12,crème,30,
+12,lait,1,
+13,sel,,
+13,poivre,,
+13,huile d'olive,,
+13,aubergines,4,
+13,herbes de Provence,,
+14,pois chiches,400,
+14,courgettes,2,
+14,carottes,5,
+14,tomates,3,
+14,cubes de bouillon,2,
+14,harissa,1,cuillère à café
+14,merguez,12,
+14,pilons de poulet,8,
+14,huile d'olive,,
+14,concentré de tomates,2,boîtes
+14,épices à couscous,3,cuillères à soupe
+14,navets,10,
+15,oignon,1,
+15,lardons,250,
+15,poivre,,
+15,sel,1,pincée
+15,crème fraîche,50,
+15,pâtes,500,
+15,jaunes d'oeuf,3,
+16,poivre,,
+16,sel,1,
+16,feuille de laurier,,
+16,tomates cerise,1,poignée
+16,oignons,2,
+16,poulet,1,
+16,ail,3,gousses
+16,jus de citron,1,
+16,bouillon de volaille,1,
+17,huile,2,cuillères à soupe
+17,vinaigre balsamique,2,cuillères à soupe
+17,miel,2,cuillères à soupe
+17,sel,,
+17,poivre,,
+17,blancs de poulet,4,
+17,jus de citron,2,cuillères à soupe
+17,sauce soja,1,cuillère
+17,ail,2,gousses
+18,clou de girofle,1,
+18,feuilles de laurier,2,
+18,thym,1,cuillère à café
+18,oignon,1,
+18,cuisses de poulet,4,
+18,eau,50,
+18,ail,1,gousse
+18,bouillon de volaille,1,
+18,genièvre,3,
+18,huile d'olive,1,cuillère à soupe
+19,piment,1,
+19,curcuma,1,cuillère à café
+19,sel,,
+19,poivre,,
+19,thym,,
+19,oignons,4,
+19,tomates,4,
+19,saucisses,6,
+19,ail,6,gousses
+19,laurier,,
+19,huile d'olive,,
+20,fromage râpé,200,
+20,sauce tomate,20,
+20,poivre,1,pincée
+20,sel,2,pincées
+20,bicarbonate,0.5,cuillère à café
+20,levure,1,sachet
+20,Farine à pizza,300,
+20,eau,20,
+20,viande,250,
+20,herbes de Provence,1,pincée
+20,olives noires,8,
+20,sel,2,pincées
+20,paprika,2,pincées
+21,sel,,
+21,poivre,,
+21,beurre,,
+21,persil,,
+21,thym,,
+21,oignons,3,
+21,tomates,4,
+21,chair à saucisse,500,
+21,ail,2,gousses
+22,thym,1,
+22,sel,1,
+22,poivre,1,
+22,rôti de boeuf,400,
+22,ail,1,gousse
+22,huile d'olive,2,cuillères à soupe
+22,eau,12,
+23,gros sel,10,
+23,farine de blé noir,330,
+23,eau,75,
+23,oeuf,1,
+24,moutarde,1,bonne
+24,andouillette,4,
+24,crème,20,
+24,échalote,1,
+25,gros sel,1,cuillère à soupe
+25,romarin,2,branches
+25,gigot d'agneau,1,
+25,ail,2,gousses
+25,graisse d'oie,,
+25,ail,,
+26,sel,,
+26,poivre,,
+26,muscade,1,pincée
+26,gruyère râpé,100,
+26,jambon,4,tranches
+26,beurre tendre,50,
+26,pain de mie,8,tranches
+26,toastinette,8,tranches
+26,lait,4,cuillères à soupe
+27,persil,,
+27,poivre,,
+27,sel,,
+27,bouillon de boeuf,30,
+27,haricots rouges,1,grosse
+27,cumin en poudre,2,cuillères à café
+27,chili,1,cuillère à café
+27,oignons,2,
+27,beurre,50,
+27,ail,2,gousses
+27,boeuf haché,500,
+27,concentré de tomates,65,
+28,sel,,
+28,poivre,,
+28,safran,3,doses
+28,oignons,2,
+28,tomate,1,
+28,poivrons,2,
+28,riz,500,
+28,filet de poulet,1,
+28,calamar,500,
+28,moules,1,
+28,crevettes,15,
+28,chorizo,1,
+28,ail,3,gousses
+28,bouillon de volaille,1,
+28,huile d'olive,5,cuillères à soupe
+29,romarin,,
+29,thym,,
+29,poivre,,
+29,fleur de sel,,
+29,harissa,,
+29,épaule d'agneau,1.5,
+29,échalotes,12,
+29,ail,8,gousses
+29,huile d'olive,5,
+30,sel,,
+30,poivre,,
+30,miel,4,cuillères à soupe
+30,thym,6,branches
+30,souris d'agneau,4,
+30,ail,1,
+30,huile d'olive,10,cuillères à soupe
+31,vinaigre,0.5,bol
+31,sucre,2,bols
+31,eau,4,bols
+31,nuoc mam,1,bol
+31,vermicelles de riz,1,sachet
+31,sel,,
+31,poivre,,
+31,curry,1,cuillère à soupe
+31,boeuf,700,
+31,ail,1,gousse
+31,sauce d'huître,3,cuillères à soupe
+31,soja,3,cuillères
+31,glutamate,1,cuillère à café
+31,coriandre,,
+31,batavia,,
+31,soja,300,
+31,menthe,,
+31,arachide,,
+31,nems,8,
+32,sel,,
+32,vinaigre balsamique,3,cuillères à café
+32,miel,3,cuillères à soupe
+32,Magrets de Canard,2,
+33,sel,,
+33,poivre,,
+33,gruyère râpé,100,
+33,farine,2,grosses
+33,crème fraîche,10,
+33,oeufs,3,
+33,lait,0.25,
+33,dés de jambon,150,
+34,côte de boeuf,1,
+34,huile,,
+34,fleur de sel,,
+34,poivre,,
+34,thym,5,brins
+35,sel,,
+35,poivre,,
+35,muscade,,
+35,miel,1,cuillère à soupe
+35,beurre,30,
+35,huile d'olive,,
+35,oignon,1,
+35,tomates,5,
+35,aubergines,2,
+35,pommes de terre,6,
+35,boeuf haché,500,
+35,cannelle,1,
+35,farine,3,cuillères à soupe
+35,beurre,20,
+35,lait,35,
+36,beurre,200,
+36,sel,1,cuillère à café
+36,farine,50,
+36,farine,200,
+36,eau,100,

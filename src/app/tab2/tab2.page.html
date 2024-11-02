@@ -1,84 +1,110 @@
-<!-- src/app/tab2/tab2.page.html -->
 <app-header [back]="false" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
-<ion-content [fullscreen]="true" scroll-y="false">
-  <!-- Bouton pour afficher la liste de courses réduite -->
-  <ion-button [ngClass]="{'fixable-element': true}"  *ngIf="isReducedIconVisible" (click)="openShoppingListModal()">
-    {{ 'VIEW_SHOPPING_LIST' | translate }}
-  </ion-button>
-  <div *ngIf="isReducedIconVisible" class="reduced-icon" (click)="openShoppingListModal()">
-    <ion-icon name="cart"></ion-icon>
-  </div>
+<ion-content [fullscreen]="true">
+  <!-- Search Bar -->
+  <ion-searchbar
+    animated="true"
+    [placeholder]="'SEARCH' | translate"
+    [(ngModel)]="searchTerm"
+    (ionInput)="filterRecettes()"
+  ></ion-searchbar>
 
+  <!-- Filter Options (Tag1, Tag2, Tag3) -->
   <ion-list class="flex-container">
-    <!-- Filtrer par recherche + tag1, tag2, tag3 -->
-    <ion-item class="item-1">
-      <ion-input
-        [placeholder]="'SEARCH' | translate"
-        [(ngModel)]="searchTerm"
-        (ionInput)="filterRecettes()"
-      ></ion-input>
-    </ion-item>
-
+    <!-- Filter by Tag1 -->
     <ion-item class="item-2">
       <ion-label>{{ 'FILTER_TAG1' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null"></ion-select-option>
+        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
 
+    <!-- Filter by Tag2 -->
     <ion-item class="item-3">
       <ion-label>{{ 'FILTER_TAG2' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null"></ion-select-option>
+        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
 
+    <!-- Filter by Tag3 -->
     <ion-item class="item-4">
       <ion-label>{{ 'FILTER_TAG3' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null"></ion-select-option>
+        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
 
+  <!-- Clear Filters Button -->
   <ion-button expand="block" color="danger" (click)="clearFilters()">
     {{ 'CLEAR_FILTERS' | translate }}
   </ion-button>
 
-  <!-- Bouton pour générer et afficher la liste de courses -->
-  <ion-button expand="block" color="danger" [disabled]="selectedRecettes.length === 0" (click)="generateShoppingList()">
+  <!-- Generate Shopping List Button -->
+  <ion-button
+    expand="block"
+    color="danger"
+    [disabled]="selectedRecettes.length === 0"
+    (click)="generateShoppingList()"
+  >
     {{ 'GENERATE_SHOPPING_LIST' | translate }}
   </ion-button>
 
-  <!-- Liste des recettes -->
-  <ion-list *ngIf="recettes && recettes.length > 0" class="grid">
-    <ion-item *ngFor="let recette of recettes">
-      <ion-checkbox [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"></ion-checkbox>
-      <ion-label class="availability">{{ recette.title }} ({{ recette.rate }})</ion-label>
-      <ion-label>{{ recette.difficulty }} - {{ recette.budget }}</ion-label>
-      <ion-label>{{ 'INGREDIENTS' | translate }}: {{ recette.ingredients.length }}</ion-label>
-      <ion-button fill="clear" class="detail-button" (click)="showRecetteDetails(recette)">
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
 
-  <!-- Pagination -->
-  <ion-item *ngIf="totalPages > 1">
-    <ion-button (click)="goToPreviousPage()" [disabled]="currentPage === 1">{{ 'PREVIOUS' | translate }}</ion-button>
-    <ion-label>{{ 'PAGE' | translate }} {{ currentPage }} {{ 'OF' | translate }} {{ totalPages }}</ion-label>
-    <ion-button (click)="goToNextPage()" [disabled]="currentPage === totalPages">{{ 'NEXT' | translate }}</ion-button>
-  </ion-item>
+  <div class="flex-container3" *ngIf="displayedRecettes && displayedRecettes.length > 0">
+    <ion-card *ngFor="let recette of displayedRecettes">
+      
+        <img *ngIf="recette.images"
+        [src]="recette.images"
+        alt="Recipe Image" />
+        <ion-card-header>
+          <ion-card-title>{{ recette.title }} </ion-card-title>
+          <ion-card-subtitle>pour{{ recette.people }} personnes, {{ recette.difficulty }} - {{ recette.budget }} </ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content class="flex-container2">
+          <div>
+           <p>Ingredients</p> 
+           <p>Dispo :</p> 
+           <p>  /  </p> 
+          </div>
 
-  <!-- Messages Conditionnels -->
-  <ion-item *ngIf="(!recettes || recettes.length === 0) && allRecettes.length > 0">
+          <ion-button fill="clear" class="detail-button" (click)="showRecetteDetails(recette)">
+            more <ion-icon name="help-circle-outline" size ="large"></ion-icon>
+          </ion-button>
+
+          <div>
+            <p>note :</p> 
+           <p>{{ recette.rate }}/5 </p>
+          </div>
+          
+        </ion-card-content>
+        <p><ion-toggle [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"> </ion-toggle> Ajouter à la liste de course </p>
+      </ion-card>
+
+     
+
+    <!-- Infinite Scroll Component -->
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}"
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+  
+  <!-- Conditional Messages -->
+  <ion-item
+    *ngIf="(!displayedRecettes || displayedRecettes.length === 0) && allRecettes.length > 0"
+  >
     {{ 'NO_RECIPES_MATCH' | translate }}
   </ion-item>
 
-  <ion-item *ngIf="allRecettes.length === 0 && recettes.length === 0">
+  <ion-item *ngIf="allRecettes.length === 0 && displayedRecettes.length === 0">
     {{ 'LOADING_RECIPES' | translate }}
   </ion-item>
 </ion-content>

@@ -19,10 +19,13 @@
       <h3>{{ 'INGREDIENTS' | translate }}:</h3>
       
         <li *ngFor="let ing of recette.ingredients">
-          {{ ing.quantite }} {{ ing.unit }} de {{ ing.ingredient }}
+          {{ ing.quantite }} {{ ing.unit }}  {{ ing.ingredient }}
         </li>
       
       <h3>{{ 'INSTRUCTIONS' | translate }}:</h3>
+      <p>
+        {{ recette.steps }} 
+      </p>
       <a [href]="recette.url" target="_blank" rel="noopener noreferrer">{{ 'VIEW_INSTRUCTIONS' | translate }}</a>
     </ion-card-content>
   </ion-card>

@@ -138,32 +138,34 @@ app.get('/api/recetteformat', async (req, res) => {
 
   try {
     const query = `
-      SELECT 
-        rf.id, 
-        ${lang === 'en' ? 'rf.title_en AS title' : 'rf.title'}, 
-        rf.url, 
-        rf.rate, 
-        ${lang === 'en' ? 'rf.tag1_en AS tag1' : 'rf.tag1'}, 
-        ${lang === 'en' ? 'rf.tag2_en AS tag2' : 'rf.tag2'}, 
-        ${lang === 'en' ? 'rf.tag3_en AS tag3' : 'rf.tag3'}, 
-        rf.difficulty, 
-        ${lang === 'en' ? 'rf.difficulty_en AS difficulty' : 'rf.difficulty'}, 
-        rf.budget, 
-        ${lang === 'en' ? 'rf.budget_en AS budget' : 'rf.budget'}, 
-        rf.people, 
-        rf.prep_time, 
-        rf.cooking_time, 
-        rf.total_time,
-        ${lang === 'en' ? 'ri.ingredient_en AS ingredient' : 'ri.ingredient'}, 
-        ${lang === 'en' ? 'ri.unit_en AS unit' : 'ri.unit'}, 
-        ${lang === 'en' ? 'ri.quantite_en AS quantite' : 'ri.quantite'}
-      FROM 
-        recetteformat rf
-      LEFT JOIN 
-        recetteingredients ri 
-      ON 
-        rf.id = ri.recetteid
-    `;
+  SELECT 
+    rf.id, 
+    ${lang === 'en' ? 'rf.title_en AS title' : 'rf.title'}, 
+    rf.url, 
+    rf.rate, 
+    ${lang === 'en' ? 'rf.tag1_en AS tag1' : 'rf.tag1'}, 
+    ${lang === 'en' ? 'rf.tag2_en AS tag2' : 'rf.tag2'}, 
+    ${lang === 'en' ? 'rf.tag3_en AS tag3' : 'rf.tag3'}, 
+    rf.steps, 
+    rf.images, 
+    rf.difficulty, 
+    ${lang === 'en' ? 'rf.difficulty_en AS difficulty' : 'rf.difficulty'}, 
+    rf.budget, 
+    ${lang === 'en' ? 'rf.budget_en AS budget' : 'rf.budget'}, 
+    rf.people, 
+    rf.prep_time, 
+    rf.cooking_time, 
+    rf.total_time,
+    ${lang === 'en' ? 'ri.ingredient_en AS ingredient' : 'ri.ingredient'}, 
+    ${lang === 'en' ? 'ri.unit_en AS unit' : 'ri.unit'}, 
+    ${lang === 'en' ? 'ri.quantite_en AS quantite' : 'ri.quantite'}
+  FROM 
+    recetteformat rf
+  LEFT JOIN 
+    recetteingredients ri 
+  ON 
+    rf.id = ri.recetteid
+`;
     const result = await pool.query(query);
 
     // Regrouper les ingrédients sous forme de tableau pour chaque recette
@@ -194,6 +196,8 @@ app.get('/api/recetteformat', async (req, res) => {
           prep_time: row.prep_time,
           cooking_time: row.cooking_time,
           total_time: row.total_time,
+          steps: Array.isArray(row.steps) ? row.steps : [row.steps], // Assurez-vous que steps est un tableau
+          images: Array.isArray(row.images) ? row.images : [row.images], // Assurez-vous que images est un tableau
           ingredients: row.ingredient ? [{
             ingredient: row.ingredient,
             unit: row.unit,

@@ -42,7 +42,7 @@ export class FrigoService {
   }
 
   loadIngredients() {
-    this.http.get<Ingredient[]>(`http://192.168.1.94:3000/api/ingredients`).subscribe(
+    this.http.get<Ingredient[]>(`http://192.168.178.53:3000/api/ingredients`).subscribe(
       ingredients => {
         console.log("load frigo db");
         this.ingredientsSubject.next(ingredients);
@@ -72,7 +72,7 @@ export class FrigoService {
 
   addIngredient(ingredientName: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`http://192.168.1.94:3000/api/ingredients`, { nom: ingredientName }, { headers, responseType: 'text' })
+    return this.http.post(`http://192.168.178.53:3000/api/ingredients`, { nom: ingredientName }, { headers, responseType: 'text' })
       .pipe(
         tap(() => this.loadIngredients())
       );
@@ -84,7 +84,7 @@ export class FrigoService {
       this.user = this.tokenStorage.getUser();
     }
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`http://192.168.1.94:3000/api/frigo`, { nom: frigoName, userId: this.user.id }, { headers, responseType: 'text' })
+    return this.http.post(`http://192.168.178.53:3000/api/frigo`, { nom: frigoName, userId: this.user.id }, { headers, responseType: 'text' })
       .pipe(
         tap(() => this.loadIngredients())
       );

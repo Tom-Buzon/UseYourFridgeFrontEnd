@@ -39,59 +39,73 @@ class Recipe:
     images: List[str]
 
     def to_dict(self):
-        return {
+        # Modifier cette méthode pour répartir les tags dans Tag1 à Tag5 et ordonner les champs
+        data = {
+            "id": None,  # L'id sera ajouté plus tard
             "title": self.title,
             "url": self.url,
             "rate": self.rate,
-            "tags": self.tags,
+            "Tag1": self.tags[0] if len(self.tags) > 0 else '',
+            "Tag2": self.tags[1] if len(self.tags) > 1 else '',
+            "Tag3": self.tags[2] if len(self.tags) > 2 else '',
+            "Tag4": self.tags[3] if len(self.tags) > 3 else '',
+            "Tag5": self.tags[4] if len(self.tags) > 4 else '',
             "difficulty": self.difficulty,
+            "steps": self.steps,
             "budget": self.budget,
             "people": self.people,
             "prep_time": self.prep_time,
             "cooking_time": self.cooking_time,
             "total_time": self.total_time,
-            "steps": self.steps,
             "images": self.images
         }
-    
-def clean_ingredient_value(value):
-    return ' '.join(value.split()).strip()
-
-unit_patterns  = [
-r'\bgrosses\b',r'\bgrosse\b',  r'\bgros\b', 
-r'\bbon\b', r'\bbons\b', r'\bbonnes\b', r'\bbonne\b', r'\bmorceaux\b', r'\bmorceau\b',
-r'\bpetites boîtes\b', r'\bpetite boîte\b', r'\bboîtes moyennes\b', r'\bboîte moyenne\b', r'\bboîtes\b',  r'\bboîte\b'
-r'\bcuillères à soupe\b', r'\bcuillère à soupe\b', r'\bcuillères à café\b', r'\bcuillère à café\b',
-r'\bcuillères rases\b', r'\bcuillère rase\b', r'\bcuillères\b', r'\bcuillère\b',
-r'\bpoignées\b', r'\bpoignée\b', r'\btranches\b', r'\btranche\b',
-r'\blamelles\b', r'\blamelle\b', r'\bpointes de couteaux\b', r'\bpointe de couteau\b',
-r'\bpointes\b', r'\bpointe\b', r'\btours de moulin\b', r'\btour de moulin\b',
-r'\bmoitiés\b', r'\bmoitié\b', r'\bpots\b', r'\bpot\b',
-r'\bdoses\b', r'\bdose\b', r'\bpincées\b', r'\bpincée\b',
-r'\bzestes\b', r'\bzeste\b', r'\bverres\b', r'\bverre\b',
-r'\btasses\b', r'\btasse\b', r'\bsachets\b', r'\bsachet\b',
-r'\bbouquets\b', r'\bbouquet\b', r'\bpaquets\b', r'\bpaquet\b',
-r'\bfilets\b', r'\bfilet\b', r'\bfeuilles\b', r'\bfeuille\b',
-r'\bbols\b', r'\bbol\b', r'\bblocs\b', r'\bbloc\b',
-r'\bgouttes\b', r'\bgoutte\b', r'\bdemi(?!\S)\b',
-r'\bbriquettes\b', r'\bbriquette\b', r'\bbrins\b', r'\bbrin\b',
-r'\bbranches\b', r'\bbranche\b', r'\bbouteilles\b', r'\bbouteille\b',
-r'\bboules\b', r'\bboule\b', r'\bbottes\b', r'\bbotte\b',
-r'\bbocaux\b', r'\bbocal\b', r'\bblancs\b', r'\bblanc\b',
-r'\bbelles\b', r'\bbelle\b', r'\bbeaux\b', r'\bbeau\b',
-r'\bbâtons\b', r'\bbâton\b', r'\bbarquettes\b', r'\bbarquette\b',
-r'\bgousses\b', r'\bgousse\b', r'\bgrosses\b', r'\bgrosse\b',
-r'\bbons\b', r'\bbon\b', r'\bbonnes\b', r'\bbonne\b'
-]
+        return data
 
 class MarmitonScraper:
     def __init__(self):
         self.base_url = "https://www.marmiton.org"
         self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            "User-Agent": "Mozilla/5.0"
         }
         self.pages_visitees = []
         self.recipes = []
+
+        # Votre liste détaillée des unités
+        self.unit_patterns = [
+            r'\bgrosses\b', r'\bgrosse\b',  r'\bgros\b', 
+            r'\bbon\b', r'\bbons\b', r'\bbonnes\b', r'\bbonne\b', r'\bmorceaux\b', r'\bmorceau\b',
+            r'\bpetites boîtes\b', r'\bpetite boîte\b', r'\bboîtes moyennes\b', r'\bboîte moyenne\b', r'\bboîtes\b',  r'\bboîte\b',
+            r'\bcuillères à soupe\b', r'\bcuillère à soupe\b', r'\bcuillères à café\b', r'\bcuillère à café\b',
+            r'\bcuillères rases\b', r'\bcuillère rase\b', r'\bcuillères\b', r'\bcuillère\b',
+            r'\bpoignées\b', r'\bpoignée\b', r'\btranches\b', r'\btranche\b',
+            r'\blamelles\b', r'\blamelle\b', r'\bpointes de couteaux\b', r'\bpointe de couteau\b',
+            r'\bpointes\b', r'\bpointe\b', r'\btours de moulin\b', r'\btour de moulin\b',
+            r'\bmoitiés\b', r'\bmoitié\b', r'\bpots\b', r'\bpot\b',
+            r'\bdoses\b', r'\bdose\b', r'\bpincées\b', r'\bpincée\b',
+            r'\bzestes\b', r'\bzeste\b', r'\bverres\b', r'\bverre\b',
+            r'\btasses\b', r'\btasse\b', r'\bsachets\b', r'\bsachet\b',
+            r'\bbouquets\b', r'\bbouquet\b', r'\bpaquets\b', r'\bpaquet\b',
+            r'\bfilets\b', r'\bfilet\b', r'\bfeuilles\b', r'\bfeuille\b',
+            r'\bbols\b', r'\bbol\b', r'\bblocs\b', r'\bbloc\b',
+            r'\bgouttes\b', r'\bgoutte\b', r'\bdemi(?!\S)\b',
+            r'\bbriquettes\b', r'\bbriquette\b', r'\bbrins\b', r'\bbrin\b',
+            r'\bbranches\b', r'\bbranche\b', r'\bbouteilles\b', r'\bbouteille\b',
+            r'\bboules\b', r'\bboule\b', r'\bbottes\b', r'\bbotte\b',
+            r'\bbocaux\b', r'\bbocal\b', r'\bblancs\b', r'\bblanc\b',
+            r'\bbelles\b', r'\bbelle\b', r'\bbeaux\b', r'\bbeau\b',
+            r'\bbâtons\b', r'\bbâton\b', r'\bbarquettes\b', r'\bbarquette\b',
+            r'\bgousses\b', r'\bgousse\b', r'\bgrosses\b', r'\bgrosse\b',
+            r'\bbons\b', r'\bbon\b', r'\bbonnes\b', r'\bbonne\b',
+            r'\bgrammes\b',r'\bgramme\b',r'\bgram\b', r'\blitres\b', r'\bgr\b',r'\bkg\b', r'\bcl\b',r'\bl\b'
+        ]
+
+        # Créer un regex à partir de la liste des unités
+        self.unit_pattern_regex = r'(' + '|'.join(self.unit_patterns) + r')'
+
+    @staticmethod
+    def clean_ingredient_value(value):
+        """Nettoie les retours à la ligne et les espaces supplémentaires dans une chaîne."""
+        return ' '.join(value.split()).strip()
 
     @staticmethod
     def get_category_url():
@@ -114,7 +128,7 @@ class MarmitonScraper:
             choice = input("\nChoisissez une catégorie (1-8) : ")
             if choice in categories:
                 return categories[choice][1]
-            print("Choix invalide. Veuillez choisir un numéro entre 1 et 8.")    
+            print("Choix invalide. Veuillez choisir un numéro entre 1 et 8.")
 
     def get_page_content(self, url: str) -> Optional[str]:
         max_retries = 3
@@ -132,13 +146,6 @@ class MarmitonScraper:
                 else:
                     logging.error("Nombre maximum de tentatives atteint")
                     return None
-
-    def clean_ingredient_value(value):
-        """Nettoie les retours à la ligne et les espaces supplémentaires dans une chaîne."""
-        return ' '.join(value.split()).strip()
-
-    # Liste des unités courantes (exemples)
-
 
     def parse_recipe(self, url: str) -> Optional[Recipe]:
         try:
@@ -178,16 +185,20 @@ class MarmitonScraper:
                 quantity = ing_div.find('span', class_='card-ingredient-quantity')
 
                 if name:
-                    ingredient_text = clean_ingredient_value(name.text.strip())
-                    quantity_text = clean_ingredient_value(quantity.text) if quantity else ''
+                    ingredient_text = self.clean_ingredient_value(name.text.strip())
+                    quantity_text = self.clean_ingredient_value(quantity.text.strip()) if quantity else ''
+
+                    # Utiliser le regex construit à partir de unit_patterns
+                    unit_pattern_regex = self.unit_pattern_regex
 
                     # Regex pour capturer quantité, unité et nom d'ingrédient
-                    match = re.match(rf"(\d*\.?\d*)\s*({unit_patterns})?\s*(.*)", quantity_text)
+                    match = re.match(rf"(?P<quantity>\d*\.?\d+)?\s*(?P<unit>{unit_pattern_regex})?\s*(.*)", quantity_text, re.IGNORECASE)
                     if match:
-                        quantity = match.group(1).strip() if match.group(1) else ''
-                        unit = match.group(2).strip() if match.group(2) else ''
+                        quantity = match.group('quantity').strip() if match.group('quantity') else ''
+                        unit = match.group('unit').strip() if match.group('unit') else ''
                     else:
-                        quantity, unit = '', ''
+                        quantity = ''
+                        unit = ''
 
                     ingredients.append({
                         'ingredient': ingredient_text,
@@ -195,7 +206,7 @@ class MarmitonScraper:
                         'unit': unit
                     })
 
-            # Continue processing for time, steps, and images
+            # Traitement pour le temps, les étapes et les images
             time_div = soup.find('div', class_='recipe-preparation__time')
             prep_time = 0
             cooking_time = 0
@@ -214,7 +225,17 @@ class MarmitonScraper:
                                 cooking_time = int(time_digits)
             total_time = prep_time + cooking_time if prep_time or cooking_time else 0
 
-            images = [img['src'] for img in soup.find_all('img', class_='recipe-media-viewer-picture')]
+            # Extraction du data-srcset des images
+            images = []
+            for img in soup.find_all('img', class_='recipe-media-viewer-picture'):
+                srcset = img.get('data-srcset')
+                if srcset:
+                    srcset_urls = [s.strip().split(' ')[0] for s in srcset.split(',')]
+                    highest_res_url = srcset_urls[-1]
+                    images.append(highest_res_url)
+                else:
+                    images.append(img.get('src'))
+
             steps = [step.find('p').text.strip() for step in soup.find_all('div', class_='recipe-step-list__container')]
 
             return Recipe(
@@ -246,14 +267,14 @@ class MarmitonScraper:
             if nb_pages and pages_visited >= nb_pages:
                 logging.info(f"Nombre de pages demandé atteint ({nb_pages})")
                 break
-            
+
             page_url = f"{base_url}&page={current_page}" if "?" in base_url else f"{base_url}?page={current_page}"
             logging.info(f"Visite de la page {current_page}: {page_url}")
-    
+
             content = self.get_page_content(page_url)
             if not content:
                 break
-            
+
             soup = BeautifulSoup(content, 'html.parser')
             recipe_cards = soup.find_all('a', class_='MRTN-recipeCard-link')
             if not recipe_cards:
@@ -266,16 +287,16 @@ class MarmitonScraper:
             if not recipe_cards:
                 logging.warning("Aucune recette trouvée sur cette page")
                 break
-            
+
             for card in recipe_cards:
                 if len(recipes) >= max_recipes:
                     break
-                
+
                 recipe_url = urljoin(self.base_url, card['href'])
                 if recipe_url not in self.pages_visitees:
                     self.pages_visitees.append(recipe_url)
                     logging.info(f"Traitement de la recette: {recipe_url}")
-    
+
                     time.sleep(random.uniform(1, 3))
                     recipe = self.parse_recipe(recipe_url)
                     if recipe:
@@ -285,19 +306,20 @@ class MarmitonScraper:
             current_page += 1
             pages_visited += 1
             time.sleep(2)
-    
+
         return recipes
 
 # Fonction pour créer les fichiers CSV principal et des ingrédients
-def generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path):
+def generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path, starting_id=1):
     main_data = []
     ingredient_data = []
-    
-    for recette_id, recipe in enumerate(recipes, start=1):
+
+    for idx, recipe in enumerate(recipes):
+        recette_id = starting_id + idx  # Utiliser l'ID de départ fourni par l'utilisateur
         main_entry = recipe.to_dict()
-        main_entry["id"] = recette_id
+        main_entry["id"] = recette_id  # Attribuer l'id
         main_data.append(main_entry)
-        
+
         for ingredient in recipe.ingredients:
             ingredient_data.append({
                 "recette_id": recette_id,
@@ -305,15 +327,22 @@ def generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path):
                 "quantity": ingredient.get('quantity', ''),
                 "ingredient": ingredient.get('ingredient', ''),
             })
-    
+
+    # Spécifier l'ordre des colonnes souhaité pour le CSV principal
+    fieldnames = ["id", "title", "url", "rate", "Tag1", "Tag2", "Tag3", "Tag4", "Tag5",
+                  "difficulty", "steps", "budget", "people", "prep_time", "cooking_time",
+                  "total_time", "images"]
+
     with open(main_csv_path, 'w', newline='', encoding='utf-8-sig') as main_csv:
-        fieldnames = list(main_data[0].keys())
         writer = csv.DictWriter(main_csv, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(main_data)
-    
+
+    # Spécifier l'ordre des colonnes souhaité pour le CSV des ingrédients
+    ingredient_fieldnames = ["recette_id", "unit", "quantity", "ingredient"]
+
     with open(ingredient_csv_path, 'w', newline='', encoding='utf-8-sig') as ingredient_csv:
-        writer = csv.DictWriter(ingredient_csv, fieldnames=["recette_id", "ingredient", "quantity", "unit"])
+        writer = csv.DictWriter(ingredient_csv, fieldnames=ingredient_fieldnames)
         writer.writeheader()
         writer.writerows(ingredient_data)
 
@@ -323,9 +352,10 @@ def generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path):
 if __name__ == "__main__":
     try:
         scraper = MarmitonScraper()
-        category_url = MarmitonScraper.get_category_url() 
+        category_url = MarmitonScraper.get_category_url()
         start_page = int(input("À partir de quelle page voulez-vous commencer ? (1 par défaut) : ") or "1")
         nb_pages = int(input("Combien de pages voulez-vous scraper ? : "))
+        starting_id = int(input("Entrez l'ID de départ pour les recettes : ") or "1")  # Nouvelle entrée pour l'ID de départ
 
         category_name = category_url.split('type=')[-1].split('&')[0] if 'type=' in category_url else 'categorie'
         category_name_sanitized = re.sub(r'[\/:*?"<>|]', '_', category_name)
@@ -340,11 +370,11 @@ if __name__ == "__main__":
             nb_pages=nb_pages
         )
 
-        main_csv_path = f"C:/Users/suean/OneDrive/Desktop/tom/Scrap/{dataFile}.csv"
-        ingredient_csv_path = f"C:/Users/suean/OneDrive/Desktop/tom/Scrap/{dataFile}_ingredientRecette.csv"
+        main_csv_path = f"C:/Users/suean/OneDrive/Desktop/tom/useYourFridgeProd/UseYourFridgeFrontEnd/Scrap/{dataFile}.csv"
+        ingredient_csv_path = f"C:/Users/suean/OneDrive/Desktop/tom/useYourFridgeProd/UseYourFridgeFrontEnd/Scrap/{dataFile}_ingredientRecette.csv"
 
         if recipes:
-            generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path)
+            generate_csv_with_ingredients(recipes, main_csv_path, ingredient_csv_path, starting_id)
         else:
             print("Aucune recette trouvée pour la conversion en CSV")
 
