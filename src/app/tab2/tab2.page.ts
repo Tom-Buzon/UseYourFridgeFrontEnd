@@ -23,7 +23,18 @@ export class Tab2Page implements OnInit, OnDestroy {
   filteredRecettes: Recette[] = [];
   displayedRecettes: Recette[] = [];
   selectedRecettes: Recette[] = [];
-  defaultImagePath = 'assets/images/repasVierge.jpg';
+
+  fallbackImages = [
+    'assets/images/repasVierge.jpg',
+    'assets/images/imageVierge2.jpg',
+    'assets/images/imageVierge3.jpg',
+    'assets/images/imageVierge4.jpg',
+    'assets/images/imageVierge5.jpg',
+    'assets/images/imageVierge6.jpg',
+    'assets/images/imageVierge7.jpg',
+    'assets/images/imageVierge8.jpg'
+  ];
+  
   
   searchTerm: string = '';
   selectedTag1: string | null = null;
@@ -69,9 +80,7 @@ export class Tab2Page implements OnInit, OnDestroy {
     if (this.languageSubscription) this.languageSubscription.unsubscribe();
   }
 
-  setFallbackImage(event: Event) {
-    (event.target as HTMLImageElement).src = this.defaultImagePath;
-  }
+
 
   loadRecettes() {
     this.recetteService.getRecettes(this.currentLang).subscribe(
@@ -97,18 +106,16 @@ export class Tab2Page implements OnInit, OnDestroy {
 }
 
   
-  doRefresh(event: any) {
-    const randomIndex = Math.floor(Math.random() * this.allRecettes.length);
-    this.displayedRecettes = this.allRecettes.slice(randomIndex, randomIndex + this.recipesPerLoad);
+doRefresh(event: any) {
+  const randomIndex = Math.floor(Math.random() * this.allRecettes.length);
+  this.displayedRecettes = this.allRecettes.slice(randomIndex, randomIndex + this.recipesPerLoad);
 
-    // Scroll back to top smoothly after setting the new recipes
-    this.content.scrollToTop(500);
-    this.processDisplayedRecettes();
+  this.content.scrollToTop(500);
+  this.processDisplayedRecettes();
 
-    // Complete the refresh animation after a brief delay
-    setTimeout(() => {
-      event.target.complete();
-    }, 500); // Animation delay
+  setTimeout(() => {
+    event.target.complete();
+  }, 500);
 }
 
   
@@ -211,32 +218,26 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   processDisplayedRecettes() {
     this.displayedRecettes = this.displayedRecettes.map(recette => {
-      // Check if recette.images is an array and take the first image if so
       const primaryImage = Array.isArray(recette.images) ? recette.images[0] : recette.images;
-      const fallbackImage = this.defaultImagePath;
-  
-      // Only proceed if primaryImage is a valid string
+
       if (typeof primaryImage === 'string') {
-        // Create a new image object to test loading
         const img = new Image();
         img.src = primaryImage;
-  
-        // Check if the primary image loads successfully
+
         img.onload = () => {
-          recette.sanitizedImage = primaryImage; // Use primary image if successful
+          recette.sanitizedImage = primaryImage;
         };
-  
-        // Set fallback image if the primary image fails to load
+
         img.onerror = () => {
+          const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
+          recette.sanitizedImage = this.fallbackImages[randomFallbackIndex];
           console.warn(`Image failed to load for recette: ${recette.title}, using fallback.`);
-          recette.sanitizedImage = fallbackImage;
         };
       } else {
-        // If no primary image, set directly to fallback image
-        recette.sanitizedImage = fallbackImage;
+        const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
+        recette.sanitizedImage = this.fallbackImages[randomFallbackIndex];
       }
-  
-      // Return the recette object with the validated image path
+
       return recette;
     });
   }
