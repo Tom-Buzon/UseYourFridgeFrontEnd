@@ -1,89 +1,122 @@
 <app-header [back]="false" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <!-- Search Bar -->
   <ion-searchbar
+    class="fixed-width"
     animated="true"
     [placeholder]="'SEARCH' | translate"
     [(ngModel)]="searchTerm"
     (ionInput)="filterRecettes()"
   ></ion-searchbar>
-
-  <!-- Filter Options (Tag1, Tag2, Tag3) -->
-  <ion-list class="flex-container">
-    <!-- Filter by Tag1 -->
-    <ion-item class="item-2">
+  <ion-item button (click)="toggleFilter()" class="accordion-button fixed-width">
+    <ion-label>{{ 'FILTRER ?' | translate }}</ion-label>
+    <ion-icon [name]="isFilterOpen ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
+  </ion-item>
+  
+  <!-- Section des Filtres avec Accordéon -->
+  <ion-list *ngIf="isFilterOpen" class="filter-container">
+    <!-- Filtre par Tag1 -->
+    <ion-item class="filter-item">
       <ion-label>{{ 'FILTER_TAG1' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
         <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
-
-    <!-- Filter by Tag2 -->
-    <ion-item class="item-3">
+  
+    <!-- Filtre par Tag2 -->
+    <ion-item class="filter-item">
       <ion-label>{{ 'FILTER_TAG2' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
         <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
-
-    <!-- Filter by Tag3 -->
-    <ion-item class="item-4">
+  
+    <!-- Filtre par Tag3 -->
+    <ion-item class="filter-item">
       <ion-label>{{ 'FILTER_TAG3' | translate }}</ion-label>
       <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
         <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
         <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
     </ion-item>
+  
   </ion-list>
-
-  <!-- Clear Filters Button -->
-  <ion-button expand="block" color="danger" (click)="clearFilters()">
-    {{ 'CLEAR_FILTERS' | translate }}
-  </ion-button>
+  
+  <!-- Bouton pour Effacer les Filtres -->
+  <ion-button
+  *ngIf="isFilterOpen || hasSearchInput"
+  expand="block"
+  class="clear-filters-button fixed-width"
+  (click)="clearFilters()"
+>
+  {{ 'CLEAR_FILTERS' | translate }}
+</ion-button>
 
   <!-- Generate Shopping List Button -->
-  <ion-button
-    expand="block"
-    color="danger"
-    [disabled]="selectedRecettes.length === 0"
-    (click)="generateShoppingList()"
-  >
-    {{ 'GENERATE_SHOPPING_LIST' | translate }}
-  </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="selectedRecettes.length > 0">
+    <ion-fab-button color="danger">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="tertiary" data-desc="Add to Calendar">
+        <ion-icon name="calendar-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="generateShoppingList()" color="secondary" data-desc="Add to Shopping List">
+        <ion-icon name="list-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
 
-  <div class="flex-container3" *ngIf="displayedRecettes && displayedRecettes.length > 0">
-    <ion-card *ngFor="let recette of displayedRecettes">
-      
-        <img *ngIf="recette.images"
-        [src]="recette.images"
-        alt="Recipe Image" />
-        <ion-card-header>
-          <ion-card-title>{{ recette.title }} </ion-card-title>
-          <ion-card-subtitle>pour{{ recette.people }} personnes, {{ recette.difficulty }} - {{ recette.budget }} </ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content class="flex-container2">
-          <div>
-           <p>Ingredients</p> 
-           <p>Dispo :</p> 
-           <p>  /  </p> 
-          </div>
 
-          <ion-button fill="clear" class="detail-button" (click)="showRecetteDetails(recette)">
-            more <ion-icon name="help-circle-outline" size ="large"></ion-icon>
-          </ion-button>
+  <ion-card *ngFor="let recette of displayedRecettes"
+  [ngStyle]="{'background-image': 'url(' + recette.images + ')'}"
+  (click)="showRecetteDetails(recette)">
 
-          <div>
-            <p>note :</p> 
-           <p>{{ recette.rate }}/5 </p>
-          </div>
-          
-        </ion-card-content>
-        <p><ion-toggle [(ngModel)]="recette.selected" (ionChange)="updateSelectedRecettes()"> </ion-toggle> Ajouter à la liste de course </p>
-      </ion-card>
+<div class="gradient-overlay"></div>
+
+<ion-card-header class="top-section">
+<ion-card-title>{{ recette.title }}</ion-card-title>
+<p>
+<ion-toggle [(ngModel)]="recette.selected" (click)="$event.stopPropagation()" (ionChange)="updateSelectedRecettes()">
+</ion-toggle>
+Ajouter à la liste de course
+</p>
+</ion-card-header>
+
+<!-- Header section moved to the bottom -->
+<ion-card-header class="bottom-section">
+<!-- First Line: Person, Difficulty, and Budget Icons -->
+<div class="header-line">
+<div class="header-item">
+<ion-icon name="person-outline" class="header-icon"></ion-icon>
+<span>{{ recette.people }}</span>
+</div>
+<div class="header-item">
+<ion-icon name="construct-outline" class="header-icon"></ion-icon>
+<span>{{ recette.difficulty }}</span>
+</div>
+<div class="header-item">
+<ion-icon name="cash-outline" class="header-icon"></ion-icon>
+<span>{{ recette.budget }}</span>
+</div>
+</div>
+
+<!-- Second Line: Cube and Star Icons for Rate -->
+<div class="header-line">
+<div class="header-item-large">
+<ion-icon name="cube-outline" class="header-icon"></ion-icon>
+<span>Dispo :</span>
+</div>
+<div class="header-item-large">
+<ion-icon name="star-outline" class="header-icon"></ion-icon>
+<span>{{ recette.rate }}/5</span>
+</div>
+</div>
+</ion-card-header>
+</ion-card>
 
      
 
@@ -95,7 +128,7 @@
       >
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
-  </div>
+  
   
   <!-- Conditional Messages -->
   <ion-item

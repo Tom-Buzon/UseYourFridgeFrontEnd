@@ -33,6 +33,8 @@ export class Tab2Page implements OnInit, OnDestroy {
   isReducedIconVisible = false;
   languageSubscription!: Subscription;
   currentLang: string = 'fr';
+  isFilterOpen = false;
+  hasSearchInput = false; 
 
   constructor(
     private recetteService: RecetteService,
@@ -76,6 +78,10 @@ export class Tab2Page implements OnInit, OnDestroy {
         console.error('Error loading recipes', error);
       }
     );
+  }
+
+  toggleFilter() {
+    this.isFilterOpen = !this.isFilterOpen;
   }
 
   initializeTagOptions() {
@@ -125,6 +131,7 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   filterRecettes() {
     this.updateTagOptions();
+    this.hasSearchInput = this.searchTerm.trim().length > 0;
 
     this.filteredRecettes = this.allRecettes.filter((recette) => {
       const matchesSearch = this.searchTerm
@@ -197,6 +204,8 @@ export class Tab2Page implements OnInit, OnDestroy {
     this.selectedTag1 = null;
     this.selectedTag2 = null;
     this.selectedTag3 = null;
+    this.hasSearchInput = false;
+    this.isFilterOpen = false;
     this.filterRecettes();
   }
 
