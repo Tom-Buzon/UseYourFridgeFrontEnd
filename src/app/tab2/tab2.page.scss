@@ -152,6 +152,38 @@ ion-card {
   overflow: hidden;
 }
 
+.imageA {
+  width: 90%;
+  max-width: 400px;
+  min-height: 300px;
+  margin: 20px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  //border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: transform 0.2s ease, background 0.2s ease;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+ion-card.recipe-card {
+  width: 90%;
+  max-width: 400px;
+  min-height: 300px;
+  margin: 20px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: transform 0.2s ease, background 0.2s ease;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+
 .gradient-overlay {
   position: absolute;
   bottom: 0;

@@ -1,5 +1,11 @@
 <app-header [back]="false" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
-<ion-content [fullscreen]="true" >
+<ion-content [fullscreen]="true" (ionScroll)="onScroll($event)" >
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}"></ion-refresher-content>
+  </ion-refresher>
+
+
   <!-- Search Bar -->
   <ion-searchbar
     class="fixed-width"
@@ -71,53 +77,52 @@
 
 
 
-  <ion-card *ngFor="let recette of displayedRecettes"
-  [ngStyle]="{'background-image': 'url(' + recette.images + ')'}"
+  <ion-card *ngFor="let recette of displayedRecettes" 
+  class="recipe-card" 
+  [ngStyle]="{'background-image': 'url(' + recette.sanitizedImage + ')'}"
   (click)="showRecetteDetails(recette)">
+  
+  
+  <div class="gradient-overlay"></div>
 
-<div class="gradient-overlay"></div>
+  <ion-card-header class="top-section">
+    <ion-card-title>{{ recette.title }}</ion-card-title>
+    <p>
+      <ion-toggle [(ngModel)]="recette.selected" (click)="$event.stopPropagation()" (ionChange)="updateSelectedRecettes()">
+      </ion-toggle>
+      Ajouter à la liste de course
+    </p>
+  </ion-card-header>
 
-<ion-card-header class="top-section">
-<ion-card-title>{{ recette.title }}</ion-card-title>
-<p>
-<ion-toggle [(ngModel)]="recette.selected" (click)="$event.stopPropagation()" (ionChange)="updateSelectedRecettes()">
-</ion-toggle>
-Ajouter à la liste de course
-</p>
-</ion-card-header>
+  <!-- Header section moved to the bottom -->
+  <ion-card-header class="bottom-section">
+    <div class="header-line">
+      <div class="header-item">
+        <ion-icon name="person-outline" class="header-icon"></ion-icon>
+        <span>{{ recette.people }}</span>
+      </div>
+      <div class="header-item">
+        <ion-icon name="construct-outline" class="header-icon"></ion-icon>
+        <span>{{ recette.difficulty }}</span>
+      </div>
+      <div class="header-item">
+        <ion-icon name="cash-outline" class="header-icon"></ion-icon>
+        <span>{{ recette.budget }}</span>
+      </div>
+    </div>
 
-<!-- Header section moved to the bottom -->
-<ion-card-header class="bottom-section">
-<!-- First Line: Person, Difficulty, and Budget Icons -->
-<div class="header-line">
-<div class="header-item">
-<ion-icon name="person-outline" class="header-icon"></ion-icon>
-<span>{{ recette.people }}</span>
-</div>
-<div class="header-item">
-<ion-icon name="construct-outline" class="header-icon"></ion-icon>
-<span>{{ recette.difficulty }}</span>
-</div>
-<div class="header-item">
-<ion-icon name="cash-outline" class="header-icon"></ion-icon>
-<span>{{ recette.budget }}</span>
-</div>
-</div>
-
-<!-- Second Line: Cube and Star Icons for Rate -->
-<div class="header-line">
-<div class="header-item-large">
-<ion-icon name="cube-outline" class="header-icon"></ion-icon>
-<span>Dispo :</span>
-</div>
-<div class="header-item-large">
-<ion-icon name="star-outline" class="header-icon"></ion-icon>
-<span>{{ recette.rate }}/5</span>
-</div>
-</div>
-</ion-card-header>
+    <div class="header-line">
+      <div class="header-item-large">
+        <ion-icon name="cube-outline" class="header-icon"></ion-icon>
+        <span>Dispo :</span>
+      </div>
+      <div class="header-item-large">
+        <ion-icon name="star-outline" class="header-icon"></ion-icon>
+        <span>{{ recette.rate }}/5</span>
+      </div>
+    </div>
+  </ion-card-header>
 </ion-card>
-
      
 
     <!-- Infinite Scroll Component -->

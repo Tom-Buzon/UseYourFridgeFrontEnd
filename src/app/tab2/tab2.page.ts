@@ -1,5 +1,7 @@
 // src/app/tab2/tab2.page.ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 import { ModalController, ToastController, AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { RecetteService, Recette } from '../services/recette.service';
@@ -16,11 +18,13 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./tab2.page.scss'],
 })
 export class Tab2Page implements OnInit, OnDestroy {
+  @ViewChild(IonContent, { static: false }) content!: IonContent;
   allRecettes: Recette[] = [];
   filteredRecettes: Recette[] = [];
   displayedRecettes: Recette[] = [];
   selectedRecettes: Recette[] = [];
-
+  defaultImagePath = 'assets/images/repasVierge.jpg';
+  
   searchTerm: string = '';
   selectedTag1: string | null = null;
   selectedTag2: string | null = null;
@@ -34,7 +38,7 @@ export class Tab2Page implements OnInit, OnDestroy {
   languageSubscription!: Subscription;
   currentLang: string = 'fr';
   isFilterOpen = false;
-  hasSearchInput = false; 
+  hasSearchInput = false;
 
   constructor(
     private recetteService: RecetteService,
@@ -65,6 +69,10 @@ export class Tab2Page implements OnInit, OnDestroy {
     if (this.languageSubscription) this.languageSubscription.unsubscribe();
   }
 
+  setFallbackImage(event: Event) {
+    (event.target as HTMLImageElement).src = this.defaultImagePath;
+  }
+
   loadRecettes() {
     this.recetteService.getRecettes(this.currentLang).subscribe(
       (recettes: Recette[]) => {
@@ -79,6 +87,31 @@ export class Tab2Page implements OnInit, OnDestroy {
       }
     );
   }
+
+  onScroll(event: any) {
+    // Check if the user has scrolled to the top
+    if (event.detail.scrollTop <= 0) {
+        // Trigger the doRefresh function
+        this.doRefresh(event);
+    }
+}
+
+  
+  doRefresh(event: any) {
+    const randomIndex = Math.floor(Math.random() * this.allRecettes.length);
+    this.displayedRecettes = this.allRecettes.slice(randomIndex, randomIndex + this.recipesPerLoad);
+
+    // Scroll back to top smoothly after setting the new recipes
+    this.content.scrollToTop(500);
+    this.processDisplayedRecettes();
+
+    // Complete the refresh animation after a brief delay
+    setTimeout(() => {
+      event.target.complete();
+    }, 500); // Animation delay
+}
+
+  
 
   toggleFilter() {
     this.isFilterOpen = !this.isFilterOpen;
@@ -178,26 +211,37 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   processDisplayedRecettes() {
     this.displayedRecettes = this.displayedRecettes.map(recette => {
-      if (!recette.sanitizedImage) {
-        let firstImageUrl: string | null = null;
+      // Check if recette.images is an array and take the first image if so
+      const primaryImage = Array.isArray(recette.images) ? recette.images[0] : recette.images;
+      const fallbackImage = this.defaultImagePath;
   
-        if (Array.isArray(recette.images) && recette.images.length > 0) {
-          firstImageUrl = recette.images[0];
-          console.log(`Recette ID: ${recette.id}, First image URL: ${firstImageUrl}`);
-        } else {
-          console.log('No images for recette:', recette.id);
-        }
+      // Only proceed if primaryImage is a valid string
+      if (typeof primaryImage === 'string') {
+        // Create a new image object to test loading
+        const img = new Image();
+        img.src = primaryImage;
   
-        const sanitizedImage = firstImageUrl ? this.sanitizer.bypassSecurityTrustUrl(firstImageUrl) : undefined;
-        return {
-          ...recette,
-          sanitizedImage: sanitizedImage
+        // Check if the primary image loads successfully
+        img.onload = () => {
+          recette.sanitizedImage = primaryImage; // Use primary image if successful
+        };
+  
+        // Set fallback image if the primary image fails to load
+        img.onerror = () => {
+          console.warn(`Image failed to load for recette: ${recette.title}, using fallback.`);
+          recette.sanitizedImage = fallbackImage;
         };
       } else {
-        return recette;
+        // If no primary image, set directly to fallback image
+        recette.sanitizedImage = fallbackImage;
       }
+  
+      // Return the recette object with the validated image path
+      return recette;
     });
   }
+  
+  
 
   clearFilters() {
     this.searchTerm = '';
@@ -285,6 +329,4 @@ export class Tab2Page implements OnInit, OnDestroy {
 
     return await modal.present();
   }
-
-
 }
