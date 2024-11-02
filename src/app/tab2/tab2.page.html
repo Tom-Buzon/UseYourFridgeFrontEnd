@@ -1,6 +1,48 @@
 <app-header [back]="false" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
 <ion-content [fullscreen]="true" (ionScroll)="onScroll($event)" >
 
+  
+
+
+  <div *ngIf="isLoading" class="advanced-bubble-loader">
+    <!-- Bol et baguettes -->
+    <div class="bowl-container">
+        <div class="bowl"></div>
+        <div class="chopstick-container">
+            <div class="chopstick chopstick-left"></div>
+            <div class="chopstick chopstick-right"></div>
+        </div>
+    </div>
+
+    <!-- Bulles et vapeur -->
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <div class="bubble bubble8"></div>
+    <div class="bubble bubble9"></div>
+
+    <div class="steam steam1"></div>
+    <div class="steam steam2"></div>
+    <div class="steam steam3"></div>
+    <div class="steam steam4"></div>
+    <div class="steam steam5"></div>
+    <div class="steam steam6"></div>
+
+    <!-- Texte de chargement -->
+    <p>Préparation en cours...</p>
+</div>
+
+ 
+
+  <!-- Contenu principal de la page, masqué pendant le chargement -->
+  <div *ngIf="!isLoading">
+
+
+
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}"></ion-refresher-content>
   </ion-refresher>
@@ -106,7 +148,7 @@
         <span>{{ recette.difficulty }}</span>
       </div>
       <div class="header-item">
-        <ion-icon name="cash-outline" class="header-icon"></ion-icon>
+        <ion-icon name="logo-euro" class="header-icon"></ion-icon>
         <span>{{ recette.budget }}</span>
       </div>
     </div>
@@ -145,4 +187,6 @@
   <ion-item *ngIf="allRecettes.length === 0 && displayedRecettes.length === 0">
     {{ 'LOADING_RECIPES' | translate }}
   </ion-item>
+
+</div>
 </ion-content>

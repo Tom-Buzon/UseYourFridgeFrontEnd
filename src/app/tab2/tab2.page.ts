@@ -32,7 +32,14 @@ export class Tab2Page implements OnInit, OnDestroy {
     'assets/images/imageVierge5.jpg',
     'assets/images/imageVierge6.jpg',
     'assets/images/imageVierge7.jpg',
-    'assets/images/imageVierge8.jpg'
+    'assets/images/imageVierge8.jpg',
+    'assets/images/imageVierge9.jpg',
+    'assets/images/imageVierge10.jpg',
+    'assets/images/imageVierge11.jpg',
+    'assets/images/imageVierge12.jpg',
+    'assets/images/imageVierge13.jpg',
+    'assets/images/imageVierge14.jpg',
+    'assets/images/imageVierge15.jpg'
   ];
   
   
@@ -50,6 +57,8 @@ export class Tab2Page implements OnInit, OnDestroy {
   currentLang: string = 'fr';
   isFilterOpen = false;
   hasSearchInput = false;
+
+  isLoading = true; // Défini à true pour afficher le loader initialement
 
   constructor(
     private recetteService: RecetteService,
@@ -90,13 +99,14 @@ export class Tab2Page implements OnInit, OnDestroy {
         this.filteredRecettes = [...this.allRecettes];
         this.displayedRecettes = [];
         this.loadInitialRecipes();
+        this.isLoading = false; // Désactive le loader une fois les recettes chargées
       },
       (error: any) => {
         console.error('Error loading recipes', error);
+        this.isLoading = false; // Désactive le loader même en cas d'erreur
       }
     );
   }
-
   onScroll(event: any) {
     // Check if the user has scrolled to the top
     if (event.detail.scrollTop <= 0) {
