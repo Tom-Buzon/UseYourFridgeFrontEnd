@@ -269,8 +269,18 @@ ion-card-title{
 }
 
 ion-fab {
- margin-bottom: 100px;
-  z-index: 999; /* Assurez-vous que le bouton est au-dessus de tout */
+  position: fixed !important; /* S'assure qu'il reste fixe */
+  bottom: 20px; /* Espace en bas */
+  right: 20px; /* Espace à droite */
+  z-index: 999; /* S'assure qu'il reste au-dessus des autres éléments */
+  margin-bottom: 100px; /* Supprime tout margin-bottom supplémentaire */
+}
+
+ion-fab-button {
+  --border-radius: 50%;
+  --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  --background: linear-gradient(135deg, #ff4e50, #f9d423); /* Couleurs gradient */
+  color: white;
 }
 
 ion-fab-button[data-desc] {
@@ -282,7 +292,7 @@ ion-fab-button[data-desc]::after {
   z-index: 1;
   right: 55px;
   bottom: 4px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.5) 70%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8) 90%);
   padding: 9px;
   border-radius: 15px;
   color: white;
@@ -462,6 +472,7 @@ ion-fab-button[data-desc]::after {
   100% {
     transform: rotate(-15deg); /* Baguette gauche à gauche, droite à droite */
   }
+
 
   
 }

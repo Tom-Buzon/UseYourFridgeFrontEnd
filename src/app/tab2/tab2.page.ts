@@ -60,6 +60,8 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   isLoading = true; // Défini à true pour afficher le loader initialement
 
+  currentIndex = 0;
+
   constructor(
     private recetteService: RecetteService,
     private alertController: AlertController,
@@ -94,16 +96,17 @@ export class Tab2Page implements OnInit, OnDestroy {
   loadRecettes() {
     this.recetteService.getRecettes(this.currentLang).subscribe(
       (recettes: Recette[]) => {
-        this.allRecettes = recettes;
+        // Filter out recipes with images containing "lazyload.png"
+        this.allRecettes = recettes.filter(recette => !recette.images?.includes('lazyload.png'));
         this.initializeTagOptions();
         this.filteredRecettes = [...this.allRecettes];
         this.displayedRecettes = [];
         this.loadInitialRecipes();
-        this.isLoading = false; // Désactive le loader une fois les recettes chargées
+        this.isLoading = false;
       },
       (error: any) => {
         console.error('Error loading recipes', error);
-        this.isLoading = false; // Désactive le loader même en cas d'erreur
+        this.isLoading = false;
       }
     );
   }
@@ -117,8 +120,33 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   
 doRefresh(event: any) {
-  const randomIndex = Math.floor(Math.random() * this.allRecettes.length);
-  this.displayedRecettes = this.allRecettes.slice(randomIndex, randomIndex + this.recipesPerLoad);
+  let attempts = 0;
+  let foundValidRecette = false;
+
+  while (!foundValidRecette && attempts < this.filteredRecettes.length) {
+    // Select a random starting index
+    const randomIndex = Math.floor(Math.random() * (this.filteredRecettes.length - this.recipesPerLoad));
+    const potentialRecettes = this.filteredRecettes.slice(randomIndex, randomIndex + this.recipesPerLoad);
+
+    // Verify that none of the images in the selected batch contains "lazyload.png"
+    const hasValidImages = potentialRecettes.every(
+      recette => recette.images && !recette.images.includes("lazyload.png")
+    );
+
+    if (hasValidImages) {
+      this.displayedRecettes = potentialRecettes;
+      this.currentIndex = randomIndex + this.recipesPerLoad; // Update index for continuous pagination
+      foundValidRecette = true;
+    } else {
+      attempts++;
+    }
+  }
+
+  // If no valid batch found, use default recipes
+  if (!foundValidRecette) {
+    this.displayedRecettes = this.filteredRecettes.slice(0, this.recipesPerLoad);
+    this.currentIndex = this.recipesPerLoad;
+  }
 
   this.content.scrollToTop(500);
   this.processDisplayedRecettes();
@@ -128,7 +156,34 @@ doRefresh(event: any) {
   }, 500);
 }
 
-  
+// Méthode de chargement continu lors du défilement
+// Méthode de chargement continu lors du défilement
+loadMore(event: any) {
+  setTimeout(() => {
+    // Load next recipes starting from currentIndex
+    const nextRecipes = this.filteredRecettes.slice(
+      this.currentIndex,
+      this.currentIndex + this.recipesPerLoad
+    );
+
+    // Add new recipes to displayedRecettes
+    this.displayedRecettes = [...this.displayedRecettes, ...nextRecipes];
+
+    // Update index for next loading
+    this.currentIndex += this.recipesPerLoad;
+
+    // Process displayed recipes to handle images
+    this.processDisplayedRecettes();
+
+    // Disable infinite scrolling if no more recipes to load
+    if (this.currentIndex >= this.filteredRecettes.length) {
+      event.target.disabled = true;
+    }
+
+    event.target.complete();
+  }, 500);
+}
+    
 
   toggleFilter() {
     this.isFilterOpen = !this.isFilterOpen;
@@ -198,6 +253,8 @@ doRefresh(event: any) {
       return matchesSearch && matchesTag1 && matchesTag2 && matchesTag3;
     });
 
+    // Réinitialiser l'index de chargement et afficher les premières recettes
+    this.currentIndex = 0;
     this.displayedRecettes = [];
     this.loadInitialRecipes();
   }
@@ -206,51 +263,48 @@ doRefresh(event: any) {
     const initialRecipes = this.filteredRecettes.slice(0, this.recipesPerLoad);
     this.displayedRecettes = [...initialRecipes];
     this.processDisplayedRecettes();
+
+    // Définir currentIndex pour le chargement suivant
+    this.currentIndex = this.recipesPerLoad;
   }
 
-  loadMore(event: any) {
-    setTimeout(() => {
-      const currentLength = this.displayedRecettes.length;
-      const nextRecipes = this.filteredRecettes.slice(
-        currentLength,
-        currentLength + this.recipesPerLoad
-      );
-      this.displayedRecettes = [...this.displayedRecettes, ...nextRecipes];
-      this.processDisplayedRecettes();
 
-      if (this.displayedRecettes.length >= this.filteredRecettes.length) {
-        event.target.disabled = true;
-      }
-
-      event.target.complete();
-    }, 500);
-  }
 
   processDisplayedRecettes() {
     this.displayedRecettes = this.displayedRecettes.map(recette => {
-      const primaryImage = Array.isArray(recette.images) ? recette.images[0] : recette.images;
-
-      if (typeof primaryImage === 'string') {
+      const primaryImage = recette.images;
+  
+      if (primaryImage) {
         const img = new Image();
-        img.src = primaryImage;
-
-        img.onload = () => {
-          recette.sanitizedImage = primaryImage;
-        };
-
+        img.src = primaryImage as string;  // Assurez-vous que primaryImage est bien une chaîne
+  
         img.onerror = () => {
+          // Si l'image échoue, utilisez une image de secours aléatoire
           const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
-          recette.sanitizedImage = this.fallbackImages[randomFallbackIndex];
+          recette.images = this.fallbackImages[randomFallbackIndex];
           console.warn(`Image failed to load for recette: ${recette.title}, using fallback.`);
         };
       } else {
+        // Si aucune image n'est définie, utilisez immédiatement une image de secours
         const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
-        recette.sanitizedImage = this.fallbackImages[randomFallbackIndex];
+        recette.images = this.fallbackImages[randomFallbackIndex];
       }
-
+  
       return recette;
     });
   }
+
+  // Choisir une image de secours aléatoire
+getRandomFallbackImage(): string {
+  const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
+  return this.fallbackImages[randomFallbackIndex];
+}
+
+onImageError(event: Event) {
+  const target = event.target as HTMLImageElement;
+  const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
+  target.src = this.fallbackImages[randomFallbackIndex];
+}
   
   
 

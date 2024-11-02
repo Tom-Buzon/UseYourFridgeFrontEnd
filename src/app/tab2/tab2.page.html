@@ -121,7 +121,7 @@
 
   <ion-card *ngFor="let recette of displayedRecettes" 
   class="recipe-card" 
-  [ngStyle]="{'background-image': 'url(' + recette.sanitizedImage + ')'}"
+  [ngStyle]="{'background-image': 'url(' + recette.images + ')'}"
   (click)="showRecetteDetails(recette)">
   
   
@@ -139,6 +139,17 @@
   <!-- Header section moved to the bottom -->
   <ion-card-header class="bottom-section">
     <div class="header-line">
+      <div class="header-item-large">
+        <ion-icon name="cube-outline" class="header-icon"></ion-icon>
+        <span>Dispo :</span>
+      </div>
+      <div class="header-item-large">
+        <ion-icon name="star-outline" class="header-icon"></ion-icon>
+        <span>{{ recette.rate }}/5</span>
+      </div>
+    </div>
+    
+    <div class="header-line">
       <div class="header-item">
         <ion-icon name="person-outline" class="header-icon"></ion-icon>
         <span>{{ recette.people }}</span>
@@ -153,16 +164,7 @@
       </div>
     </div>
 
-    <div class="header-line">
-      <div class="header-item-large">
-        <ion-icon name="cube-outline" class="header-icon"></ion-icon>
-        <span>Dispo :</span>
-      </div>
-      <div class="header-item-large">
-        <ion-icon name="star-outline" class="header-icon"></ion-icon>
-        <span>{{ recette.rate }}/5</span>
-      </div>
-    </div>
+    
   </ion-card-header>
 </ion-card>
      
