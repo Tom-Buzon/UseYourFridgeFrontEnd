@@ -2,7 +2,7 @@
 import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FrigoService } from '../../services/frigo.service';
-import { ShoppingListService, ShoppingItem } from '../../services/shopping-list.service';
+import { ShoppingListService, ShoppingItem, ShoppingList } from '../../services/shopping-list.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,8 +11,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./shopping-list-modal.component.scss'],
 })
 export class ShoppingListModalComponent implements OnInit, OnDestroy {
-  @Input() shoppingList: ShoppingItem[] = []; // Mise à jour du type
-
+  @Input() shoppingListItems: ShoppingList = {
+    name: '',
+    items: []
+  };
   private frigoSubscription!: Subscription;
 
   constructor(
@@ -23,7 +25,8 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.refreshShoppingList();
+    console.log('shoppingListItems:', this.shoppingListItems)
+  //  this.refreshShoppingList();
    // this.subscribeToFrigoChanges();
   }
 
@@ -74,8 +77,8 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
   /**
    * Rafraîchir la liste de courses en récupérant les données du service
    */
-  refreshShoppingList() {
-    this.shoppingList = this.shoppingListService.getUserShoppingList();
-    // La souscription mettra à jour inFrigo
-  }
+ // refreshShoppingList() {
+ //   this.shoppingList = this.shoppingListService.getUserShoppingList();
+ //   // La souscription mettra à jour inFrigo
+ // }
 }

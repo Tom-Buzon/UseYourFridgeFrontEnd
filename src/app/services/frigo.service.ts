@@ -38,25 +38,28 @@ export class FrigoService {
   constructor(private http: HttpClient,
     private tokenStorage: TokenStorageService,) {
     this.loadIngredients();
-    this.loadFrigos();
+    this.loadFrigos().subscribe();
   }
 
   loadIngredients() {
-    this.http.get<Ingredient[]>(`http://192.168.178.53:3000/api/ingredients`).subscribe(
+    this.http.get<Ingredient[]>(`http://${environment.ipAdress}:3000/api/ingredients`).subscribe(
       ingredients => {
-        console.log("load frigo db");
-        this.ingredientsSubject.next(ingredients);
+        console.log('Chargement des ingrédients depuis la base de données');
+        // Process ingredients if necessary
       },
       error => console.error('Erreur lors du chargement des ingrédients', error)
     );
   }
-  loadFrigos():Observable<any[]> {
+
+  loadFrigos(): Observable<Frigo[]> {
     if (this.tokenStorage.getToken()) {
       this.user = this.tokenStorage.getUser();
     }
-    return this.http.get<Frigo[]>(`${this.apiUrl}/${this.user.id}`);
-  
+    return this.http.get<Frigo[]>(`${this.apiUrl}/${this.user.id}`).pipe(
+      tap(frigos => this.frigosSubject.next(frigos))
+    );
   }
+
   loadFrigosShared():Observable<any> {
     if (this.tokenStorage.getToken()) {
       this.user = this.tokenStorage.getUser();
@@ -91,14 +94,18 @@ export class FrigoService {
   }
 
 
-  getCurrentIngredients(): Observable<any[]> {
-    console.log('getCurrentIngredients appelé');
+  getCurrentIngredients(): Observable<Ingredient[]> {
     return this.frigos$.pipe(
-     // filter(ingredients => ingredients.length > 0), // Ajoutez cette ligne
-      tap(frigos => console.log('Ingrédients dans getCurrentIngredients:', frigos)),
-      map(frigos => frigos.map(ing => ing.ingredients))
+      map(frigos => {
+        const ingredientsSet = new Set<Ingredient>();
+        frigos.forEach(frigo => {
+          frigo.ingredients.forEach(ing => ingredientsSet.add(ing));
+        });
+        return Array.from(ingredientsSet);
+      })
     );
   }
+
 
   deleteIngredient(id: number): Observable<any> {
     console.log(id);

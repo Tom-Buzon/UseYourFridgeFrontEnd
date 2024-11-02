@@ -48,12 +48,14 @@ require('./app/routes/frigo.routes')(app);
 require('./app/routes/recette.routes')(app);
 require('./app/routes/ingredients.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/shoppinglist.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
 
 function initial() {
   Role.create({

@@ -112,6 +112,14 @@ export class Tab3Page implements OnInit, OnDestroy {
       }
     )
 
+    this.frigoService.loadFrigos().subscribe(
+      frigos => {
+        // Handle the loaded frigos
+      },
+      error => {
+        console.error('Error loading frigos', error);
+      }
+    );
 
     this.id = this._route.snapshot.paramMap.get('id');
     if (!this.id) {

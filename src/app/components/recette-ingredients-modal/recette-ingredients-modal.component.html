@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ recette.title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{ 'personne' | translate }}: {{ numberOfPeople }}</ion-label>
+    <ion-range
+      min="1"
+      max="8"
+      step="1"
+      snaps="true"
+      [(ngModel)]="numberOfPeople"
+      (ionChange)="adjustIngredients()"
+    >
+      <ion-label slot="start">1</ion-label>
+      <ion-label slot="end">8</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let ing of adjustedIngredients">
+      <ion-label>
+        {{ ing.ingredient }}
+      </ion-label>
+      <ion-note slot="end">
+        {{ ing.adjustedQuantity | number:'1.0-2' }} {{ ing.unit }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="addToShoppingList()">
+      {{ 'Ajouter à la liste de course' | translate }}
+    </ion-button>
+    <ion-button expand="block" (click)="addToShoppingList()">
+      {{ 'Ajouter au calendrier' | translate }}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

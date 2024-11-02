@@ -9,9 +9,16 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of shoppingList" [ngClass]="{'in-frigo': item.inFrigo, 'not-in-frigo': !item.inFrigo}">
-      <ion-label>{{ item.ingredient }}</ion-label>
-      <ion-button *ngIf="!item.inFrigo" (click)="addToFridge(item.ingredient)">Ajouter au frigo</ion-button>
+    <!-- Itérer sur les articles de la liste de courses -->
+    <ion-item *ngFor="let item of shoppingListItems.items" 
+              [ngClass]="{'in-frigo': item.inFrigo, 'not-in-frigo': !item.inFrigo}">
+      <ion-label>
+        {{ item.ingredient }} - 
+        {{ item.quantite }} {{ item.unit ? item.unit : '' }}
+      </ion-label>
+      <ion-button *ngIf="!item.inFrigo" (click)="addToFridge(item.ingredient)">
+        Ajouter au frigo
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

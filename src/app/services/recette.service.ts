@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { SafeUrl } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
@@ -22,10 +22,13 @@ export interface Recette {
   cooking_time: number;
   total_time: number;
   ingredients: { ingredient: string; unit: string; quantite: number }[];
-  images?: string | string[]; // images can be a string or an array of strings
-  steps?: string | string[]; // steps can be a string or an array of strings
+  images?: string[]; // images est un tableau de chaînes
+  steps?: string[]; // steps est un tableau de chaînes
   sanitizedImage?: SafeUrl;
   selected?: boolean;
+  availableIngredients?: number;
+  totalIngredients?: number;
+  description?: string; // Ajouter une description si nécessaire
 }
 
 function parseImagesString(imagesStr: string): string[] {

@@ -11,6 +11,7 @@
 <ion-content>
   <ion-card>
     <h2>{{ recette.title }}</h2>
+    <ion-button expand="full" (click)="addPhoto()">{{ 'Add a Photo' | translate }}</ion-button>
     <ion-card-header>
       <ion-card-subtitle>{{ 'RATE' | translate }}: {{ recette.rate }}</ion-card-subtitle>
       <ion-card-title>{{ recette.difficulty }} - {{ recette.budget }}</ion-card-title>

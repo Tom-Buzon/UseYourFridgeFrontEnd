@@ -30,6 +30,10 @@ db.ingredient = require("../models/ingredients.model.js")(sequelize, Sequelize);
 db.recette_ingredients = require("../models/recette_ingredients.model.js")(sequelize, Sequelize);
 db.frigo_ingredients = require("../models/frigo_ingredients.model.js")(sequelize, Sequelize);
 db.mesure = require("../models/mesure.model.js")(sequelize, Sequelize);
+db.shoppinglist = require("../models/shoppinglist.model.js")(sequelize, Sequelize);
+db.shoppinglist_item = require("../models/shoppinglist_item.model.js")(sequelize, Sequelize);
+db.shoppinglist_user = require("../models/shoppinglist_user.model.js")(sequelize, Sequelize);
+
 
 db.role.belongsToMany(db.user, {
   through: "user_roles"
@@ -40,6 +44,10 @@ db.user.hasMany(db.frigo);
 db.recette.hasMany(db.recette_ingredients);
 db.ingredient.hasMany(db.recette_ingredients);
 db.mesure.hasMany(db.recette_ingredients);
+
+db.shoppinglist.associate(db);
+db.shoppinglist_item.associate(db);
+db.shoppinglist_user.associate(db);
 
 db.frigo.belongsToMany(db.ingredient, {
   through: "frigo_ingredients"

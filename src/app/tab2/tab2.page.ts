@@ -11,6 +11,8 @@ import { RecetteDetailsModalComponent } from '../components/recette-details-moda
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { RecetteIngredientsModalComponent } from '../components/recette-ingredients-modal/recette-ingredients-modal.component';
+
 
 @Component({
   selector: 'app-tab2',
@@ -268,26 +270,34 @@ loadMore(event: any) {
     this.currentIndex = this.recipesPerLoad;
   }
 
+  async openIngredientsModal(recette: Recette, event: Event) {
+    event.stopPropagation(); // Empêche l'ouverture du détail de la recette
+    const modal = await this.modalController.create({
+      component: RecetteIngredientsModalComponent,
+      componentProps: {
+        recette: recette
+      }
+    });
+    return await modal.present();
+  }
 
 
   processDisplayedRecettes() {
     this.displayedRecettes = this.displayedRecettes.map(recette => {
-      const primaryImage = recette.images;
+      const primaryImage = recette.images && recette.images[0];
   
       if (primaryImage) {
         const img = new Image();
-        img.src = primaryImage as string;  // Assurez-vous que primaryImage est bien une chaîne
+        img.src = primaryImage;
   
         img.onerror = () => {
-          // Si l'image échoue, utilisez une image de secours aléatoire
           const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
-          recette.images = this.fallbackImages[randomFallbackIndex];
+          recette.images = [this.fallbackImages[randomFallbackIndex]];
           console.warn(`Image failed to load for recette: ${recette.title}, using fallback.`);
         };
       } else {
-        // Si aucune image n'est définie, utilisez immédiatement une image de secours
         const randomFallbackIndex = Math.floor(Math.random() * this.fallbackImages.length);
-        recette.images = this.fallbackImages[randomFallbackIndex];
+        recette.images = [this.fallbackImages[randomFallbackIndex]];
       }
   
       return recette;
@@ -329,8 +339,6 @@ onImageError(event: Event) {
       return;
     }
 
-    await this.shoppingListService.clearShoppingList();
-
     const ingredientsMap: { [ingredient: string]: { unit: string; quantite: number } } = {};
 
     this.selectedRecettes.forEach(recette => {
@@ -338,24 +346,34 @@ onImageError(event: Event) {
         const key = ing.ingredient.toLowerCase().trim();
         if (ingredientsMap[key]) {
           if (ingredientsMap[key].unit === ing.unit) {
-            ingredientsMap[key].quantite += ing.quantite;
+            ingredientsMap[key].quantite += Number(ing.quantite);
           }
         } else {
-          ingredientsMap[key] = { unit: ing.unit, quantite: ing.quantite };
+          ingredientsMap[key] = { unit: ing.unit, quantite: Number(ing.quantite) };
         }
       });
     });
 
-    const shoppingList: ShoppingItem[] = Object.keys(ingredientsMap).map(ingredient => ({
+    const shoppingItems: ShoppingItem[] = Object.keys(ingredientsMap).map(ingredient => ({
       ingredient,
       unit: ingredientsMap[ingredient].unit,
       quantite: ingredientsMap[ingredient].quantite,
       inFrigo: false
     }));
 
-    await this.shoppingListService.addIngredientsToShoppingList(shoppingList);
+    console.log('Shopping Items à envoyer:', shoppingItems); // Pour déboguer
 
-    this.openShoppingListModal();
+    // Appeler createShoppingList pour envoyer les données au serveur
+    this.shoppingListService.createShoppingList(shoppingItems).subscribe(
+      async () => {
+        await this.presentToast(this.translate.instant('SHOPPING_LIST_CREATED'));
+        this.openShoppingListModal();
+      },
+      async (error) => {
+        console.error('Erreur lors de la création de la liste de courses', error);
+        await this.presentToast(this.translate.instant('ERROR_CREATING_SHOPPING_LIST'));
+      }
+    );
   }
 
   async presentToast(message: string) {
@@ -368,20 +386,30 @@ onImageError(event: Event) {
   }
 
   async openShoppingListModal() {
-    const modal = await this.modalController.create({
-      component: ShoppingListModalComponent,
-      componentProps: {
-        shoppingList: this.shoppingListService.getUserShoppingList(),
-      },
-    });
+    // Récupérer la liste de courses que vous venez de créer
+    this.shoppingListService.getShoppingLists().subscribe(async (lists) => {
+      console.log('Lists from API:', lists);
+      const latestList = lists[lists.length - 1];
+      console.log('Latest List:', latestList);
 
-    modal.onDidDismiss().then((result) => {
-      if (result.data && result.data.action === 'reduce') {
-        this.isReducedIconVisible = true;
-      }
-    });
+      const modal = await this.modalController.create({
+        component: ShoppingListModalComponent,
+        componentProps: {
+          shoppingListItems: latestList, // Passer l'objet complet avec 'items'
+        },
+      });
 
-    return await modal.present();
+      modal.onDidDismiss().then((result) => {
+        if (result.data && result.data.action === 'reduce') {
+          this.isReducedIconVisible = true;
+        }
+      });
+
+      return await modal.present();
+    }, error => {
+      console.error('Erreur lors de la récupération des listes de courses:', error);
+      this.presentToast('Erreur lors du chargement des listes de courses.');
+    });
   }
 
   async showRecetteDetails(recette: Recette) {

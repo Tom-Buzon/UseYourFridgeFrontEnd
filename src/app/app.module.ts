@@ -37,10 +37,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { HeaderModule } from './components/header/header.module';
 
+import { RecetteIngredientsModalComponent } from './components/recette-ingredients-modal/recette-ingredients-modal.component';
+
 register();
 
 @NgModule({
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent],
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,RecetteIngredientsModalComponent,],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -64,6 +66,6 @@ register();
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  exports: [ TranslateModule]
+  exports: [ TranslateModule, RecetteIngredientsModalComponent,]
 })
 export class AppModule {}
