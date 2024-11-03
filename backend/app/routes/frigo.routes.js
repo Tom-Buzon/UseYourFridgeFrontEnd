@@ -13,6 +13,7 @@ module.exports = function(app) {
   app.delete("/api/frigo/ingredients/:id", controller.deleteIngredientById);
 
   app.post("/api/frigo/ingredients",controller.addIngredient); 
+  
   app.post("/api/frigo/",controller.addFrigo); 
 
   app.get("/api/frigo/ingredients",

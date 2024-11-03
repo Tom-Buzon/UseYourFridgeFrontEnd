@@ -1,8 +1,8 @@
 // src/app/app.module.ts
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
-import { AuthComponentComponent } from './components/auth-component/auth-component.component';
+import { AuthPagePage } from './pages/auth-page/auth-page.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
@@ -31,11 +31,9 @@ import { CommonModule } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 
 import { BarcodeScanningModalComponent } from './components/barcode-scanning-modal/barcode-scanning-modal.component';
-import { FrigoListPage } from './pages/frigo-list/frigo-list.page';
-import { HeaderComponent } from './components/header/header.component';
+import { FrigoListPage } from './pages/frigo-list-page/frigo-list.page';
 
-import { SharedModule } from './shared/shared.module';
-import { HeaderModule } from './components/header/header.module';
+import { HeaderModule } from './components/header-component/header.module';
 
 import { RecetteIngredientsModalComponent } from './components/recette-ingredients-modal/recette-ingredients-modal.component';
 import { CreateShoppingListModalComponent } from './components/create-shopping-list-modal/create-shopping-list-modal.component';
@@ -47,16 +45,15 @@ import { ShoppingListDetailsModalComponent } from './components/shopping-list-de
 register();
 
 @NgModule({
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthComponentComponent,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
-  
+
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
+
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicStorageModule.forRoot(),
-    SharedModule,
-    HttpClientModule, // Nécessaire pour ngx-translate
     IonicModule.forRoot(),
     AppRoutingModule,
     RecetteDetailsModalModule, // Importer le module du modal
@@ -70,8 +67,8 @@ register();
       }
     })
   ],
-  
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders,provideHttpClient()],
+
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [ TranslateModule, RecetteIngredientsModalComponent,]

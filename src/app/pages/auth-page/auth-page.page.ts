@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-auth-component',
-  templateUrl: './auth-component.component.html',
-  styleUrls: ['./auth-component.component.scss'],
+  selector: 'app-auth-page',
+  templateUrl: './auth-page.page.html',
+  styleUrls: ['./auth-page.page.scss'],
 })
-export class AuthComponentComponent implements OnInit {
+export class AuthPagePage implements OnInit {
   screen: any = 'signin';
   formData: FormGroup;
   isLoading: boolean = false;

@@ -1,5 +1,5 @@
 <app-header [back]="false" [menu]="true" title="{{currentFrigo?.nom}}"></app-header>
-<ion-content [fullscreen]="true" [class.content-hidden]="scanning" >
+<ion-content [fullscreen]="true" [class.content-hidden]="scanning">
 
   <div class="fab-container">
     <ion-fab slot="fixed" vertical="bottom" horizontal="end" edge #fabComponent>
@@ -9,20 +9,20 @@
       </ion-fab-button>
       <ion-fab-list side="top">
 
-        <ion-fab-button data-desc="Delete fridge">
+        <ion-fab-button id="present-alert" data-desc="Supprimer le frigo">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
 
-        <ion-fab-button id="open-modal-add" data-desc="ADD_INGREDIENT">
+        <ion-fab-button id="open-modal-add" data-desc="Ajouter un ingrédient">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
 
-        <ion-fab-button  (click)="startScan()" data-desc="Start scan">
+        <ion-fab-button (click)="startScan()" data-desc="Scanner un ingrédient">
           <ion-icon name="barcode-outline"></ion-icon>
 
         </ion-fab-button>
 
-        <ion-fab-button id="open-modal-shared" data-desc="Share fridge">
+        <ion-fab-button id="open-modal-shared" data-desc="Partager le frigo">
           <ion-icon name="share-outline"></ion-icon>
         </ion-fab-button>
 
@@ -38,31 +38,27 @@
       </ion-button>
     </ion-item>
   </ion-list>
-  
-  <ion-list style="text-align:center; padding-top:40%;" *ngIf="currentFrigo?.ingredients?.length === 0" >
+
+  <ion-list style="text-align:center; padding-top:40%;" *ngIf="currentFrigo?.ingredients?.length === 0">
 
     <h2>{{ 'Votre frigo est vide!' | translate }}</h2>
-    
 
-  
-  <img src="assets/images/fridge.png" width="50%"/>
-  <br/>
-  <span>{{ 'Cliquez sur le bouton en bas à droite pour ajouter ou scanner des ingrédients' | translate }}</span>
-  <br/>
-  <img  style="transform: rotate(180deg)" src="assets/images/arrow.png" width="50%"/>
-  </ion-list >
+
+
+    <img src="assets/images/fridge.png" width="50%" />
+    <br />
+    <span>{{ 'Cliquez sur le bouton en bas à droite pour ajouter ou scanner des ingrédients' | translate }}</span>
+    <br />
+    <img style="transform: rotate(180deg)" src="assets/images/arrow.png" width="50%" />
+  </ion-list>
   <!--   <ion-item>
         <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
         <ion-button (click)="addIngredient()">{{ 'ADD_INGREDIENT' | translate }}</ion-button>
       </ion-item>
     -->
 
-    <ion-action-sheet
-    trigger="open-action-sheet"
-    header="Example header"
-    subHeader="Example subheader"
-    [buttons]="actionSheetButtons"
-  ></ion-action-sheet>
+  <ion-action-sheet trigger="open-action-sheet" header="Example header" subHeader="Example subheader"
+    [buttons]="actionSheetButtons"></ion-action-sheet>
 
   <ion-modal class="root" [isOpen]="isModalOpen">
     <ng-template>
@@ -125,28 +121,37 @@
             <ion-button color="light" (click)="modalAdd.dismiss()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <ion-list style="text-align:center">
 
-        <ion-list style="text-align:center">
-          <ion-searchbar type="text" debounce="500" (ionChange)="getItems($event)"></ion-searchbar>
-          <ion-list *ngIf="isItemAvailable">
-              <ion-item *ngFor="let item of allIngredients">{{ item.ingredient }}</ion-item>
-          </ion-list>
-          <ion-list>
             <ion-item>
-              <ion-select aria-label="Favorite Fruit" value="apple">
-                <ion-select-option value="apple">Apple</ion-select-option>
-                <ion-select-option value="banana">Banana</ion-select-option>
-                <ion-select-option value="orange">Orange</ion-select-option>
-              </ion-select>
+              <input class="sc-ion-input-ios-h sc-ion-input-ios-s ios input-label-placement-start in-item hydrated"
+                list="browsers" placeholder="Choose category" class="form-control" name="name" [(ngModel)]="form.name">
+
+
+              <datalist id="browsers">
+                <option value="Internet Explorer"></option>
+                <option value="Firefox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+              </datalist>
+
             </ion-item>
+
             <ion-item>
-              <ion-input label="Quantity" placeholder="Enter quantity"></ion-input>
+              <ion-input label="Quantity" placeholder="Enter quantity" class="form-control" name="quantity"
+                [(ngModel)]="form.quantity"></ion-input>
             </ion-item>
+            <ion-button style="align-items: center;" (click)="onSubmit()">Ajouter</ion-button>
           </ion-list>
-          <ion-button style="align-items: center;">Ajouter</ion-button>
-        </ion-list>
+        </form>
       </div>
     </ng-template>
   </ion-modal>
+
+  <ion-alert trigger="present-alert"
+    header="Etes vous sur de supprimer ce frigo ainsi que les ingrédients qu'il contient ?" [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"></ion-alert>
 
 </ion-content>

@@ -19,7 +19,7 @@ import {
 
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { TokenStorageService } from '../services/token-storage.service';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { DialogService } from '../services/dialog.service';
 import { BarcodeScanningModalComponent } from '../components/barcode-scanning-modal/barcode-scanning-modal.component';
 import { UserService } from '../services/user.service';
@@ -38,7 +38,11 @@ export class Tab3Page implements OnInit, OnDestroy {
   isModalOpen: boolean = false;
   scannedProduct: any;
   scanning: boolean = false;
-
+  form: any = {
+    name: null,
+    category: null,
+    quantity: null
+  };
   currentFrigo: Frigo | undefined;;
   currentLang: string = 'fr';
   toast: any;
@@ -48,6 +52,30 @@ export class Tab3Page implements OnInit, OnDestroy {
   isItemAvailable = false;
   allIngredients: any[] = [];
   users: any[] = [];
+  
+  formData: FormGroup;
+
+    public alertButtons = [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Alert canceled');
+        },
+      },
+      {
+        text: 'OK',
+        role: 'confirm',
+        handler: () => {
+          console.log('Alert confirmed');
+        },
+      },
+    ];
+  
+    setResult(ev:any) {
+      console.log(`Dismissed with role: ${ev.detail.role}`);
+    }
+
 
   public readonly barcodeFormat = BarcodeFormat;
   public readonly lensFacing = LensFacing;
@@ -96,14 +124,19 @@ export class Tab3Page implements OnInit, OnDestroy {
     private tokenStorage: TokenStorageService,
     private renderer: Renderer2,
 
-    @Inject(DOCUMENT) private document: Document,
     private translate: TranslateService,
     private languageService: LanguageService,
     private toastController: ToastController,
-
+    private fb:FormBuilder, 
     private router: Router
 
   ) {
+    
+    this.formData = this.fb.group({
+      name: ['',[Validators.required]],
+      email: ['',[Validators.required, Validators.email]],
+      password: ['',[Validators.required]],
+    });
 
     this.ingredientService.getAllingredients().subscribe(
       (data: any) => {
@@ -149,6 +182,20 @@ export class Tab3Page implements OnInit, OnDestroy {
 
 
 
+  onSubmit(): void {
+    const { name,quantity } = this.form;
+    this.currentFrigo?.id;
+    console.log(name+quantity+this.currentFrigo?.id);
+    this.frigoService.addIngredientToFridge(name, quantity,this.currentFrigo?.id).subscribe({
+      next: data => {
+
+    
+      },
+      error: err => {
+
+      }
+    });
+  }
 
   getItems(ev: any) {
 
@@ -216,6 +263,16 @@ export class Tab3Page implements OnInit, OnDestroy {
 
 
 
+  }
+
+  addIngredientToFridge() {
+      this.frigoService.addFrigo("").subscribe(
+        () => {
+          console.log(`Frigo créé avec succes`);
+          this.closeModal();
+        },
+        error => console.error(`Erreur lors de l'ajout de l'ingrédient au frigo`, error)
+      );
   }
 
   goToFrigoList() {

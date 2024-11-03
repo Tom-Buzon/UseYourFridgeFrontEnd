@@ -6,16 +6,17 @@ import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { ShoppingListModalModule } from '../components/shopping-list-modal/shopping-list-modal.module';
-import { SharedModule } from '../shared/shared.module';
-import { HeaderModule } from '../components/header/header.module';
+
+import { HeaderModule } from '../components/header-component/header.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
-    SharedModule,
     HeaderModule,
+    TranslateModule,
     FormsModule,
     Tab2PageRoutingModule,
     ShoppingListModalModule
