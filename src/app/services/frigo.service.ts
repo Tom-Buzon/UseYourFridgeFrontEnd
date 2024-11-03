@@ -26,6 +26,7 @@ export interface Ingredient {
 export class FrigoService {
 
   private apiUrl =  "http://"+  environment.ipAdress+ ':3000/api/frigo';
+  private apiUrl2 =  "http://"+  environment.ipAdress+ ':3000/api/ingredients';
 
   private frigosSubject = new ReplaySubject<Frigo[]>(1);
   frigos$ = this.frigosSubject.asObservable();
@@ -42,7 +43,7 @@ export class FrigoService {
   }
 
   loadIngredients() {
-    this.http.get<Ingredient[]>(`http://${environment.ipAdress}:3000/api/ingredients`).subscribe(
+    this.http.get<Ingredient[]>(`${this.apiUrl2}`).subscribe(
       ingredients => {
         console.log('Chargement des ingrédients depuis la base de données');
         // Process ingredients if necessary
@@ -75,7 +76,15 @@ export class FrigoService {
 
   addIngredient(ingredientName: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`http://192.168.178.53:3000/api/ingredients`, { nom: ingredientName }, { headers, responseType: 'text' })
+    return this.http.post(`${this.apiUrl2}`, { nom: ingredientName }, { headers, responseType: 'text' })
+      .pipe(
+        tap(() => this.loadIngredients())
+      );
+  }
+
+  addIngredientToFridge(name: string,quantity: string,frigoId : number | undefined): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(`${this.apiUrl}/ingredients`, { nom: name,quantity: quantity ,frigoId:frigoId}, { headers, responseType: 'text' })
       .pipe(
         tap(() => this.loadIngredients())
       );
@@ -87,7 +96,7 @@ export class FrigoService {
       this.user = this.tokenStorage.getUser();
     }
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`http://192.168.178.53:3000/api/frigo`, { nom: frigoName, userId: this.user.id }, { headers, responseType: 'text' })
+    return this.http.post(`${this.apiUrl}`, { nom: frigoName, userId: this.user.id }, { headers, responseType: 'text' })
       .pipe(
         tap(() => this.loadIngredients())
       );

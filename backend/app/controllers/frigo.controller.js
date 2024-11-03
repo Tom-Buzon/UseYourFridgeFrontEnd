@@ -25,21 +25,9 @@ exports.deleteIngredientById = async (req, res) => {
 };
 
 exports.addIngredient = async (req, res) => {
+console.log(req.body);
 
-const { ingredients } = req.body;
-if (!ingredients) {
-  return res.status(400).json({ message: 'L\'ingrédient est requis' });
-}
 
-const query = 'INSERT INTO frigo (ingredients) VALUES ($1)';
-pool.query(query, [ingredients], (err, result) => {
-  if (err) {
-    console.error('Erreur SQL:', err);
-    res.status(500).json({ message: `Erreur lors de l'ajout de l'ingrédient: ${err.message}` });
-  } else {
-    res.status(201).json({ message: 'Ingrédient ajouté avec succès' });
-  }
-});
 };
 
 

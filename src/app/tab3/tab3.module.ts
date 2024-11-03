@@ -5,16 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
-import { SharedModule } from '../shared/shared.module';
-import { HeaderModule } from '../components/header/header.module';
+import { HeaderModule } from '../components/header-component/header.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    SharedModule,
     HeaderModule,
+    TranslateModule,
     Tab3PageRoutingModule
   ],
   declarations: [Tab3Page],

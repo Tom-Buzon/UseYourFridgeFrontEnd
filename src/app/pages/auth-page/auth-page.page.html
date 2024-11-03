@@ -7,9 +7,9 @@
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
-          <legend>Email Id</legend>
+          <legend>Username</legend>
           <ion-input class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel"
-            type="email" placeholder="name@domain.com"></ion-input>
+            type="email" placeholder="Username"></ion-input>
           <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
             Username is required!
           </div>
