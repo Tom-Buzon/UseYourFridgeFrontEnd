@@ -32,4 +32,32 @@
   }
 }
 
-/* Styles supplémentaires si nécessaire */
+
+ion-content {
+  --background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fixed-width {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.shopping-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.advanced-bubble-loader {
+  /* Vos styles d'animation existants */
+}

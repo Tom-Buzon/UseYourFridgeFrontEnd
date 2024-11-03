@@ -8,6 +8,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderModule } from '../components/header/header.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     IonicModule,
@@ -15,7 +17,8 @@ import { HeaderModule } from '../components/header/header.module';
     FormsModule,
     SharedModule,
     HeaderModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    ReactiveFormsModule,
     
   ],
   declarations: [Tab1Page]

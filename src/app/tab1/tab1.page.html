@@ -1,103 +1,76 @@
-<!-- src/app/tab1/tab1.page.html -->
+<app-header [back]="false" [menu]="true" [title]="'HOME' | translate"></app-header>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'HOME' | translate }}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" >
 
-<ion-content [fullscreen]="true">
-  <ion-accordion-group>
-
-    <!-- Section 1: Calendrier -->
-    <ion-accordion>
-      <ion-item slot="header" color="light">
-        <ion-label>{{ 'CALENDAR' | translate }}</ion-label>
-      </ion-item>
-      <ion-content slot="content" class="ion-padding">
-        <ion-card>
-          <ion-card-content>
-            <!-- Placeholder pour le calendrier -->
-            <p>{{ 'CALENDAR_PLACEHOLDER' | translate }}</p>
-            <!-- Plus tard, vous pouvez insérer votre composant de calendrier ici -->
-          </ion-card-content>
-        </ion-card>
-      </ion-content>
-    </ion-accordion>
-
-    <!-- Section 2: Vos listes de courses -->
-    <!-- Remplacé l'accordéon par une liste de cartes avec des boutons -->
-    <div class="ion-padding">
-      <ion-list>
-        <!-- Loader -->
-        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
-        <ion-text *ngIf="isLoading">
-          <p>{{ 'LOADING_SHOPPING_LISTS' | translate }}</p>
-        </ion-text>
-
-        <!-- Liste des Listes de Courses -->
-        <ion-card *ngFor="let list of shoppingLists">
-          <ion-card-header>
-            <ion-card-title>{{ list.name }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <!-- Bouton pour ouvrir la liste -->
-            <ion-button expand="block" (click)="openShoppingList(list)">
-              <ion-icon slot="start" name="open-outline"></ion-icon>
-              {{ 'OPEN_LIST' | translate }}
-            </ion-button>
-            <!-- Bouton pour supprimer la liste -->
-            <ion-button expand="block" color="danger" (click)="deleteShoppingList(list.id!)">
-              <ion-icon slot="start" name="trash-outline"></ion-icon>
-              {{ 'DELETE_LIST' | translate }}
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-list>
-
-      <!-- Message si aucune liste n'est disponible -->
-      <ion-item *ngIf="!isLoading && shoppingLists.length === 0">
-        {{ 'NO_SHOPPING_LISTS' | translate }}
-      </ion-item>
-
-      <!-- Bouton pour créer une nouvelle liste -->
-      <ion-button expand="block" (click)="createShoppingList()">
-        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-        {{ 'CREATE_NEW_LIST' | translate }}
-      </ion-button>
-    </div>
-
-    <!-- Section 3: Vos menus disponibles -->
-    <ion-accordion>
-      <ion-item slot="header" color="light">
-        <ion-label>{{ 'AVAILABLE_MENUS' | translate }}</ion-label>
-      </ion-item>
-      <ion-content slot="content" class="ion-padding">
-        <ion-list>
-          <ion-card *ngFor="let recette of displayedRecettes" (click)="onRecetteClick(recette)">
-            <img [src]="recette.images" (error)="onImageError($event)" alt="{{ recette.title }}" />
-            <ion-card-header>
-              <ion-card-title>{{ recette.title }}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <p>{{ recette.description }}</p>
-              <p>{{ 'INGREDIENTS_AVAILABLE' | translate }}: {{ recette.availableIngredients }}/{{ recette.totalIngredients }}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-list>
-
-        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreRecettes($event)">
-          <ion-infinite-scroll-content
-            loadingSpinner="bubbles"
-            loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}"
-          ></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
-
-        <ion-item *ngIf="displayedRecettes.length === 0">
-          {{ 'NO_RECIPES_AVAILABLE' | translate }}
+  <!-- Date Picker en dehors de l'accordéon -->
+  <ion-card class="fixed-width">
+    <ion-card-content>
+      <form [formGroup]="form">
+        <ion-item>
+          <ion-datetime
+            formControlName="scheduledDate"
+            (ionChange)="onDateChange($event)"
+            [highlightedDates]="highlightedDates"
+            presentation="date"
+            locale="fr-FR"
+            cancelText="Annuler"
+            doneText="OK">
+          </ion-datetime>
         </ion-item>
-      </ion-content>
-    </ion-accordion>
+      </form>
+    </ion-card-content>
+  </ion-card>
 
-  </ion-accordion-group>
+  <!-- Liste des listes de courses programmées -->
+  <ion-list class="fixed-width">
+    <ion-item *ngFor="let list of shoppingLists" class="shopping-list-item" >
+      <ion-label>
+        <div class="flex-container">
+          <h2>{{ list.name }}</h2>
+          <p *ngIf="list.scheduledDate">Date prévue : {{ list.scheduledDate | date:'dd/MM/yyyy' }}</p>
+        </div>
+      </ion-label>
+      <ion-button expand="block" color="primary" (click)="openShoppingList(list)">
+        <ion-icon slot="start" name="open-outline"></ion-icon>
+        {{ 'OPEN_LIST' | translate }}
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="deleteShoppingList(list.id!)">
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        {{ 'DELETE_LIST' | translate }}
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Messages conditionnels -->
+  <ion-item *ngIf="shoppingLists.length === 0">
+    {{ 'NO_LISTS_AVAILABLE' | translate }}
+  </ion-item>
+
+  <!-- Loading animation -->
+  <div *ngIf="isLoading" class="advanced-bubble-loader">
+    <div class="bowl-container">
+      <div class="bowl"></div>
+      <div class="chopstick-container">
+        <div class="chopstick chopstick-left"></div>
+        <div class="chopstick chopstick-right"></div>
+      </div>
+    </div>
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <div class="bubble bubble8"></div>
+    <div class="bubble bubble9"></div>
+    <div class="steam steam1"></div>
+    <div class="steam steam2"></div>
+    <div class="steam steam3"></div>
+    <div class="steam steam4"></div>
+    <div class="steam steam5"></div>
+    <div class="steam steam6"></div>
+    <p>Préparation en cours...</p>
+  </div>
+
 </ion-content>

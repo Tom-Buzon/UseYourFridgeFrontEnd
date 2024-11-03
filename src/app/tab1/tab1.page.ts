@@ -9,6 +9,7 @@ import { AlertController, ModalController, ToastController } from '@ionic/angula
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ShoppingListDetailsModalComponent } from '../components/shopping-list-details-modal/shopping-list-details-modal.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tab1',
@@ -20,6 +21,9 @@ export class Tab1Page implements OnInit, OnDestroy {
   shoppingLists: ShoppingList[] = [];
   shoppingListsSubscription!: Subscription;
   isLoading: boolean = true; // Indicateur de chargement
+  form!: FormGroup;
+  minDate: string = new Date().toISOString();
+  maxDate: string = new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString();
 
   // Section 3: Recettes disponibles
   displayedRecettes: Recette[] = [];
@@ -27,6 +31,7 @@ export class Tab1Page implements OnInit, OnDestroy {
   currentLang: string = 'fr';
 
   ingredientsFrigo: string[] = [];
+  highlightedDates: any[] = [];
 
   // Pagination
   recipesPerLoad = 10;
@@ -40,14 +45,32 @@ export class Tab1Page implements OnInit, OnDestroy {
     private alertController: AlertController,
     private translate: TranslateService,
     private modalController: ModalController,
-    private toastController: ToastController
-  ) {}
+    private toastController: ToastController,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      scheduledDate: ['']
+    });
+  }
 
   ngOnInit() {
     this.languageService.getPreferredLanguage().then(lang => {
       this.currentLang = lang || 'fr';
-      this.loadShoppingLists();
+      
       this.loadIngredientsFrigo();
+    });
+    this.shoppingListsSubscription = this.shoppingListService.shoppingLists$.subscribe(lists => {
+      this.shoppingLists = lists;
+      this.highlightedDates = lists
+        .filter(list => list.scheduledDate)
+        .map(list => ({
+          date: list.scheduledDate,
+          textColor: '#800080',
+          backgroundColor: '#ffc0cb'
+        }));
+    });
+    this.form = this.formBuilder.group({
+      scheduledDate: ['', Validators.required]
     });
   }
 
@@ -57,30 +80,42 @@ export class Tab1Page implements OnInit, OnDestroy {
     }
   }
 
-  // Section 2: Gestion des listes de courses
-  loadShoppingLists() {
-    this.shoppingListsSubscription = this.shoppingListService.getShoppingLists().subscribe(
-      (lists: ShoppingList[]) => {
-        console.log('Listes de courses récupérées:', lists); // Log ajouté
-        this.shoppingLists = lists;
-        this.isLoading = false; // Mettre à jour l'état de chargement
-      },
-      async (error) => {
-        console.error('Erreur lors du chargement des listes de courses', error);
-        const toast = await this.toastController.create({
-          message: this.translate.instant('ERROR_LOADING_SHOPPING_LISTS'),
-          duration: 2000,
-          color: 'danger'
-        });
-        toast.present();
-        this.isLoading = false; // Mettre à jour l'état de chargement même en cas d'erreur
-      }
+  onDateChange(event: any) {
+    const selectedDate = new Date(event.detail.value);
+    const formattedDate = selectedDate.toISOString().split('T')[0]; // Format YYYY-MM-DD
+    const selectedList = this.shoppingLists.find(list => 
+      list.scheduledDate && list.scheduledDate.startsWith(formattedDate)
     );
+    
+    if (selectedList) {
+      this.showListDetails(selectedList);
+    }
+  }
+
+  showListDetails(list: ShoppingList) {
+    this.openShoppingList(list)
+    console.log('Liste sélectionnée:', list);
+    // Exemple : this.openListDetailsModal(list);
+  }
+
+  // Section 2: Gestion des listes de courses
+  async loadShoppingLists() {
+    this.shoppingListService.getShoppingLists().subscribe(lists => {
+      this.shoppingLists = lists;
+      this.highlightedDates = this.shoppingLists
+        .filter(list => list.scheduledDate)
+        .map(list => ({
+          date: list.scheduledDate,
+          textColor: '#800080',
+          backgroundColor: '#ffc0cb'
+        }));
+    });
   }
 
   deleteShoppingList(listId: number | undefined) {
     if (listId === undefined) {
       this.presentToast(this.translate.instant('INVALID_LIST_ID'), 'danger');
+      this.loadShoppingLists()
       return;
     }
 

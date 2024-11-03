@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 
@@ -35,12 +35,21 @@ export interface CreateShoppingListPayload {
   providedIn: 'root'
 })
 export class ShoppingListService {
+  private shoppingListsSubject = new BehaviorSubject<ShoppingList[]>([]);
+  shoppingLists$ = this.shoppingListsSubject.asObservable();
   private apiUrl =  "http://"+  environment.ipAdress+ ':3000/api/shoppinglists';
   private STORAGE_KEY = 'shopping_lists';
   private shoppingLists: ShoppingList[] = [];
 
   constructor(private storage: Storage,private http: HttpClient) {
+    this.loadInitialLists();
     this.init();
+  }
+
+  private loadInitialLists() {
+    this.getShoppingLists().subscribe(lists => {
+      this.shoppingListsSubject.next(lists);
+    });
   }
 
   async init() {
