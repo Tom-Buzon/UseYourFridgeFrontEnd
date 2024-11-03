@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Créer une liste de courses</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="shoppingListForm" (ngSubmit)="createList()">
+    <ion-item>
+      <ion-label position="floating">Nom de la liste</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date prévue</ion-label>
+      <ion-datetime formControlName="scheduledDate"></ion-datetime>
+    </ion-item>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Articles</ion-label>
+      </ion-list-header>
+      
+      <ion-item *ngFor="let item of items; let i = index">
+        <ion-label>
+          {{item.ingredient}} ({{item.quantite}} {{item.unit}})
+        </ion-label>
+        <ion-button slot="end" (click)="removeItem(i)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" type="submit" [disabled]="shoppingListForm.invalid">
+      Créer la liste
+    </ion-button>
+  </form>
+</ion-content>

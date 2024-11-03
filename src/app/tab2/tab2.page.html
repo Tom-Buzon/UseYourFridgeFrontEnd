@@ -111,8 +111,11 @@
       <ion-fab-button color="tertiary" data-desc="Add to Calendar">
         <ion-icon name="calendar-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button (click)="generateShoppingList()" color="secondary" data-desc="Add to Shopping List">
+      <ion-fab-button (click)="openAddToShoppingListModal()" color="secondary" data-desc="Add to Shopping List">
         <ion-icon name="list-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="openCreateListModal()" color="tertiary" data-desc="Create New Shopping List">
+        <ion-icon name="create-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>

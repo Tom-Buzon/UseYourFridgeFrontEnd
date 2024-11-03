@@ -1,0 +1,29 @@
+<!-- src/app/components/select-shopping-list-modal/select-shopping-list-modal.component.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choisir une Liste de Courses</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Fermer</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedListId">
+      <ion-item *ngFor="let list of shoppingLists">
+        <ion-label>{{ list.name }}</ion-label>
+        <ion-radio slot="start" [value]="list.id"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirmSelection()">Ajouter</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

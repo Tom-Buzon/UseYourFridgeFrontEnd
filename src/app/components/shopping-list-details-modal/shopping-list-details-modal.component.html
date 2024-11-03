@@ -1,0 +1,60 @@
+<!-- src/app/components/shopping-list-details-modal/shopping-list-details-modal.component.html -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'LIST_DETAILS' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ shoppingList.name }}</ion-card-title>
+      <ion-card-subtitle *ngIf="shoppingList.createdAt">{{ 'CREATED_AT' | translate }}: {{ shoppingList.createdAt | date }}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="shoppingList.scheduledDate">{{ 'SCHEDULED_DATE' | translate }}: {{ shoppingList.scheduledDate | date }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of shoppingList.items">
+          <ion-label>
+            <h3>{{ item.ingredient }}</h3>
+            <p>{{ item.quantite }} {{ item.unit }}</p>
+          </ion-label>
+          <!-- Bouton de suppression d'item (À implémenter) -->
+          <ion-button fill="clear" color="danger" (click)="deleteItem(item)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Formulaire pour ajouter un nouvel item -->
+  <ion-item>
+    <ion-label position="floating">{{ 'INGREDIENT' | translate }}</ion-label>
+    <ion-input [(ngModel)]="newIngredient" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">{{ 'UNIT' | translate }}</ion-label>
+    <ion-input [(ngModel)]="newUnit" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">{{ 'QUANTITY' | translate }}</ion-label>
+    <ion-input [(ngModel)]="newQuantite" type="number"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="addItem()">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    {{ 'ADD_ITEM' | translate }}
+  </ion-button>
+
+  <!-- Bouton pour supprimer la liste de courses -->
+  <ion-button color="danger" expand="block" (click)="deleteList()">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    {{ 'DELETE_LIST' | translate }}
+  </ion-button>
+</ion-content>

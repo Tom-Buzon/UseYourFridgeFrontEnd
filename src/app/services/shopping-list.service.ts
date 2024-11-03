@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage-angular';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 
 export interface ShoppingItem {
@@ -18,7 +19,17 @@ export interface ShoppingList {
   id?: number;
   name: string;
   items: ShoppingItem[];
+  createdAt?: string; // Ajoutez cette ligne
+  scheduledDate?: string | null; 
+  userID?: number;
 }
+
+export interface CreateShoppingListPayload {
+  name: string;
+  items: ShoppingItem[];
+  scheduledDate?: string | null;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -47,8 +58,24 @@ export class ShoppingListService {
     return this.http.post(this.apiUrl, { items });
   }
 
+  createShoppingListWithName(payload: CreateShoppingListPayload): Observable<ShoppingList> {
+    console.log('Service: Payload for createWithName:', payload);
+    return this.http.post<ShoppingList>(`${this.apiUrl}/createWithName`, payload)
+      .pipe(
+        tap(
+          response => console.log('Service: Response from createWithName:', response),
+          error => console.error('Service: Error from createWithName:', error)
+        )
+      );
+  }
+
   getShoppingLists(): Observable<ShoppingList[]> {
     return this.http.get<ShoppingList[]>(this.apiUrl);
+  }
+
+  // Méthode pour ajouter des items à une liste existante
+  addItemsToList(listId: number, items: ShoppingItem[]): Observable<ShoppingList> {
+    return this.http.post<ShoppingList>(`${this.apiUrl}/${listId}/addItems`, { items });
   }
 
   getUserShoppingLists(): ShoppingList[] {
@@ -60,10 +87,16 @@ export class ShoppingListService {
     this.saveLists();
   }
 
-  deleteShoppingList(index: number) {
-    this.shoppingLists.splice(index, 1);
-    this.saveLists();
-  }
+    // Supprimer une liste de courses
+    deleteShoppingList(listId: number): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${listId}`);
+    }
+  
+    // (Optionnel) Supprimer un item d'une liste de courses
+    // Vous devrez implémenter cette méthode dans le backend
+    deleteItemFromList(listId: number, itemId: number): Observable<any> {
+      return this.http.delete(`${this.apiUrl}/${listId}/items/${itemId}`);
+    }
 
   async addItemsToShoppingList(listIndex: number, newItems: ShoppingItem[]) {
     const list = this.shoppingLists[listIndex];

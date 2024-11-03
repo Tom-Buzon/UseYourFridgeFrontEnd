@@ -36,11 +36,18 @@ import { FrigoListPage } from './pages/frigo-list-page/frigo-list.page';
 import { HeaderModule } from './components/header-component/header.module';
 
 import { RecetteIngredientsModalComponent } from './components/recette-ingredients-modal/recette-ingredients-modal.component';
+import { CreateShoppingListModalComponent } from './components/create-shopping-list-modal/create-shopping-list-modal.component';
+import { SelectShoppingListModalComponent } from './components/select-shopping-list-modal/select-shopping-list-modal.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // Importer FullCalendarModule
+import { ShoppingListDetailsModalComponent } from './components/shopping-list-details-modal/shopping-list-details-modal.component';
+
 
 register();
 
 @NgModule({
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent,],
+
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
+
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -51,6 +58,7 @@ register();
     AppRoutingModule,
     RecetteDetailsModalModule, // Importer le module du modal
     HeaderModule,
+    FullCalendarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -60,6 +68,7 @@ register();
     })
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders,provideHttpClient()],
+
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [ TranslateModule, RecetteIngredientsModalComponent,]

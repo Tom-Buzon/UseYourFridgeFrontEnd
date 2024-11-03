@@ -1,0 +1,30 @@
+/* src/app/components/shopping-list-details-modal/shopping-list-details-modal.component.scss */
+
+ion-card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  ion-card-subtitle {
+    font-size: 0.9em;
+    color: gray;
+  }
+  
+  ion-item h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  ion-item p {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  ion-button {
+    margin-top: 10px;
+  }
+  
+  ion-button[color="danger"] {
+    --background: #f04141;
+  }
+  
