@@ -7,63 +7,97 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Section 1: Calendrier -->
-  <div class="section">
-    <h2>{{ 'CALENDAR' | translate }}</h2>
-    <!-- Placeholder pour le calendrier -->
-    <ion-card>
-      <ion-card-content>
-        <!-- Vous pouvez remplacer ce placeholder par un composant de calendrier -->
-        <p>{{ 'CALENDAR_PLACEHOLDER' | translate }}</p>
-      </ion-card-content>
-    </ion-card>
-  </div>
+  <ion-accordion-group>
 
-  <!-- Section 2: Vos listes de courses -->
-  <div class="section">
-    <h2>{{ 'YOUR_SHOPPING_LISTS' | translate }}</h2>
-    <ion-list>
-      <ion-item-sliding *ngFor="let list of shoppingLists; let i = index">
-        <ion-item (click)="openShoppingList(list)">
-          <ion-label>{{ list.name }}</ion-label>
+    <!-- Section 1: Calendrier -->
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'CALENDAR' | translate }}</ion-label>
+      </ion-item>
+      <ion-content slot="content" class="ion-padding">
+        <ion-card>
+          <ion-card-content>
+            <!-- Placeholder pour le calendrier -->
+            <p>{{ 'CALENDAR_PLACEHOLDER' | translate }}</p>
+            <!-- Plus tard, vous pouvez insérer votre composant de calendrier ici -->
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+    </ion-accordion>
+
+    <!-- Section 2: Vos listes de courses -->
+    <!-- Remplacé l'accordéon par une liste de cartes avec des boutons -->
+    <div class="ion-padding">
+      <ion-list>
+        <!-- Loader -->
+        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+        <ion-text *ngIf="isLoading">
+          <p>{{ 'LOADING_SHOPPING_LISTS' | translate }}</p>
+        </ion-text>
+
+        <!-- Liste des Listes de Courses -->
+        <ion-card *ngFor="let list of shoppingLists">
+          <ion-card-header>
+            <ion-card-title>{{ list.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Bouton pour ouvrir la liste -->
+            <ion-button expand="block" (click)="openShoppingList(list)">
+              <ion-icon slot="start" name="open-outline"></ion-icon>
+              {{ 'OPEN_LIST' | translate }}
+            </ion-button>
+            <!-- Bouton pour supprimer la liste -->
+            <ion-button expand="block" color="danger" (click)="deleteShoppingList(list.id!)">
+              <ion-icon slot="start" name="trash-outline"></ion-icon>
+              {{ 'DELETE_LIST' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+
+      <!-- Message si aucune liste n'est disponible -->
+      <ion-item *ngIf="!isLoading && shoppingLists.length === 0">
+        {{ 'NO_SHOPPING_LISTS' | translate }}
+      </ion-item>
+
+      <!-- Bouton pour créer une nouvelle liste -->
+      <ion-button expand="block" (click)="createShoppingList()">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        {{ 'CREATE_NEW_LIST' | translate }}
+      </ion-button>
+    </div>
+
+    <!-- Section 3: Vos menus disponibles -->
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'AVAILABLE_MENUS' | translate }}</ion-label>
+      </ion-item>
+      <ion-content slot="content" class="ion-padding">
+        <ion-list>
+          <ion-card *ngFor="let recette of displayedRecettes" (click)="onRecetteClick(recette)">
+            <img [src]="recette.images" (error)="onImageError($event)" alt="{{ recette.title }}" />
+            <ion-card-header>
+              <ion-card-title>{{ recette.title }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{ recette.description }}</p>
+              <p>{{ 'INGREDIENTS_AVAILABLE' | translate }}: {{ recette.availableIngredients }}/{{ recette.totalIngredients }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreRecettes($event)">
+          <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}"
+          ></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+
+        <ion-item *ngIf="displayedRecettes.length === 0">
+          {{ 'NO_RECIPES_AVAILABLE' | translate }}
         </ion-item>
-        <ion-item-options side="end">
-          <ion-item-option color="danger" (click)="deleteShoppingList(i)">
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
-    <ion-button expand="block" (click)="createShoppingList()">
-      {{ 'CREATE_NEW_LIST' | translate }}
-    </ion-button>
-  </div>
+      </ion-content>
+    </ion-accordion>
 
-  <!-- Section 3: Vos menus disponibles -->
-  <div class="section">
-    <h2>{{ 'AVAILABLE_MENUS' | translate }}</h2>
-    <ion-list>
-      <ion-card *ngFor="let recette of displayedRecettes" (click)="onRecetteClick(recette)">
-        <img [src]="recette.images" (error)="onImageError($event)" />
-        <ion-card-header>
-          <ion-card-title>{{ recette.title }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>{{ recette.description }}</p>
-          <p>{{ 'INGREDIENTS_AVAILABLE' | translate }}: {{ recette.availableIngredients }}/{{ recette.totalIngredients }}</p>
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
-
-    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreRecettes($event)">
-      <ion-infinite-scroll-content
-        loadingSpinner="bubbles"
-        loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}"
-      ></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-
-    <ion-item *ngIf="displayedRecettes.length === 0">
-      {{ 'NO_RECIPES_AVAILABLE' | translate }}
-    </ion-item>
-  </div>
+  </ion-accordion-group>
 </ion-content>

@@ -30,9 +30,9 @@ db.ingredient = require("../models/ingredients.model.js")(sequelize, Sequelize);
 db.recette_ingredients = require("../models/recette_ingredients.model.js")(sequelize, Sequelize);
 db.frigo_ingredients = require("../models/frigo_ingredients.model.js")(sequelize, Sequelize);
 db.mesure = require("../models/mesure.model.js")(sequelize, Sequelize);
-db.shoppinglist = require("../models/shoppinglist.model.js")(sequelize, Sequelize);
-db.shoppinglist_item = require("../models/shoppinglist_item.model.js")(sequelize, Sequelize);
-db.shoppinglist_user = require("../models/shoppinglist_user.model.js")(sequelize, Sequelize);
+db.ShoppingList = require("../models/shoppinglist.model.js")(sequelize, Sequelize);
+db.ShoppingListItem = require("../models/shoppinglist_item.model.js")(sequelize, Sequelize);
+db.ShoppingListUser = require("../models/shoppinglist_user.model.js")(sequelize, Sequelize);
 
 
 db.role.belongsToMany(db.user, {
@@ -45,9 +45,63 @@ db.recette.hasMany(db.recette_ingredients);
 db.ingredient.hasMany(db.recette_ingredients);
 db.mesure.hasMany(db.recette_ingredients);
 
-db.shoppinglist.associate(db);
-db.shoppinglist_item.associate(db);
-db.shoppinglist_user.associate(db);
+//db.ShoppingList.associate(db);
+//db.ShoppingListItem.associate(db);
+//db.ShoppingListUser.associate(db);
+
+
+  
+  db.ShoppingList.hasMany(db.ShoppingListItem, {
+    foreignKey: 'shoppinglist_id',
+    as: 'items', // Alias utilisé dans les requêtes `include`
+    onDelete: 'CASCADE',
+    hooks: true
+  });
+
+ 
+  db.ShoppingList.belongsToMany(db.user, {
+    through: db.ShoppingListUser,
+    foreignKey: 'shoppinglist_id',
+    otherKey: 'userID',
+    as: 'users' // Alias utilisé dans les requêtes `include`
+  });
+
+
+  // Définition des associations
+ 
+  
+    db.ShoppingListItem.belongsTo(db.ShoppingList, {
+      foreignKey: 'shoppinglist_id',
+      as: 'shoppingList' // Alias utilisé dans les requêtes `include`
+    });
+ 
+
+  // Définition des associations
+  
+   
+    db.ShoppingListUser.belongsTo(db.ShoppingList, {
+      foreignKey: 'shoppinglist_id',
+      as: 'shoppingList'
+    });
+
+    
+    db.ShoppingListUser.belongsTo(db.user, {
+      foreignKey: 'userID',
+      as: 'user'
+    });
+  
+
+  // Définition des associations
+ 
+
+
+
+//db.shoppinglist.hasMany(db.shoppinglist_item);
+//db.shoppinglist_item.belongsTo(db.shoppinglist);
+//
+//db.shoppinglist.hasMany(db.shoppinglist_user);
+//db.shoppinglist_user.belongsTo(db.shoppinglist);
+
 
 db.frigo.belongsToMany(db.ingredient, {
   through: "frigo_ingredients"
