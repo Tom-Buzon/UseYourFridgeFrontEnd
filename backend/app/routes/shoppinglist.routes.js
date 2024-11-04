@@ -1,14 +1,21 @@
 // app/routes/shoppinglist.routes.js
 
 const { authJwt } = require("../middleware");
+const shoppinglist = require("../controllers/shoppinglist.controller.js");
 
-module.exports = app => {
-  const shoppinglist = require("../controllers/shoppinglist.controller.js");
+module.exports = function(app) {
+  app.use(function(req, res, next) {
+    res.header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    );
+    next();
+  });
   
   // Vérifier les méthodes disponibles dans le contrôleur
   console.log('Méthodes disponibles dans shoppinglist controller:', Object.keys(shoppinglist));
 
-  var router = require("express").Router();
+  
 
 // Vérifier si createWithName est défini
  if (typeof shoppinglist.createWithName !== 'function') {
@@ -16,20 +23,17 @@ module.exports = app => {
  }
 
 // Créer une nouvelle liste de courses avec items
-    router.post("/", [authJwt.verifyToken], shoppinglist.create);
+app.post("/api/shoppinglists", shoppinglist.create);
 
 //// Créer une nouvelle liste de courses avec un nom
-router.post("/createWithName", [authJwt.verifyToken], shoppinglist.createWithName);
+app.post("/api/shoppinglists/createWithName", shoppinglist.createWithName);
 //
  // Ajouter des items à une liste existante
-router.post("/:id/addItems", [authJwt.verifyToken], shoppinglist.addItems);
+ app.post("/api/shoppinglists/:id/addItems", shoppinglist.addItems);
 
  // Récupérer toutes les listes de courses
- router.get("/", [authJwt.verifyToken], shoppinglist.findAll);
+ app.get("/api/shoppinglists", shoppinglist.findAll);
 
- router.delete('/:id', [authJwt.verifyToken], shoppinglist.delete);
+ app.delete('/api/shoppinglists/:id', shoppinglist.delete);
 
- // Autres routes si nécessaires
-
-  app.use('/api/shoppinglists', router);
 };
