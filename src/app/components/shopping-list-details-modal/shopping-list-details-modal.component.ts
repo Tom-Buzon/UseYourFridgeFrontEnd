@@ -2,8 +2,9 @@
 
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, ToastController, AlertController } from '@ionic/angular';
-import { ShoppingList, ShoppingListService, ShoppingItem } from '../../services/shopping-list.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ShoppingList, ShoppingItem } from 'src/app/models/types';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list-details-modal',

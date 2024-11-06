@@ -2,14 +2,15 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FrigoService } from '../services/frigo.service';
-import { RecetteService, Recette } from '../services/recette.service';
-import { ShoppingListService, ShoppingList, ShoppingItem  } from '../services/shopping-list.service';
 import { LanguageService } from '../services/language.service';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ShoppingListDetailsModalComponent } from '../components/shopping-list-details-modal/shopping-list-details-modal.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Recette, ShoppingList } from '../models/types';
+import { ShoppingListService } from '../services/shopping-list.service';
+import { RecetteService } from '../services/recette.service';
 
 @Component({
   selector: 'app-tab1',
@@ -205,10 +206,10 @@ export class Tab1Page implements OnInit, OnDestroy {
 
   // Section 3: Chargement des recettes disponibles
   loadIngredientsFrigo() {
-    this.frigoService.getCurrentIngredients().subscribe(ingredients => {
+/*     this.frigoService.getCurrentIngredients().subscribe(ingredients => {
       this.ingredientsFrigo = ingredients.map(ing => ing.nom.toLowerCase().trim());
       this.loadRecettesDisponibles();
-    });
+    }); */
   }
 
   loadRecettesDisponibles() {

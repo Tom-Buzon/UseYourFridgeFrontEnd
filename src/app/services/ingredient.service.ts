@@ -1,42 +1,32 @@
 // src/app/services/frigo.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
-import { ReplaySubject } from 'rxjs';
-import { TokenStorageService } from './token-storage.service';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-
-export interface Ingredient {
-  id: number;
-  ingredient: string;
-  ingredient_en: string;
-}
+import { Ingredient } from '../models/types';
 
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class IngredientService {
 
-  private apiUrl =  "http://"+  environment.ipAdress+ ':3000/api/ingredients';
+  private apiUrl = "http://" + environment.ipAdress + ':3000/api/ingredients';
 
-
-  user: any;
-  
- 
-  
   constructor(private http: HttpClient) {
 
   }
 
+  addIngredient(ingredientName: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}`, { nom: ingredientName }, httpOptions);
+  }
 
-
-
-  
   getAllingredients(): Observable<any> {
     return this.http.get<Ingredient[]>(`${this.apiUrl}`);
-   }
- 
+  }
+
 }

@@ -3,11 +3,11 @@ import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonModal, IonRouterOutlet } from '@ionic/angular';
 import { Observable } from 'rxjs';
-import { Frigo, Ingredient } from 'src/app/services/frigo.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { UserService } from 'src/app/services/user.service';
 import { FrigoService } from '../../services/frigo.service';
-import { Item } from '../../models/types';
+import { Frigo, Ingredient, Item } from '../../models/types';
+import { IngredientService } from 'src/app/services/ingredient.service';
 @Component({
   selector: 'app-frigo-list',
   templateUrl: './frigo-list.page.html',
@@ -37,8 +37,14 @@ export class FrigoListPage implements OnInit {
     private router: Router,
     private tokenStorage: TokenStorageService,
     private route: ActivatedRoute,
-    private frigoService: FrigoService
+    private frigoService: FrigoService,
+    private ingredientService: IngredientService
   ) {
+
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.user = this.tokenStorage.getUser();
+    }
 
   }
 
@@ -51,11 +57,7 @@ export class FrigoListPage implements OnInit {
     this.frigoService.loadFrigosShared().subscribe(
       (data: any) => this.frigosShared = data
     )
-    this.ingredients$ = this.frigoService.ingredients$;
-    if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-      this.user = this.tokenStorage.getUser();
-    }
+
   }
 
 
@@ -139,7 +141,7 @@ export class FrigoListPage implements OnInit {
 
   addToFridge() {
     if (this.scannedProduct) {
-      this.frigoService.addIngredient(this.scannedProduct.product_name).subscribe(
+      this.ingredientService.addIngredient(this.scannedProduct.product_name).subscribe(
         () => {
           console.log(`Ingrédient ${this.scannedProduct.product_name} ajouté au frigo`);
           this.closeModal();

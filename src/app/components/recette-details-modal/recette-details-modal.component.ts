@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
-import { Recette } from '../../services/recette.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ChangeDetectorRef } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory, FileWriteResult } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
+import { Recette } from 'src/app/models/types';
 
 @Component({
   selector: 'app-recette-details-modal',

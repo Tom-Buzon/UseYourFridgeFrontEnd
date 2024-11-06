@@ -1,14 +1,12 @@
 
 // src/app/tab3/tab3.page.ts
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from '../services/language.service';
-import { ActionSheetController, ToastController } from '@ionic/angular';
+import {  ToastController } from '@ionic/angular';
 
-import { Component, ViewChild, ElementRef, OnInit, OnDestroy, Renderer2, Inject, NgZone } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { FrigoService, Frigo, Ingredient } from '../services/frigo.service';
-import { Observable } from 'rxjs';
+import { Component, ViewChild, OnInit, OnDestroy, Renderer2, inject, NgZone, DestroyRef } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import {
   Barcode,
@@ -24,16 +22,18 @@ import { DialogService } from '../services/dialog.service';
 import { BarcodeScanningModalComponent } from '../components/barcode-scanning-modal/barcode-scanning-modal.component';
 import { UserService } from '../services/user.service';
 import { IngredientService } from '../services/ingredient.service';
+import { Frigo } from '../models/types';
+import { FrigoService } from '../services/frigo.service';
+
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page implements OnInit, OnDestroy {
+export class Tab3Page implements OnInit {
 
   @ViewChild('fabComponent') fabComponent: any;
-  frigos$: Observable<Frigo[]>;
-  ingredients$: Observable<Ingredient[]>;
+  private destroyRef = inject(DestroyRef);
   newIngredient: string = '';
   isModalOpen: boolean = false;
   scannedProduct: any;
@@ -44,38 +44,37 @@ export class Tab3Page implements OnInit, OnDestroy {
     quantity: null
   };
   currentFrigo: Frigo | undefined;;
-  currentLang: string = 'fr';
   toast: any;
   id: any = null;
   isLoggedIn = false;
   user: any;
   isItemAvailable = false;
   allIngredients: any[] = [];
-  users: any[] = [];
-  
+
   formData: FormGroup;
 
-    public alertButtons = [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-          console.log('Alert canceled');
-        },
+  public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        console.log('Alert canceled');
       },
-      {
-        text: 'OK',
-        role: 'confirm',
-        handler: () => {
-          console.log('Alert confirmed');
-        },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        console.log('Alert confirmed');
       },
-    ];
-  
-    setResult(ev:any) {
-      console.log(`Dismissed with role: ${ev.detail.role}`);
-    }
+    },
+  ];
 
+  public ingredientsObs$ = this.ingredientService.getAllingredients();
+  public ingredientsResults: any[] = [];
+
+  public usersObs$ = this.userService.getAllUsernameAndId();
+  public usersResults: any[] = [];
 
   public readonly barcodeFormat = BarcodeFormat;
   public readonly lensFacing = LensFacing;
@@ -88,28 +87,7 @@ export class Tab3Page implements OnInit, OnDestroy {
   public barcodes: Barcode[] = [];
   public isSupported = false;
   public isPermissionGranted = false;
-  public actionSheetButtons = [
-    {
-      text: 'Delete',
-      role: 'destructive',
-      data: {
-        action: 'delete',
-      },
-    },
-    {
-      text: 'Share',
-      data: {
-        action: 'share',
-      },
-    },
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      data: {
-        action: 'cancel',
-      },
-    },
-  ];
+
   private API = 'https://world.openfoodfacts.org/api/v2/product/';
 
   constructor(
@@ -120,121 +98,59 @@ export class Tab3Page implements OnInit, OnDestroy {
     private ingredientService: IngredientService,
     private http: HttpClient,
     private _route: ActivatedRoute,
-    private actionsheetCtrl: ActionSheetController,
     private tokenStorage: TokenStorageService,
-    private renderer: Renderer2,
-
     private translate: TranslateService,
-    private languageService: LanguageService,
     private toastController: ToastController,
-    private fb:FormBuilder, 
+    private fb: FormBuilder,
     private router: Router
 
   ) {
-    
+
     this.formData = this.fb.group({
-      name: ['',[Validators.required]],
-      email: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
-
-    this.ingredientService.getAllingredients().subscribe(
-      (data: any) => {
-        console.log(data);
-        this.allIngredients = data
-      }
-    )
-
-    this.frigoService.loadFrigos().subscribe(
-      frigos => {
-        // Handle the loaded frigos
-      },
-      error => {
-        console.error('Error loading frigos', error);
-      }
-    );
 
     this.id = this._route.snapshot.paramMap.get('id');
-    if (!this.id) {
-      this.frigoService.loadFrigos().subscribe(
-        (data: any) => {
-          this.currentFrigo = data[0]
-        }
-      )
-    }
-    else {
-      this.frigoService.loadFrigos().subscribe(
-        (data: any) => {
-          this.currentFrigo = data.filter((item: any) => item.id == this.id)[0]
-        }
-      )
-    }
-    this.frigos$ = this.frigoService.frigos$;
-    this.ingredients$ = this.frigoService.ingredients$;
-
-
-  }
-
-  changeLanguage(lang: string) {
-    this.translate.use(lang);
-    this.languageService.setPreferredLanguage(lang);
-  }
-
-
-
-  onSubmit(): void {
-    const { name,quantity } = this.form;
-    this.currentFrigo?.id;
-    console.log(name+quantity+this.currentFrigo?.id);
-    this.frigoService.addIngredientToFridge(name, quantity,this.currentFrigo?.id).subscribe({
-      next: data => {
-
-    
-      },
-      error: err => {
-
-      }
-    });
-  }
-
-  getItems(ev: any) {
-
-    // set val to the value of the searchbar
-    const val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() !== '') {
-      this.isItemAvailable = true;
-      this.allIngredients = this.allIngredients.filter((item: any) => {
-        return (item.ingredient.toLowerCase().indexOf(val.ingredient.toLowerCase()) > -1);
-      })
-    } else {
-      this.isItemAvailable = false;
-    }
-  }
-
-  ngOnDestroy() {
-  }
-  async ngOnInit() {
-    this.router.events.subscribe((data: any) => {
-      if(data instanceof NavigationStart) {
-        this.fabComponent.close();
-      }
-
-
-    });
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.user = this.tokenStorage.getUser();
     }
 
-    this.userService.getAllUsernameAndId().subscribe(
-      (data: any) => this.users = data.filter((item: any) => item.id != this.user.id)
-    );
+  }
 
-    this.languageService.getPreferredLanguage().then(lang => {
-      this.currentLang = lang || 'fr';
+  async ngOnInit() {
+
+
+    this.frigoService.loadFrigos().subscribe(
+      (data: any) => {
+        if (!this.id) {
+          this.currentFrigo = data[0]
+        }
+        else {
+          this.currentFrigo = data.filter((item: any) => item.id == this.id)[0]
+        }
+      }
+    )
+
+    this.router.events.subscribe((data: any) => {
+      if (data instanceof NavigationStart) {
+        this.fabComponent.close();
+      }
+
+
     });
+
+    this.ingredientsObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
+      this.ingredientsResults = data;
+    });
+
+    this.usersObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
+      this.usersResults = data;
+    });
+
+
 
     BarcodeScanner.isSupported().then((result: any) => {
 
@@ -265,14 +181,55 @@ export class Tab3Page implements OnInit, OnDestroy {
 
   }
 
+  setResult(ev: any) {
+    console.log(`Dismissed with role: ${ev.detail.role}`);
+  }
+
+
+ 
+
+
+
+  onSubmit(): void {
+    const { name, quantity } = this.form;
+    this.currentFrigo?.id;
+    console.log(name + quantity + this.currentFrigo?.id);
+    this.frigoService.addIngredientToFridge(name, quantity, this.currentFrigo?.id).subscribe({
+      next: data => {
+
+
+      },
+      error: err => {
+
+      }
+    });
+  }
+
+  getItems(ev: any) {
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() !== '') {
+      this.isItemAvailable = true;
+      this.allIngredients = this.allIngredients.filter((item: any) => {
+        return (item.ingredient.toLowerCase().indexOf(val.ingredient.toLowerCase()) > -1);
+      })
+    } else {
+      this.isItemAvailable = false;
+    }
+  }
+
+
   addIngredientToFridge() {
-      this.frigoService.addFrigo("").subscribe(
-        () => {
-          console.log(`Frigo créé avec succes`);
-          this.closeModal();
-        },
-        error => console.error(`Erreur lors de l'ajout de l'ingrédient au frigo`, error)
-      );
+    this.frigoService.addFrigo("").subscribe(
+      () => {
+        console.log(`Frigo créé avec succes`);
+        this.closeModal();
+      },
+      error => console.error(`Erreur lors de l'ajout de l'ingrédient au frigo`, error)
+    );
   }
 
   goToFrigoList() {
@@ -282,7 +239,7 @@ export class Tab3Page implements OnInit, OnDestroy {
 
   addIngredient() {
     if (this.newIngredient.trim()) {
-      this.frigoService.addIngredient(this.newIngredient.trim()).subscribe(
+      this.ingredientService.addIngredient(this.newIngredient.trim()).subscribe(
         () => {
           console.log(`Ingrédient ajouté au frigo`);
           this.newIngredient = '';
@@ -301,7 +258,7 @@ export class Tab3Page implements OnInit, OnDestroy {
     );
   }
 
- 
+
 
   public async startScan(): Promise<void> {
     const formats = this.formGroup.get('formats')?.value || [];
@@ -361,7 +318,7 @@ export class Tab3Page implements OnInit, OnDestroy {
 
   async addToFridge() {
     if (this.scannedProduct) {
-      this.frigoService.addIngredient(this.scannedProduct.product_name).subscribe(
+      this.ingredientService.addIngredient(this.scannedProduct.product_name).subscribe(
         () => {
           console.log(`Ingrédient ${this.scannedProduct.product_name} ajouté au frigo`);
           this.closeModal();

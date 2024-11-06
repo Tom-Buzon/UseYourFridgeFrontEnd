@@ -71,6 +71,6 @@ register();
 
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  exports: [ TranslateModule, RecetteIngredientsModalComponent,]
+  exports: [ TranslateModule]
 })
 export class AppModule {}
