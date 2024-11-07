@@ -127,7 +127,7 @@ exports.delete = async (req, res) => {
 exports.createWithName = async (req, res) => {
   try {
     const { name, items, scheduledDate } = req.body;
-    
+
     // Créer la liste
     const shoppingList = await ShoppingList.create({
       name,
@@ -152,6 +152,8 @@ exports.createWithName = async (req, res) => {
         as: 'items'
       }]
     });
+
+    const userID = req.userId;
 
     res.status(201).json(completeList);
   } catch (error) {

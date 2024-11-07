@@ -5,6 +5,7 @@ import { ShoppingListService, CreateShoppingListPayload, ShoppingList, ShoppingI
 import { ModalController } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-create-shopping-list-modal',
   templateUrl: './create-shopping-list-modal.component.html',
@@ -19,7 +20,8 @@ export class CreateShoppingListModalComponent {
   constructor(
     private fb: FormBuilder,
     public modalController: ModalController, // Changé en public
-    private shoppingListService: ShoppingListService
+    private shoppingListService: ShoppingListService,
+  
   ) {
     this.shoppingListForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(1)]],
@@ -41,14 +43,13 @@ export class CreateShoppingListModalComponent {
     if (this.shoppingListForm.invalid) {
       return;
     }
-
+  
     const payload: CreateShoppingListPayload = {
       name: this.shoppingListForm.value.name,
       items: this.items,
       scheduledDate: this.shoppingListForm.value.scheduledDate
     };
-    
-
+  
     this.shoppingListService.createShoppingListWithName(payload)
       .pipe(
         tap((response: ShoppingList) => console.log('Response from server:', response))
