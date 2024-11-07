@@ -1,9 +1,10 @@
 // create-shopping-list-modal.component.ts
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ShoppingListService, CreateShoppingListPayload, ShoppingList, ShoppingItem } from '../../services/shopping-list.service';
 import { ModalController } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
+import { ShoppingList, ShoppingItem, CreateShoppingListPayload } from 'src/app/models/types';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 
 @Component({

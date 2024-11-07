@@ -6,29 +6,9 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { ShoppingList, ShoppingItem, CreateShoppingListPayload } from '../models/types';
 
 
-export interface ShoppingItem {
-  ingredient: string;
-  unit: string | null;
-  quantite: number | string | null;
-  inFrigo: boolean;
-}
-
-export interface ShoppingList {
-  id?: number;
-  name: string;
-  items: ShoppingItem[];
-  createdAt?: string; // Ajoutez cette ligne
-  scheduledDate?: string | null; 
-  userID?: number;
-}
-
-export interface CreateShoppingListPayload {
-  name: string;
-  items: ShoppingItem[];
-  scheduledDate?: string | null;
-}
 
 
 @Injectable({

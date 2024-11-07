@@ -2,7 +2,6 @@
 // src/app/app.component.ts
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from './services/language.service';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
@@ -19,8 +18,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private storage: Storage,
-    private translate: TranslateService,
-    private languageService: LanguageService
+    private translate: TranslateService
   ) {
     // Définir la langue par défaut
     this.translate.setDefaultLang('fr');

@@ -2,7 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ToastController, LoadingController } from '@ionic/angular';
-import { ShoppingListService, ShoppingList } from '../../services/shopping-list.service';
+import { ShoppingList } from 'src/app/models/types';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 @Component({
   selector: 'app-select-shopping-list-modal',

@@ -3,7 +3,6 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { IonContent, ModalController, ToastController, AlertController, LoadingController  } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { RecetteService, Recette } from '../services/recette.service';
 import { ShoppingListModalComponent } from '../components/shopping-list-modal/shopping-list-modal.component';
 import { CreateShoppingListModalComponent } from '../components/create-shopping-list-modal/create-shopping-list-modal.component';
 
@@ -13,7 +12,9 @@ import { LanguageService } from '../services/language.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { RecetteIngredientsModalComponent } from '../components/recette-ingredients-modal/recette-ingredients-modal.component';
 import { SelectShoppingListModalComponent } from '../components/select-shopping-list-modal/select-shopping-list-modal.component';
-import { ShoppingListService, ShoppingItem, ShoppingList, CreateShoppingListPayload } from './../services/shopping-list.service';
+import { Recette, ShoppingItem, ShoppingList } from '../models/types';
+import { ShoppingListService } from '../services/shopping-list.service';
+import { RecetteService } from '../services/recette.service';
 
 @Component({
   selector: 'app-tab2',

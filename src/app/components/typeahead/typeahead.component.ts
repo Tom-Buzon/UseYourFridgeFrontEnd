@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import type { OnInit } from '@angular/core';
-import { Item } from '../../models/types';
-import { Ingredient } from 'src/app/services/frigo.service';
+import { Ingredient, Item } from '../../models/types';
 
 @Component({
   selector: 'app-typeahead',
@@ -24,7 +23,7 @@ export class TypeaheadComponent implements OnInit {
   }
 
   trackItems(index: number, item: Ingredient) {
-    return item.nom;
+    return item.ingredient;
   }
 
   cancelChanges() {

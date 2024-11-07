@@ -2,8 +2,8 @@
 
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ShoppingListService, ShoppingItem } from './../../services/shopping-list.service';
-import { Recette } from './../../services/recette.service';
+import { Recette, ShoppingItem } from 'src/app/models/types';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 @Component({
   selector: 'app-recette-ingredients-modal',

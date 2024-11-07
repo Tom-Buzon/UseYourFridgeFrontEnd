@@ -2,8 +2,10 @@
 import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FrigoService } from '../../services/frigo.service';
-import { ShoppingListService, ShoppingItem, ShoppingList } from '../../services/shopping-list.service';
 import { Subscription } from 'rxjs';
+import { ShoppingList } from 'src/app/models/types';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
+import { IngredientService } from 'src/app/services/ingredient.service';
 
 @Component({
   selector: 'app-shopping-list-modal',
@@ -20,6 +22,7 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
   constructor(
     private modalController: ModalController,
     private frigoService: FrigoService,
+    private ingredientService: IngredientService,
     private shoppingListService: ShoppingListService,
     private cdr: ChangeDetectorRef
   ) {}
@@ -55,7 +58,7 @@ export class ShoppingListModalComponent implements OnInit, OnDestroy {
    * @param ingredient L'ingrédient à ajouter
    */
   addToFridge(ingredient: string) {
-    this.frigoService.addIngredient(ingredient).subscribe(
+    this.ingredientService.addIngredient(ingredient).subscribe(
       () => {
         console.log(`Ingrédient ${ingredient} ajouté au frigo`);
         // La souscription prendra en charge la mise à jour

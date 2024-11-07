@@ -57,8 +57,6 @@
       </ion-item>
     -->
 
-  <ion-action-sheet trigger="open-action-sheet" header="Example header" subHeader="Example subheader"
-    [buttons]="actionSheetButtons"></ion-action-sheet>
 
   <ion-modal class="root" [isOpen]="isModalOpen">
     <ng-template>
@@ -101,7 +99,7 @@
           <ion-item>
             <ion-select id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
               placeholder="Selectionner un/des utilisateur(s)">
-              <ion-select-option *ngFor="let item of users" value="{{item.id}}">{{item.username}}
+              <ion-select-option *ngFor="let item of usersResults" value="{{item.id}}">{{item.username}}
               </ion-select-option>
 
             </ion-select>
@@ -125,8 +123,8 @@
           <ion-list style="text-align:center">
 
             <ion-item>
-              <input class="sc-ion-input-ios-h sc-ion-input-ios-s ios input-label-placement-start in-item hydrated"
-                list="browsers" placeholder="Choose category" class="form-control" name="name" [(ngModel)]="form.name">
+              <input style="width: 100%;" class="sc-ion-input-ios-h sc-ion-input-ios-s ios input-label-placement-start in-item hydrated"
+                list="browsers" placeholder="Entrer le nom de l'ingrédient" class="form-control" name="name" [(ngModel)]="form.name">
 
 
               <datalist id="browsers">
@@ -140,7 +138,7 @@
             </ion-item>
 
             <ion-item>
-              <ion-input label="Quantity" placeholder="Enter quantity" class="form-control" name="quantity"
+              <ion-input  inputmode="decimal" type="number" label="Quantity" placeholder="Enter quantity" class="form-control" name="quantity"
                 [(ngModel)]="form.quantity"></ion-input>
             </ion-item>
             <ion-button style="align-items: center;" (click)="onSubmit()">Ajouter</ion-button>
