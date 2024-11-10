@@ -108,7 +108,7 @@ exports.delete = async (req, res) => {
   const listId = req.params.id;
   try {
     const result = await ShoppingList.destroy({
-      where: { id: listId, userID: req.userId }
+      where: { id: listId }
     });
     if (result === 0) {
       return res.status(404).send({ message: 'Liste de courses non trouvée.' });
