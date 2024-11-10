@@ -24,13 +24,6 @@ export class AppComponent {
     this.translate.setDefaultLang('fr');
     this.initializeApp();
 
-   // // Utiliser la langue préférée si définie, sinon la langue du navigateur
-   // this.languageService.getPreferredLanguage().then(lang => {
-   //   const browserLang = this.translate.getBrowserLang();
-   //   const selectedLang = lang || (browserLang.match(/en|fr/) ? browserLang : 'fr');
-   //   this.translate.use(selectedLang);
-   //   this.languageService.setPreferredLanguage(selectedLang); // Assurez-vous que cela stocke la langue préférée
-   // });
   }
 
 
@@ -39,13 +32,4 @@ export class AppComponent {
     await this.storage.create(); // Initialiser le Storage
    // document.body.classList.add('dark');
   }
- 
-
-
-
-
-ngOnInit(): void {
-}
-
-
 }

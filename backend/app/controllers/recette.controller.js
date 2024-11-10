@@ -131,9 +131,9 @@ exports.getAllRecipesFormat = async (req, res) => {
     rf.prep_time, 
     rf.cooking_time, 
     rf.total_time,
-    ${lang === 'en' ? 'ri.ingredient_en AS ingredient' : 'ri.ingredient'}, 
-    ${lang === 'en' ? 'ri.unit_en AS unit' : 'ri.unit'}, 
-    ${lang === 'en' ? 'ri.quantite_en AS quantite' : 'ri.quantite'}
+    ${lang === 'en' ? 'ri.ingredient AS ingredient' : 'ri.ingredient'}, 
+    ${lang === 'en' ? 'ri.unit AS unit' : 'ri.unit'}, 
+    ${lang === 'en' ? 'ri.quantite AS quantite' : 'ri.quantite'}
   FROM 
     recetteformat rf
   LEFT JOIN 

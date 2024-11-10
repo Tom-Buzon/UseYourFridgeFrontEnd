@@ -57,9 +57,10 @@ exports.create = async (req, res) => {
 
 // Méthode pour récupérer toutes les listes de courses d'un utilisateur
 exports.findAll = async (req, res) => {
+  const id = req.params.id;
   try {
     const shoppingLists = await ShoppingList.findAll({
-      where: { userID: req.params.userId },
+      where: { userID: id },
       include: [{ model: ShoppingListItem, as: 'items' }] // Alias 'items' correspond à l'association
     });
     res.send(shoppingLists);
@@ -131,7 +132,7 @@ exports.createWithName = async (req, res) => {
     const shoppingList = await ShoppingList.create({
       name,
       scheduledDate,
-      userID: req.bodyuserId
+      userID: req.body.userId
     });
 
     // Créer les items

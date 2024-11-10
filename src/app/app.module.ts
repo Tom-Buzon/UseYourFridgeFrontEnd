@@ -40,13 +40,14 @@ import { CreateShoppingListModalComponent } from './components/create-shopping-l
 import { SelectShoppingListModalComponent } from './components/select-shopping-list-modal/select-shopping-list-modal.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; // Importer FullCalendarModule
 import { ShoppingListDetailsModalComponent } from './components/shopping-list-details-modal/shopping-list-details-modal.component';
+import { FirsTimePage } from './pages/first-time-page/first-time.page';
 
 
 register();
 
 @NgModule({
 
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
+  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,FirsTimePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
 
   imports: [
     BrowserModule,

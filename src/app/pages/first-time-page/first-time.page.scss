@@ -1,0 +1,25 @@
+swiper-container {
+    height: 100%;
+}
+
+swiper-slide {
+    display: block;
+}
+
+swiper-slide img {
+    padding: 15%;
+}
+
+.slider-text {
+    padding-top: 20%;
+}
+
+
+.navigator {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}

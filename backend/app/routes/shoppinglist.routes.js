@@ -33,7 +33,7 @@ app.post("/api/shoppinglists/createWithName",  shoppinglist.createWithName);
  app.post("/api/shoppinglists/:id/addItems", shoppinglist.addItems);
 
  // Récupérer toutes les listes de courses
- app.get("/api/shoppinglists", shoppinglist.findAll);
+ app.get("/api/shoppinglists/:id", shoppinglist.findAll);
 
  app.delete('/api/shoppinglists/:id', shoppinglist.delete);
 

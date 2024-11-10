@@ -1,6 +1,6 @@
 // src/app/tab1/tab1.page.ts
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, DestroyRef, inject } from '@angular/core';
 import { FrigoService } from '../services/frigo.service';
 import { LanguageService } from '../services/language.service';
 import { AlertController, ModalController, ToastController } from '@ionic/angular';
@@ -10,8 +10,9 @@ import { ShoppingListDetailsModalComponent } from '../components/shopping-list-d
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Recette, ShoppingList } from '../models/types';
 import { ShoppingListService } from '../services/shopping-list.service';
-import { RecetteService } from '../services/recette.service';
 import { TokenStorageService } from '../services/token-storage.service';
+import { RecetteService } from '../services/recette.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 
 
@@ -21,9 +22,14 @@ import { TokenStorageService } from '../services/token-storage.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit, OnDestroy {
+  private destroyRef = inject(DestroyRef);
   // Section 2: Listes de courses
-  shoppingLists: ShoppingList[] = [];
   shoppingListsSubscription!: Subscription;
+
+  
+  public shoppingListsObs$ = this.shoppingListService.getShoppingLists();
+  public shoppingLists: ShoppingList[] = [];
+
   isLoading: boolean = true; // Indicateur de chargement
   form!: FormGroup;
   minDate: string = new Date().toISOString();
@@ -65,18 +71,22 @@ export class Tab1Page implements OnInit, OnDestroy {
       
       this.loadIngredientsFrigo();
     });
-    if (this.tokenStorage.getToken()) {
-    this.shoppingListsSubscription = this.shoppingListService.shoppingLists$.subscribe(lists => {
-      this.shoppingLists = lists;
-      this.highlightedDates = lists
-        .filter(list => list.scheduledDate)
-        .map(list => ({
-          date: list.scheduledDate,
-          textColor: '#800080',
-          backgroundColor: '#ffc0cb'
-        }));
+
+    
+    this.shoppingListsObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
+      this.shoppingLists = data;
+      console.log(data);
+      this.highlightedDates = data
+      .filter(list => list.scheduledDate)
+      .map(list => ({
+        date: list.scheduledDate,
+        textColor: '#800080',
+        backgroundColor: '#ffc0cb'
+      }));
     });
-  }
+
+
+  
     this.form = this.formBuilder.group({
       scheduledDate: ['', Validators.required]
     });

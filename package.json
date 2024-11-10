@@ -45,7 +45,6 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "@zxing/browser": "^0.1.5",
     "@zxing/library": "^0.21.3",
-    "capacitor-resources": "^2.0.5",
     "install": "^0.13.0",
     "ionicons": "^7.0.0",
     "npm": "^10.9.0",

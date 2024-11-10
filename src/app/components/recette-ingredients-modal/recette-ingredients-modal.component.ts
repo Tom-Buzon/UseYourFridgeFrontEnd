@@ -49,13 +49,13 @@ export class RecetteIngredientsModalComponent {
       inFrigo: false
     }));
 
-    let lists = this.shoppingListService.getUserShoppingLists();
+/*     let lists = this.shoppingListService.getUserShoppingLists();
     if (lists.length === 0) {
       this.shoppingListService.addShoppingList({ name: 'Default List', items: [] });
       lists = this.shoppingListService.getUserShoppingLists();
     }
 
-    await this.shoppingListService.addItemsToShoppingList(0, shoppingList);
+    await this.shoppingListService.addItemsToShoppingList(0, shoppingList); */
     this.modalController.dismiss();
   }
 }
