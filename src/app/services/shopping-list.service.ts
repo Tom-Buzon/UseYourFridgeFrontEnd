@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ShoppingList, ShoppingItem, CreateShoppingListPayload } from '../models/types';
+import { TokenStorageService } from './token-storage.service';
 
 
 
@@ -20,10 +21,14 @@ export class ShoppingListService {
   private apiUrl =  "http://"+  environment.ipAdress+ ':3000/api/shoppinglists';
   private STORAGE_KEY = 'shopping_lists';
   private shoppingLists: ShoppingList[] = [];
+  user: any;
 
-  constructor(private storage: Storage,private http: HttpClient) {
+  constructor(private storage: Storage,private http: HttpClient, private tokenStorage: TokenStorageService) {
     this.loadInitialLists();
     this.init();
+    if (this.tokenStorage.getToken()) {
+      this.user = this.tokenStorage.getUser();
+    }
   }
 
   private loadInitialLists() {
@@ -49,6 +54,7 @@ export class ShoppingListService {
 
   createShoppingListWithName(payload: CreateShoppingListPayload): Observable<ShoppingList> {
     console.log('Service: Payload for createWithName:', payload);
+    payload.userId = this.user.id
     return this.http.post<ShoppingList>(`${this.apiUrl}/createWithName`, payload)
       .pipe(
         tap(
@@ -59,7 +65,8 @@ export class ShoppingListService {
   }
 
   getShoppingLists(): Observable<ShoppingList[]> {
-    return this.http.get<ShoppingList[]>(this.apiUrl);
+    const userId = this.user.id;
+    return this.http.get<ShoppingList[]>(`${this.apiUrl}/${userId}`);
   }
 
   // Méthode pour ajouter des items à une liste existante

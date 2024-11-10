@@ -15,6 +15,7 @@ import { SelectShoppingListModalComponent } from '../components/select-shopping-
 import { Recette, ShoppingItem, ShoppingList } from '../models/types';
 import { ShoppingListService } from '../services/shopping-list.service';
 import { RecetteService } from '../services/recette.service';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-tab2',
@@ -74,21 +75,25 @@ export class Tab2Page implements OnInit, OnDestroy {
     private translate: TranslateService,
     private languageService: LanguageService,
     public sanitizer: DomSanitizer,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private tokenStorage: TokenStorageService
   ) {}
 
   ngOnInit() {
-    this.languageService.getPreferredLanguage().then((lang: string | null) => {
-      this.currentLang = lang || 'fr';
-      this.loadRecettes();
-    });
-
-    this.languageSubscription = this.languageService.getLanguageObservable().subscribe((lang: string) => {
-      if (lang !== this.currentLang) {
-        this.currentLang = lang;
+    if (this.tokenStorage.getToken()) {
+      this.languageService.getPreferredLanguage().then((lang: string | null) => {
+        this.currentLang = lang || 'fr';
         this.loadRecettes();
-      }
-    });
+      });
+  
+      this.languageSubscription = this.languageService.getLanguageObservable().subscribe((lang: string) => {
+        if (lang !== this.currentLang) {
+          this.currentLang = lang;
+          this.loadRecettes();
+        }
+      });
+    }
+    
   }
 
   ngOnDestroy() {

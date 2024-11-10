@@ -59,7 +59,7 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
   try {
     const shoppingLists = await ShoppingList.findAll({
-      where: { userID: req.userId },
+      where: { userID: req.params.userId },
       include: [{ model: ShoppingListItem, as: 'items' }] // Alias 'items' correspond à l'association
     });
     res.send(shoppingLists);
@@ -68,7 +68,6 @@ exports.findAll = async (req, res) => {
     res.status(500).send({ message: "Erreur lors de la récupération des listes de courses." });
   }
 };
-
 
 
 // Méthode pour ajouter des items à une liste existante
@@ -126,13 +125,13 @@ exports.delete = async (req, res) => {
 
 exports.createWithName = async (req, res) => {
   try {
-    const { name, items, scheduledDate } = req.body;
+    const { name, items, scheduledDate, userId } = req.body;
 
     // Créer la liste
     const shoppingList = await ShoppingList.create({
       name,
       scheduledDate,
-      userID: req.userId
+      userID: req.bodyuserId
     });
 
     // Créer les items

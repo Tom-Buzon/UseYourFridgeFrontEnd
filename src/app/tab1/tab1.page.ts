@@ -11,6 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Recette, ShoppingList } from '../models/types';
 import { ShoppingListService } from '../services/shopping-list.service';
 import { RecetteService } from '../services/recette.service';
+import { TokenStorageService } from '../services/token-storage.service';
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -47,7 +50,8 @@ export class Tab1Page implements OnInit, OnDestroy {
     private translate: TranslateService,
     private modalController: ModalController,
     private toastController: ToastController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private tokenStorage: TokenStorageService
   ) {
     this.form = this.formBuilder.group({
       scheduledDate: ['']
@@ -55,11 +59,13 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+   
     this.languageService.getPreferredLanguage().then(lang => {
       this.currentLang = lang || 'fr';
       
       this.loadIngredientsFrigo();
     });
+    if (this.tokenStorage.getToken()) {
     this.shoppingListsSubscription = this.shoppingListService.shoppingLists$.subscribe(lists => {
       this.shoppingLists = lists;
       this.highlightedDates = lists
@@ -70,10 +76,12 @@ export class Tab1Page implements OnInit, OnDestroy {
           backgroundColor: '#ffc0cb'
         }));
     });
+  }
     this.form = this.formBuilder.group({
       scheduledDate: ['', Validators.required]
     });
-  }
+  
+}
 
   ngOnDestroy() {
     if (this.shoppingListsSubscription) {

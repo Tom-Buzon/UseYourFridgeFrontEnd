@@ -45,6 +45,7 @@ export interface CreateShoppingListPayload {
   name: string;
   items: ShoppingItem[];
   scheduledDate?: string | null;
+  userId? : number;
 }
 
 export interface Recette {

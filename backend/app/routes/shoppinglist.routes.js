@@ -26,7 +26,7 @@ module.exports = function(app) {
 app.post("/api/shoppinglists", shoppinglist.create);
 
 //// Créer une nouvelle liste de courses avec un nom
-app.post("/api/shoppinglists/createWithName", [authJwt.verifyToken], shoppinglist.createWithName);
+app.post("/api/shoppinglists/createWithName",  shoppinglist.createWithName);
 
 //
  // Ajouter des items à une liste existante

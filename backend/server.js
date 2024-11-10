@@ -2,18 +2,27 @@ const express = require("express");
 const cors = require("cors");
 const { Pool } = require('pg');
 const app = express();
+require('dotenv').config()
 /* 
 var corsOptions = {
   origin: "http://localhost:8081"
 }; */
 
 
+//const pool = new Pool({
+//  user: "useyourfridgeAdm",
+//  host: "useyourfridgedb.cz8kwm66811r.eu-west-3.rds.amazonaws.com",
+//  database: "useyourfridgeDB",
+//  password: "Admin!123",
+//  port: "5432",
+//});
+
 const pool = new Pool({
-  user: "useyourfridgeAdm",
-  host: "useyourfridgedb.cz8kwm66811r.eu-west-3.rds.amazonaws.com",
-  database: "useyourfridgeDB",
-  password: "Admin!123",
-  port: "5432",
+  user: process.env.DB_USER, // Utilise la variable d'environnement pour l'utilisateur
+  host: process.env.DB_HOST, // Utilise la variable d'environnement pour l'hôte
+  database: process.env.DB_NAME, // Utilise la variable d'environnement pour le nom de la base de données
+  password: process.env.DB_PASSWORD, // Utilise la variable d'environnement pour le mot de passe
+  port: process.env.DB_PORT, // Utilise la variable d'environnement pour le port
 });
 
 
