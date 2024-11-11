@@ -4,6 +4,7 @@
   <div class="container" *ngIf="screen == 'signin'">
     <h1 class="heading">👋 Welcome<br><br></h1>
     <p class="para">Sign in to continue!</p>
+    <app-lottie animation="man"></app-lottie>
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
@@ -57,16 +58,8 @@
     </form>
   </div>
 
-  <ion-toast
-    [isOpen]="isToastOpen"
-    message="Connexion réussie"
-    [duration]="3000"
-    (didDismiss)="setOpen(false)"
-  ></ion-toast>
-  <ion-toast
-    [isOpen]="isToastOpen2"
-    message="Inscription réussie"
-    [duration]="3000"
-    (didDismiss)="setOpen2(false)"
-  ></ion-toast>
+  <ion-toast [isOpen]="isToastOpen" message="Connexion réussie" [duration]="3000" (didDismiss)="setOpen(false)">
+  </ion-toast>
+  <ion-toast [isOpen]="isToastOpen2" message="Inscription réussie" [duration]="3000" (didDismiss)="setOpen2(false)">
+  </ion-toast>
 </ion-content>

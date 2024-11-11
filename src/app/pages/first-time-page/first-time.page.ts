@@ -42,16 +42,17 @@ export class FirsTimePage  {
       isEnd: this.swiperInstance.isEnd
     });
   }
-  async next() {
+   next() {
+    console.log("clic");
    this.swiperInstance.slideNext();
   }
 
-  async back() {
+   back() {
     this.swiperInstance.slidePrev();
    }
 
-  async finish() {
-    await this.storage.set('tutorialComplete', true);
+   finish() {
+     this.storage.set('tutorialComplete', true);
     this.router.navigateByUrl('/');
   }
 }

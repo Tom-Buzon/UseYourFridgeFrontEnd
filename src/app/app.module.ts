@@ -41,24 +41,33 @@ import { SelectShoppingListModalComponent } from './components/select-shopping-l
 import { FullCalendarModule } from '@fullcalendar/angular'; // Importer FullCalendarModule
 import { ShoppingListDetailsModalComponent } from './components/shopping-list-details-modal/shopping-list-details-modal.component';
 import { FirsTimePage } from './pages/first-time-page/first-time.page';
+import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
+import { LottieModule } from './components/lottie-component/lottie.module';
 
+// Export this factory to be used by ngx-lottie
+export function playerFactory() {
+  return player;
+}
 
 register();
 
 @NgModule({
 
-  declarations: [AppComponent,FrigoListPage,TypeaheadComponent,AuthPagePage,FirsTimePage,BarcodeScanningModalComponent,RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent,  ShoppingListDetailsModalComponent],
+  declarations: [AppComponent, FrigoListPage, TypeaheadComponent, AuthPagePage, FirsTimePage, BarcodeScanningModalComponent, RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent, ShoppingListDetailsModalComponent],
 
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     CommonModule,
+    LottieComponent,
     FormsModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(),
     AppRoutingModule,
     RecetteDetailsModalModule, // Importer le module du modal
     HeaderModule,
+    LottieModule,
     FullCalendarModule,
     TranslateModule.forRoot({
       loader: {
@@ -68,10 +77,12 @@ register();
       }
     })
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },authInterceptorProviders,provideHttpClient()],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, authInterceptorProviders, provideHttpClient(), provideLottieOptions({
+    player: playerFactory,
+  })],
 
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  exports: [ TranslateModule]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [TranslateModule]
 })
-export class AppModule {}
+export class AppModule { }

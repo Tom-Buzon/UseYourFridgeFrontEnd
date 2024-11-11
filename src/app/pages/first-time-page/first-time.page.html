@@ -4,12 +4,10 @@
     (slidechangetransitionstart)="slideWillChange()" (slidechangetransitionend)="slideDidChange()">
     <swiper-slide>
       <h1>Bienvenue sur Use Your Fridge</h1>
-      <p>ici vous pourrez... bla bla bla</p>
 
-      <img src="../../assets/slide1.png" >
+      <app-lottie animation="food-served"></app-lottie>
 
       <div class="slider-text">
-        <h2>Easy Exchange!</h2>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur
@@ -24,22 +22,61 @@
       </div>
     </swiper-slide>
     <swiper-slide>
-      <h1>Votre cuisine</h1>
-      <p>Vous pourrez gerer votre frigos, ajouter des ingrédients</p>
+      <h1>Bienvenue sur Use Your Fridge</h1>
 
-      <ion-button (click)="next()">Suivant 2</ion-button>
+      <app-lottie animation="order-food"></app-lottie>
+
+      <div class="slider-text">
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nulla ultricies, erat vitae
+          porta consequat.
+        </p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" >SKIP</ion-button>
+        <ion-button color="primary" fill="clear" (click)="next()">NEXT</ion-button>
+      </div>
     </swiper-slide>
     <swiper-slide>
-      <h1>Recettes</h1>
-      <p>Vous pourrez bla bla bla</p>
+      <h1>Bienvenue sur Use Your Fridge</h1>
 
-      <ion-button (click)="next()">Suivant 2</ion-button>
+      <app-lottie animation="select-food"></app-lottie>
+
+      <div class="slider-text">
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nulla ultricies, erat vitae
+          porta consequat.
+        </p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" >SKIP</ion-button>
+        <ion-button color="primary" fill="clear" (click)="next()">NEXT</ion-button>
+      </div>
     </swiper-slide>
     <swiper-slide>
-      <h1>Liste de courses</h1>
-      <p>Vous pourrez bla bla bla</p>
+      <h1>Bienvenue sur Use Your Fridge</h1>
 
-      <ion-button (click)="finish()">FINISH !</ion-button>
+      <app-lottie animation="restaurant-open"></app-lottie>
+
+      <div class="slider-text">
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Nulla ultricies, erat vitae
+          porta consequat.
+        </p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" >SKIP</ion-button>
+        <ion-button color="primary" fill="clear" (click)="finish()">FINISH</ion-button>
+      </div>
     </swiper-slide>
   </swiper-container>
 </ion-content>

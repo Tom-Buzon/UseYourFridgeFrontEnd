@@ -1,5 +1,6 @@
 swiper-container {
     height: 100%;
+    padding-top: 50%;
 }
 
 swiper-slide {
@@ -23,3 +24,7 @@ swiper-slide img {
     left: 0;
     bottom: 0;
 }
+
+ion-content{
+    text-align: center;
+}  

@@ -7,12 +7,14 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { HeaderModule } from '../components/header-component/header.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { LottieModule } from '../components/lottie-component/lottie.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    LottieModule,
     HeaderModule,
     TranslateModule,
     Tab3PageRoutingModule
