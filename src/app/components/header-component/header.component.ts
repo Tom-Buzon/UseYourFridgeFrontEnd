@@ -13,6 +13,8 @@ export class HeaderComponent  implements OnInit {
   @Input() public title: string = "";
   @Input() public back: boolean = false;
   @Input() public menu: boolean = false;
+  @Input() public settings: boolean = false;
+  @Input() public notifications: boolean = false;
   @Input() public menuTab1: boolean = false;
   constructor(
     private router : Router,private translate: TranslateService,
@@ -32,6 +34,14 @@ export class HeaderComponent  implements OnInit {
   changeLanguage(lang: string) {
     this.translate.use(lang);
     this.languageService.setPreferredLanguage(lang);
+  }
+  goToSettings() {
+    this.router.navigate(["tabs/settings"]);
+
+  }
+  goToNotifications() {
+    this.router.navigate(["tabs/notifications"]);
+
   }
 
 

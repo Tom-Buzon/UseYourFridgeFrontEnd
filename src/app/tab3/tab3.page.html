@@ -1,4 +1,4 @@
-<app-header [back]="false" [menu]="true" title="{{currentFrigo?.nom}}"></app-header>
+<app-header [back]="false" [menu]="true" [settings]="true" title="{{frigosResults?.nom}}"></app-header>
 <ion-content [fullscreen]="true" [class.content-hidden]="scanning">
 
   <div class="fab-container">
@@ -31,15 +31,16 @@
   </div>
 
   <ion-list>
-    <ion-item *ngFor="let ingredient of currentFrigo?.ingredients">
-      <ion-label>{{ ingredient.nom }}</ion-label> <!-- Ajusté selon l'interface Ingredient -->
+    <ion-item *ngFor="let ingredient of frigosResults?.ingredients">
+      <ion-label>{{ ingredient.ingredient }}</ion-label> <!-- Ajusté selon l'interface Ingredient -->
+      <span>Quantity: {{ ingredient.frigo_ingredients.quantity }}</span> <!-- Ajusté selon l'interface Ingredient -->
       <ion-button slot="end" color="danger" (click)="removeIngredient(ingredient.id)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
 
-  <ion-list style="text-align:center; padding-top:40%;" *ngIf="currentFrigo?.ingredients?.length === 0">
+  <ion-list style="text-align:center; padding-top:40%;" *ngIf="frigosResults?.ingredients?.length === 0">
 
     <h2>{{ 'Votre cuisine est vide!' | translate }}</h2>
 
@@ -98,14 +99,14 @@
 
         <ion-list style="text-align:center">
           <ion-item>
-            <ion-select id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
+            <ion-select  [(ngModel)]="selectedUsers" id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
               placeholder="Selectionner un/des utilisateur(s)">
-              <ion-select-option *ngFor="let item of usersResults" value="{{item.id}}">{{item.username}}
+              <ion-select-option *ngFor="let item of usersResults" [value]="item.id">{{item.username}}
               </ion-select-option>
 
             </ion-select>
           </ion-item>
-          <ion-button style="align-items: center;">{{ 'SHARED' | translate }}</ion-button>
+          <ion-button  (click)="shareFridge()" style="align-items: center;">{{ 'SHARED' | translate }}</ion-button>
         </ion-list>
       </div>
     </ng-template>
@@ -120,29 +121,29 @@
             <ion-button color="light" (click)="modalAdd.dismiss()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
-        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <form name="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <ion-list style="text-align:center">
 
             <ion-item>
-              <input style="width: 100%;" class="sc-ion-input-ios-h sc-ion-input-ios-s ios input-label-placement-start in-item hydrated"
-                list="browsers" placeholder="Entrer le nom de l'ingrédient" class="form-control" name="name" [(ngModel)]="form.name">
-
-
-              <datalist id="browsers">
-                <option value="Internet Explorer"></option>
-                <option value="Firefox"></option>
-                <option value="Chrome"></option>
-                <option value="Opera"></option>
-                <option value="Safari"></option>
-              </datalist>
-
+              <select class="form-control" name="name" required [(ngModel)]="form.ingredient" class="form-control">
+                <option *ngFor="let ingredient of ingredientsResults;" [ngValue]="ingredient">
+                  {{ingredient.ingredient}}
+                </option>
+              </select>
             </ion-item>
-
             <ion-item>
-              <ion-input  inputmode="decimal" type="number" label="Quantity" placeholder="Enter quantity" class="form-control" name="quantity"
-                [(ngModel)]="form.quantity"></ion-input>
+              <ion-input inputmode="decimal" type="number" label="Quantity" placeholder="Enter quantity"
+                class="form-control" name="quantity" [(ngModel)]="form.quantity"></ion-input>
             </ion-item>
-            <ion-button style="align-items: center;" (click)="onSubmit()">Ajouter</ion-button>
+            <ion-item>
+              <select class="form-control" name="mesure" required [(ngModel)]="form.mesure" class="form-control">
+                <option *ngFor="let mesure of mesuresResults;" [ngValue]="mesure">
+                  {{mesure.name}}
+                </option>
+              </select>
+            </ion-item>
+            <ion-button style="align-items: center;" [disabled]="!f.form.valid" (click)="onSubmit()">Ajouter
+            </ion-button>
           </ion-list>
         </form>
       </div>

@@ -6,7 +6,22 @@ module.exports = (sequelize, Sequelize) => {
     },
     name: {
       type: Sequelize.STRING
+    },
+    name_en: {
+      type: Sequelize.STRING
+    },
+    short_name: {
+      type: Sequelize.STRING
+    },
+    equivalence: {
+      type: Sequelize.STRING
+    },
+    equivalence_name: {
+      type: Sequelize.STRING
     }
+  },
+  {
+    timestamps: false,
   });
 
   return Mesure;

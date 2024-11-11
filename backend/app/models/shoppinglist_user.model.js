@@ -22,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'shoppinglist_users',
     freezeTableName: true
+  },
+  {
+    timestamps: false,
   });
 
   

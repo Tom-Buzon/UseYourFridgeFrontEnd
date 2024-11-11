@@ -10,6 +10,9 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
         allowNull: true
       }
+    },
+    {
+      timestamps: false,
     });
   
     return Ingredient;

@@ -44,6 +44,8 @@ import { FirsTimePage } from './pages/first-time-page/first-time.page';
 import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
 import { LottieModule } from './components/lottie-component/lottie.module';
+import { SettingstPage } from './pages/settings-page/settings.page';
+import { NotificationsPage } from './pages/notifications-page/notifications.page';
 
 // Export this factory to be used by ngx-lottie
 export function playerFactory() {
@@ -54,7 +56,7 @@ register();
 
 @NgModule({
 
-  declarations: [AppComponent, FrigoListPage, TypeaheadComponent, AuthPagePage, FirsTimePage, BarcodeScanningModalComponent, RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent, ShoppingListDetailsModalComponent],
+  declarations: [AppComponent, FrigoListPage,SettingstPage,NotificationsPage, TypeaheadComponent, AuthPagePage, FirsTimePage, BarcodeScanningModalComponent, RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent, ShoppingListDetailsModalComponent],
 
   imports: [
     BrowserModule,

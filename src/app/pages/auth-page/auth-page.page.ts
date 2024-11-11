@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID, signal, WritableSignal} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, signal, WritableSignal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -41,14 +41,13 @@ export class AuthPagePage implements OnInit {
   
   private animationItem: AnimationItem | null = null;
   
-  constructor(private fb:FormBuilder, private loadingController: LoadingController, private router: Router,private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
+  constructor(private fb:FormBuilder, private loadingController: LoadingController, private cdr: ChangeDetectorRef,private router: Router,private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
   private lottieTransferState: LottieTransferState,
 ) {
   this.createOptions();
  
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
-      email: ['',[Validators.required, Validators.email]],
       password: ['',[Validators.required]],
     });
   }
@@ -101,9 +100,8 @@ export class AuthPagePage implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.dismiss();
-        
         this.setOpen2(true);
-        this.reloadPage();
+        this.onSubmit();
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -116,12 +114,14 @@ export class AuthPagePage implements OnInit {
   async present() {
     this.isLoading = true;
     return await this.loadingController.create({
+      spinner : "circles",
+      translucent: true
       // duration: 5000,
     }).then(a => {
       a.present().then(() => {
         console.log('presented');
         if (!this.isLoading) {
-          a.dismiss().then(() => console.log('abort presenting'));
+          a.dismiss();
         }
       });
     });
@@ -129,7 +129,7 @@ export class AuthPagePage implements OnInit {
 
   async dismiss() {
     this.isLoading = false;
-    return await this.loadingController.dismiss().then(() => console.log('dismissed'));
+    return await this.loadingController.dismiss();
   }
 
   onSubmit(): void {
@@ -148,8 +148,9 @@ export class AuthPagePage implements OnInit {
         this.setOpen(true);
       },
       error: err => {
-        this.errorMessage = err.error.message;
+        this.errorMessage ="FAil";
         this.isLoginFailed = true;
+        this.cdr.detectChanges();
         this.dismiss();
       }
     });

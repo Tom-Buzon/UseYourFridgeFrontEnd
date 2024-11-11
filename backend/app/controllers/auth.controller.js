@@ -17,7 +17,7 @@ exports.signup = (req, res) => {
   })
     .then(user => {
       frigo.create({
-        nom: "Mon Frigo",
+        nom: "Ma Cuisine",
         userId: user.id
       })
         .catch(err => {

@@ -1,0 +1,18 @@
+<app-header [back]="true" [menu]="false" [notifications]="true" title="Settings"></app-header>
+<ion-content>
+  <form>
+
+
+    <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input type="text" name="username"  [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+
+
+
+  </form>
+
+  <div class="ion-text-center bottom-item">
+    <ion-button fill="clear" (click)="signOut()">Log Out</ion-button>
+  </div>
+</ion-content>

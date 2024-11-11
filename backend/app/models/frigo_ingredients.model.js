@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: true
       },
       
+  },
+  {
+    timestamps: false,
   });
 
   

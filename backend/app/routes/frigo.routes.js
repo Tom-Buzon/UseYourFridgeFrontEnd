@@ -28,5 +28,8 @@ app.get("/api/frigo/shared/:id",
 controller.getFrigosSharedByUserId
 );
 
+app.post("/api/frigo/shared",
+controller.shareFrigoToUser
+);
 };
 

@@ -23,12 +23,14 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
+db.notification = require("../models/notifications.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
 db.frigo = require("../models/frigo.model.js")(sequelize, Sequelize);
 db.recette = require("../models/recette.model.js")(sequelize, Sequelize);
 db.ingredient = require("../models/ingredients.model.js")(sequelize, Sequelize);
 db.recette_ingredients = require("../models/recette_ingredients.model.js")(sequelize, Sequelize);
 db.frigo_ingredients = require("../models/frigo_ingredients.model.js")(sequelize, Sequelize);
+db.frigo_users = require("../models/frigo_users.model.js")(sequelize, Sequelize);
 db.mesure = require("../models/mesure.model.js")(sequelize, Sequelize);
 db.ShoppingList = require("../models/shoppinglist.model.js")(sequelize, Sequelize);
 db.ShoppingListItem = require("../models/shoppinglist_item.model.js")(sequelize, Sequelize);
@@ -40,6 +42,17 @@ db.role.belongsToMany(db.user, {
 });
 
 db.user.hasMany(db.frigo);
+db.user.hasMany(db.notification);
+
+db.frigo.belongsToMany(db.ingredient, { through: db.frigo_ingredients })
+db.ingredient.belongsToMany(db.frigo, { through: db.frigo_ingredients })
+
+
+db.frigo.belongsToMany(db.user, { through: db.frigo_users })
+db.user.hasMany(db.frigo_users)
+
+
+db.mesure.hasMany(db.frigo_ingredients);
 
 db.recette.hasMany(db.recette_ingredients);
 db.ingredient.hasMany(db.recette_ingredients);
@@ -107,10 +120,6 @@ db.frigo.belongsToMany(db.ingredient, {
   through: "frigo_ingredients"
 });
 
-db.user.belongsToMany(db.frigo, {
-  through: "frigo_users",
-  foreignKey: "frigoId",
-});
 
 
 db.user.belongsToMany(db.role, {

@@ -10,6 +10,7 @@
     <ion-buttons slot="start" *ngIf="back" >
       <ion-icon  (click)="goBack()" name="arrow-back-outline"></ion-icon>
     </ion-buttons>
+
     <ion-buttons slot="end">
       <ion-button (click)="changeLanguage('en')">
         🇺🇸
@@ -19,7 +20,13 @@
       </ion-button>
      <!-- <ion-icon  id="open-action-sheet" name="settings-outline"></ion-icon>-->
     </ion-buttons>
-    <ion-title>{{ title | translate }}</ion-title>
+    <ion-buttons slot="end" *ngIf="settings" >
+      <ion-icon  (click)="goToSettings()" name="settings-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end" *ngIf="notifications" >
+      <ion-icon  (click)="goToNotifications()" name="notifications-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title >{{ title | translate }}</ion-title>
 
   </ion-toolbar>
 

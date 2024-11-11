@@ -10,6 +10,12 @@ export interface User {
   username: string;
 }
 
+export interface Mesure {
+  id: number;
+  name: string;
+}
+
+
 export interface Frigo {
   id: number;
   nom: string;

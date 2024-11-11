@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'shoppinglist_items', // Correspond exactement au nom de la table
     freezeTableName: true            // Empêche Sequelize de modifier le nom de la table
+  },
+  {
+    timestamps: false,
   });
 
 

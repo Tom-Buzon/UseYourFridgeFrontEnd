@@ -34,12 +34,17 @@ export class FrigoService {
     return this.http.get<any>(`${this.apiUrl}/shared/${this.user.id}`);
   }
 
+  shareFrigoToUser(ids : any[], frigoId:string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/shared`, { usersId: ids,frigoId: frigoId }, httpOptions);
+  }
+
+
   getFrigoById(id: number): Observable<any> {
     return this.http.get<Frigo[]>(`${this.apiUrl}/${id}`);
   }
 
-  addIngredientToFridge(name: string, quantity: string, frigoId: number | undefined): Observable<any> {
-    return this.http.post(`${this.apiUrl}/ingredients`, { nom: name, quantity: quantity, frigoId: frigoId }, httpOptions);
+  addIngredientToFridge(ingredientId: string, mesureId : string,quantity: string, frigoId: number | undefined): Observable<any> {
+    return this.http.post(`${this.apiUrl}/ingredients`, { ingredientId: ingredientId, mesureId: mesureId, quantity: quantity, frigoId: frigoId }, httpOptions);
   }
 
   addFrigo(frigoName: string): Observable<any> {
