@@ -21,7 +21,7 @@ export class TabsPage {
 }
 
 goToPictures(){
-  this.router.navigate(["tabs/tab2"]);
+  this.router.navigate(["tabs/tab1"]);
 }
 
 
