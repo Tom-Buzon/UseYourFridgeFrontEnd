@@ -1,30 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-const { Pool } = require('pg');
 const app = express();
 require('dotenv').config()
 /* 
 var corsOptions = {
   origin: "http://localhost:8081"
 }; */
-
-
-//const pool = new Pool({
-//  user: "useyourfridgeAdm",
-//  host: "useyourfridgedb.cz8kwm66811r.eu-west-3.rds.amazonaws.com",
-//  database: "useyourfridgeDB",
-//  password: "Admin!123",
-//  port: "5432",
-//});
-
-const pool = new Pool({
-  user: process.env.DB_USER, // Utilise la variable d'environnement pour l'utilisateur
-  host: process.env.DB_HOST, // Utilise la variable d'environnement pour l'hôte
-  database: process.env.DB_NAME, // Utilise la variable d'environnement pour le nom de la base de données
-  password: process.env.DB_PASSWORD, // Utilise la variable d'environnement pour le mot de passe
-  port: process.env.DB_PORT, // Utilise la variable d'environnement pour le port
-});
-
 
 app.use(cors());
 // parse requests of content-type - application/json
@@ -76,25 +57,5 @@ function initial() {
     name: "admin"
   });
 }
-
-// Route pour supprimer un ingrédient
-app.delete('/api/frigo/ingredients/:id', async (req, res) => {
-  const { id } = req.params;
-  if (!id) {
-    return res.status(400).json({ error: 'ID de l\'ingrédient non fourni' });
-  }
-  try {
-    const query = 'DELETE FROM frigo WHERE id = $1';
-    const result = await pool.query(query, [id]);
-    if (result.rowCount === 0) {
-      return res.status(404).json({ message: 'Ingrédient non trouvé' });
-    }
-    res.status(200).json({ message: 'Ingrédient supprimé avec succès' });
-  } catch (err) {
-    console.error('Erreur lors de la suppression de l\'ingrédient:', err);
-    res.status(500).json({ error: 'Une erreur est survenue lors de la suppression de l\'ingrédient' });
-  }
-});
-
 
 
