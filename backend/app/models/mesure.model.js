@@ -18,6 +18,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     equivalence_name: {
       type: Sequelize.STRING
+    },
+    infinite: {
+      type: Sequelize.BOOLEAN,
+      default: false
     }
   },
   {

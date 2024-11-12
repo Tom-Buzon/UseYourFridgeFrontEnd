@@ -34,6 +34,10 @@ export class FrigoService {
     return this.http.get<any>(`${this.apiUrl}/shared/${this.user.id}`);
   }
 
+  loadUserIdsFrigosShared(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/shared/users/${id}`);
+  }
+
   shareFrigoToUser(ids : any[], frigoId:string): Observable<any> {
     return this.http.post(`${this.apiUrl}/shared`, { usersId: ids,frigoId: frigoId }, httpOptions);
   }

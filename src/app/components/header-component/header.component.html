@@ -11,7 +11,7 @@
       <ion-icon  (click)="goBack()" name="arrow-back-outline"></ion-icon>
     </ion-buttons>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" *ngIf="trad" >
       <ion-button (click)="changeLanguage('en')">
         🇺🇸
       </ion-button>
@@ -25,6 +25,7 @@
     </ion-buttons>
     <ion-buttons slot="end" *ngIf="notifications" >
       <ion-icon  (click)="goToNotifications()" name="notifications-outline"></ion-icon>
+      <ion-badge id="cart-badge">2</ion-badge>
     </ion-buttons>
     <ion-title >{{ title | translate }}</ion-title>
 

@@ -28,6 +28,11 @@ app.get("/api/frigo/shared/:id",
 controller.getFrigosSharedByUserId
 );
 
+app.get("/api/frigo/shared/users/:id",
+controller.getUserIdsByFrigoShared
+);
+
+
 app.post("/api/frigo/shared",
 controller.shareFrigoToUser
 );

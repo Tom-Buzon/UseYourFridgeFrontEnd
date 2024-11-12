@@ -37,11 +37,6 @@ ion-fab {
   display: none;
 }
 
-ion-item {
-  border-bottom: 0.5px solid #fff;  
-}
-
-
 
 ion-select {
   width: 100%;
@@ -49,7 +44,7 @@ ion-select {
 }
   
 ion-modal {
-  --height: 50%;
+  --height: auto;
   --border-radius: 16px;
   padding-left: 16px;
   padding-right: 16px;

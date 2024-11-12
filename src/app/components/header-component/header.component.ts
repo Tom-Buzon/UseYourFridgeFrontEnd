@@ -3,12 +3,13 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/language.service';
 
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit {
 
   @Input() public title: string = "";
   @Input() public back: boolean = false;
@@ -16,11 +17,12 @@ export class HeaderComponent  implements OnInit {
   @Input() public settings: boolean = false;
   @Input() public notifications: boolean = false;
   @Input() public menuTab1: boolean = false;
+  @Input() public trad: boolean = true;
   constructor(
-    private router : Router,private translate: TranslateService,
+    private router: Router, private translate: TranslateService, private location: Location,
     private languageService: LanguageService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   goToFrigoList() {
     this.router.navigate(["tabs/frigo-list"]);
@@ -43,7 +45,5 @@ export class HeaderComponent  implements OnInit {
     this.router.navigate(["tabs/notifications"]);
 
   }
-
-
-  goBack() {   this.router.navigate(['tabs/tab3']); }
+  goBack() { this.location.back(); }
 }

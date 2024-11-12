@@ -56,6 +56,30 @@ module.exports = (sequelize, Sequelize) => {
       total_time: {
         type:  Sequelize.INTEGER,
         allowNull: true
+      },
+      title_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
+      },
+      tag1_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
+      },
+      tag2_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
+      },
+      tag3_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
+      },
+      difficulty_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
+      },
+      budget_en: {
+        type:  Sequelize.TEXT,
+        allowNull: true
       }
     },
     {

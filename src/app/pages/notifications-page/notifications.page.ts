@@ -15,7 +15,7 @@ export class NotificationsPage implements OnInit {
   isLoggedIn = false;
   user: any;
   notifications: any;
-  public notificationsObs$ = this.notificationsService.getData();
+  public notificationsObs$ = this.notificationsService.loadNotifications();
   public notificationsResults: any;
   private destroyRef = inject(DestroyRef);
   constructor(
@@ -40,18 +40,10 @@ export class NotificationsPage implements OnInit {
   ngOnInit(): void {
 
     this.notificationsObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
-
+      console.log(data);
       this.notificationsResults = data;
     });
   }
-  async signOut() {
-    console.log("tok");
-    this.authService.signOut();
-    window.location.reload();
-  }
-
-
-
 
 
 

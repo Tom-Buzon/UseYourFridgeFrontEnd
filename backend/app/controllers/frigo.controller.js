@@ -98,7 +98,20 @@ exports.getFrigosByUserId = async (req, res) => {
     });
 
 }
+exports.getUserIdsByFrigoShared = async (req, res) => {
+  const id = req.params.id;
 
+  FrigoUser.findAll({ where: { frigoId: id } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving user frigo shared" 
+      });
+    });
+
+}
 exports.shareFrigoToUser = async (req, res) => {
 
   for (const userId of req.body.usersId) {

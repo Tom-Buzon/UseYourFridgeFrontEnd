@@ -9,7 +9,7 @@
       </ion-fab-button>
       <ion-fab-list side="top">
 
-        <ion-fab-button id="present-alert" data-desc="Supprimer le frigo">
+        <ion-fab-button id="present-alert" data-desc="Supprimer la cuisine">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
 
@@ -22,7 +22,7 @@
 
         </ion-fab-button>
 
-        <ion-fab-button id="open-modal-shared" data-desc="Partager le frigo">
+        <ion-fab-button id="open-modal-shared" data-desc="Partager la cuisine">
           <ion-icon name="share-outline"></ion-icon>
         </ion-fab-button>
 
@@ -40,24 +40,22 @@
     </ion-item>
   </ion-list>
 
-  <ion-list style="text-align:center; padding-top:40%;" *ngIf="frigosResults?.ingredients?.length === 0">
+  <ion-list lines="none" style="text-align:center; padding-top:40%;" *ngIf="frigosResults?.ingredients?.length === 0">
 
     <h2>{{ 'Votre cuisine est vide!' | translate }}</h2>
 
-
+    <button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
+      Do it!
+    </button>
 
     <app-lottie animation="man"></app-lottie>
 
     <br />
-    <span>{{ 'Cliquez sur le bouton en bas à droite pour ajouter ou scanner des ingrédients' | translate }}</span>
-    <br />
+    <ion-item style="text-align:center;">
+      <p>{{ 'Cliquez sur le bouton en bas à droite pour ajouter ou scanner des ingrédients' | translate }}</p>
+    </ion-item>
     <img style="transform: rotate(180deg)" src="assets/images/arrow.png" width="50%" />
   </ion-list>
-  <!--   <ion-item>
-        <ion-input [(ngModel)]="newIngredient" [placeholder]="'NEW_INGREDIENT_PLACEHOLDER' | translate"></ion-input>
-        <ion-button (click)="addIngredient()">{{ 'ADD_INGREDIENT' | translate }}</ion-button>
-      </ion-item>
-    -->
 
 
   <ion-modal class="root" [isOpen]="isModalOpen">
@@ -91,22 +89,31 @@
     <ng-template>
       <div class="block">
         <ion-toolbar>
-          <ion-title>Partager le frigo</ion-title>
+          <ion-title>Partager la cuisine</ion-title>
           <ion-buttons slot="end">
-            <ion-button color="light" (click)="modalShared.dismiss()">Close</ion-button>
+            <ion-button color="light" (click)="modalShared.dismiss()">Fermer</ion-button>
           </ion-buttons>
         </ion-toolbar>
 
-        <ion-list style="text-align:center">
+        <ion-list lines="none" style="text-align:center">
+
+
+          <app-lottie animation="searching-food"></app-lottie>
+          <ion-item style="text-align:center">
+            <p>En partageant cette cuisine avec un utilisateur, il aura accès à son contenu, les recettes favorites,
+              ainsi que les listes de courses liés.</p>
+          </ion-item>
           <ion-item>
-            <ion-select  [(ngModel)]="selectedUsers" id="category" cancelText="Cancel" okText="Ok" multiple="true" value=""
-              placeholder="Selectionner un/des utilisateur(s)">
+            <ion-select class="form-control" justify="space-between" label="Selectionner un/des utilisateurs"
+              placeholder="utilisateur(s)" [(ngModel)]="selectedUsers" id="category" cancelText="Cancel" okText="Ok"
+              multiple="true" [value]="">
               <ion-select-option *ngFor="let item of usersResults" [value]="item.id">{{item.username}}
               </ion-select-option>
 
             </ion-select>
           </ion-item>
-          <ion-button  (click)="shareFridge()" style="align-items: center;">{{ 'SHARED' | translate }}</ion-button>
+          <ion-button (click)="shareFridge()" [disabled]="selectedUsers.length === 0" style="align-items: center;">{{
+            'SHARED' | translate }}</ion-button>
         </ion-list>
       </div>
     </ng-template>
@@ -118,12 +125,15 @@
         <ion-toolbar>
           <ion-title>Ajouter un ingrédient</ion-title>
           <ion-buttons slot="end">
-            <ion-button color="light" (click)="modalAdd.dismiss()">Close</ion-button>
+            <ion-button color="light" (click)="modalAdd.dismiss()">Fermer</ion-button>
           </ion-buttons>
         </ion-toolbar>
         <form name="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-          <ion-list style="text-align:center">
-
+          <ion-list style="text-align:center" lines="none">
+            <app-lottie animation="enjoy-food"></app-lottie>
+            <ion-item style="text-align:center">
+              <p>Ajouter un ingrédient à votre cuisine parmis la liste, et préciser sa quantité.</p>
+            </ion-item>
             <ion-item>
               <select class="form-control" name="name" required [(ngModel)]="form.ingredient" class="form-control">
                 <option *ngFor="let ingredient of ingredientsResults;" [ngValue]="ingredient">
@@ -151,7 +161,7 @@
   </ion-modal>
 
   <ion-alert trigger="present-alert"
-    header="Etes vous sur de supprimer ce frigo ainsi que les ingrédients qu'il contient ?" [buttons]="alertButtons"
-    (didDismiss)="setResult($event)"></ion-alert>
+    header="Etes vous sur de supprimer ce frigo ainsi que les ingrédients qu'il contient ?" [buttons]="alertButtons">
+  </ion-alert>
 
 </ion-content>

@@ -1,9 +1,9 @@
 
 // src/app/tab3/tab3.page.ts
 import { TranslateService } from '@ngx-translate/core';
-import {  AlertController, ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 
-import { Component, ViewChild, OnInit, OnDestroy, Renderer2, inject, NgZone, DestroyRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, OnInit, inject, NgZone, DestroyRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -22,7 +22,6 @@ import { DialogService } from '../services/dialog.service';
 import { BarcodeScanningModalComponent } from '../components/barcode-scanning-modal/barcode-scanning-modal.component';
 import { UserService } from '../services/user.service';
 import { IngredientService } from '../services/ingredient.service';
-import { Frigo } from '../models/types';
 import { FrigoService } from '../services/frigo.service';
 import { MesureService } from '../services/mesure.service';
 
@@ -44,7 +43,7 @@ export class Tab3Page implements OnInit {
   form: any = {
     ingredient: null,
     quantity: null,
-    mesure:null
+    mesure: null
   };
   toast: any;
   id: any = null;
@@ -52,7 +51,8 @@ export class Tab3Page implements OnInit {
   user: any;
   isItemAvailable = false;
   allIngredients: any[] = [];
-  selectedUsers: any[] = [];
+  selectedUsers: any[] = [1];
+  isLoading: boolean = false;
 
   formData: FormGroup;
 
@@ -85,6 +85,7 @@ export class Tab3Page implements OnInit {
   public frigosObs$ = this.frigoService.loadFrigos();
   public frigosResults: any = null;
 
+
   public readonly barcodeFormat = BarcodeFormat;
   public readonly lensFacing = LensFacing;
   public formGroup = new UntypedFormGroup({
@@ -107,8 +108,9 @@ export class Tab3Page implements OnInit {
     private cdr: ChangeDetectorRef,
     private alertCtrl: AlertController,
     private ingredientService: IngredientService,
+    private loadingController: LoadingController,
     private http: HttpClient,
-    private mesureService : MesureService,
+    private mesureService: MesureService,
     private _route: ActivatedRoute,
     private tokenStorage: TokenStorageService,
     private translate: TranslateService,
@@ -119,7 +121,7 @@ export class Tab3Page implements OnInit {
   ) {
 
     this.formData = this.fb.group({
-      ingredientId: [ null, [Validators.required]],
+      ingredientId: [null, [Validators.required]],
       quantity: [null, [Validators.required]],
       mesure: [null, [Validators.required]]
     });
@@ -159,13 +161,13 @@ export class Tab3Page implements OnInit {
     });
 
     this.usersObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
-      this.usersResults =  data.filter((item: any) => item.id !== this.user.id);
+      this.usersResults = data.filter((item: any) => item.id !== this.user.id);
     });
 
 
     this.mesuresObs$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
       console.log(data);
-      this.mesuresResults = data;
+      this.mesuresResults = data.filter((item: any) => !item.infinite);
     });
 
     BarcodeScanner.isSupported().then((result: any) => {
@@ -193,89 +195,71 @@ export class Tab3Page implements OnInit {
       );
     });
 
-
-
-  }
-
-  setResult(ev: any) {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
   }
 
 
- 
+  async present() {
+    this.isLoading = true;
+    return await this.loadingController.create({
+      spinner: "circles",
+      translucent: true
+      // duration: 5000,
+    }).then(a => {
+      a.present().then(() => {
+        console.log('presented');
+        if (!this.isLoading) {
+          a.dismiss();
+        }
+      });
+    });
+  }
+
+  async dismiss() {
+    this.isLoading = false;
+    return await this.loadingController.dismiss();
+  }
 
 
 
   onSubmit(): void {
-    const { ingredient, quantity,mesure } = this.form;
+
+    this.present();
+    const { ingredient, quantity, mesure } = this.form;
     console.log(mesure);
-    this.frigoService.addIngredientToFridge(ingredient.id,mesure.id, quantity, this.frigosResults?.id).subscribe({
+    this.frigoService.addIngredientToFridge(ingredient.id, mesure.id, quantity, this.frigosResults?.id).subscribe({
       next: data => {
+        this.dismiss();
         this.modalAdd.dismiss();
         this.cdr.detectChanges();
       },
       error: err => {
+        this.dismiss();
+        this.modalAdd.dismiss();
 
       }
     });
   }
 
-  getItems(ev: any) {
 
-    // set val to the value of the searchbar
-    const val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() !== '') {
-      this.isItemAvailable = true;
-      this.allIngredients = this.allIngredients.filter((item: any) => {
-        return (item.ingredient.toLowerCase().indexOf(val.ingredient.toLowerCase()) > -1);
-      })
-    } else {
-      this.isItemAvailable = false;
-    }
-  }
-
-
-  addIngredientToFridge() {
-    this.frigoService.addFrigo("").subscribe(
-      () => {
-        console.log(`Frigo créé avec succes`);
-        this.cdr.detectChanges();
-        this.closeModal();
-      },
-      error => console.error(`Erreur lors de l'ajout de l'ingrédient au frigo`, error)
-    );
-  }
 
   goToFrigoList() {
     this.router.navigate(["tabs/frigo-list"]);
 
   }
 
-  addIngredient() {
-    if (this.newIngredient.trim()) {
-      this.ingredientService.addIngredient(this.newIngredient.trim()).subscribe(
-        () => {
-          console.log(`Ingrédient ajouté au frigo`);
-          this.newIngredient = '';
-        },
-        error => console.error(`Erreur lors de l'ajout de l'ingrédient au frigo`, error)
-      );
-    }
-  }
 
   shareFridge() {
-    console.log(this.selectedUsers+ this.frigosResults.id);
+    
+    this.present();
+    this.frigoService.shareFrigoToUser(this.selectedUsers, this.frigosResults.id).subscribe(
+      () => {
+        console.log(`Frigo partagé`);
+        this.dismiss();
+      },
+      error => console.error(`Erreur lors du partage du frigo`, error)
+    );
+  }
 
-      this.frigoService.shareFrigoToUser(this.selectedUsers,this.frigosResults.id).subscribe(
-        () => {
-          console.log(`Frigo partagé`);
-        },
-        error => console.error(`Erreur lors du partage du frigo`, error)
-      );
-    } 
-  
 
 
   async removeIngredient(id: number) {
@@ -287,14 +271,18 @@ export class Tab3Page implements OnInit {
         {
           text: 'Supprimer',
           handler: () => {
+
+            this.present();
             this.frigoService.deleteIngredient(id).subscribe({
               next: () => {
+                this.dismiss();
                 console.log(`Ingrédient supprimé`);
                 this.cdr.detectChanges();
               },
               error: err => {
-               console.error(`Erreur lors de la suppression de l'ingrédient du frigo`, err)
-        
+                this.dismiss();
+                console.error(`Erreur lors de la suppression de l'ingrédient du frigo`, err)
+
               }
             });
 

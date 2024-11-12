@@ -1,12 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, signal, WritableSignal} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import { AnimationOptions, BMDestroyEvent, LottieTransferState } from 'ngx-lottie';
-import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-auth-page',
@@ -31,20 +28,9 @@ export class AuthPagePage implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  options!: WritableSignal<AnimationOptions>;
 
-  shown = signal(true);
-
-  styles: Partial<CSSStyleDeclaration> = {
-    margin: '0 auto',
-  };
-  
-  private animationItem: AnimationItem | null = null;
-  
   constructor(private fb:FormBuilder, private loadingController: LoadingController, private cdr: ChangeDetectorRef,private router: Router,private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
-  private lottieTransferState: LottieTransferState,
 ) {
-  this.createOptions();
  
     this.formData = this.fb.group({
       name: ['',[Validators.required]],
@@ -65,24 +51,6 @@ export class AuthPagePage implements OnInit {
     console.log('destroy -> ', destroyEvent);
   }
   
-  animationCreated(animationItem: any): void {
-    console.log('animationCreated -> ', animationItem);
-    this.animationItem = animationItem;
-  }
-  private createOptions(): void {
-    console.log("animate")
-    const tranferredAnimationData = this.lottieTransferState.get('food-served.json');
-
-    if (tranferredAnimationData) {
-      this.options = signal({
-        animationData: tranferredAnimationData,
-      });
-    } else {
-      this.options = signal({
-        path: '/assets/animations/food-served.json',
-      });
-    }
-  }
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;

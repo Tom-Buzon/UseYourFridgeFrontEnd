@@ -11,7 +11,7 @@ module.exports = function(app) {
   });
 
   
-  app.post("/api/frigo/",controller.addNotification); 
+  app.post("/api/notifications/",controller.addNotification); 
 
 
   app.get("/api/notifications/:id",

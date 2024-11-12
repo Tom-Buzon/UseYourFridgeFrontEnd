@@ -27,7 +27,7 @@ import { AuthPagePage } from './pages/auth-page/auth-page.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { register } from 'swiper/element/bundle';
 
 import { BarcodeScanningModalComponent } from './components/barcode-scanning-modal/barcode-scanning-modal.component';
@@ -66,6 +66,7 @@ register();
     FormsModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(),
+    SweetAlert2Module.forRoot(),
     AppRoutingModule,
     RecetteDetailsModalModule, // Importer le module du modal
     HeaderModule,

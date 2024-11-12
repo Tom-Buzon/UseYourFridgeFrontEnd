@@ -10,6 +10,14 @@ export interface User {
   username: string;
 }
 
+export interface Notification {
+  id: number;
+  creatorId: number;
+  userId: number;
+  type: string;
+  read: boolean;
+}
+
 export interface Mesure {
   id: number;
   name: string;
