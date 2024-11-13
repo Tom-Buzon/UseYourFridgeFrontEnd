@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true" scroll-y="false">
+
+  <!-- Login Page -->
+  <div class="container">
+    <h1 class="heading">Use Your Fridge<br><br></h1>
+    <p class="para">Connectez vous pour continuer!</p>
+    <app-lottie animation="man"></app-lottie>
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Nom d'utilisateur</legend>
+          <ion-input class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel"
+            type="email" placeholder="Pseudo"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Mot de passe</legend>
+          <ion-input class="form-control" name="password" [(ngModel)]="form.password" required minlength="3"
+            #password="ngModel" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+        Erreur! Utilisateur ou mot de passe incorrect 
+      </div>
+      <p class="signup-text">Pas de compte ?&nbsp;<a (click)="goToSignUp()">Inscris toi!</a></p>
+      <ion-button class="login-button" [disabled]="!f.form.valid" (click)="onSubmit()" expand="block">Connexion</ion-button>
+    </form>
+  </div>
+
+
+  <ion-toast [isOpen]="isToastOpen" message="Connexion réussie" [duration]="3000" (didDismiss)="setOpen(false)">
+  </ion-toast>
+  <ion-toast [isOpen]="isToastOpen2" message="Inscription réussie" [duration]="3000" (didDismiss)="setOpen2(false)">
+  </ion-toast>
+</ion-content>

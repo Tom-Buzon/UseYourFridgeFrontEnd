@@ -23,7 +23,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
-import { AuthPagePage } from './pages/auth-page/auth-page.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
@@ -46,6 +45,8 @@ import player from 'lottie-web';
 import { LottieModule } from './components/lottie-component/lottie.module';
 import { SettingstPage } from './pages/settings-page/settings.page';
 import { NotificationsPage } from './pages/notifications-page/notifications.page';
+import { SigninPage } from './pages/signin-page/signin.page';
+import { SignupPage } from './pages/signup-page/signup.page';
 
 // Export this factory to be used by ngx-lottie
 export function playerFactory() {
@@ -56,7 +57,7 @@ register();
 
 @NgModule({
 
-  declarations: [AppComponent, FrigoListPage,SettingstPage,NotificationsPage, TypeaheadComponent, AuthPagePage, FirsTimePage, BarcodeScanningModalComponent, RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent, ShoppingListDetailsModalComponent],
+  declarations: [AppComponent, FrigoListPage,SettingstPage,NotificationsPage, TypeaheadComponent, SigninPage,SignupPage, FirsTimePage, BarcodeScanningModalComponent, RecetteIngredientsModalComponent, CreateShoppingListModalComponent, SelectShoppingListModalComponent, ShoppingListDetailsModalComponent],
 
   imports: [
     BrowserModule,

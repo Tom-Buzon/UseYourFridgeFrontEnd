@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 @Component({
-  selector: 'app-auth-page',
-  templateUrl: './auth-page.page.html',
-  styleUrls: ['./auth-page.page.scss'],
+  selector: 'app-signin',
+  templateUrl: './signin.page.html',
+  styleUrls: ['./signin.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AuthPagePage implements OnInit {
+export class SigninPage implements OnInit {
   screen: any = 'signin';
   formData: FormGroup;
   isLoading: boolean = false;
@@ -125,6 +125,11 @@ export class AuthPagePage implements OnInit {
         this.dismiss();
       }
     });
+  }
+
+  goToSignUp() {
+    this.router.navigate(["register"]);
+
   }
 
   change(event: any) {
