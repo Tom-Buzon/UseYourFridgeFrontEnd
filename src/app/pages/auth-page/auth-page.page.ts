@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 @Component({
   selector: 'app-auth-page',
   templateUrl: './auth-page.page.html',
@@ -29,12 +29,12 @@ export class AuthPagePage implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private fb:FormBuilder, private loadingController: LoadingController, private cdr: ChangeDetectorRef,private router: Router,private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
-) {
- 
+  constructor(private fb: FormBuilder, private loadingController: LoadingController, private cdr: ChangeDetectorRef, private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
+  ) {
+
     this.formData = this.fb.group({
-      name: ['',[Validators.required]],
-      password: ['',[Validators.required]],
+      name: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -42,7 +42,7 @@ export class AuthPagePage implements OnInit {
     this.isToastOpen = isOpen;
   }
 
-  
+
   setOpen2(isOpen: boolean) {
     this.isToastOpen2 = isOpen;
   }
@@ -50,7 +50,7 @@ export class AuthPagePage implements OnInit {
   destroy(destroyEvent: any): void {
     console.log('destroy -> ', destroyEvent);
   }
-  
+
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
@@ -82,7 +82,7 @@ export class AuthPagePage implements OnInit {
   async present() {
     this.isLoading = true;
     return await this.loadingController.create({
-      spinner : "circles",
+      spinner: "circles",
       translucent: true
       // duration: 5000,
     }).then(a => {
@@ -112,11 +112,14 @@ export class AuthPagePage implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.dismiss();
+        Haptics.vibrate();
+
+
         this.router.navigate(['']);
         this.setOpen(true);
       },
       error: err => {
-        this.errorMessage ="FAil";
+        this.errorMessage = "FAil";
         this.isLoginFailed = true;
         this.cdr.detectChanges();
         this.dismiss();
@@ -124,7 +127,7 @@ export class AuthPagePage implements OnInit {
     });
   }
 
-  change(event: any){
+  change(event: any) {
     this.screen = event;
   }
   reloadPage(): void {

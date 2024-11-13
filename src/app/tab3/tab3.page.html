@@ -44,9 +44,7 @@
 
     <h2>{{ 'Votre cuisine est vide!' | translate }}</h2>
 
-    <button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
-      Do it!
-    </button>
+
 
     <app-lottie animation="man"></app-lottie>
 
@@ -164,4 +162,10 @@
     header="Etes vous sur de supprimer ce frigo ainsi que les ingrédients qu'il contient ?" [buttons]="alertButtons">
   </ion-alert>
 
+  <swal
+  #deleteSwal
+  title="Oops..."
+  text="Something went wrong!"
+  icon="error">
+</swal>
 </ion-content>

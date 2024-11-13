@@ -2,20 +2,20 @@
 
   <!-- Login Page -->
   <div class="container" *ngIf="screen == 'signin'">
-    <h1 class="heading">Welcome<br><br></h1>
-    <p class="para">Sign in to continue!</p>
+    <h1 class="heading">Use Your Fridge<br><br></h1>
+    <p class="para">Connectez vous pour continuer!</p>
     <app-lottie animation="man"></app-lottie>
     <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
-          <legend>Username</legend>
+          <legend>Nom d'utilisateur</legend>
           <ion-input class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel"
-            type="email" placeholder="Username"></ion-input>
+            type="email" placeholder="Pseudo"></ion-input>
         </fieldset>
       </ion-item>
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
-          <legend>Password</legend>
+          <legend>Mot de passe</legend>
           <ion-input class="form-control" name="password" [(ngModel)]="form.password" required minlength="3"
             #password="ngModel" placeholder="*******"></ion-input>
         </fieldset>
@@ -23,24 +23,24 @@
       <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
         Erreur! Utilisateur ou mot de passe incorrect 
       </div>
-      <p class="signup-text">I'm a new user&nbsp;<a (click)="change('signup')">Sign Up?</a></p>
-      <ion-button class="login-button" [disabled]="!f.form.valid" (click)="onSubmit()" expand="block">Login</ion-button>
+      <p class="signup-text">Pas de compte ?&nbsp;<a (click)="change('signup')">Inscris toi!</a></p>
+      <ion-button class="login-button" [disabled]="!f.form.valid" (click)="onSubmit()" expand="block">Connexion</ion-button>
     </form>
   </div>
 
   <!-- Sign up page -->
   <div class="container" *ngIf="screen == 'signup'">
-    <h1 class="heading">Create Account<br><br></h1>
-    <p class="para">Sign up to get started!</p>
+    <h1 class="heading">Use Your Fridge<br><br></h1>
+    <p class="para">Créer un compte pour commencer!</p>
     <app-lottie animation="man"></app-lottie>
     <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmitRegister()" #f="ngForm" novalidate>
 
       <div class="form-group">
         <ion-item lines="none" class="ion-item">
           <fieldset class="input-item">
-            <legend>Full Name</legend>
+            <legend>Nom d'utilisateur</legend>
             <ion-input class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
-              maxlength="20" #username="ngModel" type="text" placeholder="John Doe"></ion-input>
+              maxlength="20" #username="ngModel" type="text" placeholder="Rentrer un pseudo"></ion-input>
           </fieldset>
         </ion-item>
       </div>
@@ -48,14 +48,14 @@
 
       <ion-item lines="none" class="ion-item">
         <fieldset class="input-item">
-          <legend>Password</legend>
+          <legend>Mot de passe</legend>
           <ion-input class="form-control" name="password" [(ngModel)]="form.password" required minlength="3"
             #password="ngModel" type="password" placeholder="*******"></ion-input>
         </fieldset>
       </ion-item>
 
-      <p class="signup-text">I'm already a member&nbsp;<a (click)="change('signin')">Sign In?</a></p>
-      <ion-button class="login-button" [disabled]="!f.form.valid" (click)="onSubmitRegister()" expand="block">Sign Up
+      <p class="signup-text">Vous avez déja un compte ?&nbsp;<a (click)="change('signin')">Connectez vous !</a></p>
+      <ion-button class="login-button" [disabled]="!f.form.valid" (click)="onSubmitRegister()" expand="block">Inscription
       </ion-button>
     </form>
   </div>

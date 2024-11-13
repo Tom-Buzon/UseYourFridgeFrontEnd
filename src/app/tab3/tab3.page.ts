@@ -7,7 +7,7 @@ import { Component, ViewChild, OnInit, inject, NgZone, DestroyRef, ChangeDetecti
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-
+import Swal from 'sweetalert2';
 import {
   Barcode,
   BarcodeFormat,
@@ -32,7 +32,7 @@ import { MesureService } from '../services/mesure.service';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class Tab3Page implements OnInit {
-
+  @ViewChild('deleteSwal') deleteSwal!: any;
   @ViewChild('fabComponent') fabComponent: any;
   @ViewChild('modalAdd') modalAdd: any;
   private destroyRef = inject(DestroyRef);
@@ -132,7 +132,6 @@ export class Tab3Page implements OnInit {
       this.isLoggedIn = true;
       this.user = this.tokenStorage.getUser();
     }
-
   }
 
   async ngOnInit() {
@@ -197,6 +196,9 @@ export class Tab3Page implements OnInit {
 
   }
 
+  showError() {
+    this.deleteSwal.fire();
+  }
 
   async present() {
     this.isLoading = true;
@@ -249,7 +251,7 @@ export class Tab3Page implements OnInit {
 
 
   shareFridge() {
-    
+
     this.present();
     this.frigoService.shareFrigoToUser(this.selectedUsers, this.frigosResults.id).subscribe(
       () => {

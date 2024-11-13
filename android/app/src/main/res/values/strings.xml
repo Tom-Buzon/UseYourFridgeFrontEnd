@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">UseYourFridge</string>
     <string name="title_activity_main">UseYourFridge</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">io.useyourfridge.app</string>
+    <string name="custom_url_scheme">io.useyourfridge.app</string>
 </resources>
