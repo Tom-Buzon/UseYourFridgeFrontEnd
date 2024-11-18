@@ -183,7 +183,14 @@ ion-card.recipe-card {
   overflow: hidden;
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 90vh;
 
+
+}
 .gradient-overlay {
   position: absolute;
   bottom: 0;

@@ -26,29 +26,29 @@ exports.signup = (req, res) => {
               err.message || "Some error occurred while creating the Ingredient."
           });
         });
-    
-  if (req.body.roles) {
-    Role.findAll({
-      where: {
-        name: {
-          [Op.or]: req.body.roles
-        }
+
+      if (req.body.roles) {
+        Role.findAll({
+          where: {
+            name: {
+              [Op.or]: req.body.roles
+            }
+          }
+        }).then(roles => {
+          user.setRoles(roles).then(() => {
+            res.send({ message: "User registered successfully!" });
+          });
+        });
+      } else {
+        // user role = 1
+        user.setRoles([1]).then(() => {
+          res.send({ message: "User registered successfully!" });
+        });
       }
-    }).then(roles => {
-      user.setRoles(roles).then(() => {
-        res.send({ message: "User registered successfully!" });
-      });
+    })
+    .catch(err => {
+      res.status(500).send({ message: err.message });
     });
-  } else {
-    // user role = 1
-    user.setRoles([1]).then(() => {
-      res.send({ message: "User registered successfully!" });
-    });
-  }
-})
-    .catch (err => {
-  res.status(500).send({ message: err.message });
-});
 };
 
 exports.signin = (req, res) => {

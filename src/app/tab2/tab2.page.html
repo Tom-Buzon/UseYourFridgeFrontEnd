@@ -1,17 +1,17 @@
 <app-header [back]="false" [settings]="true" [menu]="false" [title]="'ALL_RECIPES' | translate"></app-header>
-<ion-content [fullscreen]="true" (ionScroll)="onScroll($event)" >
+<ion-content [fullscreen]="true"  (ionScroll)="onScroll($event)">
 
-  
+
 
 
   <div *ngIf="isLoading" class="advanced-bubble-loader">
     <!-- Bol et baguettes -->
     <div class="bowl-container">
-        <div class="bowl"></div>
-        <div class="chopstick-container">
-            <div class="chopstick chopstick-left"></div>
-            <div class="chopstick chopstick-right"></div>
-        </div>
+      <div class="bowl"></div>
+      <div class="chopstick-container">
+        <div class="chopstick chopstick-left"></div>
+        <div class="chopstick chopstick-right"></div>
+      </div>
     </div>
 
     <!-- Bulles et vapeur -->
@@ -34,166 +34,152 @@
 
     <!-- Texte de chargement -->
     <p>Préparation en cours...</p>
-</div>
+  </div>
 
- 
+
 
   <!-- Contenu principal de la page, masqué pendant le chargement -->
   <div *ngIf="!isLoading">
 
 
 
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}"></ion-refresher-content>
-  </ion-refresher>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingText="{{ 'PULL_TO_REFRESH' | translate }}"></ion-refresher-content>
+    </ion-refresher>
 
 
-  <!-- Search Bar -->
-  <ion-searchbar
-    class="fixed-width"
-    animated="true"
-    [placeholder]="'SEARCH' | translate"
-    [(ngModel)]="searchTerm"
-    (ionInput)="filterRecettes()"
-  ></ion-searchbar>
-  <ion-item button (click)="toggleFilter()" class="accordion-button fixed-width">
-    <ion-label>{{ 'FILTRER ?' | translate }}</ion-label>
-    <ion-icon [name]="isFilterOpen ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
-  </ion-item>
-  
-  <!-- Section des Filtres avec Accordéon -->
-  <ion-list *ngIf="isFilterOpen" class="filter-container">
-    <!-- Filtre par Tag1 -->
-    <ion-item class="filter-item">
-      <ion-label>{{ 'FILTER_TAG1' | translate }}</ion-label>
-      <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
-        <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
-      </ion-select>
+    <!-- Search Bar -->
+    <ion-searchbar class="fixed-width" animated="true" [placeholder]="'SEARCH' | translate" [(ngModel)]="searchTerm"
+      (ionInput)="filterRecettes()"></ion-searchbar>
+    <ion-item button (click)="toggleFilter()" class="accordion-button fixed-width">
+      <ion-label>{{ 'FILTRER ?' | translate }}</ion-label>
+      <ion-icon [name]="isFilterOpen ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"></ion-icon>
     </ion-item>
-  
-    <!-- Filtre par Tag2 -->
-    <ion-item class="filter-item">
-      <ion-label>{{ 'FILTER_TAG2' | translate }}</ion-label>
-      <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
-        <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
-      </ion-select>
-    </ion-item>
-  
-    <!-- Filtre par Tag3 -->
-    <ion-item class="filter-item">
-      <ion-label>{{ 'FILTER_TAG3' | translate }}</ion-label>
-      <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
-        <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
-        <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
-      </ion-select>
-    </ion-item>
-  
-  </ion-list>
-  
-  <!-- Bouton pour Effacer les Filtres -->
-  <ion-button
-  *ngIf="isFilterOpen || hasSearchInput"
-  expand="block"
-  class="clear-filters-button fixed-width"
-  (click)="clearFilters()"
->
-  {{ 'CLEAR_FILTERS' | translate }}
-</ion-button>
 
-  <!-- Generate Shopping List Button -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="selectedRecettes.length > 0">
-    <ion-fab-button color="danger">
-      <ion-icon name="add-outline"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button color="tertiary" data-desc="Add to Calendar">
-        <ion-icon name="calendar-outline"></ion-icon>
+    <!-- Section des Filtres avec Accordéon -->
+    <ion-list *ngIf="isFilterOpen" class="filter-container">
+      <!-- Filtre par Tag1 -->
+      <ion-item class="filter-item">
+        <ion-label>{{ 'FILTER_TAG1' | translate }}</ion-label>
+        <ion-select [(ngModel)]="selectedTag1" (ionChange)="filterRecettes()">
+          <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
+          <ion-select-option *ngFor="let tag of tag1Options" [value]="tag">{{ tag }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Filtre par Tag2 -->
+      <ion-item class="filter-item">
+        <ion-label>{{ 'FILTER_TAG2' | translate }}</ion-label>
+        <ion-select [(ngModel)]="selectedTag2" (ionChange)="filterRecettes()">
+          <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
+          <ion-select-option *ngFor="let tag of tag2Options" [value]="tag">{{ tag }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Filtre par Tag3 -->
+      <ion-item class="filter-item">
+        <ion-label>{{ 'FILTER_TAG3' | translate }}</ion-label>
+        <ion-select [(ngModel)]="selectedTag3" (ionChange)="filterRecettes()">
+          <ion-select-option [value]="null">{{ 'ALL' | translate }}</ion-select-option>
+          <ion-select-option *ngFor="let tag of tag3Options" [value]="tag">{{ tag }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <!-- Bouton pour Effacer les Filtres -->
+    <ion-button *ngIf="isFilterOpen || hasSearchInput" expand="block" class="clear-filters-button fixed-width"
+      (click)="clearFilters()">
+      {{ 'CLEAR_FILTERS' | translate }}
+    </ion-button>
+
+    <!-- Generate Shopping List Button -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="selectedRecettes.length > 0">
+      <ion-fab-button color="danger">
+        <ion-icon name="add-outline"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button (click)="openAddToShoppingListModal()" color="secondary" data-desc="Add to Shopping List">
-        <ion-icon name="list-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button (click)="openCreateListModal()" color="tertiary" data-desc="Create New Shopping List">
-        <ion-icon name="create-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+      <ion-fab-list side="top">
+        <ion-fab-button color="tertiary" data-desc="Add to Calendar">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openAddToShoppingListModal()" color="secondary" data-desc="Add to Shopping List">
+          <ion-icon name="list-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click)="openCreateListModal()" color="tertiary" data-desc="Create New Shopping List">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
 
 
 
-  <ion-card *ngFor="let recette of displayedRecettes" 
-  class="recipe-card" 
-  [ngStyle]="{'background-image': 'url(' + recette.images + ')'}"
-  (click)="showRecetteDetails(recette)">
-  
-  
-  <div class="gradient-overlay"></div>
+    <div class="grid">
+      <ion-card *ngFor="let recette of displayedRecettes" class="recipe-card"
+        [ngStyle]="{'background-image': 'url(' + recette.images + ')'}" (click)="showRecetteDetails(recette)">
 
-  <ion-card-header class="top-section">
-    <ion-card-title>{{ recette.title }}</ion-card-title>
-    <p>
-      <ion-toggle [(ngModel)]="recette.selected" (click)="$event.stopPropagation()" (ionChange)="updateSelectedRecettes()">
-      </ion-toggle>
-      Ajouter à la liste de course
-    </p>
-  </ion-card-header>
 
-  <!-- Header section moved to the bottom -->
-  <ion-card-header class="bottom-section">
-    <div class="header-line">
-      <div class="header-item-large">
-        <ion-icon name="cube-outline" class="header-icon"></ion-icon>
-        <span>Dispo :</span>
-      </div>
-      <div class="header-item-large">
-        <ion-icon name="star-outline" class="header-icon"></ion-icon>
-        <span>{{ recette.rate }}/5</span>
-      </div>
+        <div class="gradient-overlay"></div>
+
+        <ion-card-header class="top-section">
+          <ion-card-title>{{ recette.title }}</ion-card-title>
+          <p>
+            <ion-toggle [(ngModel)]="recette.selected" (click)="$event.stopPropagation()"
+              (ionChange)="updateSelectedRecettes()">
+            </ion-toggle>
+            Ajouter à la liste de course
+          </p>
+        </ion-card-header>
+
+        <!-- Header section moved to the bottom -->
+        <ion-card-header class="bottom-section">
+          <div class="header-line">
+            <div class="header-item-large">
+              <ion-icon name="cube-outline" class="header-icon"></ion-icon>
+              <span>Dispo :</span>
+            </div>
+            <div class="header-item-large">
+              <ion-icon name="star-outline" class="header-icon"></ion-icon>
+              <span>{{ recette.rate }}/5</span>
+            </div>
+          </div>
+
+          <div class="header-line">
+            <div class="header-item" (click)="openIngredientsModal(recette, $event)">
+              <ion-icon name="person-outline" class="header-icon"></ion-icon>
+              <span>{{ recette.people }}</span>
+            </div>
+
+
+            <div class="header-item">
+              <ion-icon name="construct-outline" class="header-icon"></ion-icon>
+              <span>{{ recette.difficulty }}</span>
+            </div>
+            <div class="header-item">
+              <ion-icon name="logo-euro" class="header-icon"></ion-icon>
+              <span>{{ recette.budget }}</span>
+            </div>
+          </div>
+
+
+        </ion-card-header>
+      </ion-card>
+
     </div>
-    
-    <div class="header-line">
-      <div class="header-item" (click)="openIngredientsModal(recette, $event)">
-        <ion-icon name="person-outline" class="header-icon"></ion-icon>
-        <span>{{ recette.people }}</span>
-      </div>     
-      
-      
-      <div class="header-item">
-        <ion-icon name="construct-outline" class="header-icon"></ion-icon>
-        <span>{{ recette.difficulty }}</span>
-      </div>
-      <div class="header-item">
-        <ion-icon name="logo-euro" class="header-icon"></ion-icon>
-        <span>{{ recette.budget }}</span>
-      </div>
-    </div>
-
-    
-  </ion-card-header>
-</ion-card>
-     
-
     <!-- Infinite Scroll Component -->
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
-      <ion-infinite-scroll-content
-        loadingSpinner="bubbles"
-        loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}"
-      >
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'LOADING_MORE_RECIPES' | translate }}">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
-  
-  
-  <!-- Conditional Messages -->
-  <ion-item
-    *ngIf="(!displayedRecettes || displayedRecettes.length === 0) && allRecettes.length > 0"
-  >
-    {{ 'NO_RECIPES_MATCH' | translate }}
-  </ion-item>
 
-  <ion-item *ngIf="allRecettes.length === 0 && displayedRecettes.length === 0">
-    {{ 'LOADING_RECIPES' | translate }}
-  </ion-item>
 
-</div>
+    <!-- Conditional Messages -->
+    <ion-item *ngIf="(!displayedRecettes || displayedRecettes.length === 0) && allRecettes.length > 0">
+      {{ 'NO_RECIPES_MATCH' | translate }}
+    </ion-item>
+
+    <ion-item *ngIf="allRecettes.length === 0 && displayedRecettes.length === 0">
+      {{ 'LOADING_RECIPES' | translate }}
+    </ion-item>
+
+  </div>
 </ion-content>

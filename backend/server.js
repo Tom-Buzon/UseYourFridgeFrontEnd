@@ -38,7 +38,7 @@ const Frigo = db.frigo;
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-db.sequelize.sync({ alter: true });
+ db.sequelize.sync({ alter: true });
 
 // DECOMMENTER CE BLOC POUR RECREER LE SCHEMA DE BASE DE DONNEES
 
@@ -49,7 +49,7 @@ db.sequelize.sync({ alter: true });
   initial(true);
   //SI FALSE, BEN SA LE FAIS PAS QUOI ^^
   //initial(false);
-}); */
+});  */
 
 //-----------------------------------------------------------------------------------------------------------------------------
 

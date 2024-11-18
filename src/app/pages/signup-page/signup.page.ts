@@ -5,6 +5,8 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
+import { NativeAudio } from '@capacitor-community/native-audio';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -19,7 +21,6 @@ export class SignupPage implements OnInit {
   isToastOpen2 = false;
   form: any = {
     username: null,
-    email: null,
     password: null
   };
   isLoggedIn = false;
@@ -31,6 +32,12 @@ export class SignupPage implements OnInit {
 
   constructor(private fb: FormBuilder, private loadingController: LoadingController, private cdr: ChangeDetectorRef, private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService, @Inject(PLATFORM_ID) private platformId: string,
   ) {
+    NativeAudio.preload({
+      assetId: "success",
+      assetPath: "public/assets/sounds/success.mp3",
+      audioChannelNum: 1,
+      isUrl: false
+    });
 
     this.formData = this.fb.group({
       name: ['', [Validators.required]],
@@ -66,13 +73,17 @@ export class SignupPage implements OnInit {
   onSubmitRegister(): void {
     this.present();
     const { username, password } = this.form;
-    console.log(username);
 
     this.authService.register(username, password).subscribe({
       next: data => {
+        console.log("yes");
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.dismiss();
+        Haptics.impact({ style: ImpactStyle.Light });
+        NativeAudio.play({
+          assetId: 'success',
+        });
         this.setOpen2(true);
         this.onSubmit();
       },
